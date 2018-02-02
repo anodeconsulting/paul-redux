@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './styles/foundation.min.css';
 import './styles/custom.css';
+import { Button } from 'react-bootstrap';
 import Routes from './routes';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';

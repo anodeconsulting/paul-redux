@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import './Login.css';
+import { Button } from 'react-bootstrap';
 
 class Login extends Component {
 
@@ -39,7 +40,7 @@ class Login extends Component {
               <input type="text" name="username" placeholder="Username" onChange={this.onChange}/>
               <label>Password</label>
               <input type="password" name="password"  placeholder="Password" onChange={this.onChange}/>
-              <input type="submit" className="button success" value="Login" onClick={this.login}/>
+              <Button bsStyle='success' type="submit" onClick={this.login}>Login</Button>
               </div>
             </div>
           );
