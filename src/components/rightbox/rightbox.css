@@ -1,0 +1,24 @@
+.right-box {
+    border: 1px solid #c0bfbb;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    overflow: hidden!important;
+    position: relative;
+}
+.right-box-content{
+    margin: 10px 15px 10px 35px;
+    font-size: 16px;
+    color: #606060;
+}
+.right-box-arrow{
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    content: "\f0da";
+    color: #d81e05;
+    position: absolute;
+    font-size: 22px;
+    top: 10px;
+    left: 17px;
+}
