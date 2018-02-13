@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import './Login.css';
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import RightBox from "../rightbox/rightbox";
 
 class Login extends Component {
@@ -36,9 +36,9 @@ class Login extends Component {
         return (
             <section >
                 <form className="form-signin">
-                    <h1 className="RUIFW-col-9 col-sm-9 col-sm-9 h1title">Acceso Clientes Persona</h1>
+                    <h1 className=" h1title">Acceso Clientes Persona</h1>
                     <div className="row">
-                        <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9 col-md-9 col-sm-9">
+                        <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9">
                             <div className="wizard-form-content wrapfrom">
                                 <div className="RUIFW-row row">
                                     <div className="col-sm-4">

@@ -1,0 +1,71 @@
+.quick-menu-box {
+    font-size: 1.6rem;
+    font-size: 16px;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 40px 0 30px;
+    padding: 0 1.1%;
+}
+.quick-menu-box a {
+    background: #f1f1f1;
+    padding: 15px 15px 15px 15px;
+    float: left;
+    /*width: 23%;*/
+    /*margin: 0 1%;*/
+    font-weight: normal;
+    display: block;
+    border-bottom: 1px solid #D7D7D7;
+    border-left: 1px solid #D7D7D7;
+    border-right: 1px solid #D7D7D7;
+}
+
+.quick-menu-box a.pay-bill {
+    border-top: 7px solid #B5121B;
+    nowhitespace: afterproperty;
+    color: #B5121B;
+}
+.quick-menu-box a.send-money {
+    border-top: 7px solid #E20177;
+    color: #E20177;
+}
+.quick-menu-box a.transfer {
+    border-top: 7px solid #0084A9;
+    color: #0084A9;
+}
+.quick-menu-box a.topup-mobile {
+    border-top: 7px solid #8D8B00;
+    color: #8D8B00;
+}
+.h1title {
+    color: #D81E05;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.download-icon {
+    background: url(../../assets/images/download.png) left top no-repeat;
+    width: 20px;
+    height: 21px;
+    float: right;
+    margin-right: 20px;
+}
+.caculate-icon {
+    background: url(../../assets/images/calculator.png) left top no-repeat;
+    width: 20px;
+    height: 21px;
+    float: right;
+    margin-right: 20px;
+}
+.print-icon {
+    background: url(../../assets/images/print.png) left top no-repeat;
+    width: 20px;
+    height: 21px;
+    float: right;
+    margin-right: 10px;
+}
+.boxsize{
+    height: 142px;max-width: 250px
+}
+.account-icon{
+    position: relative;margin-top: -37px;
+}

@@ -6,7 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { reducers } from './reducers/index';
 import { Provider } from 'react-redux';
-//import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 // build the users list
 const users = [];
