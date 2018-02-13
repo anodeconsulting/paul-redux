@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import './Login.css';
 import { Button } from 'react-bootstrap';
+import RightBox from "../rightbox/rightbox";
 
 class Login extends Component {
 
@@ -33,16 +34,42 @@ class Login extends Component {
         }
         console.log("login page");
         return (
-            <div className="row" id="Body">
-              <div className="medium-5 columns left">
-              <h4>Login</h4>
-              <label>Username</label>
-              <input type="text" name="username" placeholder="Username" onChange={this.onChange}/>
-              <label>Password</label>
-              <input type="password" name="password"  placeholder="Password" onChange={this.onChange}/>
-              <Button bsStyle='success' type="submit" onClick={this.login}>Login</Button>
-              </div>
-            </div>
+            <section >
+                <form className="form-signin">
+                    <h1 className="RUIFW-col-9 col-sm-9 col-sm-9 h1title">Acceso Clientes Persona</h1>
+                    <div className="row">
+                        <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9 col-md-9 col-sm-9">
+                            <div className="wizard-form-content wrapfrom">
+                                <div className="RUIFW-row row">
+                                    <div className="col-sm-4">
+                                        <label  className="">RUT</label>
+                                        <input type="text" id="inputEmail" className="form-control inputwidth"  placeholder="Email address" ></input>
+                                    </div>
+                                </div>
+                                <div className="RUIFW-row row">
+                                    <div className="col-sm-4">
+                                        <label  className="">Contraseña</label>
+                                        <input type="password" id="inputPassword" className="form-control inputwidth"   placeholder="Password" ></input>
+                                    </div>
+                                </div>
+                                <div className="RUIFW-row row">
+                                    <div className="forgetPassword col-sm-4" >
+                                        <a href="">¿Olvidaste tu contraseña?</a>
+                                    </div>
+                                </div>
+
+                                <div className="btn-holder">
+                                    <button className="btn login-btn " type="submit" onClick={this.login} ><i className="fa fa-lock" aria-hidden="true"></i> Ingresar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="RUIFW-content-side RUIFW-col-3 col-md-3 col-sm-3">
+                            <RightBox/>
+                        </div>
+                    </div>
+                </form>
+            </section>
           );
     }
 }

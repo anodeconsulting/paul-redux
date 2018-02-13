@@ -4,34 +4,14 @@ import Redirect from "react-router-dom/es/Redirect";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
-    constructor(){
-        super();
-
-        this.state = {
-            username: '',
-            password: '',
-            redirectToReferrer: false
-        };
-
-        this.changeState = this.changeState.bind(this);
-
-    }
-
-    changeState() {
-        console.log(this.state.redirectToReferrer);
-        this.setState({redirectToReferrer: true})
-    }
-
-    render() {
-        // if (this.state.redirectToReferrer) {
-        //       return (<NavLink to='/' />)
-        // }
+      render() {
 
         return (
             <div className="navbar-border">
                 <div className="navbar-logo">
+                    {/*<Link to="/">w</Link>*/}
                     <Link to='/'>
-                        <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6">
+                    <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
                         <span className="RUIFW-sr sr-only sr-only"></span>
                         </h1>
                     </Link>

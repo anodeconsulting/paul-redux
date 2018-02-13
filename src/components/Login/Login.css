@@ -1,0 +1,55 @@
+section { border-top: 5px solid #f1f1f1;
+    border-right: 5px solid #f1f1f1;
+    border-left: 5px solid #f1f1f1;
+    border-bottom: 5px solid #f1f1f1;
+    padding: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 960px;
+}
+
+.wizard-form-content {
+    padding: 25px;
+    background: #F1F1F1;
+}
+.btn-holder {
+    text-align: right;
+    margin: 35px 0 0;
+}
+.form-control {
+    height: 31px;
+    font-size: 12px;
+    padding: 6px 5px;
+}
+.RUIFW-row{
+    margin-top: 18px;
+}
+.RUIFW-content-side {
+    padding-left: 5px;
+    padding-right: 19px;
+}
+
+.login-btn{
+    background: #d81e05;
+    height: 30px;
+    color: white;
+    padding: 0 10px;
+}
+.h1title {
+    color: #D81E05;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+.forgetPassword{
+    color: #2A5DB0;
+    text-decoration: none;
+    display: inline-block;
+    text-align: right!important;
+    font-size: 12px;
+    margin-top: -12px;
+    min-width: 280px;
+}
+.inputwidth{
+    min-width: 250px;
+}
