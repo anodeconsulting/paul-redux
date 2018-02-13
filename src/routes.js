@@ -10,7 +10,7 @@ import Header from '././components/Header/Header';
 
 const Routes = () => (
   <BrowserRouter >
-    <div className="container">
+    <div className="">
         <Header />
         <Route exact path="/" component={Login}/>
         <Route exact path="/account" component={Account}/>

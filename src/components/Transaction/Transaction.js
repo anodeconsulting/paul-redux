@@ -53,14 +53,14 @@ class Transaction extends Component {
               <th>Description</th>
               <th>Amount</th>
             </tr>
-          </thead>          
+          </thead>
           {/* {this.state.items.map(item => */}
           {this.props.users.map((item) =>{
             return (
               <TransactionList key={item.id} item={item} />
-            )} 
+            )}
           )}
-        </Table> 
+        </Table>
       </div>
     </div>
     );

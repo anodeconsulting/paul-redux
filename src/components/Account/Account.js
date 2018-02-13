@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { GetAccounts } from "../../services/GetAccounts"
 import { Table } from 'react-bootstrap';
 import './Account.css';
+import RightBox from "../rightbox/rightbox";
+import TopBox from "../topbox/topbox";
 
 class Account extends Component {
 
@@ -23,28 +25,59 @@ class Account extends Component {
 
   render() {
     return (
-      <div className="row small-up-2 medium-up-3 large-up-4" id="Body">
-      <div className="medium-12 columns">
-        <h2>Account Page</h2>
-        <Link to="/account/transaction">Transaction</Link>        
-        <Table responsive>
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th>Amount</th>
-            </tr>
-          </thead>          
-          {this.state.items.map(item =>
-            <tbody key={item.id}>
-              <tr>
-                <td>{item.type}</td>
-                <td>{item.primary_balance.amount}</td>
-              </tr>
-            </tbody>
-          )}
-        </Table>                  
-      </div>
-    </div>
+        <section >
+          <form className="form-signin">
+            <TopBox/>
+            <div className="row">
+              <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9">
+
+                <div className="summerary-title">
+                  <i className="fa fa-caret-right arrow-down" aria-hidden="true"></i>
+                  <h2 className="account-title" >Resumen de Productos</h2>
+                </div>
+
+                <div className="summerary-title">
+                  <i className="fa fa-caret-right arrow-down" aria-hidden="true"></i>
+                  <h2 className="account-title">Cuentas Bancarias</h2>
+                </div>
+
+                <div className="summerary-title">
+                  <i className="fa fa-caret-down arrow-down" aria-hidden="true"></i>
+                  <h2 className="account-title">Credits and Credit Cards</h2>
+                </div>
+
+
+                <div className="" id="Body">
+                  <div className="">
+                    <Link to="/account/transaction">Transaction</Link>
+                    <Table responsive>
+                      <thead>
+                      <tr>
+                        <th>Type</th>
+                        <th>Amount</th>
+                      </tr>
+                      </thead>
+                        {this.state.items.map(item =>
+                            <tbody key={item.id}>
+                            <tr>
+                              <td>{item.type}</td>
+                              <td>{item.primary_balance.amount}</td>
+                            </tr>
+                            </tbody>
+                        )}
+                    </Table>
+                  </div>
+                </div>
+              </div>
+
+              <div className="RUIFW-content-side RUIFW-col-3 col-md-3 col-sm-3">
+                <RightBox/>
+              </div>
+            </div>
+          </form>
+        </section>
+
+
     );
   }
 }

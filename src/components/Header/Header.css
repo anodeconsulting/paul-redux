@@ -20,11 +20,11 @@
 }
 
 .navbar-content{
-    width: 960px;margin: auto;position: relative;margin-top: -9px;
+    width: 960px;margin: auto;position: relative;margin-top: -7px;
 }
 
 .navbar-left{
-    float: left;margin-top: 9px;
+    float: left;
 }
 
 .navbar-right{

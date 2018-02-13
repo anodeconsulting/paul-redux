@@ -34,6 +34,7 @@ section { border-top: 5px solid #f1f1f1;
     height: 30px;
     color: white;
     padding: 0 10px;
+    line-height: 12px !important;
 }
 .h1title {
     color: #D81E05;

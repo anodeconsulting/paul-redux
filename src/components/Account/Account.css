@@ -1,0 +1,119 @@
+.overview-table tr {
+    border-top: 1px dotted #D7D7D7!important;
+    /* background: #fbfbfb!important; */
+}
+.overview-table tr td.account-type {
+    width: 55%;
+    word-break: normal!important;
+    white-space: pre-wrap!important;
+}
+.overview-table tr td.balance {
+    width: 40%;
+}
+.overview-table tr td {
+    font-size: 1.3em!important;
+
+    border-top: 0!important;
+    padding-top: 15px!important;
+    padding-bottom: 15px!important;
+}
+
+
+.overview-table{
+    font-size: 12px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.arrow-down{
+    /*font-family: fontAwesome;*/
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    content: "\f0da";
+    color: #d81e05;
+    position: absolute;
+    font-size: 25px;
+}
+
+.account-title{
+    padding: 0 0 0 20px;
+    font-size: 20px;
+    color: #333333 !important;
+}
+.pad-lft-20 {
+    padding-left: 20px !important;
+}
+
+.txt-right {
+    text-align: right!important;
+}
+
+.arrow-down-btn{
+    position: absolute;
+    left: 6px;
+    top:1px;
+    color: white;
+    font-size: 12px;
+}
+
+.square-btn{
+    font-size: 22px;
+    color:#d81e05;
+}
+
+
+
+section { border-top: 5px solid #f1f1f1; border-right: 5px solid #f1f1f1; border-left: 5px solid #f1f1f1; padding-bottom: 15px; }
+/*from account*/
+.wizard-form-content {
+    padding: 25px;
+    background: #F1F1F1;
+}
+.btn-holder {
+    text-align: right;
+    margin: 35px 0 0;
+}
+.form-control {
+    height: 30px;
+    font-size: 12px;
+    padding: 6px 5px;
+}
+.RUIFW-row{
+    margin-top: 18px;
+}
+.RUIFW-content-side {
+    padding-left: 5px;
+    padding-right: 19px;
+}
+.right-box {
+    border: 1px solid #c0bfbb;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    overflow: hidden!important;
+    position: relative;
+}
+.right-box-content{
+    margin: 10px 15px 10px 35px;
+    font-size: 16px;
+}
+.right-box-arrow{
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    -webkit-font-smoothing: antialiased;
+    content: "\f0da";
+    color: #d81e05;
+    position: absolute;
+    font-size: 22px;
+    top: 10px;
+    left: 17px;
+}
+
+p {
+    font-family: Lato;
+}
+.summerary-title{
+    border-bottom: 1px dotted #D7D7D7!important; padding: 25px 0 6px 0;
+}

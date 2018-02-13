@@ -9,10 +9,9 @@ class Header extends Component {
         return (
             <div className="navbar-border">
                 <div className="navbar-logo">
-                    {/*<Link to="/">w</Link>*/}
                     <Link to='/'>
-                    <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
-                        <span className="RUIFW-sr sr-only sr-only"></span>
+                        <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
+                            <span className="RUIFW-sr sr-only sr-only"></span>
                         </h1>
                     </Link>
                     <div className="navbar-contact">
@@ -31,8 +30,8 @@ class Header extends Component {
                           <a className="navbar-brand">Ofertas Disponibles</a>
                       </div>
                       <div className="navbar-right">
-                          {/*<a className="navbar-brand"><i className="fa fa-cog" ></i></a>*/}
-                          {/*<a className="navbar-brand"><i className="fa fa-question"></i></a>*/}
+                          <a className="navbar-brand"><i className="fa fa-cog" ></i></a>
+                          <a className="navbar-brand"><i className="fa fa-question"></i></a>
                       </div>
                   </div>
                 </nav>
