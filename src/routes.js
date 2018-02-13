@@ -15,7 +15,7 @@ const Routes = () => (
         <Route exact path="/" component={Login}/>
         <Route exact path="/account" component={Account}/>
         <Route exact path="/account/transaction" component={Transaction}/>
-        {/* <Route exact path="*" component={NotFound}/> */}
+        {/* <Route path="*" component={NotFound}/> */}
     </div>
   </BrowserRouter>
 );

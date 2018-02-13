@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-=======
-import { Link } from 'react-router-dom';
->>>>>>> paul
 import './Header.css';
 import Redirect from "react-router-dom/es/Redirect";
+import { Link } from "react-router-dom";
 
 class Header extends Component {
-<<<<<<< HEAD
     constructor(){
         super();
 
@@ -22,20 +18,23 @@ class Header extends Component {
     }
 
     changeState() {
+        console.log(this.state.redirectToReferrer);
         this.setState({redirectToReferrer: true})
     }
 
-      render() {
-          if (this.state.redirectToReferrer) {
-              return (<Redirect to={'/'}/>)
-          }
+    render() {
+        // if (this.state.redirectToReferrer) {
+        //       return (<NavLink to='/' />)
+        // }
 
         return (
             <div className="navbar-border">
                 <div className="navbar-logo">
-                    <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" onClick={this.changeState}>
+                    <Link to='/'>
+                        <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6">
                         <span className="RUIFW-sr sr-only sr-only"></span>
-                    </h1>
+                        </h1>
+                    </Link>
                     <div className="navbar-contact">
                         <a href=""  title="Términos y Condiciones">Términos y Condiciones &nbsp;&nbsp;</a>
                         <a href=""  title="Contacto">Contacto</a>
@@ -60,18 +59,6 @@ class Header extends Component {
             </div>
         );
       }
-=======
-
-  render() {
-    return (
-        <div className="callout primary" id="Header">
-        <div className="row column">
-          <Link to="/">Header</Link>
-        </div>
-      </div>
-    );
-  }
->>>>>>> paul
 }
 
 export default Header;
