@@ -15,7 +15,7 @@ class Account extends Component {
     };
   }
 
-  componentWillMount(){
+  componentDidMount(){
     GetAccounts().then((result) => {
       this.setState({items: result})   
      });
@@ -24,27 +24,27 @@ class Account extends Component {
   render() {
     return (
       <div className="row small-up-2 medium-up-3 large-up-4" id="Body">
-        <div className="medium-12 columns">
-          <h2>Account Page</h2>
-          <Link to="/account/transaction">Transaction</Link>
-            <Table responsive>
-              <thead>
-                <tr>
-                  <th>Type</th>
-                  <th>Amount</th>
-                </tr>
-              </thead>
-              {this.state.items.map(item =>
-                <tbody key={item.id}>
-                  <tr>
-                    <td>{item.type}</td>
-                    <td>{item.primary_balance.amount}</td>
-                  </tr>
-                </tbody>
-              )}
-            </Table>
-        </div>
-     </div>
+      <div className="medium-12 columns">
+        <h2>Account Page</h2>
+        <Link to="/account/transaction">Transaction</Link>        
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount</th>
+            </tr>
+          </thead>          
+          {this.state.items.map(item =>
+            <tbody key={item.id}>
+              <tr>
+                <td>{item.type}</td>
+                <td>{item.primary_balance.amount}</td>
+              </tr>
+            </tbody>
+          )}
+        </Table>                  
+      </div>
+    </div>
     );
   }
 }

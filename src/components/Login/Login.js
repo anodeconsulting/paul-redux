@@ -20,19 +20,19 @@ class Login extends Component {
     
       }
 
-      login() {      
-          this.setState({redirectToReferrer: true})
-       }
+    login() {      
+        this.setState({redirectToReferrer: true})
+    }
 
-      onChange(e){
-          this.setState({[e.target.name]:e.target.value});
-       }
+    onChange(e){
+        this.setState({[e.target.name]:e.target.value});
+    }
 
     render() {
         if (this.state.redirectToReferrer) {
             return (<Redirect to={'/account'}/>)
         }
-
+        console.log("login page");
         return (
             <section >
                 <form className="form-signin">

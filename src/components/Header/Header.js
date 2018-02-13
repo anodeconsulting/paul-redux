@@ -10,10 +10,11 @@ class Header extends Component {
             <div className="navbar-border">
                 <div className="navbar-logo">
                     {/*<Link to="/">w</Link>*/}
-
+                    <Link to='/'>
                     <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
                         <span className="RUIFW-sr sr-only sr-only"></span>
-                    </h1>
+                        </h1>
+                    </Link>
                     <div className="navbar-contact">
                         <a href=""  title="Términos y Condiciones">Términos y Condiciones &nbsp;&nbsp;</a>
                         <a href=""  title="Contacto">Contacto</a>
