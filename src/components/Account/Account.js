@@ -49,7 +49,7 @@ class Account extends Component {
 
                 <div className="" id="Body">
                   <div className="">
-                    <Link to="/account/transaction">Transaction</Link>
+                    {/* <Link to={'/account/'+}"/account/transaction">Transaction</Link> */}
                     <Table responsive>
                       <thead>
                       <tr>
@@ -60,7 +60,7 @@ class Account extends Component {
                         {this.state.items.map(item =>
                             <tbody key={item.id}>
                             <tr>
-                              <td>{item.type}</td>
+                              <td><Link to={`/account/${item.id}`}>{item.type}</Link></td>
                               <td>{item.primary_balance.amount}</td>
                             </tr>
                             </tbody>
