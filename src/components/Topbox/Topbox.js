@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './topbox.css';
+import './Topbox.css';
 
 class TopBox extends Component {
     render() {
