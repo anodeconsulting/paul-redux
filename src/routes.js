@@ -14,7 +14,7 @@ const Routes = () => (
         <Header />
         <Route exact path="/" component={Login}/>
         <Route exact path="/account" component={Account}/>
-        <Route exact path="/account/transaction" component={Transaction}/>
+        <Route path="/account/:id" component={Transaction}/>
         {/* <Route path="*" component={NotFound}/> */}
     </div>
   </BrowserRouter>
