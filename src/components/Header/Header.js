@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> paul
 import './Header.css';
 import Redirect from "react-router-dom/es/Redirect";
 
 class Header extends Component {
+<<<<<<< HEAD
     constructor(){
         super();
 
@@ -55,6 +60,18 @@ class Header extends Component {
             </div>
         );
       }
+=======
+
+  render() {
+    return (
+        <div className="callout primary" id="Header">
+        <div className="row column">
+          <Link to="/">Header</Link>
+        </div>
+      </div>
+    );
+  }
+>>>>>>> paul
 }
 
 export default Header;
