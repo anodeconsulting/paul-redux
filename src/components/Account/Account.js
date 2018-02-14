@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { GetAccounts } from "../../services/GetAccounts"
 import { Table } from 'react-bootstrap';
 import './Account.css';
-import RightBox from "../rightbox/rightbox";
-import TopBox from "../topbox/topbox";
+import RightBox from "../Rightbox/Rightbox";
+import TopBox from "../Topbox/Topbox";
+import Calendar from "../Calendar/Calendar";
 
 class Account extends Component {
 
@@ -75,6 +76,9 @@ class Account extends Component {
               </div>
             </div>
           </form>
+          <div className="calendar">
+            <Calendar/>
+          </div>
         </section>
 
 

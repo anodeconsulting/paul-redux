@@ -117,3 +117,6 @@ p {
 .summerary-title{
     border-bottom: 1px dotted #D7D7D7!important; padding: 25px 0 6px 0;
 }
+.calendar{
+    height: 500px;
+}

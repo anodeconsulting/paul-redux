@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './rightbox.css';
+import './Rightbox.css';
 
 class RightBox extends Component {
     render() {

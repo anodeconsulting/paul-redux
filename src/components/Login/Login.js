@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Redirect} from 'react-router-dom';
 import './Login.css';
 // import { Button } from 'react-bootstrap';
-import RightBox from "../rightbox/rightbox";
+import RightBox from "../Rightbox/Rightbox";
 
 class Login extends Component {
 
