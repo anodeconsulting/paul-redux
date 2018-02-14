@@ -1,0 +1,17 @@
+.RUIFW-page-wrap:after { content: ""; display: block; }
+.RUIFW-page-footer, .RUIFW-page-wrap:after { height: 60px; }
+
+
+.RUIFW-page-footer{ font-size: 1.1rem; text-align:right; position: relative; color:#666; z-index: 2;}
+.RUIFW-nav-footer{ width:100%; border-top: 1px solid #CCCCCC; margin-top: 5px; padding: 6px 0; }
+.RUIFW-nav-footer li{float: none!important; display: inline-block;}
+.RUIFW-nav-footer li a{ border-right: 1px dotted #666; color: #666; padding: 0 10px; line-height: 1rem; }
+.RUIFW-nav-footer li a:hover{background: transparent; text-decoration: underline;}
+
+.RUIFW-footer a{padding:0 3px 0 3px; color: #666;}
+.RUIFW-footer a:hover{ color: #3A00FF; }
+
+.footerWrap{
+    margin-top: 40px;
+}
+.main-footer{text-align: center;}

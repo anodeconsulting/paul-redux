@@ -9,7 +9,7 @@ import Header from '././components/Header/Header';
 
 
 const Routes = () => (
-  <BrowserRouter >
+  <BrowserRouter basename="/react">
     <div className="">
         <Header />
         <Route exact path="/" component={Login}/>
