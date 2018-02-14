@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { GetAccounts } from "../../services/GetAccounts"
 import { Table } from 'react-bootstrap';
 import './Account.css';
-import RightBox from "../Rightbox/Rightbox";
-import TopBox from "../Topbox/Topbox";
+import RightBox from "../rightbox/Rightbox";
+import TopBox from "../topbox/Topbox";
 import Calendar from "../Calendar/Calendar";
 
 class Account extends Component {

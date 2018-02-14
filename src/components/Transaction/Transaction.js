@@ -5,8 +5,8 @@ import { GetTransactions } from '../../services/GetTransactions';
 import TransactionList from './TransactionList';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
-import RightBox from "../rightbox/rightbox";
-import TopBox from "../topbox/topbox";
+import RightBox from "../rightbox/Rightbox";
+import TopBox from "../topbox/Topbox";
 import logo from '../../assets/images/scotiapesoo.png';
 
 class Transaction extends Component {
