@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Header.css';
-import Redirect from "react-router-dom/es/Redirect";
+// import Redirect from "react-router-dom/es/Redirect";
 import { Link } from "react-router-dom";
 
 class Header extends Component {

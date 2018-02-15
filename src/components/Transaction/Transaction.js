@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
-import { Table, Pagination } from 'react-bootstrap';
 import './Transaction.css';
 import { GetTransactions } from '../../services/GetTransactions';
-import TransactionList from './TransactionList';
+import Accordion from '../Accordion/Accordion';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import logo from '../../assets/images/scotiapesoo.png';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+
+function priceFormatter(cell, row) {
+  return `$ ${cell}`;
+}
 
 class Transaction extends Component {
 
@@ -17,6 +21,11 @@ class Transaction extends Component {
 
     // bind <this> to the event methods
     this.changePage = this.changePage.bind(this);
+    // Assign state itself, and a default value for items
+    this.state = {
+      data: '',
+      open: true
+    };
   }
   //   const users = [];
   //   for(let i=0;i<10;i++){
@@ -37,22 +46,38 @@ class Transaction extends Component {
 
   componentDidMount(){
     GetTransactions().then((result) => {
-      console.log(result);
-      this.setState({items: result.transactions.splice(0,50)})   
+      let data = result.transactions.splice(0,50);
+      for(let i=0;i<data.length;i++){
+        data[i].dataAmount = data[i].transaction_amount.amount;
+      }
+      this.setState({items: data})   
     });
   }
 
+  
+
   // <Pagination bsSize="medium" maxButtons={10} first last next prev boundaryLinks 
   //        items={pages} activePage={current_page} onSelect={this.changePage} />
-
+//   <div className="medium-12">
+//   <h2>Transaction</h2>
+//   <Table responsive>
+//     <thead>
+//       <tr>
+//         <th>Date</th>
+//         <th>Description</th>
+//         <th>Amount</th>
+//       </tr>
+//     </thead>
+//     {/* {this.state.items.map(item => */}
+//     {this.props.users.map((item) =>{            
+//         return (
+//           <TransactionList key={item.id} item={item} />
+//         )}
+//     )}
+//   </Table>     
+// </div>
   render() {
-    //pagination
-    const per_page = 10;
-    const pages = Math.ceil(this.props.users.length / per_page);
-    const current_page = this.props.page;
-    const start_offset =(current_page -1)*per_page;
-    let start_count = 0;
-
+    
     return (
       <section>
         <div className="row pushBottom">
@@ -62,6 +87,8 @@ class Transaction extends Component {
         <div className="row main2">
           <div className="col-md-3">
           {/*  for accordion */}
+          <Accordion/>
+          {/* end of accordion */}
           </div>
           <div className="col-md-6 pushRight">
             {/* for mid box */}
@@ -135,29 +162,24 @@ class Transaction extends Component {
 				<a className="toggle-btn col-md-12 ico-angle-up" href="">Más</a>
 			</div>
 
-
             {/* for mid box small-up-2 medium-up-3 large-up-4*/}
             <br />
             <div className="">
               <div className="row" id="Body">
-                <div className="medium-12">
-                  <h2>Transaction</h2>
-                  <Table responsive>
-                    <thead>
-                      <tr>
-                        <th>Date</th>
-                        <th>Description</th>
-                        <th>Amount</th>
-                      </tr>
-                    </thead>
-                    {/* {this.state.items.map(item => */}
-                    {this.props.users.map((item, index) =>{            
-                        return (
-                          <TransactionList key={item.id} item={item} />
-                        )}
-                    )}
-                  </Table>     
+                
+                {/* react bootstrap table */}
+                <div>
+                  <BootstrapTable
+                    data={ this.state.items }
+                    search={ true }
+                    hover
+                    pagination>
+                    <TableHeaderColumn dataField='posted_date' isKey dataSort>Date</TableHeaderColumn>
+                    <TableHeaderColumn dataField='description' searchable={ false }>Description</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataAmount' dataFormat={ priceFormatter } searchable={ false }>Amount</TableHeaderColumn>
+                  </BootstrapTable>
                 </div>
+                {/* end of react bootstrap table */}
               </div>
             </div>
           </div>
@@ -165,8 +187,7 @@ class Transaction extends Component {
             {/* for right box */}
             <RightBox/>
           </div>
-        </div>
-              
+        </div>          
     </section>
     );
   }
