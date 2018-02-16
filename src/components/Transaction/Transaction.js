@@ -185,7 +185,7 @@ class Transaction extends Component {
           </div>
           <div className="col-md-3">
             {/* for right box */}
-            <RightBox/>
+            <RightBox location = {this.props.location}/>
           </div>
         </div>          
     </section>

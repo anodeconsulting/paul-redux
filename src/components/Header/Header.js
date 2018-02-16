@@ -5,6 +5,23 @@ import { Link } from "react-router-dom";
 
 class Header extends Component {
       render() {
+      var loginPage;
+        if(window.location.pathname !== '/react/'){
+            loginPage= <div className="navbar-content">
+                            <div className="navbar-left">
+                                <a className="navbar-brand">Mis Productos</a>
+                                <a className="navbar-brand">Mis Movimientos</a>
+                                <a className="navbar-brand">Pagar</a>
+                                <a className="navbar-brand">Transferir</a>
+                                <a className="navbar-brand">Invertir</a>
+                                <a className="navbar-brand">Ofertas Disponibles</a>
+                            </div>
+                            <div className="navbar-right">
+                                <a className="navbar-brand"><i className="fa fa-cog" ></i></a>
+                                <a className="navbar-brand"><i className="fa fa-question"></i></a>
+                            </div>
+                        </div>
+        }
 
         return (
             <div className="navbar-border">
@@ -20,20 +37,7 @@ class Header extends Component {
                     </div>
                 </div>
                 <nav className="navbar navbar-expand-md navbar-light main-nav">
-                  <div className="navbar-content">
-                      <div className="navbar-left">
-                          <a className="navbar-brand">Mis Productos</a>
-                          <a className="navbar-brand">Mis Movimientos</a>
-                          <a className="navbar-brand">Pagar</a>
-                          <a className="navbar-brand">Transferir</a>
-                          <a className="navbar-brand">Invertir</a>
-                          <a className="navbar-brand">Ofertas Disponibles</a>
-                      </div>
-                      <div className="navbar-right">
-                          <a className="navbar-brand"><i className="fa fa-cog" ></i></a>
-                          <a className="navbar-brand"><i className="fa fa-question"></i></a>
-                      </div>
-                  </div>
+                    {loginPage}
                 </nav>
             </div>
         );

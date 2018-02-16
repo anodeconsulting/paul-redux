@@ -4,7 +4,7 @@ import './Topbox.css';
 class TopBox extends Component {
     render() {
         return (
-            <div>
+            <div className="row">
                 <h3 className=" col-sm-12 h1title">&nbsp;Mis Productos</h3>
                 <div className="col-sm-12 account-icon">
                     <a className="print-icon"></a>
