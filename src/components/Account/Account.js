@@ -24,10 +24,11 @@ class Account extends Component {
      });
   }
 
+
   render() {
-    return (
+
+      return (
         <section >
-          <form className="form-signin">
             <TopBox/>
             <div className="row">
               <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9">
@@ -68,17 +69,18 @@ class Account extends Component {
                         )}
                     </Table>
                   </div>
+
+                  <div className="calendar">
+                    <Calendar/>
+                  </div>
                 </div>
               </div>
 
               <div className="RUIFW-content-side RUIFW-col-3 col-md-3 col-sm-3">
-                <RightBox/>
+                <RightBox location = {this.props.location}/>
               </div>
             </div>
-          </form>
-          <div className="calendar">
-            <Calendar/>
-          </div>
+
         </section>
 
 

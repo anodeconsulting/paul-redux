@@ -32,7 +32,6 @@ class Login extends Component {
         if (this.state.redirectToReferrer) {
             return (<Redirect to={'/account'}/>)
         }
-        console.log("login page");
         return (
             <section >
                 <form className="form-signin">
@@ -65,7 +64,7 @@ class Login extends Component {
                         </div>
 
                         <div className="RUIFW-content-side RUIFW-col-3 col-md-3 col-sm-3">
-                            <RightBox/>
+                            <RightBox location = {this.props.location}/>
                         </div>
                     </div>
                 </form>
