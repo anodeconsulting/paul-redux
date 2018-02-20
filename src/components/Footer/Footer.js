@@ -15,7 +15,7 @@ class Footer extends Component {
                   <li className="separator">&nbsp;</li>
                   <li><a href="">Canales de Atención</a></li>
               </ul>
-              <ul className=" RUIFW-nav-footer RUIFW-col-6 col-sm-6 col-sm-6">
+              <ul className=" RUIFW-nav-footer RUIFW-col-6 col-sm-6 col-sm-6 text-right">
                   <li className="copyright">©<script type="text/javascript">document.write(new Date().getFullYear());</script>2018 Scotiabank Todos los derechos reservados</li>
               </ul>
           </div>
