@@ -49,10 +49,7 @@
 .dropdown-menu > li > a{
     border: none;
     padding: 15px 0 0 28px !important;
-    /*font-size: 12px;*/
-    /*font-weight: normal;*/
-    /*padding: 15px 20px 0 !important;*/
-    /*white-space: pre-wrap;*/
+
 }
 
 .dropdown-menu > li > a:focus{
@@ -69,6 +66,9 @@
 }
 .container>div>ul> li> a{
     color: white !important;
+}
+.navbar-default .navbar-nav>.active>a{
+    background-color: transparent!important;
 }
 
 .dropdown-menu > li > a{
@@ -116,10 +116,10 @@ span{
 .RUIFW-nav-quick-links li.lftbox {
     width: 58%;
     border-right: 1px solid #d4d4d4;
-    -webkit-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.75);
-    -moz-box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.75);
-    box-shadow: 1px 0px 0px 0px rgba(255, 255, 255, 0.75);
-    padding: 0px;
+    -webkit-box-shadow: 1px 0 0 0 rgba(255, 255, 255, 0.75);
+    -moz-box-shadow: 1px 0 0 0 rgba(255, 255, 255, 0.75);
+    box-shadow: 1px 0 0 0 rgba(255, 255, 255, 0.75);
+    padding: 0;
 }
 
 .RUIFW-nav-quick-links li {
@@ -145,3 +145,4 @@ span{
     float: right;
     margin-top: -4px!important;
 }
+
