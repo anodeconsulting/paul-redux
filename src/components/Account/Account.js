@@ -92,7 +92,12 @@ class Account extends Component {
                             <tbody key={item.id}>
                             <tr>
                               <td><Link to={`/account/${item.id}`}>{item.type}</Link></td>
-                              <td>{item.primary_balance.amount}</td>
+                              <td className="amount">{item.primary_balance.amount}
+                                <span >
+                                  <i className="fa fa-square square-btn" aria-hidden="true"></i>
+                                  <i className="fa fa-sort-desc arrow-down-btn" aria-hidden="true" ></i>
+                                </span>
+                              </td>
                             </tr>
                             </tbody>
                         )}

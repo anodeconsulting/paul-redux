@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import './Header.css';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import {Redirect} from 'react-router-dom';
 // import Redirect from "react-router-dom/es/Redirect";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
       constructor(){
           super();
+          this.state = {
+              redirectToReferrer: false,
+              pathBase: "/react/"
+          };
         }
 
+        logout() {
+            window.location.pathname = this.state.pathBase;
+        }
 
       render() {
-          const path = "/react/";
+          const path = this.state.pathBase;
 
       let loginPage;
         if(window.location.pathname !== path){
@@ -96,18 +104,39 @@ class Header extends Component {
                 </div>
         }
 
+
+
         return (
             <div className="navbar-border">
                 <div className="navbar-logo">
-                    <Link to='/'>
-                        <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
-                            <span className="RUIFW-sr sr-only sr-only"></span>
-                        </h1>
-                    </Link>
+                    <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
+                        <span className="RUIFW-sr sr-only sr-only"></span>
+                    </h1>
                     <div className="navbar-contact">
                         <a href=""  title="Términos y Condiciones">Términos y Condiciones &nbsp;&nbsp;</a>
                         <a href=""  title="Contacto">Contacto</a>
                     </div>
+                </div>
+                <div className="logout">
+                    <ul className="RUIFW-nav-quick-links ">
+                        <li className="lftbox bold-txt">
+                            <span>John Rodingo Laslomos Scenarious Along Names Onos Twolinos </span>
+                        </li>
+                        <li >
+                            <button className="btn " id="signout" onClick={this.logout.bind(this)}>Salir</button>
+                        </li>
+                        <li className="lftbox">
+                            <span className="h-separator">
+                                <a herf="#">Último Ingreso: Miércoles, Julio 06, 2016 04:22 PM</a>
+                            </span>
+                        </li>
+                        <li>
+                            <span className="h-separator">
+                                <i className="icon-lock icon-lock-signout"></i>
+                                <a herf="#" className="pull-right">Garantía de Seguridad</a>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
                 <Navbar>
                 {loginPage}

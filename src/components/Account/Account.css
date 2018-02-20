@@ -53,8 +53,8 @@
 
 .arrow-down-btn{
     position: absolute;
-    left: 6px;
-    top:1px;
+    right: 14px;
+    top:11px;
     color: white;
     font-size: 12px;
 }
@@ -121,4 +121,11 @@ p {
 .calendar{
     height: 500px;
     margin-top: 50px;
+}
+.amount{
+    position: relative;
+}
+
+.amount span{
+    float: right!important;
 }
