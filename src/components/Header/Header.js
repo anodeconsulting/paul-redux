@@ -30,7 +30,7 @@ class Header extends Component {
                             <a href="#" title="Pagos Automáticos (PAC/PAT)" >Pagos Automáticos (PAC/PAT) </a>
                             <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
                         </li>
-                        <li class="clear"></li>
+                        <li className="clear"></li>
                         <li id="addcclmpayment" className="nav-toggle">
                             <a href="#" title="Pagar Mis Productos" >Pagar Mis Productos </a>
                             <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
