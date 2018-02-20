@@ -41,6 +41,7 @@
     padding: 0 0 0 20px;
     font-size: 20px;
     color: #333333 !important;
+    margin: 0;
 }
 .pad-lft-20 {
     padding-left: 20px !important;
@@ -52,8 +53,8 @@
 
 .arrow-down-btn{
     position: absolute;
-    left: 6px;
-    top:1px;
+    right: 14px;
+    top:11px;
     color: white;
     font-size: 12px;
 }
@@ -119,4 +120,12 @@ p {
 }
 .calendar{
     height: 500px;
+    margin-top: 50px;
+}
+.amount{
+    position: relative;
+}
+
+.amount span{
+    float: right!important;
 }
