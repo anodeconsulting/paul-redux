@@ -67,7 +67,7 @@
     color: #d81e05 !important;
     background-color: white !important;
 }
-.container>ul> li> a{
+.container>div>ul> li> a{
     color: white !important;
 }
 
@@ -88,4 +88,7 @@
 }
 .nav ul{
     width: 500px;
+}
+span{
+    float: none !important;
 }
