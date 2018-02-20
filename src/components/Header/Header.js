@@ -39,7 +39,7 @@ class Header extends Component {
                             <a href="#" title="Histórico de Pagos" >Histórico de Pagos </a>
                             <div>Revisa tus pagos realizados</div>
                         </li>
-                        <li class="banner" className="nav-toggle">
+                        <li className="banner" className="nav-toggle">
                             <div id="cmContentOnlyMenu_payment">
                             </div>
                         </li>

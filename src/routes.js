@@ -8,10 +8,9 @@ import Header from '././components/Header/Header';
 import ThirdPartyTransfer from "././components/Transfer/ThirdPartyTransfer";
 import Pay from "././components/Pay/Pay";
 import MutualFund from "././components/MutualFund/MutualFund";
+import CreditCard from "././components/CreditCard/CreditCard";
+
 // import NotFound from '././components/NotFound/NotFound';
-
-
-
 
 const Routes = () => (
   <BrowserRouter basename="/react">
@@ -23,6 +22,7 @@ const Routes = () => (
         <Route exact path="/thirdPartyTransfer" component={ThirdPartyTransfer}/>
         <Route exact path="/pay" component={Pay}/>
         <Route exact path="/pay/mutualfund" component={MutualFund}/>
+        <Route exact path="/creditcard" component={CreditCard}/>
         {/* <Route path="*" component={NotFound}/> */}
     </div>
   </BrowserRouter>

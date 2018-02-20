@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Transaction.css';
+import './CreditCard.css';
 import { GetTransactions } from '../../services/GetTransactions';
 import Leftbox from '../Leftbox/Leftbox';
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import Table from "../Table/Table";
 
-class Transaction extends Component {
+class CreditCard extends Component {
 
   //Constructor 
   constructor(props) {
@@ -62,11 +62,7 @@ class Transaction extends Component {
           </div>
           <div className="col-md-6 pushRight">
             {/* for mid box */}
-            <div class="product-title">
-              <span class="product-name">Cuenta Corriente*** 0002</span> 
-              <span class="product-amt">$ 2.222.222.222</span>
-            </div>
-            <Midbox/>
+              <Midbox/>
             <br />
             <div>
               <div className="row" id="Body">  
@@ -92,5 +88,5 @@ function mapStateToProps(state){
     // page: Number(state.routing.locationBeforeTransitions.query.page) || 1,
   })
 }
-export default connect(mapStateToProps) (Transaction)
+export default connect(mapStateToProps) (CreditCard)
 // export default Transaction;

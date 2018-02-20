@@ -4,29 +4,25 @@
     color: #ffffff!important;
 }
 
-/* .panel-title:before {
-    content: "\f0da"; 
-    font-family: fontAwesome;
-    padding-right:10px;
-    font-size: 14px;
-}  */
-/* .collapsed {
-    content: "\f0da";
-    font-family: fontAwesome;
-    padding-right:10px;
-    font-size: 14px;
-} */
+.panel-danger{
+    border:none!important;
+    margin-bottom:0!important;
+}
 
-/* collpase */
-.panel-title .collapse:before{
-    content: "\f0da";
+.fa-caret-right:before{
     font-family: fontAwesome;
     padding-right:10px;
     font-size: 14px;
-} 
+}
+
+.fa-caret-down:before{
+    font-family: fontAwesome;
+    padding-right:10px;
+    font-size: 14px;
+}
 
 /* expanded */
-.panel-title:before{
+#iconAfter{
     content: "\f0d7";
     font-family: fontAwesome;
     padding-right:10px;
