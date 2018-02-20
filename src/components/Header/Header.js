@@ -9,7 +9,9 @@ class Header extends Component {
           super();
           this.state = {
               redirectToReferrer: false,
-              pathBase: "/react/"
+              pathBase: "/react/",
+              gear: false,
+              question: false
           };
         }
 
@@ -17,15 +19,37 @@ class Header extends Component {
             window.location.pathname = this.state.pathBase;
         }
 
-         handleClick(e){
+         static handleClick(e){
                     let target = e.target;
                     let li = target.parentElement.parentElement.parentElement;
-                    console.log(li)
-                    console.log("j")
                     li.click();
                 }
 
+        static iconClick(e){
+            let target = e.target;
+            let li = target.parentElement.parentElement;
+            if(!this.state.gear){
+                li.classList.add("open");
+                console.log("1")
+            }else{
+                li.classList.remove("open");
+                console.log("2")
+            }
+            this.state.gear = !this.state.gear;
+            console.log("trigger")
+        }
 
+        static iconClick2(e){
+            let target = e.target;
+            let li2 = target.parentElement.parentElement;
+            if(!this.state.question){
+                li2.classList.add("open");
+            }else{
+                li2.classList.remove("open");
+            }
+            this.state.question = !this.state.question;
+            console.log("trigger")
+        }
 
       render() {
           const path = this.state.pathBase;
@@ -54,7 +78,7 @@ class Header extends Component {
                                 <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
                             </li>
                             <li id="addcclmpayment" className="nav-toggle">
-                                <Link to={`/pay`} onClick={this.handleClick.bind(this)}>Pagar Mis Productos</Link>
+                                <Link to={`/pay`} onClick={Header.handleClick.bind(this)}>Pagar Mis Productos</Link>
                                 <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
                             </li>
                             <li id="paymentoverview" className="nav-toggle">
@@ -64,7 +88,7 @@ class Header extends Component {
                         </NavDropdown>
                         <NavDropdown eventKey={4} title="Transferir" id="Transgerir">
                                 <li id="thirdpartytransfer" className="nav-toggle">
-                                    <Link to={`/thirdPartyTransfer`} onClick={this.handleClick.bind(this)}>Transferir a Terceros</Link>
+                                    <Link to={`/thirdPartyTransfer`} onClick={Header.handleClick.bind(this)}>Transferir a Terceros</Link>
                                     <div>Realiza transferencias a cuentas en Scotiabank o en otro banco</div>
                                 </li>
                                 <li id="managerecipients" className="nav-toggle">
@@ -89,7 +113,7 @@ class Header extends Component {
                         </NavDropdown>
                         <NavDropdown eventKey={5} title="Invertir" id="Invertir">
                             <li id="buy_mutual_fund" className="nav-toggle">
-                                <Link to={`/pay/mutualfund`} onClick={this.handleClick.bind(this)}>Invertir en Fondos Mutuos</Link>
+                                <Link to={`/pay/mutualfund`} onClick={Header.handleClick.bind(this)}>Invertir en Fondos Mutuos</Link>
                                 <div>Selecciona Fondos Mutuos asociados a tu Perfil de Inversionista.</div>
                             </li>
                             <li id="investment_overview" className="nav-toggle">
@@ -105,14 +129,88 @@ class Header extends Component {
                             Ofertas Disponibles
                         </NavItem>
                     </Nav>
-                    <Nav pullRight>
+                   {/* <Nav pullRight>
+                        <li className="dropdown"  >
+                            <a role="button" className="dropdown-toggle" onClick={Header.iconClick.bind(this)}>
+                                <i className="fa fa-cog" ></i>
+                            </a>
+                            <ul role="menu" className="dropdown-menu" >
+                                <li  className="nav-toggle">
+                                    <a href="" title="Pagar Servicios">Pagar Servicios</a>
+                                    <div>Realiza tus pagos de servicios en línea</div>
+                                </li>
+                                <li  className="nav-toggle">
+                                    <a href="#" title="Pagos Automáticos (PAC/PAT)">Pagos Automáticos (PAC/PAT) </a>
+                                    <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
+                                </li>
+                                <li className="nav-toggle">
+                                    <a href="/react/pay">Pagar Mis Productos</a>
+                                    <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
+                                </li>
+                                <li  className="nav-toggle">
+                                    <a href="#" title="Histórico de Pagos">Histórico de Pagos </a>
+                                    <div>Revisa tus pagos realizados</div>
+                                </li>
+                            </ul>
+                        </li>
                         <NavItem eventKey={7} >
                             <i className="fa fa-cog" ></i>
                         </NavItem>
                         <NavItem eventKey={8} >
                             <i className="fa fa-question"></i>
                         </NavItem>
-                    </Nav>
+                    </Nav>*/}
+                    <ul className="nav navbar-nav floatRight">
+                        <li className="dropdown"  >
+                            <a role="button" className="dropdown-toggle" >
+                                <i className="fa fa-question" onClick={Header.iconClick2.bind(this)}></i>
+                            </a>
+                            <ul role="menu" className="dropdown-menu menuLeft" >
+                                <li  className="nav-toggle">
+                                    <a href="" title="Pagar Servicios">Pagar Servicios</a>
+                                    <div>Realiza tus pagos de servicios en línea</div>
+                                </li>
+                                <li  className="nav-toggle">
+                                    <a href="#" title="Pagos Automáticos (PAC/PAT)">Pagos Automáticos (PAC/PAT) </a>
+                                    <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
+                                </li>
+                                <li className="nav-toggle">
+                                    <a href="/react/pay">Pagar Mis Productos</a>
+                                    <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
+                                </li>
+                                <li  className="nav-toggle">
+                                    <a href="#" title="Histórico de Pagos">Histórico de Pagos </a>
+                                    <div>Revisa tus pagos realizados</div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul className="nav navbar-nav floatRight">
+                        <li className="dropdown"  >
+                            <a role="button" className="dropdown-toggle" >
+                                <i className="fa fa-cog" onClick={Header.iconClick.bind(this)}></i>
+                            </a>
+                            <ul role="menu" className="dropdown-menu menuLeft" >
+                                <li  className="nav-toggle">
+                                    <a href="" title="Pagar Servicios">Pagar Servicios</a>
+                                    <div>Realiza tus pagos de servicios en línea</div>
+                                </li>
+                                <li  className="nav-toggle">
+                                    <a href="#" title="Pagos Automáticos (PAC/PAT)">Pagos Automáticos (PAC/PAT) </a>
+                                    <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
+                                </li>
+                                <li className="nav-toggle">
+                                    <a href="/react/pay">Pagar Mis Productos</a>
+                                    <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
+                                </li>
+                                <li  className="nav-toggle">
+                                    <a href="#" title="Histórico de Pagos">Histórico de Pagos </a>
+                                    <div>Revisa tus pagos realizados</div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
                 </div>
 
             logout =

@@ -145,4 +145,10 @@ span{
     float: right;
     margin-top: -4px!important;
 }
-
+.floatRight{
+    float: right!important;
+}
+.menuLeft{
+    right: -20px;
+    left: auto!important;
+}
