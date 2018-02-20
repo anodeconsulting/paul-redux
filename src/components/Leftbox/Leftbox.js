@@ -92,7 +92,7 @@ class Leftbox extends Component {
             <Panel.Collapse>
               <ListGroup>
                 {this.state.data[1].accounts.map((ele,index)=>
-                    <ListGroupItem key={index}><Link to='/creditcard' onClick={this.handleCard.bind(this, index)}>{ele}</Link></ListGroupItem>
+                    <ListGroupItem key={index}><Link to={'/credit/'+ele} onClick={this.handleCard.bind(this, index)}>{ele}</Link></ListGroupItem>
                 )}
               </ListGroup>
             </Panel.Collapse>

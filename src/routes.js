@@ -22,7 +22,7 @@ const Routes = () => (
         <Route exact path="/thirdPartyTransfer" component={ThirdPartyTransfer}/>
         <Route exact path="/pay" component={Pay}/>
         <Route exact path="/pay/mutualfund" component={MutualFund}/>
-        <Route exact path="/creditcard" component={CreditCard}/>
+        <Route exact path="/credit/:id" component={CreditCard}/>
         {/* <Route path="*" component={NotFound}/> */}
     </div>
   </BrowserRouter>
