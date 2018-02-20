@@ -33,19 +33,19 @@ class Midbox extends Component {
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Cupo Disponible</span>
 					<div className="data">
-						<label className="leap-data">No Disponible</label>
+						<label className="leap-data">$ 100.90.00</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Cupo Utilizado</span>
 					<div className="data">
-						<label className="leap-data">No Disponible</label>
+						<label className="leap-data">$ 222.00</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Pago Mínimo</span>
 					<div className="data">
-						<label className="leap-data">No Disponible</label>
+						<label className="leap-data">$ 200.55.00</label>
 					</div>
 				</div>
 				<div className="clear"></div>
@@ -53,13 +53,13 @@ class Midbox extends Component {
 					<div className="RUIFW-col-4 col-sm-4 col-sm-4 ">
 						<span className="data-label">Monto Facturado</span>
 						<div className="data">
-							<label className="leap-data">No Disponible</label>
+							<label className="leap-data">$ 111.90.00</label>
 						</div>
 					</div>
 					<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 						<span className="data-label ">Saldo Disponible Avance</span>
 						<div className="data">
-							<label className="leap-data">No Disponible</label>
+							<label className="leap-data">$ 5500.90.00</label>
 						</div>
 					</div>
 					</div>

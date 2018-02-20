@@ -17,7 +17,7 @@ class CreditCard extends Component {
     // Assign state itself, and a default value for items
     this.state = {
       data: '',
-      open: true
+      open: false
     };
   }
   //   const users = [];
@@ -48,7 +48,11 @@ class CreditCard extends Component {
   }
 
   render() {
-    
+    let module = 
+    <div className="product-title">
+      <span className="product-name">MASTERCARD *** 8981</span> 
+      <span className="product-amt">$ 2.222.222.222</span>
+    </div>;
     return (
       <section>
         <div className="row pushBottom">
@@ -62,6 +66,7 @@ class CreditCard extends Component {
           </div>
           <div className="col-md-6 pushRight">
             {/* for mid box */}
+              {module}
               <Midbox/>
             <br />
             <div>

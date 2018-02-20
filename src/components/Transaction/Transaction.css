@@ -34,6 +34,21 @@ transform:         rotate(-90deg);
 transform:         rotate(90deg);
 }
 
+.product-name {
+  margin-right: 15px;
+  float: left;
+  font-size: 1.2em;
+  color: #606060;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.product-title{
+  margin-bottom: 15px;
+}
+
+
 /* 
 .account-balance-container span { color: #606060!important }
 .account-balance-container { background: #f5f5f5; border: 1px solid #d8d8d8; padding: 10px 0 0 0; font-size: 1.2rem; font-size: 12px; color: #606060!important; font-weight: normal!important; }

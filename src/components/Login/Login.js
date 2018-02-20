@@ -35,9 +35,9 @@ class Login extends Component {
         }
         return (
             <section >
-                <Link to="/account/123">Transactions</Link> <br />
+                {/* <Link to="/account/123">Transactions</Link> <br /> */}
                 <Link to="/pay/mutualfund">mutualfund</Link><br />
-                <Link to="pay">Pay</Link>  
+                {/* <Link to="pay">Pay</Link>   */}
                 <form className="form-signin">
                     <h1 className=" h1title">Acceso Clientes Persona</h1>
                     <div className="row">

@@ -1,0 +1,13 @@
+.product-name {
+    margin-right: 15px;
+    float: left;
+    font-size: 1.2em;
+    color: #606060;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+  }
+  
+  .product-title{
+    margin-bottom: 15px;
+  }

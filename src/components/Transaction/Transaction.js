@@ -48,7 +48,12 @@ class Transaction extends Component {
   }
 
   render() {
-    
+    let module = 
+    <div className="product-title">
+      <span className="product-name">Cuenta Corriente*** 0002</span> 
+      <span className="product-amt">$ 2.222.222.222</span>
+    </div>;
+
     return (
       <section>
         <div className="row pushBottom">
@@ -62,10 +67,7 @@ class Transaction extends Component {
           </div>
           <div className="col-md-6 pushRight">
             {/* for mid box */}
-            <div class="product-title">
-              <span class="product-name">Cuenta Corriente*** 0002</span> 
-              <span class="product-amt">$ 2.222.222.222</span>
-            </div>
+            {module}
             <Midbox/>
             <br />
             <div>

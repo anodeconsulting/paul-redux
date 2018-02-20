@@ -67,7 +67,7 @@ class Leftbox extends Component {
       }
       return (
         <div>        
-          <Panel bsStyle="danger" id="collapsible-panel-example-3">
+          <Panel bsStyle="danger" id="collapsible-panel-example-3" expanded={this.state.openCheque}>
             <Panel.Heading>
             <Panel.Title toggle onClick={this.handleClickCheque}>
               {module}Cuentas Bancarias
@@ -81,7 +81,7 @@ class Leftbox extends Component {
               </ListGroup>
             </Panel.Collapse>
           </Panel>
-          <Panel bsStyle="danger" id="collapsible-panel-example-3">
+          <Panel bsStyle="danger" id="collapsible-panel-example-3" expanded={this.state.openCredit}>
             <Panel.Heading>
             <Panel.Title toggle onClick={this.handleClickCredit}>
               {module1}Créditos y Tarjetas de Crédito
