@@ -47,12 +47,14 @@ class Account extends Component {
               <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9">
 
                 <div className="summerary-title" onClick={this.changeResumen.bind(this)}>
-                  <i className="fa fa-caret-right arrow-down" aria-hidden="true"></i>
+                  <i className="fa fa-caret-right arrow-down" aria-hidden="true" style={{display: this.state.resumenExpand? 'none' : 'block'}}></i>
+                  <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.resumenExpand? 'block' : 'none'}}></i>
                   <h2 className="account-title" >Resumen de Productos</h2>
                 </div>
 
                 <div className="summerary-title" onClick={this.changeCuentas.bind(this)}>
-                  <i className="fa fa-caret-right arrow-down" aria-hidden="true"></i>
+                  <i className="fa fa-caret-right arrow-down" aria-hidden="true" style={{display: this.state.cuentasExpand? 'none' : 'block'}}></i>
+                  <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.cuentasExpand? 'block' : 'none'}}></i>
                   <h2 className="account-title">Cuentas Bancarias</h2>
                 </div>
                 <div style={{display: this.state.cuentasExpand? 'block' : 'none'}}>
@@ -73,7 +75,8 @@ class Account extends Component {
                 </div>
 
                 <div className="summerary-title" onClick={this.changeCredit.bind(this)}>
-                  <i className="fa fa-caret-down arrow-down" aria-hidden="true"></i>
+                  <i className="fa fa-caret-right arrow-down" aria-hidden="true" style={{display: this.state.creditExpand? 'none' : 'block'}}></i>
+                  <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.creditExpand? 'block' : 'none'}}></i>
                   <h2 className="account-title">Créditos y Tarjetas de Crédito</h2>
                 </div>
                 <div className="" id="Body" style={{display: this.state.creditExpand? 'block' : 'none'}}>
@@ -89,7 +92,12 @@ class Account extends Component {
                             <tbody key={item.id}>
                             <tr>
                               <td><Link to={`/account/${item.id}`}>{item.type}</Link></td>
-                              <td>{item.primary_balance.amount}</td>
+                              <td className="amount">{item.primary_balance.amount}
+                                <span >
+                                  <i className="fa fa-square square-btn" aria-hidden="true"></i>
+                                  <i className="fa fa-sort-desc arrow-down-btn" aria-hidden="true" ></i>
+                                </span>
+                              </td>
                             </tr>
                             </tbody>
                         )}
