@@ -54,13 +54,13 @@ class Leftbox extends Component {
 
       let module = null;
       let module1 = null;
-      if(this.state.openCheque){
+      if(!this.state.openCheque){
         module = <i className="fas fa-caret-right"></i>
       }else{
         module = <i className="fas fa-caret-down"></i>
       }
 
-      if(this.state.openCredit){
+      if(!this.state.openCredit){
         module1 = <i className="fas fa-caret-right"></i>
       }else{
         module1 = <i className="fas fa-caret-down"></i>
