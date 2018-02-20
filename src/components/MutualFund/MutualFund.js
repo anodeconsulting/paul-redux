@@ -33,7 +33,6 @@ class MutualFund extends Component {
     }
 
     handleDismiss() {
-        console.log('dismiss');
         this.setState({ show: false });
     }
     

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Transaction.css';
-import { Button } from 'react-bootstrap';
+import { Button, Alert } from 'react-bootstrap';
 import button1 from '../../assets/images/button1.png';
 import Table from "../Table/Table";
 import RightBox from "../Rightbox/Rightbox";
@@ -12,13 +12,40 @@ class MutualFundTransaction extends Component {
         super(props);
         // Assign state itself, and a default value for items
         this.state = {
-            users: ''
+            show: true
         };
+        this.handleDismiss = this.handleDismiss.bind(this);
+    }
+
+    handleDismiss(){
+      this.setState({ show: false });
     }
 
     render() {
+      let moduleAlert = null;
+      if (this.state.show) {
+         moduleAlert = 
+         <div >
+                    <Alert bsStyle="success" onDismiss={this.handleDismiss}>
+                        <span className="alert-icon"></span>
+                        <h4>¡Realizado!</h4>
+                        <p>
+                        Tu Inversión Nro 8997 por $ 1.000.000 fue tomado con éxito el día 17/01/2017 a la(s) 3:20 PM. 
+                        Recibirás un comprobante de aporte firmado en forma física o electrónica, 
+                        al domicilio o correo electrónico registrado, dentro de los próximos 30 días.         
+                        </p>  
+                        <p className="pushMid">
+                          <Button bsStyle="default">Nueva Inversión</Button>
+                          <Button bsStyle="default">Imprimir</Button>
+                          <Button bsStyle="default">Descargar</Button>
+                        </p>                     
+                    </Alert>
+        </div>
+      }
         return (
-            <section>
+          <div>
+            {moduleAlert}
+            <section>           
         <div className="row pushBottom">
           {/* for topbox */}
           <TopBox/>
@@ -38,6 +65,7 @@ class MutualFundTransaction extends Component {
           </div>
         </div>       
     </section>
+    </div>
         );
     }
 }
