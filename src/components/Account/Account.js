@@ -14,7 +14,10 @@ class Account extends Component {
 
     // Assign state itself, and a default value for items
     this.state = {
-      items: []
+      items: [],
+     resumenExpand:false,
+      cuentasExpand: false,
+      creditExpand: false
     };
   }
 
@@ -23,7 +26,17 @@ class Account extends Component {
       this.setState({items: result})   
      });
   }
+    changeResumen(){
+        this.setState({resumenExpand : !this.state.resumenExpand})
+    }
 
+    changeCuentas(){
+        this.setState({cuentasExpand : !this.state.cuentasExpand})
+    }
+
+    changeCredit(){
+        this.setState({creditExpand : !this.state.creditExpand})
+    }
 
   render() {
 
@@ -33,25 +46,38 @@ class Account extends Component {
             <div className="row">
               <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9">
 
-                <div className="summerary-title">
+                <div className="summerary-title" onClick={this.changeResumen.bind(this)}>
                   <i className="fa fa-caret-right arrow-down" aria-hidden="true"></i>
                   <h2 className="account-title" >Resumen de Productos</h2>
                 </div>
 
-                <div className="summerary-title">
+                <div className="summerary-title" onClick={this.changeCuentas.bind(this)}>
                   <i className="fa fa-caret-right arrow-down" aria-hidden="true"></i>
                   <h2 className="account-title">Cuentas Bancarias</h2>
                 </div>
-
-                <div className="summerary-title">
-                  <i className="fa fa-caret-down arrow-down" aria-hidden="true"></i>
-                  <h2 className="account-title">Credits and Credit Cards</h2>
+                <div style={{display: this.state.cuentasExpand? 'block' : 'none'}}>
+                  <Table responsive>
+                    <thead>
+                    <tr>
+                      <th>Type</th>
+                      <th>Amount</th>
+                    </tr>
+                    </thead>
+                    <tbody >
+                      <tr>
+                        <td>Cuenta Corriente Pesos *** 0343</td>
+                        <td>1022093</td>
+                      </tr>
+                    </tbody>
+                  </Table>
                 </div>
 
-
-                <div className="" id="Body">
-                  <div className="">
-                    {/* <Link to={'/account/'+}"/account/transaction">Transaction</Link> */}
+                <div className="summerary-title" onClick={this.changeCredit.bind(this)}>
+                  <i className="fa fa-caret-down arrow-down" aria-hidden="true"></i>
+                  <h2 className="account-title">Créditos y Tarjetas de Crédito</h2>
+                </div>
+                <div className="" id="Body" style={{display: this.state.creditExpand? 'block' : 'none'}}>
+                  <div >
                     <Table responsive>
                       <thead>
                       <tr>
@@ -70,9 +96,11 @@ class Account extends Component {
                     </Table>
                   </div>
 
-                  <div className="calendar">
-                    <Calendar/>
-                  </div>
+
+                </div>
+
+                <div className="calendar">
+                  <Calendar/>
                 </div>
               </div>
 

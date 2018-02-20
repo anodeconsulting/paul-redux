@@ -11,7 +11,7 @@
 
 .navbar{
     height: 45px;
-    background: #d81e05;
+    background: #d81e05 !important;
     border-radius: 0 !important;
 }
 .navbar-brand{
@@ -41,4 +41,51 @@
 }
 .navbar-border{
     border: 1px white solid;
+}
+.container{
+    width: 960px !important;
+}
+
+.dropdown-menu > li > a{
+    border: none;
+    padding: 15px 0 0 28px !important;
+    /*font-size: 12px;*/
+    /*font-weight: normal;*/
+    /*padding: 15px 20px 0 !important;*/
+    /*white-space: pre-wrap;*/
+}
+
+.dropdown-menu > li > a:focus{
+    background-color: white !important;
+}
+
+.dropdown-menu > li > div{
+    padding-left: 28px!important;
+
+}
+.dropdown.open > a{
+    color: #d81e05 !important;
+    background-color: white !important;
+}
+.container>ul> li> a{
+    color: white !important;
+}
+
+.dropdown-menu > li > a{
+    color: #2a5db0 !important;
+}
+.dropdown-menu{
+    border-top: white !important;
+    padding-right: 20px !important;
+    padding-bottom: 25px !important;
+    margin-left:-15px !important;
+}
+
+.nav-toggle{
+    width: 50%;
+    float: left;
+    position: relative;
+}
+.nav ul{
+    width: 500px;
 }

@@ -1,26 +1,101 @@
 import React, { Component } from 'react';
 import './Header.css';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 // import Redirect from "react-router-dom/es/Redirect";
 import { Link } from "react-router-dom";
 
 class Header extends Component {
+      // constructor(){
+      //     super();
+      //     this.
+      //   }
+
       render() {
-      var loginPage;
+      let loginPage;
         if(window.location.pathname !== '/react/'){
-            loginPage= <div className="navbar-content">
-                            <div className="navbar-left">
-                                <a className="navbar-brand">Mis Productos</a>
-                                <a className="navbar-brand">Mis Movimientos</a>
-                                <a className="navbar-brand">Pagar</a>
-                                <a className="navbar-brand">Transferir</a>
-                                <a className="navbar-brand">Invertir</a>
-                                <a className="navbar-brand">Ofertas Disponibles</a>
+            loginPage= <Navbar>
+                <Nav >
+                    <NavItem eventKey={1} href="#">
+                        Mis Productos
+                    </NavItem>
+                    <NavItem eventKey={2} href="#">
+                        Mis Movimientos
+                    </NavItem>
+                    <NavDropdown eventKey={3} title="Pagar">
+                        <li id="billpayment" className="nav-toggle">
+                            <a href="javascript:undefined;" title="Pagar Servicios" >Pagar Servicios</a>
+                            <div>Realiza tus pagos de servicios en línea</div>
+                        </li>
+                        <li id="preauthpayment" className="nav-toggle">
+                            <a href="#" title="Pagos Automáticos (PAC/PAT)" >Pagos Automáticos (PAC/PAT) </a>
+                            <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
+                        </li>
+                        <li class="clear"></li>
+                        <li id="addcclmpayment" className="nav-toggle">
+                            <a href="#" title="Pagar Mis Productos" >Pagar Mis Productos </a>
+                            <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
+                        </li>
+                        <li id="paymentoverview" className="nav-toggle">
+                            <a href="#" title="Histórico de Pagos" >Histórico de Pagos </a>
+                            <div>Revisa tus pagos realizados</div>
+                        </li>
+                        <li class="banner" className="nav-toggle">
+                            <div id="cmContentOnlyMenu_payment">
                             </div>
-                            <div className="navbar-right">
-                                <a className="navbar-brand"><i className="fa fa-cog" ></i></a>
-                                <a className="navbar-brand"><i className="fa fa-question"></i></a>
-                            </div>
-                        </div>
+                        </li>
+                    </NavDropdown>
+                    <NavDropdown eventKey={4} title="Transferir">
+                            <li id="thirdpartytransfer" className="nav-toggle">
+                                <a href="#" title="Transferir a Terceros" >Transferir a Terceros </a>
+                                <div>Realiza transferencias a cuentas en Scotiabank o en otro banco</div>
+                            </li>
+                            <li id="managerecipients" className="nav-toggle">
+                                <a href="#" title="Administración de Destinatarios" >Administración de Destinatarios </a>
+                                <div>Agregar/ editar/ eliminar destinatario de transferencias</div>
+                            </li>
+
+                            <li id="addfundstransfer" className="nav-toggle">
+                                <a href="#" title="Transferir entre Mis Cuentas" >Transferir entre Mis Cuentas </a>
+                                <div>Realiza tus transferencias entre tus cuentas y pago de línea de crédito</div>
+                            </li>
+
+                            <li id="transfersoverview" className="nav-toggle">
+                                <a href="#" title="Cartola de Transferencias">Cartola de Transferencias </a>
+                                <div>Revisa tus transferencias realizadas y programadas.</div>
+                            </li>
+                            <li id="cashadvance" className="nav-toggle">
+                                <a href="#" title="Avance de Tarjeta de Crédito" >Avance de Tarjeta de Crédito </a>
+                                <div>Realiza avances en efectivo desde tus tarjetas de crédito hacia tus cuentas, con o sin cuotas.</div>
+                            </li>
+
+                    </NavDropdown>
+                    <NavDropdown eventKey={5} title="Invertir">
+                        <li id="buy_mutual_fund" className="nav-toggle">
+                            <a href="#" title="Invertir en Fondos Mutuos" >Invertir en Fondos Mutuos </a>
+                            <div>Selecciona Fondos Mutuos asociados a tu Perfil de Inversionista.</div>
+                        </li>
+                        <li id="investment_overview" className="nav-toggle">
+                            <a href="#" title="Cartola de Inversiones" >Cartola de Inversiones </a>
+                            <div>Revisa el movimiento de tus inversiones.</div>
+                        </li>
+                        <li id="add_term_deposit" className="nav-toggle">
+                            <a href="#" title="Invertir en Depósitos a Plazo" >Invertir en Depósitos a Plazo </a>
+                            <div>Selecciona el plazo y la moneda en la que deseas invertir.</div>
+                        </li>
+                    </NavDropdown>
+                    <NavItem eventKey={6} href="#">
+                        Ofertas Disponibles
+                    </NavItem>
+                </Nav>
+                <Nav pullRight>
+                    <NavItem eventKey={7} >
+                        <i className="fa fa-cog" ></i>
+                    </NavItem>
+                    <NavItem eventKey={8} >
+                        <i className="fa fa-question"></i>
+                    </NavItem>
+                </Nav>
+            </Navbar>
         }
 
         return (
@@ -36,13 +111,12 @@ class Header extends Component {
                         <a href=""  title="Contacto">Contacto</a>
                     </div>
                 </div>
-                <nav className="navbar navbar-expand-md navbar-light main-nav">
-                    {loginPage}
-                </nav>
+                {loginPage}
             </div>
         );
       }
 }
 
 export default Header;
+
 
