@@ -9,7 +9,7 @@ import ThirdPartyTransfer from "././components/Transfer/ThirdPartyTransfer";
 import Pay from "././components/Pay/Pay";
 import MutualFund from "././components/MutualFund/MutualFund";
 import CreditCard from "././components/CreditCard/CreditCard";
-
+import MutualFundTransaction from "././components/Transaction/MutualFundTransaction";
 // import NotFound from '././components/NotFound/NotFound';
 
 const Routes = () => (
@@ -23,6 +23,7 @@ const Routes = () => (
         <Route exact path="/pay" component={Pay}/>
         <Route exact path="/pay/mutualfund" component={MutualFund}/>
         <Route exact path="/credit/:id" component={CreditCard}/>
+        <Route exact path="/mutualFund/transaction" component={MutualFundTransaction}/>
         {/* <Route path="*" component={NotFound}/> */}
     </div>
   </BrowserRouter>

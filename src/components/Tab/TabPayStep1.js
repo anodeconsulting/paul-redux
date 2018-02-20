@@ -239,8 +239,8 @@ class TabPayStep1 extends Component {
                     {module2}
                     
                     <span className="pushBot">
-                        <Button className="cancel">Cancelar</Button>
                         <Button className="accept">Aceptar</Button>
+                        <Button className="cancel">Cancelar</Button>         
                     </span>
                     
                 </div>       

@@ -46,8 +46,8 @@ class Tab1 extends Component {
                     </div>
                     <TableTransfer items={users} />
                     <span className="pushBot">
-                        <Button className="cancel">Cancelar</Button>
                         <Button className="accept">Aceptar</Button>
+                        <Button className="cancel">Cancelar</Button>                       
                     </span>
                     
                 </div>       
