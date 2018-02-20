@@ -47,7 +47,7 @@
 }
 
 .alert-icon-info{
-    float:left;
+    float:left!important;
     background: url(../../assets/images/warning.png) right top no-repeat;
     width: 100px;
     height: 100px;
@@ -57,6 +57,8 @@
 
 .alert-warning{
     background-color:#fcf38b!important;
+    width:65%;
+    margin: auto;
 }
 
 .alert h4 {

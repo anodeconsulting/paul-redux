@@ -3,8 +3,10 @@ import './MutualFund.css';
 import {Tabs, Tab, TabContainer, TabContent, TabPane} from 'react-bootstrap';
 import MutualFundStep1 from '../Tab/MutualFundStep1';
 import MutualFundStep2 from '../Tab/MutualFundStep2';
+import MutualFundTransaction from '../Transaction/MutualFundTransaction';
 import RightBox from "../Rightbox/Rightbox";
 import { Button, Alert } from 'react-bootstrap';
+import {Redirect} from 'react-router-dom';
 
 class MutualFund extends Component {
 
@@ -42,6 +44,7 @@ class MutualFund extends Component {
     render() {
         let module = null;
         let moduleAlert = null;
+        // let moduleLink = <MutualFundStep3 />;
         if(this.state.key !=1){
             module= <Button className="back" onClick={()=>this.handleSelect(1)}>Volver</Button>     
             
@@ -58,6 +61,10 @@ class MutualFund extends Component {
                         
                     </Alert>
             }
+        }
+
+        if (this.state.key==3) {
+            return (<Redirect to={'/mutualFund/transaction'}/>)
         }
         return (
           <div>
@@ -78,7 +85,14 @@ class MutualFund extends Component {
                         </div>
                         <div className="btnStyle">
                             {module}
-                            <Button className="accept" onClick={()=>this.handleSelect(2)}>Aceptar</Button>
+                            <Button className="accept" onClick={()=>
+                            {
+                                if(this.state.key==2){
+                                    this.handleSelect(3)
+                                }else{
+                                    this.handleSelect(2);
+                                }
+                                }}>Aceptar</Button>
                             <Button className="cancel">Cancelar</Button>
                         </div>
                 </div>  

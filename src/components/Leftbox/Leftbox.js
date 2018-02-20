@@ -8,6 +8,7 @@ class Leftbox extends Component {
       super(props, context);
   
       this.state = {
+        active:false,
         openCheque: true,
         openCredit: true,
         data: [
@@ -42,6 +43,8 @@ class Leftbox extends Component {
 
     handleClickCheque(e){
       this.setState({ openCheque: !this.state.openCheque});
+      this.setState({ active: !this.state.active});
+  
     }
 
     handleClickCredit(e){
@@ -49,7 +52,6 @@ class Leftbox extends Component {
     }
 
     handleCard(id){
-      console.log(this.state.data[id]);
     }
   
     render() {
@@ -69,7 +71,7 @@ class Leftbox extends Component {
       }
       return (
         <div>        
-          <Panel bsStyle="danger" id="collapsible-panel-example-3" expanded={this.state.openCheque}>
+          <Panel bsStyle="danger" id="collapsible-panel-example-3" defaultExpanded={this.state.openCheque}>
             <Panel.Heading>
             <Panel.Title toggle onClick={this.handleClickCheque}>
               {module}Cuentas Bancarias
@@ -83,7 +85,7 @@ class Leftbox extends Component {
               </ListGroup>
             </Panel.Collapse>
           </Panel>
-          <Panel bsStyle="danger" id="collapsible-panel-example-3" expanded={this.state.openCredit}>
+          <Panel bsStyle="danger" id="collapsible-panel-example-3" defaultExpanded={this.state.openCredit}>
             <Panel.Heading>
             <Panel.Title toggle onClick={this.handleClickCredit}>
               {module1}Créditos y Tarjetas de Crédito
