@@ -21,7 +21,9 @@ class Leftbox extends Component {
           {
             type: "creditcard",
             accounts:[
-              "MASTERCARD *** 8981"
+              "MASTERCARD *** 8981",
+              "Línea de Crédito *** 0007",
+              "Crédito Hipotecario*** 0010"
             ]
           },
           {
