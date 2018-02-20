@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import './styles/foundation.min.css';
-import './styles/custom.css';
 import Routes from './routes';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
-
-  constructor(){
-    super();
-  }
 
   render() {
     return (

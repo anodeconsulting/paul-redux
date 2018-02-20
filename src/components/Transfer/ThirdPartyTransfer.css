@@ -1,0 +1,39 @@
+section { 
+    border-top: 5px solid #f1f1f1; 
+    border-right: 5px solid #f1f1f1; 
+    border-left: 5px solid #f1f1f1; 
+    padding-bottom: 15px;
+}
+
+.divLeft{
+    border-right: 2px solid #f1f1f1; 
+    border-bottom: 2px solid #f1f1f1;;
+    padding-bottom: 2px;
+    margin-top:-15px;
+}
+
+section h1 {
+    margin-top: 16px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #D81E05;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: .67em 0;
+}
+
+section h5{
+    font-size: 15px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    background: #e0e0e0!important;
+    border-top: 5px solid #D81E05!important; 
+}
+
+.nav-tabs>li>a {
+    font-size: 12px;
+    color: #5e5e5e;
+    background: #f5f5f5
+}

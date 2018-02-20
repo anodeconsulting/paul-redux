@@ -1,23 +1,29 @@
 import React, {Component} from 'react';
-import './Accordion.css'
+import './Leftbox.css'
 import { Link } from 'react-router-dom';
 import { ListGroup,ListGroupItem,Panel } from 'react-bootstrap';
 
-class Accordion extends React.Component {
+class Leftbox extends Component {
     constructor(props, context) {
       super(props, context);
   
       this.state = {
         open: true
       };
+
+      this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(){
+      this.setState({ open: !this.state.open});
     }
   
     render() {
       return (
         <div>        
-          <Panel bsStyle="danger" id="collapsible-panel-example-3" defaultExpanded>
+          <Panel bsStyle="danger" id="collapsible-panel-example-3">
           <Panel.Heading>
-            <Panel.Title toggle>Cuentas Bancarias</Panel.Title>
+            <Panel.Title className="title1" toggle onClick={this.handleClick}>Cuentas Bancarias</Panel.Title>
           </Panel.Heading>
           <Panel.Collapse>
             <ListGroup>
@@ -36,4 +42,4 @@ class Accordion extends React.Component {
     }
   }
   
-  export default Accordion;
+  export default Leftbox;

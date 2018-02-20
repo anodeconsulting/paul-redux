@@ -1,0 +1,35 @@
+.panel-heading { 
+    background-image: none;
+    background-color: #d81e05!important; 
+    color: #ffffff!important;
+}
+
+/* .panel-title:before {
+    content: "\f0da"; 
+    font-family: fontAwesome;
+    padding-right:10px;
+    font-size: 14px;
+}  */
+/* .collapsed {
+    content: "\f0da";
+    font-family: fontAwesome;
+    padding-right:10px;
+    font-size: 14px;
+} */
+
+/* collpase */
+.panel-title .collapse:before{
+    content: "\f0da";
+    font-family: fontAwesome;
+    padding-right:10px;
+    font-size: 14px;
+} 
+
+/* expanded */
+.panel-title:before{
+    content: "\f0d7";
+    font-family: fontAwesome;
+    padding-right:10px;
+    font-size: 14px;
+}  
+
