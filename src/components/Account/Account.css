@@ -53,18 +53,36 @@
 
 .arrow-down-btn{
     position: absolute;
-    right: 14px;
-    top:11px;
-    color: white;
+    right: 6px;
+    top:4px;
     font-size: 12px;
 }
 
 .square-btn{
     font-size: 22px;
+}
+
+.red{
     color:#d81e05;
 }
 
+.white{
+    color: white;
+}
 
+.black{
+    color: black;
+}
+
+.square-border{
+    border-color: #BBB!important;
+    border-bottom: none!important;
+    border-radius: 3px 3px 0 0!important;
+    box-shadow: none!important;
+    border-top: 1px solid #cccccc!important;
+    border-right: 1px solid #cccccc!important;
+    border-left: 1px solid #cccccc!important;
+}
 
 section { border-top: 5px solid #f1f1f1; border-right: 5px solid #f1f1f1; border-left: 5px solid #f1f1f1; padding-bottom: 15px; }
 /*from account*/
@@ -128,4 +146,27 @@ p {
 
 .amount span{
     float: right!important;
+}
+
+.amount li{
+    list-style: none;
+}
+
+.amount .dropdown ul{
+    transform: none!important;
+    left: auto!important;
+    right: 0px;
+    top:19px!important;
+    border-radius: 0!important;
+    width: 240px;
+}
+
+.squaren-btn-item{
+    display: block!important;
+    padding: 3px 20px!important;
+    clear: both!important;
+    font-weight: normal!important;
+    line-height: 1.42857143!important;
+    color: #333!important;
+    white-space: nowrap!important;
 }
