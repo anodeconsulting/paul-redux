@@ -6,6 +6,7 @@ import './Account.css';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Calendar from "../Calendar/Calendar";
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 
 class Account extends Component {
 
@@ -13,11 +14,15 @@ class Account extends Component {
     super(props);
 
     // Assign state itself, and a default value for items
+    this.toggle = this.toggle.bind(this);
+    this.squarebtn = [...false];
+
     this.state = {
       items: [],
-     resumenExpand:false,
+      resumenExpand:false,
       cuentasExpand: false,
-      creditExpand: false
+      creditExpand: false,
+      squarebtnArray: this.squarebtn
     };
   }
 
@@ -36,6 +41,14 @@ class Account extends Component {
 
     changeCredit(){
         this.setState({creditExpand : !this.state.creditExpand})
+    }
+
+    toggle(index) {
+      this.squarebtn[index] = !this.squarebtn[index];
+      let newArray = this.squarebtn;
+        this.setState({
+            squarebtnArray: newArray
+        });
     }
 
   render() {
@@ -79,7 +92,8 @@ class Account extends Component {
                   <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.creditExpand? 'block' : 'none'}}></i>
                   <h2 className="account-title">Créditos y Tarjetas de Crédito</h2>
                 </div>
-                <div className="" id="Body" style={{display: this.state.creditExpand? 'block' : 'none'}}>
+                {/*<div className="" id="Body" style={{display: this.state.creditExpand? 'block' : 'none'}}>*/}
+                <div className="" id="Body" >
                   <div >
                     <Table responsive>
                       <thead>
@@ -88,15 +102,43 @@ class Account extends Component {
                         <th>Amount</th>
                       </tr>
                       </thead>
-                        {this.state.items.map(item =>
+                        {this.state.items.map((item,index) =>
                             <tbody key={item.id}>
                             <tr>
                               <td><Link to={`/account/${item.id}`}>{item.type}</Link></td>
                               <td className="amount">{item.primary_balance.amount}
-                                <span >
-                                  <i className="fa fa-square square-btn" aria-hidden="true"></i>
-                                  <i className="fa fa-sort-desc arrow-down-btn" aria-hidden="true" ></i>
-                                </span>
+                                <Dropdown isOpen={this.state.squarebtnArray[index]} toggle={()=>{this.toggle(index)}} tag="li">
+                                  <DropdownToggle
+                                      tag="a"
+                                      data-toggle="dropdown"
+                                      aria-expanded={this.state.squarebtnArray[index]}>
+                                    <span >
+
+                                      <i className={!this.state.squarebtnArray[index]?"fa fa-square square-btn red":"fa fa-square square-btn white square-border"} aria-hidden="true"></i>
+                                      <i className={!this.state.squarebtnArray[index]?"fa fa-sort-desc arrow-down-btn white":"fa fa-sort-desc arrow-down-btn black"} aria-hidden="true"></i>
+                                      {/*<i className="fa fa-square square-btn" aria-hidden="true"></i>*/}
+                                      {/*<i className="fa fa-sort-desc arrow-down-btn" aria-hidden="true" ></i>*/}
+                                    </span>
+                                  </DropdownToggle>
+                                  <DropdownMenu tag="ul">
+                                      <li role="presentation">
+                                        <a href=""  role="menuitem" className="squaren-btn-item">
+                                          Transferir a Terceros</a>
+                                      </li>
+                                      <li role="presentation">
+                                        <a href=""  role="menuitem" className="squaren-btn-item">
+                                          Transferencias entre Mis Cuentas</a>
+                                      </li>
+
+                                      <li role="presentation">
+                                        <a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>
+                                      </li>
+                                      <li role="presentation">
+                                        <a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>
+                                      </li>
+
+                                  </DropdownMenu>
+                                </Dropdown>
                               </td>
                             </tr>
                             </tbody>
