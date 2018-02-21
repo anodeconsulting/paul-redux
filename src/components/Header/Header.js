@@ -3,15 +3,20 @@ import './Header.css';
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { IndexLinkContainer } from 'react-router-bootstrap';
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 
 class Header extends Component {
       constructor(){
           super();
+          this.toggle = this.toggle.bind(this);
+          this.toggle2 = this.toggle2.bind(this);
           this.state = {
               redirectToReferrer: false,
               pathBase: "/react/",
               gear: false,
-              question: false
+              question: false,
+              GearOpen: false,
+              QuestionOpen: false
           };
         }
 
@@ -25,30 +30,18 @@ class Header extends Component {
                     li.click();
                 }
 
-        static iconClick(e){
-            let target = e.target;
-            let li = target.parentElement.parentElement;
-            if(!this.state.gear){
-                li.classList.add("open");
-                console.log("1")
-            }else{
-                li.classList.remove("open");
-                console.log("2")
-            }
-            this.state.gear = !this.state.gear;
-            console.log("trigger")
+
+
+        toggle() {
+            this.setState({
+                GearOpen: !this.state.GearOpen
+            });
         }
 
-        static iconClick2(e){
-            let target = e.target;
-            let li2 = target.parentElement.parentElement;
-            if(!this.state.question){
-                li2.classList.add("open");
-            }else{
-                li2.classList.remove("open");
-            }
-            this.state.question = !this.state.question;
-            console.log("trigger")
+        toggle2() {
+            this.setState({
+                QuestionOpen: !this.state.QuestionOpen
+            });
         }
 
       render() {
@@ -105,6 +98,8 @@ class Header extends Component {
                                     <a href="#" title="Cartola de Transferencias">Cartola de Transferencias </a>
                                     <div>Revisa tus transferencias realizadas y programadas.</div>
                                 </li>
+                                <li className="nav-toggle clear"></li>
+
                                 <li id="cashadvance" className="nav-toggle">
                                     <a href="#" title="Avance de Tarjeta de Crédito" >Avance de Tarjeta de Crédito </a>
                                     <div>Realiza avances en efectivo desde tus tarjetas de crédito hacia tus cuentas, con o sin cuotas.</div>
@@ -120,6 +115,7 @@ class Header extends Component {
                                 <a href="#" title="Cartola de Inversiones" >Cartola de Inversiones </a>
                                 <div>Revisa el movimiento de tus inversiones.</div>
                             </li>
+                            <li className="nav-toggle clear"></li>
                             <li id="add_term_deposit" className="nav-toggle">
                                 <a href="#" title="Invertir en Depósitos a Plazo" >Invertir en Depósitos a Plazo </a>
                                 <div>Selecciona el plazo y la moneda en la que deseas invertir.</div>
@@ -129,88 +125,94 @@ class Header extends Component {
                             Ofertas Disponibles
                         </NavItem>
                     </Nav>
-                   {/* <Nav pullRight>
-                        <li className="dropdown"  >
-                            <a role="button" className="dropdown-toggle" onClick={Header.iconClick.bind(this)}>
-                                <i className="fa fa-cog" ></i>
-                            </a>
-                            <ul role="menu" className="dropdown-menu" >
-                                <li  className="nav-toggle">
-                                    <a href="" title="Pagar Servicios">Pagar Servicios</a>
-                                    <div>Realiza tus pagos de servicios en línea</div>
+
+
+                    <ul className="nav navbar-nav floatRight navIcon-ul question">
+                        <Dropdown isOpen={this.state.QuestionOpen} toggle={this.toggle2} tag="li">
+                            <DropdownToggle
+                                tag="a"
+                                onClick={this.toggle2}
+                                data-toggle="dropdown"
+                                aria-expanded={this.state.QuestionOpen}>
+                                <i className="fa fa-question navIcon"></i>
+                            </DropdownToggle>
+                            <DropdownMenu tag="ul">
+                                <li className="nav-toggle" id="">
+                                    <a href="#" title="Ayuda con esta página">Ayuda con esta Página</a>
+                                    <div>Conoce las instrucciones paso a paso de cómo usar las funcionalidades de esta página</div>
                                 </li>
-                                <li  className="nav-toggle">
-                                    <a href="#" title="Pagos Automáticos (PAC/PAT)">Pagos Automáticos (PAC/PAT) </a>
-                                    <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
+                                <li className="nav-toggle clear"></li>
+
+                                <li  className="nav-toggle"id="">
+                                    <a href="#" title="Centro de Ayuda" >Centro de Ayuda</a>
+                                    <div>Revisa videos y tips de ayuda.</div></li>
+                                <li className="nav-toggle clear"></li>
+
+                                <li className="banner2">
+                                    <div>Get peace of mind while travelling with new Scotia Visa Travel card
+                                        <h1 className="creditcard-pic"></h1>
+                                        <button className="btn desk-btn">Learn More</button>
+                                    </div>
                                 </li>
-                                <li className="nav-toggle">
-                                    <a href="/react/pay">Pagar Mis Productos</a>
-                                    <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
-                                </li>
-                                <li  className="nav-toggle">
-                                    <a href="#" title="Histórico de Pagos">Histórico de Pagos </a>
-                                    <div>Revisa tus pagos realizados</div>
-                                </li>
-                            </ul>
-                        </li>
-                        <NavItem eventKey={7} >
-                            <i className="fa fa-cog" ></i>
-                        </NavItem>
-                        <NavItem eventKey={8} >
-                            <i className="fa fa-question"></i>
-                        </NavItem>
-                    </Nav>*/}
-                    <ul className="nav navbar-nav floatRight">
-                        <li className="dropdown"  >
-                            <a role="button" className="dropdown-toggle" >
-                                <i className="fa fa-question" onClick={Header.iconClick2.bind(this)}></i>
-                            </a>
-                            <ul role="menu" className="dropdown-menu menuLeft" >
-                                <li  className="nav-toggle">
-                                    <a href="" title="Pagar Servicios">Pagar Servicios</a>
-                                    <div>Realiza tus pagos de servicios en línea</div>
-                                </li>
-                                <li  className="nav-toggle">
-                                    <a href="#" title="Pagos Automáticos (PAC/PAT)">Pagos Automáticos (PAC/PAT) </a>
-                                    <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
-                                </li>
-                                <li className="nav-toggle">
-                                    <a href="/react/pay">Pagar Mis Productos</a>
-                                    <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
-                                </li>
-                                <li  className="nav-toggle">
-                                    <a href="#" title="Histórico de Pagos">Histórico de Pagos </a>
-                                    <div>Revisa tus pagos realizados</div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul className="nav navbar-nav floatRight">
-                        <li className="dropdown"  >
-                            <a role="button" className="dropdown-toggle" >
-                                <i className="fa fa-cog" onClick={Header.iconClick.bind(this)}></i>
-                            </a>
-                            <ul role="menu" className="dropdown-menu menuLeft" >
-                                <li  className="nav-toggle">
-                                    <a href="" title="Pagar Servicios">Pagar Servicios</a>
-                                    <div>Realiza tus pagos de servicios en línea</div>
-                                </li>
-                                <li  className="nav-toggle">
-                                    <a href="#" title="Pagos Automáticos (PAC/PAT)">Pagos Automáticos (PAC/PAT) </a>
-                                    <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
-                                </li>
-                                <li className="nav-toggle">
-                                    <a href="/react/pay">Pagar Mis Productos</a>
-                                    <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
-                                </li>
-                                <li  className="nav-toggle">
-                                    <a href="#" title="Histórico de Pagos">Histórico de Pagos </a>
-                                    <div>Revisa tus pagos realizados</div>
-                                </li>
-                            </ul>
-                        </li>
+                            </DropdownMenu>
+                        </Dropdown>
                     </ul>
 
+                    <ul className="nav navbar-nav floatRight navIcon-ul gear">
+                        <Dropdown isOpen={this.state.GearOpen} toggle={this.toggle} tag="li">
+                            <DropdownToggle
+                                tag="a"
+                                onClick={this.toggle}
+                                data-toggle="dropdown"
+                                aria-expanded={this.state.GearOpen}>
+                                <i className="fa fa-cog navIcon"></i>
+                            </DropdownToggle>
+                            <DropdownMenu tag="ul">
+
+                                <li className="nav-toggle3" id="">
+                                    <a href="Chile_Online_Statements.html" title="Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos">
+                                        Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos </a>
+                                    <div>Descarga documentos y modifica opciones de envío.</div>
+                                </li>
+                                <li className="nav-toggle3" id="">
+                                    <a href="Chile_Manage_Security_Settings_changePassword.html" title="Configuración de Seguridad ">
+                                        Configuración de Seguridad</a>
+                                    <div>Cambio de Contraseña</div>
+                                </li>
+                                <li className="nav-toggle3 clear"></li>
+                                <li className="nav-toggle3" id="">
+                                    <a href="Chile_General_Account_Settings.html" title="Configuración de Información Personal y de Productos">
+                                        Configuración de Información Personal y de Productos</a>
+                                    <div>Actualiza tus datos personales, administra y configura tus productos.</div>
+                                </li>
+
+                                <li className="nav-toggle3" id="">
+                                    <a href="Chile_Manage_Cheques.html" title="Cheques y Ordenes de No Pago">Cheques y Ordenes de No Pago</a><div>
+                                    Consulta el estado de un talonario o cheque e Instruye Ordenes de No Pago.</div>
+                                </li>
+                                <li className="nav-toggle3 clear"></li>
+                                <li className="nav-toggle3" id="">
+                                    <a href="Chile_Token_Management.html" title="ScotiaPass">ScotiaPass</a>
+                                    <div>Activa, sincroniza y reemplaza tu dispositivo ScotiaPass</div>
+                                </li>
+
+                                <li className="nav-toggle3" id="">
+                                    <a href="Chile_Virtual_CreditCard.html" title="Tarjetas de Crédito Virtuales">
+                                        Tarjetas de Crédito Virtuales</a>
+                                    <div>Crea, elimina y consulta tus tarjetas de crédito virtuales.</div>
+                                </li>
+                                <li className="nav-toggle3 clear"></li>
+                                <li className="nav-toggle3 clear"></li>
+
+                                <li className="banner">
+                                    <div>Get peace of mind while travelling with new Scotia Visa Travel card
+                                        <h1 className="creditcard-pic"></h1>
+                                        <button className="btn desk-btn">Learn More</button>
+                                    </div>
+                                </li>
+                            </DropdownMenu>
+                        </Dropdown>
+                    </ul>
                 </div>
 
             logout =

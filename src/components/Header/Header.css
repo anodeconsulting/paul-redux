@@ -49,6 +49,7 @@
 .dropdown-menu > li > a{
     border: none;
     padding: 15px 0 0 28px !important;
+    white-space: normal!important;
 
 }
 
@@ -86,9 +87,25 @@
     float: left;
     position: relative;
 }
+
+.nav-toggle3{
+    width: 33%;
+    float: left;
+    position: relative;
+}
+
 .nav ul{
     width: 500px;
 }
+
+.question ul{
+    width: 40%!important;
+}
+
+.gear ul{
+    width: 60%!important;
+}
+
 span{
     float: none !important;
 }
@@ -151,4 +168,67 @@ span{
 .menuLeft{
     right: -20px;
     left: auto!important;
+}
+
+
+
+.navIcon-ul ul{
+    left: auto!important;
+    right: -17px!important;
+    border-radius: 0!important;
+    transform: none!important;
+    top:48px!important;
+}
+
+.show > a{
+    background-color: white!important;
+}
+
+.show > a > i {
+    color: #d81e05;
+}
+
+.navIcon{
+    font-size: 15px;
+}
+.creditcard-pic{
+    background: url("../../assets/images/cc_img.png") no-repeat 0 0;
+    height: 79px!important;
+}
+.clear {
+    clear: both;
+}
+
+.gear .dropdown{
+    position: static!important;
+}
+.question .dropdown{
+    position: static!important;
+}
+
+.banner{
+    background: #F1F1F1;
+    height: 100%!important;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    padding: 10px;
+    font-size: 10px;
+    display: block;
+    float: left;
+    width: 33%;
+}
+.banner2{
+    background: #F1F1F1;
+    height: 100%!important;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    padding: 10px;
+    font-size: 10px;
+    display: block;
+    float: left;
+    width: 50%;
 }
