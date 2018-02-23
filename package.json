@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^3.3.4",
     "moment": "^2.20.1",
+    "rc-progress": "^2.2.5",
     "react": "^16.2.0",
     "react-big-calendar": "^0.18.0",
     "react-bootstrap": "^0.32.1",
@@ -16,6 +17,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
     "react-scripts": "^1.1.1",
+    "reactstrap": "^5.0.0-beta",
     "redux": "^3.7.2"
   },
   "scripts": {

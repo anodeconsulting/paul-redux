@@ -26,7 +26,6 @@
 }
 
 .arrow-down{
-    /*font-family: fontAwesome;*/
     font-weight: normal;
     font-style: normal;
     text-decoration: inherit;
@@ -34,7 +33,13 @@
     content: "\f0da";
     color: #d81e05;
     position: absolute;
-    font-size: 25px;
+}
+
+.fa-caret-down:before {
+    font-size: 24px!important;
+}
+.fa-caret-right:before {
+    font-size: 24px!important;
 }
 
 .account-title{
@@ -53,18 +58,36 @@
 
 .arrow-down-btn{
     position: absolute;
-    right: 14px;
-    top:11px;
-    color: white;
+    right: 8px;
+    top:4px;
     font-size: 12px;
 }
 
 .square-btn{
-    font-size: 22px;
+    font-size: 25px;
+}
+
+.red{
     color:#d81e05;
 }
 
+.white{
+    color: white;
+}
 
+.black{
+    color: black;
+}
+
+.square-border{
+    border-color: #BBB!important;
+    border-bottom: 1px solid white!important;
+    border-radius: 3px 3px 0 0!important;
+    box-shadow: none!important;
+    border-top: 1px solid #cccccc!important;
+    border-right: 1px solid #cccccc!important;
+    border-left: 1px solid #cccccc!important;
+}
 
 section { border-top: 5px solid #f1f1f1; border-right: 5px solid #f1f1f1; border-left: 5px solid #f1f1f1; padding-bottom: 15px; }
 /*from account*/
@@ -128,4 +151,77 @@ p {
 
 .amount span{
     float: right!important;
+}
+
+.amount >li{
+    list-style: none;
+    margin-top: -20px;
+}
+
+.amount .dropdown ul{
+    transform: none!important;
+    left: auto!important;
+    right: 0;
+    top:19px!important;
+    border-radius: 0!important;
+    width: 240px;
+}
+
+.squaren-btn-item{
+    display: block!important;
+    padding: 3px 20px!important;
+    clear: both!important;
+    font-weight: normal!important;
+    line-height: 1.42857143!important;
+    color: #333!important;
+    white-space: nowrap!important;
+}
+
+/*.overview-table tr {*/
+    /*border-top: 1px dotted #D7D7D7!important;*/
+/*}*/
+
+
+
+
+.progressbar{
+    width: 360px;
+}
+
+.progressbar >div{
+    margin-top: 10px;
+}
+
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.progress-number{
+    right: 14px;
+    top:9px;
+}
+.progrees3{
+    height: 60px;
+    border-top: 1px solid #d7d7d7;
+    margin: 0!important;
+    padding: 15px;
+}
+.progress-chart{
+    background: #f5f5f5;
+    border: 1px solid #d7d7d7;
+}
+.progress2{
+    height: 50px;
+    margin: 0!important;
+    padding: 0 15px;
+}
+.progress1{
+    height: 50px;
+    margin: 0!important;
+    padding: 15px 15px 0 15px;
+}
+.progress-title{
+    margin-top: 7px;
 }
