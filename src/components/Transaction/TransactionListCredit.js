@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Cheque from '../Transaction/Cheque';
+import Transaction from '../Transaction/Transaction';
 import CreditCard from '../CreditCard/CreditCard';
 import Mortgage from '../Mortgage/Mortgage';
 import { location } from 'react-router';
 
-export default class TransactionList extends Component{
+export default class TransactionListCredit extends Component{
 
     render(){
         const item = this.props.item;
@@ -17,8 +18,10 @@ export default class TransactionList extends Component{
         </div>;
 
         let moduleType = null;
-        if(type == 'deposite'){ 
-            moduleType= <Cheque location = {this.props.location}/>     
+        if(type == 'mortgage'){ 
+            moduleType= <Mortgage location = {this.props.location}/>     
+        }else if(type == 'lineofcredit'){
+            moduleType = <Transaction location = {this.props.location}/>
         }else{
             moduleType = <CreditCard location = {this.props.location}/>
         }

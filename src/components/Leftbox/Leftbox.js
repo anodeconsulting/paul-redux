@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Leftbox.css'
 import { Link } from 'react-router-dom';
 import { ListGroup,ListGroupItem,Panel } from 'react-bootstrap';
+import { Mortgage} from '../Mortgage/Mortgage';
 
 class Leftbox extends Component {
     constructor(props, context) {
@@ -31,7 +32,7 @@ class Leftbox extends Component {
             type: "credit",
             accounts:[
               {
-                type:"credtcard",
+                type:"creditcard",
                 account: "MASTERCARD *** 8981",
               },{
                 type:"lineofcredit",
@@ -68,6 +69,7 @@ class Leftbox extends Component {
 
     handleCard(ele1,ele2){
       // console.log(ele2);
+      // return <Mortgage />
       // const currentState = this.state.active;
       // this.setState({ active: !currentState });
       // var current = document.querySelector('.active');

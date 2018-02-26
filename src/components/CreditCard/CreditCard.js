@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
-import Table from "../Table/Table";
+import TableCredit from "../Table/TableCredit";
 import { location } from 'react-router';
+import {GetCCDetails} from "../../services/GetCCDetails";
 
 class CreditCard extends Component {
 
@@ -18,43 +19,35 @@ class CreditCard extends Component {
 
     // Assign state itself, and a default value for items
     this.state = {
-      data: '',
+      type:'',
+      balance:'',
       open: false
     };
   }
 
   componentDidMount(){
-    
-    let type = this.props.location.pathname.split('/')[2];
-    console.log(type);
-    if('mortgage' == type){
-      GetMortgageTransactions().then((result) => {
-        console.log(result);
-        let data = result.transactions.splice(0,10);
-        for(let i=0;i<data.length;i++){
-          data[i].dataAmount = data[i].transaction_amount.amount;
-        }
-        this.setState({items: data})   
-      });
-    }else{
-      GetTransactions().then((result) => {
-        let data = result.transactions.splice(0,50);
-        for(let i=0;i<data.length;i++){
-          data[i].dataAmount = data[i].transaction_amount.amount;
-        }
-        this.setState({items: data})   
-      });
-    }
+
+    GetCCDetails().then((result) => {
+      let balance = result.primary_balance.amount || 0;
+      this.setState({balance: balance})   
+    });
     
   }
 
-  render() {    
+  render() {  
+    
     let pathName = this.props.location.pathname;
+    let type = this.props.location.pathname.split('/')[2];
+    console.log(type);
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName.split('/')[3]}</span> 
-      <span className="product-amt">$ 2.111.123.134</span>
+      <span className="product-amt">$ {this.state.balance}</span>
     </div>;
+
+    let moduleType = null;
+    if(type == 'mortgage'){      
+    }
 
     return (
       <section>
@@ -75,7 +68,7 @@ class CreditCard extends Component {
             <div>
               <div className="row" id="Body"> 
                 {/* react bootstrap table */}
-                <Table items={this.state.items}/>
+                <TableCredit items={this.state.items}/>
               </div>
             </div>
           </div>
@@ -85,6 +78,7 @@ class CreditCard extends Component {
           </div>
         </div>       
     </section>
+      
     );
   }
 }
