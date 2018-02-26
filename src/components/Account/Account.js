@@ -25,9 +25,9 @@ class Account extends Component {
     this.state = {
       itemsChecking: [],
       itemsCredit: [],
-      resumenExpand:false,
-      cuentasExpand: false,
-      creditExpand: false,
+      resumenExpand:true,
+      cuentasExpand: true,
+      creditExpand: true,
       squarebtnArrayCredit: this.squarebtnCredit,
       squarebtnArrayCuentas: this.squarebtnCuentas
     };
@@ -46,6 +46,7 @@ class Account extends Component {
         credit[1].type = "Línea de Crédito *** 0007";
         credit[2].type = "Crédito Hipotecario*** 0010";
 
+        console.log(credit)
       this.setState({itemsChecking: Checking});
       this.setState({itemsCredit: credit});
      });
@@ -166,13 +167,11 @@ class Account extends Component {
                                     </span>
                                 </DropdownToggle>
                                 <DropdownMenu tag="ul">
-                                  <li role="presentation">
-                                    <a href=""  role="menuitem" className="squaren-btn-item">
-                                      Transferir a Terceros</a>
+                                  <li role="presentation" className="squaren-btn-item">
+                                    <Link to={`/thirdPartyTransfer`}>Transferir a Terceros</Link>
                                   </li>
-                                  <li role="presentation">
-                                    <a href=""  role="menuitem" className="squaren-btn-item">
-                                      Transferencias entre Mis Cuentas</a>
+                                  <li role="presentation" className="squaren-btn-item">
+                                    <Link to={`/accountTransfer`}>Transferencias entre Mis Cuentas</Link>
                                   </li>
 
                                   {/*<li role="presentation">*/}
@@ -220,22 +219,9 @@ class Account extends Component {
                                     </span>
                                   </DropdownToggle>
                                   <DropdownMenu tag="ul">
-                                      <li role="presentation">
-                                        <a href=""  role="menuitem" className="squaren-btn-item">
-                                          Pagar</a>
+                                      <li role="presentation" className="squaren-btn-item">
+                                        <Link to={`/pay`}>Pagar</Link>
                                       </li>
-                                      {/*<li role="presentation">*/}
-                                        {/*<a href=""  role="menuitem" className="squaren-btn-item">*/}
-                                          {/*Transferencias entre Mis Cuentas</a>*/}
-                                      {/*</li>*/}
-
-                                      {/*<li role="presentation">*/}
-                                        {/*<a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>*/}
-                                      {/*</li>*/}
-                                      {/*<li role="presentation">*/}
-                                        {/*<a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>*/}
-                                      {/*</li>*/}
-
                                   </DropdownMenu>
                                 </Dropdown>
                               </td>

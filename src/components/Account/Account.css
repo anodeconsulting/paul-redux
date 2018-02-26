@@ -179,7 +179,7 @@ p {
     width: 224px;
 }
 
-.squaren-btn-item{
+.squaren-btn-item >a{
     display: block!important;
     padding: 3px 20px!important;
     clear: both!important;
