@@ -28,7 +28,6 @@ class Transaction extends Component {
       for(let i=0;i<data.length;i++){
         data[i].dataAmount = data[i].transaction_amount.amount;
       }
-      console.log(data);
       this.setState({items: data})   
     });
     

@@ -9,9 +9,25 @@ class Midbox extends Component {
       this.state = {
         open: true
       };
-    }
+	}
+	
+	componentDidMount(){
+		this.setState({details:this.props.details})
+
+	}
   
     render() {
+		let module1 = null;
+		const details = this.props.details;
+		// console.log(this.state.details);
+		
+		// if('undefined' != details){
+		// 	let module1= details.primary_balance.amount;
+		// }else{
+		// 	'2222.222.22'
+		// }
+		
+	  
       return (
         <div className="account-balance-container row pushRight" id="cc_balance_container_id">
 				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
@@ -19,7 +35,7 @@ class Midbox extends Component {
 						<span id="cc_lbl_credit_limit_id">
 							<a href="" className="RUIFW-tooltip" data-toggle="tooltip" title="" data-placement="auto" data-original-title="Cupo Autorizado en Pesos">
 								<span className="icon-info-sign"></span>
-							</a> Cupo Total: &nbsp;$ 2.222.222.222
+							</a> Cupo Total: &nbsp;$ 2222.222.22
 						</span>
 					</h6>
 					<div className="progress">

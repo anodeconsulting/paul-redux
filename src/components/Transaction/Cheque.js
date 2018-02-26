@@ -25,8 +25,11 @@ class Cheque extends Component {
 
   componentDidMount(){
     GetDepositeDetails().then((result) => {
+      // console.log(result);
       let balance = result.available_balance.amount || 0;
-      this.setState({balance: balance})   
+      this.setState({balance: balance});  
+      this.setState({details: result}); 
+      // console.log(this.state.details); 
     });
 
     GetDepositeTransactions().then((result) => {
@@ -43,18 +46,13 @@ class Cheque extends Component {
 
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
-    // let type = this.props.location.pathname.split('/')[2];
-    // console.log(type);
+
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
       <span className="product-amt">$ {this.state.balance}</span>
     </div>;
-
-    // let moduleType = null;
-    //   moduleType =
-      
-    
+         
     return (
       <section>
         <div className="pushBottom">
@@ -70,7 +68,7 @@ class Cheque extends Component {
           <div className="col-md-6 pushRight">
             {/* for mid box */}
             {module}
-            <Midbox/>
+            <Midbox details={this.state.details}/>
             <br />
             <div>
               <div className="row" id="Body">  
