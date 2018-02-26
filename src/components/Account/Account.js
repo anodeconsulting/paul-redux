@@ -143,25 +143,16 @@ class Account extends Component {
                   <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.cuentasExpand? 'block' : 'none'}}></i>
                   <h2 className="account-title">Cuentas Bancarias</h2>
                 </div>
-                <div style={{display: this.state.cuentasExpand? 'block' : 'none'}}>
-                  {/*<Table responsive>*/}
-                    {/*<thead>*/}
-                    {/*</thead>*/}
-                    {/*<tbody >*/}
-                      {/*<tr>*/}
-                        {/*<td>Cuenta Corriente Pesos *** 0343</td>*/}
-                        {/*<td>1022093</td>*/}
-                      {/*</tr>*/}
-                    {/*</tbody>*/}
-                  {/*</Table>*/}
+                <div className="overview-table" style={{display: this.state.cuentasExpand? 'block' : 'none'}}>
                   <Table >
                     <thead>
                     </thead>
                       {this.state.itemsChecking.map((item,index) =>
                           <tbody key={item.id}>
                           <tr>
-                            <td><Link to={`/account/deposite/${item.type}`}>{item.type}</Link></td>
-                            <td className="amount">{item.primary_balance.amount}
+                            <td className="amount-title"><Link to={`/account/deposite/${item.type}`}>{item.type}</Link></td>
+                            <td className="amount">
+                                <div className="amount-number">$  {item.primary_balance.amount}</div>
                               <Dropdown isOpen={this.state.squarebtnArrayCuentas[index]} toggle={()=>{this.toggleCuentas(index)}} tag="li">
                                 <DropdownToggle
                                     tag="a"
@@ -184,12 +175,12 @@ class Account extends Component {
                                       Transferencias entre Mis Cuentas</a>
                                   </li>
 
-                                  <li role="presentation">
-                                    <a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>
-                                  </li>
-                                  <li role="presentation">
-                                    <a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>
-                                  </li>
+                                  {/*<li role="presentation">*/}
+                                    {/*<a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>*/}
+                                  {/*</li>*/}
+                                  {/*<li role="presentation">*/}
+                                    {/*<a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>*/}
+                                  {/*</li>*/}
 
                                 </DropdownMenu>
                               </Dropdown>
@@ -206,7 +197,6 @@ class Account extends Component {
                   <h2 className="account-title">Créditos y Tarjetas de Crédito</h2>
                 </div>
                 <div className="overview-table" id="Body" style={{display: this.state.creditExpand? 'block' : 'none'}}>
-                  <div >
                     {/*<Table responsive>*/}
                     <Table >
                       <thead>
@@ -214,8 +204,9 @@ class Account extends Component {
                         {this.state.itemsCredit.map((item,index) =>
                             <tbody key={item.id}>
                             <tr>
-                              <td><Link to={`/credit/credtcard/${item.type}`}>{item.type}</Link></td>
-                              <td className="amount">{item.primary_balance.amount}
+                              <td className="amount-title"><Link to={`/credit/credtcard/${item.type}`}>{item.type}</Link></td>
+                              <td className="amount">
+                                <div className="amount-number">$  {item.primary_balance.amount}</div>
                                 <Dropdown isOpen={this.state.squarebtnArrayCredit[index]} toggle={()=>{this.toggleCredit(index)}} tag="li">
                                   <DropdownToggle
                                       tag="a"
@@ -231,19 +222,19 @@ class Account extends Component {
                                   <DropdownMenu tag="ul">
                                       <li role="presentation">
                                         <a href=""  role="menuitem" className="squaren-btn-item">
-                                          Transferir a Terceros</a>
+                                          Pagar</a>
                                       </li>
-                                      <li role="presentation">
-                                        <a href=""  role="menuitem" className="squaren-btn-item">
-                                          Transferencias entre Mis Cuentas</a>
-                                      </li>
+                                      {/*<li role="presentation">*/}
+                                        {/*<a href=""  role="menuitem" className="squaren-btn-item">*/}
+                                          {/*Transferencias entre Mis Cuentas</a>*/}
+                                      {/*</li>*/}
 
-                                      <li role="presentation">
-                                        <a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>
-                                      </li>
-                                      <li role="presentation">
-                                        <a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>
-                                      </li>
+                                      {/*<li role="presentation">*/}
+                                        {/*<a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>*/}
+                                      {/*</li>*/}
+                                      {/*<li role="presentation">*/}
+                                        {/*<a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>*/}
+                                      {/*</li>*/}
 
                                   </DropdownMenu>
                                 </Dropdown>
@@ -252,9 +243,6 @@ class Account extends Component {
                             </tbody>
                         )}
                     </Table>
-                  </div>
-
-
                 </div>
 
                 <div className="calendar">

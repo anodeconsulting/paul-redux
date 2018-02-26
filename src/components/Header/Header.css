@@ -192,7 +192,16 @@ span{
 .creditcard-pic{
     background: url("../../assets/images/cc_img.png") no-repeat 0 0;
     height: 79px!important;
+    width: 123px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.desk-btn{
+    background-color:  #d81e05;
+    color: white;
+}
+
 .clear {
     clear: both;
 }
@@ -202,6 +211,10 @@ span{
 }
 .question .dropdown{
     position: static!important;
+}
+
+.question ul{
+    height: 240px;
 }
 
 .banner{
