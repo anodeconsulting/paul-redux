@@ -2,7 +2,8 @@
     margin: 20px;
     background: url("../../assets/images/scotiabank_logo.png") no-repeat 0 0;
     width: 224px;
-    height: 40px;
+    /*height: 40px;*/
+    height: 70px;
 }
 
 .RUIFW-brand:focus{
@@ -51,7 +52,10 @@
     padding: 15px 0 0 28px !important;
     white-space: normal!important;
     color: #2a5db0 !important;
+}
 
+.nav >li{
+    font-size: 15px;
 }
 
 .nav .dropdown-menu > li > a:focus{
@@ -187,7 +191,7 @@ span{
 }
 
 .navIcon{
-    font-size: 15px;
+    font-size: 25px;
 }
 .creditcard-pic{
     background: url("../../assets/images/cc_img.png") no-repeat 0 0;
