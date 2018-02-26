@@ -7,8 +7,9 @@
     word-break: normal!important;
     white-space: pre-wrap!important;
 }
-.overview-table tr td.balance {
-    width: 40%;
+.overview-table tr td.amount {
+    width: 22%;
+    text-align: right;
 }
 .overview-table tr td {
     font-size: 1.3em!important;
@@ -23,6 +24,15 @@
     font-size: 12px;
     border-collapse: collapse;
     width: 100%;
+}
+
+.amount-number{
+    margin-right: 50px;
+    line-height: 15px;
+}
+
+.amount-title a{
+    padding-left: 18px;
 }
 
 .arrow-down{
