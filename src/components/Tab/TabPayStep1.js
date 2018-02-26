@@ -99,7 +99,7 @@ class TabPayStep1 extends Component {
                 </div>
                 <div className="col-sm-9">
                 <FormGroup>
-                    <Radio name="radioGroup1" inline checked disabled>
+                    <Radio name="radioGroup1" inline defaultChecked disabled>
                         Nacionales
                     </Radio>
                     <Radio name="radioGroup1" inline disabled>
@@ -115,7 +115,7 @@ class TabPayStep1 extends Component {
                 </div>
                 <div className="col-sm-9">
                 <FormGroup>
-                    <Radio name="radioGroup" checked >
+                    <Radio name="radioGroup" defaultChecked >
                     Monto Facturado ($ 123.456)
                     </Radio>{' '}
                     <Radio name="radioGroup"  >

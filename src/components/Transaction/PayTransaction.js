@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Transaction.css';
 import { Button, Alert } from 'react-bootstrap';
 import button1 from '../../assets/images/button1.png';
-import Table from "../Table/Table";
+import TablePay from "../Table/TablePay";
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 
@@ -63,7 +63,7 @@ class PayTransaction extends Component {
                     </div><br />
               <div id="Body">  
                 {/* react bootstrap table */}
-                <Table items={this.state.items}/>
+                <TablePay items={this.state.items}/>
               </div>
             </div>
           </div>

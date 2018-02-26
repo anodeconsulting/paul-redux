@@ -19,7 +19,7 @@ class Midbox extends Component {
 						<span id="cc_lbl_credit_limit_id">
 							<a href="" className="RUIFW-tooltip" data-toggle="tooltip" title="" data-placement="auto" data-original-title="Cupo Autorizado en Pesos">
 								<span className="icon-info-sign"></span>
-							</a> Cupo Total: &nbsp;No Disponible
+							</a> Cupo Total: &nbsp;$ 2.222.222.222
 						</span>
 					</h6>
 					<div className="progress">
