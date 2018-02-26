@@ -140,7 +140,8 @@ p {
     font-family: Lato;
 }
 .summerary-title{
-    border-bottom: 1px dotted #D7D7D7!important; padding: 25px 0 6px 0;
+    border-bottom: 1px dotted #D7D7D7!important;
+    padding: 25px 0 6px 0;
 }
 .calendar{
     height: 500px;
@@ -165,7 +166,7 @@ p {
     right: 0;
     top:19px!important;
     border-radius: 0!important;
-    width: 240px;
+    width: 224px;
 }
 
 .squaren-btn-item{
@@ -176,13 +177,8 @@ p {
     line-height: 1.42857143!important;
     color: #333!important;
     white-space: nowrap!important;
+    font-size: 12px;
 }
-
-/*.overview-table tr {*/
-    /*border-top: 1px dotted #D7D7D7!important;*/
-/*}*/
-
-
 
 
 .progressbar{
@@ -225,4 +221,7 @@ p {
 }
 .progress-title{
     margin-top: 7px;
+}
+table{
+    margin-bottom: 0!important;
 }

@@ -143,7 +143,7 @@ class Account extends Component {
                   <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.cuentasExpand? 'block' : 'none'}}></i>
                   <h2 className="account-title">Cuentas Bancarias</h2>
                 </div>
-                <div style={{display: this.state.cuentasExpand? 'block' : 'none'}}>
+                <div className="overview-table" style={{display: this.state.cuentasExpand? 'block' : 'none'}}>
                   {/*<Table responsive>*/}
                     {/*<thead>*/}
                     {/*</thead>*/}
@@ -184,12 +184,12 @@ class Account extends Component {
                                       Transferencias entre Mis Cuentas</a>
                                   </li>
 
-                                  <li role="presentation">
-                                    <a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>
-                                  </li>
-                                  <li role="presentation">
-                                    <a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>
-                                  </li>
+                                  {/*<li role="presentation">*/}
+                                    {/*<a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>*/}
+                                  {/*</li>*/}
+                                  {/*<li role="presentation">*/}
+                                    {/*<a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>*/}
+                                  {/*</li>*/}
 
                                 </DropdownMenu>
                               </Dropdown>
@@ -231,19 +231,19 @@ class Account extends Component {
                                   <DropdownMenu tag="ul">
                                       <li role="presentation">
                                         <a href=""  role="menuitem" className="squaren-btn-item">
-                                          Transferir a Terceros</a>
+                                          Pagar</a>
                                       </li>
-                                      <li role="presentation">
-                                        <a href=""  role="menuitem" className="squaren-btn-item">
-                                          Transferencias entre Mis Cuentas</a>
-                                      </li>
+                                      {/*<li role="presentation">*/}
+                                        {/*<a href=""  role="menuitem" className="squaren-btn-item">*/}
+                                          {/*Transferencias entre Mis Cuentas</a>*/}
+                                      {/*</li>*/}
 
-                                      <li role="presentation">
-                                        <a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>
-                                      </li>
-                                      <li role="presentation">
-                                        <a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>
-                                      </li>
+                                      {/*<li role="presentation">*/}
+                                        {/*<a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>*/}
+                                      {/*</li>*/}
+                                      {/*<li role="presentation">*/}
+                                        {/*<a href=""  role="menuitem" className="squaren-btn-item">Cartolas Oficiales</a>*/}
+                                      {/*</li>*/}
 
                                   </DropdownMenu>
                                 </Dropdown>
