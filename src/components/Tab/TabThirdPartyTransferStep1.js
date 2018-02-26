@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Tab.css';
 import { Button } from 'react-bootstrap';
 import button1 from '../../assets/images/button1.png';
-import TableTransfer from "../Table/TableTransfer";
+import Table from "../Table/Table";
 
 class Tab1 extends Component {
      //Constructor 
@@ -44,7 +44,7 @@ class Tab1 extends Component {
                             <span><img width="70" src={button1} alt="scotia button1" /></span>   
                         </div>
                     </div>
-                    <TableTransfer items={users} />
+                    <Table items={users} />
                     <span className="pushBot">
                         <Button className="accept">Aceptar</Button>
                         <Button className="cancel">Cancelar</Button>                       
