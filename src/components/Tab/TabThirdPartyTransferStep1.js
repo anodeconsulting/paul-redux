@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Tab.css';
 import { Button } from 'react-bootstrap';
 import button1 from '../../assets/images/button1.png';
-import Table from "../Table/Table";
+import TableThirdParty from "../Table/TableThirdParty";
 
 class Tab1 extends Component {
      //Constructor 
@@ -44,7 +44,7 @@ class Tab1 extends Component {
                             <span><img width="70" src={button1} alt="scotia button1" /></span>   
                         </div>
                     </div>
-                    <Table items={users} />
+                    <TableThirdParty items={users} />
                     <span className="pushBot">
                         <Button className="accept">Aceptar</Button>
                         <Button className="cancel">Cancelar</Button>                       

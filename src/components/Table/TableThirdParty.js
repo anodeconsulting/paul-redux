@@ -37,13 +37,13 @@ function priceFormatter(cell, row) {
                 <br />
                 <div>
                     <BootstrapTable
-                    data={ item }
+                    data={ users }
                     search={ true }
                     hover
                     pagination>
-                    <TableHeaderColumn dataField='posted_date' isKey dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' searchable={ false }>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' dataFormat={ priceFormatter } searchable={ false }>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='bank' isKey dataSort>Date</TableHeaderColumn>
+                    <TableHeaderColumn dataField='name' searchable={ false }>Description</TableHeaderColumn>
+                    <TableHeaderColumn dataField='phone' dataFormat={ priceFormatter } searchable={ false }>Amount</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
