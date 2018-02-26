@@ -7,6 +7,7 @@ export function GetAccounts() {
           })
           .then((response) => response.json())
           .then((res) => {
+            console.log(res)
             resolve(res);
           })
           .catch((error) => {
