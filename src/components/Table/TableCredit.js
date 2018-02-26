@@ -7,7 +7,7 @@ function priceFormatter(cell, row) {
     return `$ ${cell}`;
   }
   
-  class Table extends Component {
+  class TableCredit extends Component {
   
     //Constructor 
     constructor(props) {
@@ -17,18 +17,24 @@ function priceFormatter(cell, row) {
     render() {
         const users = [];
         users.push({
-            name: 'LEONEL',
-            rut: '11.000.000-k',
-            bank: 'Banco de Chile',
-            phone:'123456683',
-            Email:'qwert@scotiabank.com'          
+            date: '13/03/2016',
+            couta: '004',
+            estado: 'Pendiente',
+            valor:'2.563'
         });
         users.push({
-            name: 'CARLOS',
-            rut: '11.000.000-k',
-            bank: 'Scotiabank',
-            phone:'564534362',
-            Email:'qwert@scotiabank.com'          
+            date: '12/03/2016',
+            couta: '003',
+            estado: 'Pendiente',
+            valor:'3.143'
+         
+        });
+        users.push({
+            date: '01/01/2016',
+            couta: '002',
+            estado: 'Pendiente',
+            valor:'1.222'
+         
         });
         const item = this.props.items;
         return(
@@ -37,13 +43,14 @@ function priceFormatter(cell, row) {
                 <br />
                 <div>
                     <BootstrapTable
-                    data={ item }
+                    data={ users }
                     search={ true }
                     hover
                     pagination>
-                    <TableHeaderColumn dataField='posted_date' dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' searchable={ false }>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' isKey dataFormat={ priceFormatter } searchable={ false }>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='date' isKey dataSort>Fecha de Vencimiento</TableHeaderColumn>
+                    <TableHeaderColumn dataField='couta' searchable={ false } dataSort>N° Cuota</TableHeaderColumn>
+                    <TableHeaderColumn dataField='estado' searchable={ false } dataSort>Estado</TableHeaderColumn>
+                    <TableHeaderColumn dataField='valor' searchable={ false } dataSort>Valor Cuota ($)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
@@ -56,4 +63,4 @@ function priceFormatter(cell, row) {
     }
 }
 
-export default Table;
+export default TableCredit;

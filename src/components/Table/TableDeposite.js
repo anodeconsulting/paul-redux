@@ -7,7 +7,7 @@ function priceFormatter(cell, row) {
     return `$ ${cell}`;
   }
   
-  class Table extends Component {
+  class TableDeposite extends Component {
   
     //Constructor 
     constructor(props) {
@@ -15,21 +15,6 @@ function priceFormatter(cell, row) {
     }
     
     render() {
-        const users = [];
-        users.push({
-            name: 'LEONEL',
-            rut: '11.000.000-k',
-            bank: 'Banco de Chile',
-            phone:'123456683',
-            Email:'qwert@scotiabank.com'          
-        });
-        users.push({
-            name: 'CARLOS',
-            rut: '11.000.000-k',
-            bank: 'Scotiabank',
-            phone:'564534362',
-            Email:'qwert@scotiabank.com'          
-        });
         const item = this.props.items;
         return(
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
@@ -41,9 +26,10 @@ function priceFormatter(cell, row) {
                     search={ true }
                     hover
                     pagination>
-                    <TableHeaderColumn dataField='posted_date' dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' searchable={ false }>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' isKey dataFormat={ priceFormatter } searchable={ false }>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='posted_date' isKey dataSort>Fecha</TableHeaderColumn>
+                    <TableHeaderColumn dataField='description' searchable={ false } dataSort>Description</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataMonto' searchable={ false } dataSort>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataSaldo' searchable={ false } dataSort>Saldo($)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
@@ -56,4 +42,4 @@ function priceFormatter(cell, row) {
     }
 }
 
-export default Table;
+export default TableDeposite;
