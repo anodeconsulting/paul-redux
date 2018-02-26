@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import './Transaction.css';
 import { Button, Alert } from 'react-bootstrap';
 import button1 from '../../assets/images/button1.png';
-import Table from "../Table/Table";
+import TableMutualFund from "../Table/TableMutualFund";
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
+import {GetMortgageTransactions} from "../../services/GetMortgageTransactions";
 
 class MutualFundTransaction extends Component {
      //Constructor 
@@ -12,6 +13,7 @@ class MutualFundTransaction extends Component {
         super(props);
         // Assign state itself, and a default value for items
         this.state = {
+            length: 2,
             show: true
         };
         this.handleDismiss = this.handleDismiss.bind(this);
@@ -19,6 +21,21 @@ class MutualFundTransaction extends Component {
 
     handleDismiss(){
       this.setState({ show: false });
+    }
+
+    componentDidMount(){
+      GetMortgageTransactions().then((result) => {
+        let data = result.transactions;
+        for(let i=0;i<data.length;i++){
+          data[i].dataAmount = data[i].transaction_amount.amount;
+          data[i].cuenta = "Depósito Plazo Fijo *** 0056";
+          data[i].desc = "<Glosa Scotiaweb Inv >Inversiones";
+          data[i].due_date= data[i].due_date[0].toString()+'-'+data[i].due_date[1].toString()+'-'+data[i].due_date[2].toString();
+        } 
+        // console.log(data);
+        this.setState({items: data})  
+        this.setState({length: data.length})  
+      });
     }
 
     render() {
@@ -55,7 +72,7 @@ class MutualFundTransaction extends Component {
             <div>
             <div className="RUIFW-row mrgn-btm-10 row">
                         <div className="RUIFW-col-6 col-sm-6">
-                            <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  (2)</h5>
+                            <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  ({this.state.length})</h5>
                         </div>
                         <div className="RUIFW-col-6 txt-right col-sm-6">
                             <span><img width="70" src={button1} alt="scotia button1" /></span>   
@@ -63,7 +80,7 @@ class MutualFundTransaction extends Component {
                     </div><br />
               <div id="Body">  
                 {/* react bootstrap table */}
-                <Table items={this.state.items}/>
+                <TableMutualFund items={this.state.items}/>
               </div>
             </div>
           </div>

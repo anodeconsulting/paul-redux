@@ -10,12 +10,14 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
             <div>
                 <BootstrapTable
                 data={ item }
-                hover>
-                <TableHeaderColumn dataField='name' isKey dataSort>Nombre</TableHeaderColumn>
-                <TableHeaderColumn dataField='rut' dataSort>RUT</TableHeaderColumn>
-                <TableHeaderColumn dataField='bank' dataSort>Banco de Destino</TableHeaderColumn>
-                <TableHeaderColumn dataField='phone' dataSort>N° de Cuenta</TableHeaderColumn>
-                <TableHeaderColumn dataField='email' dataSort>Email</TableHeaderColumn>
+                search={ true }
+                hover
+                pagination>
+                <TableHeaderColumn dataField='date' isKey dataSort>Fecha</TableHeaderColumn>
+                <TableHeaderColumn dataField='desc' dataSort>Descripción</TableHeaderColumn>
+                <TableHeaderColumn dataField='cuenta' dataSort>Cuenta o Tarjeta</TableHeaderColumn>
+                <TableHeaderColumn dataField='Estado' dataSort>Estado</TableHeaderColumn>
+                <TableHeaderColumn dataField='dataAmount' dataSort>Monto</TableHeaderColumn>
                 </BootstrapTable>
             </div>
         );

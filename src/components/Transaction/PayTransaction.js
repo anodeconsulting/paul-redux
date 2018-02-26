@@ -53,6 +53,14 @@ class PayTransaction extends Component {
         <div className="row main2">
           <div className="col-md-9 pushRight">
             <div>
+            <div className="RUIFW-row mrgn-btm-10 row">
+                        <div className="RUIFW-col-6 col-sm-6">
+                            <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  (2)</h5>
+                        </div>
+                        <div className="RUIFW-col-6 txt-right col-sm-6">
+                            <span><img width="70" src={button1} alt="scotia button1" /></span>   
+                        </div>
+                    </div><br />
               <div id="Body">  
                 {/* react bootstrap table */}
                 <Table items={this.state.items}/>

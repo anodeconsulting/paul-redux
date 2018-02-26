@@ -4,6 +4,13 @@ import './Login.css';
 // import { Button } from 'react-bootstrap';
 import RightBox from "../Rightbox/Rightbox";
 import { Link } from "react-router-dom";
+// import {AddTransferD2D} from "../../services/AddTransferD2D";
+// import {AddTransferD2CC} from "../../services/AddTransferD2CC";
+// import {AddCashAdvance} from "../../services/AddCashAdvance";
+// import {GetTransferActivities} from "../../services/GetTransferActivities";
+// import {GetCCDetails} from "../../services/GetCCDetails";
+// import {GetMortgageDetails} from "../../services/GetMortgageDetails";
+// import {GetMortgageTransactions} from "../../services/GetMortgageTransactions";
 
 class Login extends Component {
 
@@ -28,6 +35,30 @@ class Login extends Component {
     onChange(e){
         this.setState({[e.target.name]:e.target.value});
     }
+
+    componentDidMount(){
+        // AddTransferD2D().then((result) => {
+        //     console.log(result);  
+        // });
+        // AddTransferD2CC().then((result) => {
+        //     console.log(result);  
+        // });
+        // AddCashAdvance().then((result) => {
+        //     console.log(result);  
+        // });
+        // GetTransferActivities().then((result) => {
+        //     console.log(result);  
+        // });
+        // GetCCDetails().then((result) => {
+        //     console.log(result);  
+        // });
+        // GetMortgageDetails().then((result) => {
+        //     console.log(result);  
+        // });
+        // GetMortgageTransactions().then((result) => {
+        //     console.log(result);  
+        // });
+      }
 
     render() {
         if (this.state.redirectToReferrer) {
