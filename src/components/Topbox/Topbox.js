@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './Topbox.css';
+import Link from "react-router-dom/es/Link";
 
 class TopBox extends Component {
     render() {
@@ -15,27 +16,18 @@ class TopBox extends Component {
 
 
                 <div className="quick-menu-box chile-quickmenu row">
-                    <div className="col-lg-3 col-sm-6">
-                        <a id="quickMenuBoxLinkForm:tptQuickBoxLink" href="#" className="pay-bill boxsize">
-                            <span>Transferencias a Cuentas en Scotiabank o en Otro Banco</span>
-                        </a>
+                    <div className="col-lg-3 col-sm-6 boxsize pay-bill">
+                        <Link to={`/thirdPartyTransfer`} >Transferencias a Cuentas en Scotiabank o en Otro Banco</Link>
                     </div>
-                    <div className="col-lg-3 col-sm-6">
-                        <a id="quickMenuBoxLinkForm:ftQuickBoxLink" href="#"  className="send-money boxsize">
-                            Transferir entre mis Cuentas<span>Transferencias entre mis Cuentas y Pago de Línea de Crédito</span>
-                        </a>
+                    <div className="col-lg-3 col-sm-6 send-money boxsize">
+                        <Link to={`/accountTransfer`} >Transferencias entre mis Cuentas y Pago de Línea de Crédito</Link>
                     </div>
-                    <div className="col-lg-3 col-sm-6">
-                        <a id="paymentQuickBoxLink" className="transfer boxsize" title="Pagar Servicios"  >
-                            Pagar Servicios<span>Pagos de Servicios en Línea</span>
-                        </a>
+                    <div className="col-lg-3 col-sm-6 transfer boxsize">
+                        <Link to={`#`} >Pagar Servicios<span>Pagos de Servicios en Línea</span></Link>
                     </div>
-                    <div className="col-lg-3 col-sm-6">
-                        <a id="quickMenuBoxLinkForm:cashAdvanceQuickBoxLink" href="#"  className="topup-mobile boxsize">
-                            <span>Avances en Efectivo en una o más Cuotas</span>
-                        </a>
+                    <div className="col-lg-3 col-sm-6 topup-mobile boxsize">
+                        <Link to={`#`} ><span>Avances en Efectivo en una o más Cuotas</span></Link>
                     </div>
-                    <div className="clear"></div>
                 </div>
 
             </div>

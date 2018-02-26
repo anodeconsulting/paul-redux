@@ -4,8 +4,8 @@ import './Rightbox.css';
 class RightBox extends Component {
     constructor(){
         super();
-        this.state = {recommendExpand:false,
-            contactExpand: false
+        this.state = {recommendExpand:true,
+            contactExpand: true
         }
     }
 
@@ -21,6 +21,9 @@ class RightBox extends Component {
         let loginPage;
 
         if(this.props.location.pathname === "/"){
+            this.state.recommendExpand = false;
+            this.state.contactExpand = false;
+
             loginPage =  <div className="right-box">
                                 <div className="row">
                                     <div className="col-sm-1" >

@@ -20,20 +20,20 @@
     border-right: 1px solid #D7D7D7;
 }
 
-.quick-menu-box a.pay-bill {
+.quick-menu-box .pay-bill > a {
     border-top: 7px solid #B5121B;
     nowhitespace: afterproperty;
     color: #B5121B;
 }
-.quick-menu-box a.send-money {
+.quick-menu-box .send-money > a{
     border-top: 7px solid #E20177;
     color: #E20177;
 }
-.quick-menu-box a.transfer {
+.quick-menu-box .transfer > a{
     border-top: 7px solid #0084A9;
     color: #0084A9;
 }
-.quick-menu-box a.topup-mobile {
+.quick-menu-box .topup-mobile > a{
     border-top: 7px solid #8D8B00;
     color: #8D8B00;
 }
@@ -64,7 +64,7 @@
     float: right;
     margin-right: 10px;
 }
-.boxsize{
+.boxsize>a{
     height: 142px;max-width: 250px
 }
 .account-icon{
