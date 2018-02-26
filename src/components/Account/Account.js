@@ -23,7 +23,8 @@ class Account extends Component {
     this.squarebtnCuentas = [...false];
 
     this.state = {
-      items: [],
+      itemsChecking: [],
+      itemsCredit: [],
       resumenExpand:false,
       cuentasExpand: false,
       creditExpand: false,
@@ -34,7 +35,19 @@ class Account extends Component {
 
   componentDidMount(){
     GetAccounts().then((result) => {
-      this.setState({items: result})   
+      let credit = result.filter((item)=>{return !item.type.includes("CTA")});
+      let Checking = result.filter((item)=>{return item.type.includes("CTA")});
+
+        Checking[0].type = "Cuenta Corriente Pesos *** 0343";
+        Checking[1].type = "Cuenta Corriente Pesos *** 9990";
+        Checking[2].type = "Cuenta Pesos *** 1111";
+
+        credit[0].type = "MASTERCARD *** 8981";
+        credit[1].type = "Línea de Crédito *** 0007";
+        credit[2].type = "Crédito Hipotecario*** 0010";
+
+      this.setState({itemsChecking: Checking});
+      this.setState({itemsCredit: credit});
      });
   }
     changeResumen(){
@@ -144,10 +157,10 @@ class Account extends Component {
                   <Table >
                     <thead>
                     </thead>
-                      {this.state.items.map((item,index) =>
+                      {this.state.itemsChecking.map((item,index) =>
                           <tbody key={item.id}>
                           <tr>
-                            <td><Link to={`/account/cheque/${item.id}`}>{item.type}</Link></td>
+                            <td><Link to={`/account/deposite/${item.type}`}>{item.type}</Link></td>
                             <td className="amount">{item.primary_balance.amount}
                               <Dropdown isOpen={this.state.squarebtnArrayCuentas[index]} toggle={()=>{this.toggleCuentas(index)}} tag="li">
                                 <DropdownToggle
@@ -198,10 +211,10 @@ class Account extends Component {
                     <Table >
                       <thead>
                       </thead>
-                        {this.state.items.map((item,index) =>
+                        {this.state.itemsCredit.map((item,index) =>
                             <tbody key={item.id}>
                             <tr>
-                              <td><Link to={`/account/credit/${item.id}`}>{item.type}</Link></td>
+                              <td><Link to={`/credit/credtcard/${item.type}`}>{item.type}</Link></td>
                               <td className="amount">{item.primary_balance.amount}
                                 <Dropdown isOpen={this.state.squarebtnArrayCredit[index]} toggle={()=>{this.toggleCredit(index)}} tag="li">
                                   <DropdownToggle

@@ -5,6 +5,7 @@
     width: 100%;
     margin: 40px 0 30px;
     padding: 0 1.1%;
+    margin-left: 2px!important;
 }
 .quick-menu-box a {
     background: #f1f1f1;
