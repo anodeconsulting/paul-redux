@@ -6,7 +6,7 @@ import Table from "../Table/Table";
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 
-class MutualFundTransaction extends Component {
+class TransferTransaction extends Component {
      //Constructor 
      constructor(props) {
         super(props);
@@ -43,9 +43,9 @@ class MutualFundTransaction extends Component {
         </div>
       }
         return (
-        <div>
+          <div>
             {moduleAlert}
-          <section>           
+            <section>           
         <div className="pushBottom">
           {/* for topbox */}
           <TopBox/>
@@ -53,14 +53,6 @@ class MutualFundTransaction extends Component {
         <div className="row main2">
           <div className="col-md-9 pushRight">
             <div>
-            <div className="RUIFW-row mrgn-btm-10 row">
-                        <div className="RUIFW-col-6 col-sm-6">
-                            <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  (2)</h5>
-                        </div>
-                        <div className="RUIFW-col-6 txt-right col-sm-6">
-                            <span><img width="70" src={button1} alt="scotia button1" /></span>   
-                        </div>
-                    </div><br />
               <div id="Body">  
                 {/* react bootstrap table */}
                 <Table items={this.state.items}/>
@@ -78,4 +70,4 @@ class MutualFundTransaction extends Component {
     }
 }
 
-export default MutualFundTransaction;
+export default TransferTransaction;

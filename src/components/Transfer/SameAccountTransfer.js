@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import './Pay.css';
+import '../Pay/Pay.css';
 import {Tabs, Tab, TabContainer, TabContent, TabPane} from 'react-bootstrap';
-import TabPayStep1 from '../Tab/TabPayStep1';
-import TabPayStep2 from '../Tab/TabPayStep2';
+import TabAccountTransStep1 from '../Tab/TabAccountTransStep1';
+import TabAccountTransStep2 from '../Tab/TabAccountTransStep2';
 import RightBox from "../Rightbox/Rightbox";
 import { Button, Alert } from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
@@ -48,7 +48,7 @@ class Pay extends Component {
         // let moduleLink = <MutualFundStep3 />;
         if(this.state.key !=1){
             module= <Button className="back" onClick={()=>this.handleSelect(1)}>Volver</Button>     
-            console.log(this.state.show);
+            
             if (this.state.show) {
                 moduleAlert = 
                     <Alert bsStyle="warning" onDismiss={this.handleDismiss}>
@@ -65,23 +65,23 @@ class Pay extends Component {
         }
 
         if (this.state.key==3) {
-            return (<Redirect to={'/pay/transaction'}/>)
+            return (<Redirect to={'/transfer/transaction'}/>)
         }
 
         return (
         <div>
-                {moduleAlert}
+          {moduleAlert}
           <section>
             <div className="row">
                 <div className='col-sm-9 divLeft'>
-                    <h1>Pagar Mis Productos </h1>        
+                    <h1>Transferencias entre Mis Cuentas </h1>        
                         <div>
                             <Tabs activeKey={this.state.key} onSelect={this.handleSelect} animation={false} id="noanim-tab-example">
                                 <Tab eventKey={1} title="1. Seleccionar Destino">
-                                    <TabPayStep1 />
+                                    <TabAccountTransStep1 />
                                 </Tab>
                                 <Tab eventKey={2} title="2. Confirmar" disabled={this.state.disabled}>
-                                    <TabPayStep2 />
+                                    <TabAccountTransStep2 />
                                 </Tab>
                             </Tabs>
                         </div>  

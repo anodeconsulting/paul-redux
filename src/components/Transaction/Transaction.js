@@ -7,6 +7,7 @@ import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import Table from "../Table/Table";
+import { location } from 'react-router';
 
 class Transaction extends Component {
 
@@ -20,22 +21,6 @@ class Transaction extends Component {
       open: true
     };
   }
-  //   const users = [];
-  //   for(let i=0;i<10;i++){
-  //     users.push({
-  //       id: i,
-  //       posted_date: '201'+i,
-  //       description: 'description' + i,
-  //       transaction_amount:{
-  //         amount:i
-  //       }
-  //     });
-  //   }
-  //   // Assign state itself, and a default value for items
-  //   this.state = {
-  //     users: users
-  //   };
-  // }
 
   componentDidMount(){
     GetTransactions().then((result) => {
@@ -48,15 +33,16 @@ class Transaction extends Component {
   }
 
   render() {
+    let pathName = this.props.location.pathname.split('/')[3];
     let module = 
     <div className="product-title">
-      <span className="product-name">Cuenta Corriente*** 0002</span> 
+      <span className="product-name">{pathName}</span> 
       <span className="product-amt">$ 2.222.222.222</span>
     </div>;
 
     return (
       <section>
-        <div className="row pushBottom">
+        <div className="pushBottom">
           {/* for topbox */}
           <TopBox/>
         </div>
@@ -64,6 +50,7 @@ class Transaction extends Component {
           <div className="col-md-3">
           {/*  for accordion */}
             <Leftbox/>
+            <br />
           </div>
           <div className="col-md-6 pushRight">
             {/* for mid box */}

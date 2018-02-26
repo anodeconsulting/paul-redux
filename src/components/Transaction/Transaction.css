@@ -79,3 +79,9 @@ transform:         rotate(90deg);
   margin:5px;
 }
 
+.pushBottom {margin: 0 0 20px 0;}
+.pushRight {margin:0}
+.pushRight1 {padding-left:15px;}
+.pushRight2 {padding-left:50;}
+.floatLeft{float:left;}
+

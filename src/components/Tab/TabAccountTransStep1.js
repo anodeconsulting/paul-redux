@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Tab.css';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap';
 
-class TabPayStep1 extends Component {
+class TabAccountTransStep1 extends Component {
      //Constructor 
      constructor(props) {
         super(props);
@@ -204,8 +204,7 @@ class TabPayStep1 extends Component {
         return (
             <div>
                 <div className="wizard-form-title">
-                    Desde esta página puedes  transferir dinero a una persona en Scotiabank o en otro banco.    
-                </div>
+                Selecciona o ingresa los datos para efectuar la transferencia de fondos                </div>
                 <div className="well col-sm-12">
                     <div className="col-sm-12 pushBot">
                         <div className="col-sm-3">
@@ -244,4 +243,4 @@ class TabPayStep1 extends Component {
     }
 }
 
-export default TabPayStep1;
+export default TabAccountTransStep1;

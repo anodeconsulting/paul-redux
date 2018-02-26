@@ -14,17 +14,32 @@ class Leftbox extends Component {
         data: [
           {
             type: "cheque",
-            accounts:["Cuenta Corriente Pesos *** 0343",
-                      "Cuenta Corriente Pesos *** 9990",
-                      "Cuenta Pesos *** 1111"
+            accounts:[
+              {
+                type:"deposite",
+                account: "Cuenta Corriente Pesos *** 0343",
+              },{
+                type:"deposite",
+                account: "Cuenta Corriente Pesos *** 9990"
+              },{
+                type:"deposite",
+                account:"Cuenta Pesos *** 1111"
+              }                                   
             ]
           },
           {
-            type: "creditcard",
+            type: "credit",
             accounts:[
-              "MASTERCARD *** 8981",
-              "Línea de Crédito *** 0007",
-              "Crédito Hipotecario*** 0010"
+              {
+                type:"credtcard",
+                account: "MASTERCARD *** 8981",
+              },{
+                type:"lineofcredit",
+                account: "Línea de Crédito *** 0007"
+              },{
+                type:"mortgage",
+                account:"Crédito Hipotecario*** 0010"
+              }            
             ]
           },
           {
@@ -51,8 +66,17 @@ class Leftbox extends Component {
       this.setState({ openCredit: !this.state.openCredit});
     }
 
-    handleCard(id){
-    }
+    handleCard(ele1,ele2){
+      // console.log(ele2);
+      // const currentState = this.state.active;
+      // this.setState({ active: !currentState });
+      // var current = document.querySelector('.active');
+      // console.log(this);
+      // if (current) {
+      //     current.classList.remove('active');
+      // }
+      // current.classList.add('active');
+      }
   
     render() {
 
@@ -78,9 +102,9 @@ class Leftbox extends Component {
             </Panel.Title>
             </Panel.Heading>
             <Panel.Collapse>
-              <ListGroup>
+              <ListGroup id="firstList">
                 {this.state.data[0].accounts.map((ele,index)=>
-                    <ListGroupItem key={index}><Link to={'/account/'+ele} onClick={this.handleCard.bind(this, index)}>{ele}</Link></ListGroupItem>
+                    <ListGroupItem key={index}><Link to={'/account/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}>{ele.account}</Link></ListGroupItem>
                 )}
               </ListGroup>
             </Panel.Collapse>
@@ -94,7 +118,7 @@ class Leftbox extends Component {
             <Panel.Collapse>
               <ListGroup>
                 {this.state.data[1].accounts.map((ele,index)=>
-                    <ListGroupItem key={index}><Link to={'/credit/'+ele} onClick={this.handleCard.bind(this, index)}>{ele}</Link></ListGroupItem>
+                    <ListGroupItem key={index}><Link to={'/credit/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account, ele.type)}>{ele.account}</Link></ListGroupItem>
                 )}
               </ListGroup>
             </Panel.Collapse>

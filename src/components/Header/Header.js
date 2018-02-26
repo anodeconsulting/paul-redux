@@ -90,7 +90,7 @@ class Header extends Component {
                                 </li>
 
                                 <li id="addfundstransfer" className="nav-toggle">
-                                    <a href="#" title="Transferir entre Mis Cuentas" >Transferir entre Mis Cuentas </a>
+                                    <Link to={`/accountTransfer`} title="Transferir entre Mis Cuentas" onClick={Header.handleClick.bind(this)}>Transferir entre Mis Cuentas </Link>
                                     <div>Realiza tus transferencias entre tus cuentas y pago de línea de crédito</div>
                                 </li>
 

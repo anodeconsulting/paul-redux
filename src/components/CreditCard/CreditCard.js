@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './CreditCard.css';
 import { GetTransactions } from '../../services/GetTransactions';
+import { GetMortgageTransactions } from '../../services/GetMortgageTransactions';
 import Leftbox from '../Leftbox/Leftbox';
 import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import Table from "../Table/Table";
+import { location } from 'react-router';
 
 class CreditCard extends Component {
 
@@ -20,42 +22,43 @@ class CreditCard extends Component {
       open: false
     };
   }
-  //   const users = [];
-  //   for(let i=0;i<10;i++){
-  //     users.push({
-  //       id: i,
-  //       posted_date: '201'+i,
-  //       description: 'description' + i,
-  //       transaction_amount:{
-  //         amount:i
-  //       }
-  //     });
-  //   }
-  //   // Assign state itself, and a default value for items
-  //   this.state = {
-  //     users: users
-  //   };
-  // }
 
   componentDidMount(){
-    GetTransactions().then((result) => {
-      let data = result.transactions.splice(0,50);
-      for(let i=0;i<data.length;i++){
-        data[i].dataAmount = data[i].transaction_amount.amount;
-      }
-      this.setState({items: data})   
-    });
+    
+    let type = this.props.location.pathname.split('/')[2];
+    console.log(type);
+    if('mortgage' == type){
+      GetMortgageTransactions().then((result) => {
+        console.log(result);
+        let data = result.transactions.splice(0,10);
+        for(let i=0;i<data.length;i++){
+          data[i].dataAmount = data[i].transaction_amount.amount;
+        }
+        this.setState({items: data})   
+      });
+    }else{
+      GetTransactions().then((result) => {
+        let data = result.transactions.splice(0,50);
+        for(let i=0;i<data.length;i++){
+          data[i].dataAmount = data[i].transaction_amount.amount;
+        }
+        this.setState({items: data})   
+      });
+    }
+    
   }
 
-  render() {
+  render() {    
+    let pathName = this.props.location.pathname;
     let module = 
     <div className="product-title">
-      <span className="product-name">MASTERCARD *** 8981</span> 
-      <span className="product-amt">$ 2.222.222.222</span>
+      <span className="product-name">{pathName.split('/')[3]}</span> 
+      <span className="product-amt">$ 2.111.123.134</span>
     </div>;
+
     return (
       <section>
-        <div className="row pushBottom">
+        <div className="pushBottom">
           {/* for topbox */}
           <TopBox/>
         </div>
@@ -70,7 +73,7 @@ class CreditCard extends Component {
               <Midbox/>
             <br />
             <div>
-              <div className="row" id="Body">  
+              <div className="row" id="Body"> 
                 {/* react bootstrap table */}
                 <Table items={this.state.items}/>
               </div>

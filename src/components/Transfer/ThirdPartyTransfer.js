@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './ThirdPartyTransfer.css';
 import {Tabs, Tab, TabContainer, TabContent, TabPane} from 'react-bootstrap';
-import TabTransferStep1 from '../Tab/TabTransferStep1';
+import TabThirdPartyTransferStep1 from '../Tab/TabThirdPartyTransferStep1';
 import RightBox from "../Rightbox/Rightbox";
 
 class ThirdPartyTransfer extends Component {
@@ -15,7 +15,7 @@ class ThirdPartyTransfer extends Component {
                         <div>
                             <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
                                 <Tab eventKey={1} title="1. Seleccionar Destino">
-                                    <TabTransferStep1 />
+                                    <TabThirdPartyTransferStep1 />
                                 </Tab>
                                 <Tab eventKey={2} title="2. Ingresar" disabled>
                                     Tab 2 content

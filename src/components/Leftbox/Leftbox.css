@@ -5,6 +5,7 @@
 }
 
 .panel-danger{
+    width: 90%;
     border:none!important;
     margin-bottom:0!important;
 }
@@ -12,13 +13,23 @@
 .fa-caret-right:before{
     font-family: fontAwesome;
     padding-right:10px;
-    font-size: 14px;
+    font-size: 12px!important;
 }
 
 .fa-caret-down:before{
     font-family: fontAwesome;
     padding-right:10px;
-    font-size: 14px;
+    font-size: 12px!important;
 }
+
+/* #firstList .list-group-item:first-child{
+    background: #d4d4d4;
+    
+} */
+
+#firstList .list-group-item a.active {
+    background-color: #030;
+    border-color: #aed248;
+  }
 
 

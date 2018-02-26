@@ -1,0 +1,7 @@
+.cancel a{
+    float: right;
+    color: #fff!important;
+    font-size: 12px!important;
+    margin: 0 5px!important;
+    background-color: #606060!important;
+}

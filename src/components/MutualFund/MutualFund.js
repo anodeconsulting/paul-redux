@@ -7,6 +7,7 @@ import MutualFundTransaction from '../Transaction/MutualFundTransaction';
 import RightBox from "../Rightbox/Rightbox";
 import { Button, Alert } from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 class MutualFund extends Component {
 
@@ -92,7 +93,7 @@ class MutualFund extends Component {
                                     this.handleSelect(2);
                                 }
                                 }}>Aceptar</Button>
-                            <Button className="cancel">Cancelar</Button>
+                            <Button className="cancel"><Link to="/account">Cancelar</Link></Button>
                         </div>
                 </div>  
                 <div className='col-sm-3'>
