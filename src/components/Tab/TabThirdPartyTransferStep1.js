@@ -45,10 +45,7 @@ class Tab1 extends Component {
                         </div>
                     </div>
                     <TableThirdParty items={users} />
-                    <span className="pushBot">
-                        <Button className="accept">Aceptar</Button>
-                        <Button className="cancel">Cancelar</Button>                       
-                    </span>
+                    
                     
                 </div>       
             </div>
