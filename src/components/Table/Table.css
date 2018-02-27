@@ -3,7 +3,7 @@
 }
 
 .table > tbody > tr > td , .table>thead{
-    font-size: 12px!important;
+    font-size: 12px;
 }
 .table>thead{
     color:#2A5DB0 !important;
