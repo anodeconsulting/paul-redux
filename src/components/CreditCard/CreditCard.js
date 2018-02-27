@@ -38,7 +38,7 @@ class CreditCard extends Component {
     
     let pathName = this.props.location.pathname;
     let type = this.props.location.pathname.split('/')[2];
-    console.log(type);
+    // console.log(type);
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName.split('/')[3]}</span> 

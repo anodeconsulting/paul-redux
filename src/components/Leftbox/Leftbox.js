@@ -95,6 +95,7 @@ class Leftbox extends Component {
       }else{
         module1 = <i className="fas fa-caret-down"></i>
       }
+
       return (
         <div>        
           <Panel bsStyle="danger" id="collapsible-panel-example-3" defaultExpanded={this.state.openCheque}>

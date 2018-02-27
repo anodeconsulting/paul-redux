@@ -26,6 +26,7 @@ class Transaction extends Component {
     GetTransactions().then((result) => {
       let data = result.transactions.splice(0,50);
       for(let i=0;i<data.length;i++){
+        data[i].id = i+1;
         data[i].dataAmount = data[i].transaction_amount.amount;
       }
       this.setState({items: data})   

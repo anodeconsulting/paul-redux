@@ -35,6 +35,7 @@ class Mortgage extends Component {
     GetMortgageTransactions().then((result) => {
       let data = result.transactions;
       for(let i=0;i<data.length;i++){
+        data[i].id = i+1;
         data[i].date = data[i].due_date[0]+'-'+data[i].due_date[1]+'-'+data[i].due_date[2];
         data[i].dividend = "001";
         data[i].dataAmount = data[i].transaction_amount.amount;

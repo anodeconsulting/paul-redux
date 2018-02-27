@@ -1,0 +1,35 @@
+.table{
+    table-layout: fixed!important;
+}
+
+.table > tbody > tr > td , .table>thead{
+    font-size: 12px!important;
+}
+.table>thead{
+    color:#2A5DB0 !important;
+    cursor: pointer;
+}
+
+.react-bs-table-search-form{
+    position:relative;
+    text-align: left;
+}
+
+.td-column-style{
+    color: #2A5DB0;
+    cursor: pointer;
+}
+
+.textAlignRight{
+    margin-bottom: 5px;
+    cursor: pointer;
+    /* padding-left: 20px!important; */
+    color: #2A5DB0;
+    font-weight:500;
+}
+
+.col-style{
+    color: #606060;
+    margin-bottom:5px;
+    font-size: 1.0em;
+}

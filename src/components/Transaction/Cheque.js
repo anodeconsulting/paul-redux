@@ -8,6 +8,7 @@ import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import TableDeposite from "../Table/TableDeposite";
+// import TableMeta from "../Table/TableMeta";
 import { location } from 'react-router';
 
 class Cheque extends Component {
@@ -35,6 +36,7 @@ class Cheque extends Component {
     GetDepositeTransactions().then((result) => {
       let data = result.transactions;
       for(let i=0;i<data.length;i++){
+        data[i].id = i+1;
         data[i].dataSaldo = data[i].running_balance.amount;
         data[i].dataMonto = data[i].transaction_amount.amount;
       }
@@ -74,6 +76,8 @@ class Cheque extends Component {
               <div className="row" id="Body">  
                 {/* react bootstrap table */}
                 <TableDeposite items={this.state.items}/>
+                {/* <TableMeta items={this.state.items}/> */}
+
               </div>
             </div>
           </div>

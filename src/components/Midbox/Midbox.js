@@ -1,19 +1,24 @@
 import React, {Component} from 'react';
 import logo from '../../assets/images/scotiapesoo.png';
 import './Midbox.css';
+import { Panel, ProgressBar } from 'react-bootstrap';
 
 class Midbox extends Component {
     constructor(props) {
       super(props);
   
       this.state = {
-        open: true
+        open: false
       };
 	}
 	
 	componentDidMount(){
 		this.setState({details:this.props.details})
 
+	}
+
+	handleClick(){
+		this.setState({ open: !this.state.open });
 	}
   
     render() {
@@ -26,7 +31,16 @@ class Midbox extends Component {
 		// }else{
 		// 	'2222.222.22'
 		// }
-		
+
+		let module = null;
+		let moduleText = null;
+		if(!this.state.open){
+			moduleText = "Más"
+			module = <i className="fas fa-caret-down"></i>
+		  }else{
+			moduleText="Menos"
+			module = <i className="fas fa-caret-up"></i>
+		}
 	  
       return (
         <div className="account-balance-container row pushRight" id="cc_balance_container_id">
@@ -39,13 +53,14 @@ class Midbox extends Component {
 						</span>
 					</h6>
 					<div className="progress">
-						<div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+						<ProgressBar bsStyle="success" now={40} />
+						<div>
 							<span className="sr-only">% Complete (success)</span>
 						</div>
 					</div>
 				</div>
 				<div className="clear"></div>
-				<div className="floatLeft">
+				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Cupo Disponible</span>
 					<div className="data">
@@ -64,6 +79,7 @@ class Midbox extends Component {
 						<label className="leap-data">$ 200.55.00</label>
 					</div>
 				</div>
+				
 				<div className="clear"></div>
 				<div className="mrgn-top-15 row pushRight1">
 					<div className="RUIFW-col-4 col-sm-4 col-sm-4 ">
@@ -94,11 +110,47 @@ class Midbox extends Component {
 							<label className="leap-data">Espere Facturación</label>
 						</span>
 					</span>
-					<input id="transDetailsForm:ccpaymentbtn" name="transDetailsForm:ccpaymentbtn" value="Pagar " className="RUIFW-btn-primary mrgn-lft-10 btn btn-danger btn btn-danger btn btn-danger"
+					<input id="transDetailsForm" name="transDetailsForm:ccpaymentbtn" value="Pagar " className="RUIFW-btn-primary mrgn-lft-10 btn btn-danger btn btn-danger btn btn-danger"
 					type="submit" />
 				</div>
 				<div className="clear"></div>
-				<a className="toggle-btn col-md-12 ico-angle-up" href="">Más</a>
+				<a className="toggle-btn col-md-12 ico-angle-up" onClick={this.handleClick.bind(this)}><p> {moduleText}{module}</p></a>
+				
+				<Panel id="collapsedDiv" expanded={this.state.open}>
+				<Panel.Collapse>
+					<Panel.Body>
+						<div className="well col-sm-12">
+							<div className="col-sm-4">
+								<span>Fecha de Última Facturación</span><br /><br />
+								<span>26/06/2016</span>
+							</div>
+							<div className="col-sm-4">
+								<span>Fecha Último Pago</span><br /><br />
+								<span>26/06/2016</span>
+							</div>
+							<div className="col-sm-4">
+								<span>Monto Último Pago</span><br /><br />
+								<span>$ 333.322</span>
+							</div>
+						</div>	
+						<div className="well col-sm-12">
+							<div className="col-sm-4">
+								<span>Cupo Total Dólares</span><br /><br />
+								<span>USD 10.122,20</span>
+							</div>
+							<div className="col-sm-4">
+								<span>Cupo Utilizado Dólares</span><br /><br />
+								<span>USD 12.111,12</span>
+							</div>
+							<div className="col-sm-4">
+								<span>Saldo del Último Estado de Cuenta</span><br /><br />
+								<span>USD 22.456,32</span>
+							</div>
+						</div>			
+					</Panel.Body>
+				</Panel.Collapse>
+				</Panel>
+				
 			</div>
         );
     }
