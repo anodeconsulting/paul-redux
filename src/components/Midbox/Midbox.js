@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from '../../assets/images/scotiapesoo.png';
 import './Midbox.css';
 import { Panel, ProgressBar } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 
 class Midbox extends Component {
     constructor(props) {
@@ -23,27 +24,6 @@ class Midbox extends Component {
 	}
   
     render() {
-		// let module1 = null;
-		const details = this.props.details;
-		const curCode = this.props.currency;
-		const type = this.props.type;
-		// console.log(type);
-		let ratio = null;
-		let base = null;
-		if('deposite' === type){
-			base = 4102110.88;
-			ratio = details*100/base;
-		}else if ('creditcard' === type){
-			base = 24110.09;
-			ratio = details*100/base;
-		}else if ('mortgage' === type){
-			base = 3145.67;
-			ratio = details*100/base;
-		}else if('lineofcredit' === type){
-			base = 335001.67;
-			ratio = details*100/base;
-		}
-		 
 		let module = null;
 		let moduleText = null;
 		if(!this.state.open){
@@ -53,9 +33,54 @@ class Midbox extends Component {
 			moduleText="Menos"
 			module = <span className="glyphicon glyphicon-chevron-up"></span>
 		}
-	  
-      return (
-        <div className="account-balance-container row pushRight" id="cc_balance_container_id">
+
+		let module1 = null;		
+		const details = this.props.details;
+		const curCode = this.props.currency;
+		const type = this.props.type;
+		// console.log(type);
+		let ratio = null;
+		let base = null;
+		if('deposite' === type){
+			base = 4102110.88;
+			ratio = details*100/base;
+			module1=
+			<div className="account-balance-container row pushRight" id="cc_balance_container_id">
+				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
+				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
+					<span className="data-label">Saldo Disponible</span>
+					<div className="data">
+						<label className="leap-data">{curCode} {details}</label>
+					</div>
+				</div>
+				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
+					<span className="data-label">Retenciones</span>
+					<div className="data">
+						<label className="leap-data">{curCode} 150.000</label>
+					</div>
+				</div>
+				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
+					<span className="data-label">Saldo Contable</span>
+					<div className="data">
+						<label className="leap-data">{curCode} {details+150}</label>
+					</div>
+				</div>		
+				<div className="clear"></div>
+				</div>			
+			</div>;
+		}else {
+			if ('creditcard' === type){
+				base = 24110.09;
+				ratio = details*100/base;
+			}else if ('mortgage' === type){
+				base = 3145.67;
+				ratio = details*100/base;
+			}else{
+				base = 335001.67;
+				ratio = details*100/base;
+			}
+			module1=
+		<div className="account-balance-container row pushRight" id="cc_balance_container_id">
 				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
 					<h6> Resumen
 						<span id="cc_lbl_credit_limit_id">
@@ -122,8 +147,8 @@ class Midbox extends Component {
 							<label className="leap-data">Espere Facturación</label>
 						</span>
 					</span>
-					<input id="transDetailsForm" name="transDetailsForm:ccpaymentbtn" value="Pagar " className="RUIFW-btn-primary mrgn-lft-10 btn btn-danger btn btn-danger btn btn-danger"
-					type="submit" />
+					<Link to='/pay'><input id="transDetailsForm" name="transDetailsForm:ccpaymentbtn" value="Pagar " className="RUIFW-btn-primary mrgn-lft-10 btn btn-danger btn btn-danger btn btn-danger"
+					type="submit" /></Link>
 				</div>
 				<div className="clear"></div>
 				<a className="toggle-btn col-md-12 ico-angle-up" onClick={this.handleClick.bind(this)}><p> {moduleText}{module}</p></a>
@@ -162,7 +187,14 @@ class Midbox extends Component {
 					</Panel.Body>
 				</Panel.Collapse>
 				</Panel>
-				
+		</div>;		
+		}
+		 
+		
+	  
+      return (
+			<div>	
+				{module1}
 			</div>
         );
     }

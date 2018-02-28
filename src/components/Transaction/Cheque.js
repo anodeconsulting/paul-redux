@@ -8,6 +8,7 @@ import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import TableDeposite from "../Table/TableDeposite";
+// import DropDown from "../Midbox/DropDown";
 // import TableMeta from "../Table/TableMeta";
 // import { location } from 'react-router';
 
@@ -54,7 +55,8 @@ class Cheque extends Component {
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
       <span className="product-amt">$ {this.state.balance}</span>
-    </div>;
+    </div>
+    ;
          
     return (
       <section>
