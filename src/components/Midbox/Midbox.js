@@ -22,8 +22,8 @@ class Midbox extends Component {
 	}
   
     render() {
-		let module1 = null;
-		const details = this.props.details;
+		// let module1 = null;
+		// const details = this.props.details;
 		// console.log(this.state.details);
 		
 		// if('undefined' != details){
@@ -36,10 +36,11 @@ class Midbox extends Component {
 		let moduleText = null;
 		if(!this.state.open){
 			moduleText = "Más"
-			module = <i className="fas fa-caret-down"></i>
+			module = <span className="glyphicon glyphicon-chevron-down"></span>
 		  }else{
 			moduleText="Menos"
-			module = <i className="fas fa-caret-up"></i>
+			// module = <i className="fas fa-chevron-up"></i>
+			module = <span className="glyphicon glyphicon-chevron-up"></span>
 		}
 	  
       return (

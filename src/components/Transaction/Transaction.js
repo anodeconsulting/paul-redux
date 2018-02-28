@@ -7,7 +7,7 @@ import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import Table from "../Table/Table";
-import { location } from 'react-router';
+// import { location } from 'react-router';
 
 class Transaction extends Component {
 

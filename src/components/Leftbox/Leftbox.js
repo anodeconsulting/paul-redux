@@ -85,15 +85,19 @@ class Leftbox extends Component {
       let module = null;
       let module1 = null;
       if(!this.state.openCheque){
-        module = <i className="fas fa-caret-right"></i>
+        // module = <i className="fas fa-caret-right"></i>
+        module = <span className="glyphicon glyphicon-triangle-right"></span>
       }else{
-        module = <i className="fas fa-caret-down"></i>
+        // module = <i className="fas fa-caret-down"></i>
+        module = <span className="glyphicon glyphicon-triangle-bottom"></span>
       }
 
       if(!this.state.openCredit){
-        module1 = <i className="fas fa-caret-right"></i>
+        // module1 = <i className="fas fa-caret-right"></i>
+        module1 = <span className="glyphicon glyphicon-triangle-right"></span>
       }else{
-        module1 = <i className="fas fa-caret-down"></i>
+        // module1 = <i className="fas fa-caret-down"></i>
+        module1 = <span className="glyphicon glyphicon-triangle-bottom"></span>
       }
 
       return (

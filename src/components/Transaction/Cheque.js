@@ -9,7 +9,7 @@ import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import TableDeposite from "../Table/TableDeposite";
 // import TableMeta from "../Table/TableMeta";
-import { location } from 'react-router';
+// import { location } from 'react-router';
 
 class Cheque extends Component {
 

@@ -43,16 +43,16 @@ button.pull-left { margin-left: 0px }
   line-height: 1.1;
 }
 
-.fa-caret-up:before{
+fa-chevron-up:before{
   font-family: fontAwesome;
   padding-right:10px;
-  font-size: 12px!important;
+  font-size: 12px;
 }
 
-.fa-caret-down:before{
+fa-chevron-down:before{
   font-family: fontAwesome;
   padding-right:10px;
-  font-size: 12px!important;
+  font-size: 12px;
 }
 
 .panel-body {
@@ -82,4 +82,9 @@ p{
 .progress-bar-success{
   background-color: #00bb04!important;
   
+}
+
+.glyphicon-chevron-down:before, .glyphicon-chevron-up:before{
+  padding-left:3px;
+  color:#2a5db0;
 }
