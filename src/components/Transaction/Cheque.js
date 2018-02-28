@@ -20,7 +20,8 @@ class Cheque extends Component {
     // Assign state itself, and a default value for items
     this.state = {
       data: '',
-      open: true
+      open: true,
+      curCode: '$'
     };
   }
 
@@ -48,7 +49,7 @@ class Cheque extends Component {
 
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
-
+    let type = this.props.location.pathname.split('/')[2];
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
@@ -70,7 +71,7 @@ class Cheque extends Component {
           <div className="col-md-6 pushRight">
             {/* for mid box */}
             {module}
-            <Midbox details={this.state.details}/>
+            <Midbox details={this.state.balance} currency={this.state.curCode} type = {type}/>
             <br />
             <div>
               <div className="row" id="Body">  

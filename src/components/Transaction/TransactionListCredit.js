@@ -8,7 +8,7 @@ export default class TransactionListCredit extends Component{
 
     render(){
         // const item = this.props.item;
-        let pathName = this.props.location.pathname;
+        // let pathName = this.props.location.pathname;
         let type = this.props.location.pathname.split('/')[2];
         // let module = 
         // <div className="product-title">

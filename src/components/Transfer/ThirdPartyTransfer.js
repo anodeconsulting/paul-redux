@@ -25,7 +25,7 @@ class ThirdPartyTransfer extends Component {
                                     Tab 3 content
                                 </Tab>
                             </Tabs>
-                            <span className="pushBot">
+                            <span className="pushBot row">
                                 <Button className="accept">Aceptar</Button>
                                 <Button className="cancel"><Link to="/account">Cancelar</Link></Button>                       
                             </span>

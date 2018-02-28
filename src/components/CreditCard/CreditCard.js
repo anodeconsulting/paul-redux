@@ -21,7 +21,8 @@ class CreditCard extends Component {
     this.state = {
       type:'',
       balance:'',
-      open: false
+      open: false,
+      curCode: '$'
     };
   }
 
@@ -29,7 +30,8 @@ class CreditCard extends Component {
 
     GetCCDetails().then((result) => {
       let balance = result.primary_balance.amount || 0;
-      this.setState({balance: balance})   
+      this.setState({balance: balance});
+      this.setState({details: result});    
     });
     
   }
@@ -63,7 +65,7 @@ class CreditCard extends Component {
           <div className="col-md-6 pushRight">
             {/* for mid box */}
               {module}
-              <Midbox/>
+              <Midbox details={this.state.balance} currency={this.state.curCode} type = {type}/>
             <br />
             <div>
               <div className="row" id="Body"> 

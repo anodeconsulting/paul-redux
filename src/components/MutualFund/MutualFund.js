@@ -71,7 +71,7 @@ class MutualFund extends Component {
           {moduleAlert}
           <section>
             <div className="row">
-                <div className='well col-sm-9 divLeft'>
+                <div className='well col-sm-9 div-border'>
                     <h1>Invierte o Rescata tu Fondo Mutuo </h1>        
                         <div>
                             <Tabs activeKey={this.state.key} onSelect={this.handleSelect} animation={false} id="noanim-tab-example">
@@ -83,7 +83,7 @@ class MutualFund extends Component {
                                 </Tab>
                             </Tabs>
                         </div>
-                        <div className="btnStyle">
+                        <div className="row btnStyle">
                             {module}
                             <Button className="accept" onClick={()=>
                             {

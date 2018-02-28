@@ -17,8 +17,8 @@ class Transaction extends Component {
 
     // Assign state itself, and a default value for items
     this.state = {
-      data: '',
-      open: true
+      open: true,
+      curCode: '$'
     };
   }
 
@@ -29,17 +29,19 @@ class Transaction extends Component {
         data[i].id = i+1;
         data[i].dataAmount = data[i].transaction_amount.amount;
       }
-      this.setState({items: data})   
+      this.setState({items: data})  
+      this.setState({balance:'222222.34'}); 
     });
     
   }
 
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
+    let type = this.props.location.pathname.split('/')[2];
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
-      <span className="product-amt">$ 2.222.222.222</span>
+      <span className="product-amt">$ { this.state.balance }</span>
     </div>;
 
     return (
@@ -57,7 +59,7 @@ class Transaction extends Component {
           <div className="col-md-6 pushRight">
             {/* for mid box */}
             {module}
-            <Midbox/>
+            <Midbox details={this.state.balance} currency={this.state.curCode} type = {type}/>
             <br />
             <div>
               <div className="row" id="Body">  

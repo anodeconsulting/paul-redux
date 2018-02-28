@@ -158,11 +158,11 @@ class MutualFundStep1 extends Component {
                                 onChange={this.handleChange}
                             /> 
                         </div>
-                        <div className="col-sm-4 pushToLeft90">
+                        {/* <div className="col-sm-4 pushToLeft90">
                             <FormControl componentClass="select" placeholder="select" disabled>
                                 <option>$</option>   
                             </FormControl>
-                        </div> 
+                        </div>  */}
                     </div>
                 </div>
                 <div className="col-sm-12 pushBot">
@@ -227,12 +227,12 @@ class MutualFundStep1 extends Component {
                                 onChange={this.handleChange}
                             /> 
                         </div>
-                        <div className="col-sm-4 pushToLeft90">
+                        {/* <div className="col-sm-4 pushToLeft90">
                             <FormControl componentClass="select" placeholder="select">
                                 <option>$</option>   
                                 <option>Cuotas</option>
                             </FormControl>
-                        </div> 
+                        </div>  */}
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">

@@ -8,14 +8,15 @@ class Midbox extends Component {
       super(props);
   
       this.state = {
-        open: false
+		open: false,
+		details:''
       };
 	}
 	
-	componentDidMount(){
-		this.setState({details:this.props.details})
-
-	}
+	// componentDidMount(){
+	// 	this.setState({details:this.props.details})
+	// 	console.log(this.props.details);
+	// }
 
 	handleClick(){
 		this.setState({ open: !this.state.open });
@@ -23,15 +24,26 @@ class Midbox extends Component {
   
     render() {
 		// let module1 = null;
-		// const details = this.props.details;
-		// console.log(this.state.details);
-		
-		// if('undefined' != details){
-		// 	let module1= details.primary_balance.amount;
-		// }else{
-		// 	'2222.222.22'
-		// }
-
+		const details = this.props.details;
+		const curCode = this.props.currency;
+		const type = this.props.type;
+		// console.log(type);
+		let ratio = null;
+		let base = null;
+		if('deposite' === type){
+			base = 4102110.88;
+			ratio = details*100/base;
+		}else if ('creditcard' === type){
+			base = 24110.09;
+			ratio = details*100/base;
+		}else if ('mortgage' === type){
+			base = 3145.67;
+			ratio = details*100/base;
+		}else if('lineofcredit' === type){
+			base = 335001.67;
+			ratio = details*100/base;
+		}
+		 
 		let module = null;
 		let moduleText = null;
 		if(!this.state.open){
@@ -39,7 +51,6 @@ class Midbox extends Component {
 			module = <span className="glyphicon glyphicon-chevron-down"></span>
 		  }else{
 			moduleText="Menos"
-			// module = <i className="fas fa-chevron-up"></i>
 			module = <span className="glyphicon glyphicon-chevron-up"></span>
 		}
 	  
@@ -50,11 +61,11 @@ class Midbox extends Component {
 						<span id="cc_lbl_credit_limit_id">
 							<a href="" className="RUIFW-tooltip" data-toggle="tooltip" title="" data-placement="auto" data-original-title="Cupo Autorizado en Pesos">
 								<span className="icon-info-sign"></span>
-							</a> Cupo Total: &nbsp;$ 2222.222.22
+							</a> Cupo Total: &nbsp;{curCode} {details} 
 						</span>
 					</h6>
 					<div className="progress">
-						<ProgressBar bsStyle="success" now={40} />
+						<ProgressBar bsStyle="success" now={ratio} />
 						<div>
 							<span className="sr-only">% Complete (success)</span>
 						</div>
@@ -65,19 +76,19 @@ class Midbox extends Component {
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Cupo Disponible</span>
 					<div className="data">
-						<label className="leap-data">$ 100.90.00</label>
+						<label className="leap-data">{curCode} {(base*0.234).toFixed(2)}</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Cupo Utilizado</span>
 					<div className="data">
-						<label className="leap-data">$ 222.00</label>
+						<label className="leap-data">{curCode} {(base*0.145).toFixed(2)}</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Pago Mínimo</span>
 					<div className="data">
-						<label className="leap-data">$ 200.55.00</label>
+						<label className="leap-data">{curCode} {(base*0.567).toFixed(2)}</label>
 					</div>
 				</div>
 				
@@ -86,13 +97,13 @@ class Midbox extends Component {
 					<div className="RUIFW-col-4 col-sm-4 col-sm-4 ">
 						<span className="data-label">Monto Facturado</span>
 						<div className="data">
-							<label className="leap-data">$ 111.90.00</label>
+							<label className="leap-data">{curCode} {(base*0.213).toFixed(2)}</label>
 						</div>
 					</div>
 					<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 						<span className="data-label ">Saldo Disponible Avance</span>
 						<div className="data">
-							<label className="leap-data">$ 5500.90.00</label>
+							<label className="leap-data">{curCode} {(base*0.002).toFixed(2)}</label>
 						</div>
 					</div>
 					</div>
@@ -117,7 +128,7 @@ class Midbox extends Component {
 				<div className="clear"></div>
 				<a className="toggle-btn col-md-12 ico-angle-up" onClick={this.handleClick.bind(this)}><p> {moduleText}{module}</p></a>
 				
-				<Panel id="collapsedDiv" expanded={this.state.open}>
+				<Panel id="collapsedDiv" expanded={this.state.open} onToggle={()=> this.handleClick.bind(this)}>
 				<Panel.Collapse>
 					<Panel.Body>
 						<div className="well col-sm-12">

@@ -28,7 +28,8 @@ class Mortgage extends Component {
         let balance = result.primary_balance.amount || 0;
         let curCode = result.primary_balance.currency_code || '$';
         this.setState({balance: balance});
-        this.setState({curCode: curCode})   
+        this.setState({curCode: curCode});
+        this.setState({details: result});    
       });
 
 
@@ -48,6 +49,7 @@ class Mortgage extends Component {
   render() {  
     
     let pathName = this.props.location.pathname;
+    let type = this.props.location.pathname.split('/')[2];
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName.split('/')[3]}</span> 
@@ -68,7 +70,7 @@ class Mortgage extends Component {
           <div className="col-md-6 pushRight">
             {/* for mid box */}
               {module}
-              <Midbox/>
+              <Midbox details={this.state.balance} currency={this.state.curCode} type = {type}/>
             <br />
             <div>
               <div className="row" id="Body"> 
