@@ -51,7 +51,8 @@ class Header extends Component {
       let logout;
         if(window.location.pathname !== path){
             loginPage=
-                <div>
+                <Navbar.Collapse>
+                 <div>
                     <Nav >
                         <IndexLinkContainer to={`/account`}>
                             <NavItem eventKey={1} href="#">
@@ -219,6 +220,7 @@ class Header extends Component {
                         </Dropdown>
                     </ul>
                 </div>
+                </Navbar.Collapse>
 
             logout =
                 <div className="logout">
@@ -261,8 +263,12 @@ class Header extends Component {
                 </div>
                 {logout}
                 <Navbar>
-                {loginPage}
+                    <Navbar.Header>
+                        <Navbar.Toggle />
+                    </Navbar.Header>
+                        {loginPage}
                 </Navbar>
+
 
         </div>
         );
