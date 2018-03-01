@@ -30,7 +30,7 @@ class Transaction extends Component {
         data[i].dataAmount = data[i].transaction_amount.amount;
       }
       this.setState({items: data})  
-      this.setState({balance:'222222.34'}); 
+      this.setState({balance:'1064850'}); 
     });
     
   }

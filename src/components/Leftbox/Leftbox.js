@@ -123,7 +123,7 @@ class Leftbox extends Component {
             </Panel.Title>
             </Panel.Heading>
             <Panel.Collapse>
-              <ListGroup>
+              <ListGroup id="secondList">
                 {this.state.data[1].accounts.map((ele,index)=>
                     <ListGroupItem key={index}><Link to={'/credit/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account, ele.type)}>{ele.account}</Link></ListGroupItem>
                 )}

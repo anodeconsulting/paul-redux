@@ -27,7 +27,7 @@ class Mortgage extends Component {
     GetMortgageDetails().then((result) => {
         let balance = result.primary_balance.amount || 0;
         let curCode = result.primary_balance.currency_code || '$';
-        this.setState({balance: balance});
+        this.setState({balance: "5150654"});
         this.setState({curCode: curCode});
         this.setState({details: result});    
       });

@@ -30,7 +30,7 @@ class Cheque extends Component {
     GetDepositeDetails().then((result) => {
       // console.log(result);
       let balance = result.available_balance.amount || 0;
-      this.setState({balance: balance});  
+      this.setState({balance: "32925"});  
       this.setState({details: result}); 
       // console.log(this.state.details); 
     });

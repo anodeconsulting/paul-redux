@@ -21,4 +21,7 @@
     border-color: #aed248;
   }
 
+#firstList a, #secondList a{
+    color: #2A5DB0;
+}
 
