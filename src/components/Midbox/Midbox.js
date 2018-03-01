@@ -35,7 +35,7 @@ class Midbox extends Component {
 		}
 
 		let module1 = null;		
-		const details = this.props.details;
+		const details = Number(this.props.details);
 		const curCode = this.props.currency;
 		const type = this.props.type;
 		// console.log(type);
@@ -44,6 +44,7 @@ class Midbox extends Component {
 		if('deposite' === type){
 			base = 4102110.88;
 			ratio = details*100/base;
+			if(details){
 			module1=
 			<div className="account-balance-container row pushRight" id="cc_balance_container_id">
 				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
@@ -56,7 +57,7 @@ class Midbox extends Component {
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
 					<span className="data-label">Retenciones</span>
 					<div className="data">
-						<label className="leap-data">{curCode} 150.000</label>
+						<label className="leap-data">{curCode} 150</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
@@ -68,17 +69,21 @@ class Midbox extends Component {
 				<div className="clear"></div>
 				</div>			
 			</div>;
+			}
 		}else {
 			if ('creditcard' === type){
-				base = 24110.09;
+				base = 8000000.09;
 				ratio = details*100/base;
 			}else if ('mortgage' === type){
-				base = 3145.67;
+				base = 9000000.67;
 				ratio = details*100/base;
 			}else{
-				base = 335001.67;
+				base = 4000000.67;
 				ratio = details*100/base;
 			}
+			// console.log(details)
+			// console.log(ratio);
+			if(details){
 			module1=
 		<div className="account-balance-container row pushRight" id="cc_balance_container_id">
 				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
@@ -189,7 +194,7 @@ class Midbox extends Component {
 				</Panel>
 		</div>;		
 		}
-		 
+	}
 		
 	  
       return (
