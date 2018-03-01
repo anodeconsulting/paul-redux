@@ -2,20 +2,19 @@ import React, {Component} from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import Calendar from "../Calendar/Calendar";
 import {Tabs, Tab} from 'react-bootstrap';
+import MyLargeModal from './MyLargeModal';
 
-function priceFormatter(cell, row) {
-    return `$ ${cell}`;
-  }
-  
-  class TableMortgage extends Component {
-  
-    //Constructor 
+class ExtraComponent extends Component {
     constructor(props) {
-      super(props);
+        super(props);
+        this.state = {
+          lgShow: false
+        };
     }
 
-    expandComponent(row) {
-        return (
+    render() {
+      let lgClose = () => this.setState({ lgShow: false });
+      return (
         <div className="row">
             <div className="col-sm-12 col-style">
                 <div className="col-sm-2">
@@ -28,7 +27,7 @@ function priceFormatter(cell, row) {
                     <span>26/06/2016</span>
                 </div>
                 <div className="col-sm-2">
-                    <span className="textAlignRight">Imprimir </span><br />
+                    <span className="textAlignRight" onClick={() => this.setState({ lgShow: true })}>Imprimir </span><br />
                 </div>
             </div><br />
             <div className="col-sm-12 col-style">
@@ -117,7 +116,26 @@ function priceFormatter(cell, row) {
                     <span className="textAlignRight"></span><br />
                 </div>
             </div>
+            <MyLargeModal show={this.state.lgShow} onHide={lgClose} />
         </div>
+      );
+    }
+  }
+
+function priceFormatter(cell, row) {
+    return `$ ${cell}`;
+  }
+  
+  class TableMortgage extends Component {
+  
+    //Constructor 
+    constructor(props) {
+      super(props);
+    }
+
+    expandComponent(row) {
+        return (
+        <ExtraComponent />
         );
       }
 

@@ -159,8 +159,8 @@ class TabPayStep1 extends Component {
                 </div>
             </div>;
         }else{
-            if("Selecciona cuenta de oirgen"!= this.state.valueA ) {
-                if("Crédito Educación *** 0013" != this.state.valueA ) {
+            if("Selecciona cuenta de oirgen"!== this.state.valueA ) {
+                if("Crédito Educación *** 0013" !== this.state.valueA ) {
                     module2_1=
                      <ControlLabel className="labelSet">Para ver más información haga clic aquí</ControlLabel>;
                  }
