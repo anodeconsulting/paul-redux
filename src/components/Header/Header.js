@@ -16,7 +16,8 @@ class Header extends Component {
               gear: false,
               question: false,
               GearOpen: false,
-              QuestionOpen: false
+              QuestionOpen: false,
+              showIcon:true
           };
         }
 
@@ -44,6 +45,12 @@ class Header extends Component {
             });
         }
 
+        displayIcon(){
+            this.setState({
+                showIcon: !this.state.showIcon
+            });
+        }
+
       render() {
           const path = this.state.pathBase;
 
@@ -64,9 +71,6 @@ class Header extends Component {
                                 Mis Movimientos
                             </NavItem>
                         </IndexLinkContainer>
-                        {/*<NavItem eventKey={2} href="#" >*/}
-                            {/*Mis Movimientos*/}
-                        {/*</NavItem>*/}
                         <NavDropdown eventKey={3} title="Pagar" id="Pager" >
                             <li id="billpayment" className="nav-toggle">
                                 <a href="" title="Pagar Servicios" >Pagar Servicios</a>
@@ -133,7 +137,7 @@ class Header extends Component {
                     </Nav>
 
 
-                    <ul className="nav navbar-nav floatRight navIcon-ul question">
+                    <ul className="nav navbar-nav floatRight navIcon-ul question" style={{display: this.state.showIcon? 'block' : 'none'}}>
                         <Dropdown isOpen={this.state.QuestionOpen} toggle={this.toggle2} tag="li">
                             <DropdownToggle
                                 tag="a"
@@ -164,7 +168,7 @@ class Header extends Component {
                         </Dropdown>
                     </ul>
 
-                    <ul className="nav navbar-nav floatRight navIcon-ul gear">
+                    <ul className="nav navbar-nav floatRight navIcon-ul gear" style={{display: this.state.showIcon? 'block' : 'none'}}>
                         <Dropdown isOpen={this.state.GearOpen} toggle={this.toggle} tag="li">
                             <DropdownToggle
                                 tag="a"
@@ -251,7 +255,7 @@ class Header extends Component {
 
 
         return (
-            <div className="navbar-border">
+            <div className="navbar-border" >
                 <div className="navbar-logo">
                     <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
                         <span className="RUIFW-sr sr-only sr-only"></span>
@@ -264,7 +268,7 @@ class Header extends Component {
                 {logout}
                 <Navbar>
                     <Navbar.Header>
-                        <Navbar.Toggle />
+                        <Navbar.Toggle onClick={()=>{this.displayIcon();}} />
                     </Navbar.Header>
                         {loginPage}
                 </Navbar>

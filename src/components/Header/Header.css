@@ -38,12 +38,23 @@
     .container {
         width: auto !important;
     }
+    .nav-toggle{
+        width: 100%;
+        float: none;
+    }
+    .nav >li{
+        font-size: 15px;
+    }
 }
 
 
 .navbar-collapse.collapse.in{
     background-color: #f8f8f8 !important;
 }
+
+/*.navbar-collapse.collapse.in .navIcon-ul{*/
+    /*display: none;*/
+/*}*/
 
 .container>.navbar-collapse > div>ul{
     margin-top: 3px!important;
@@ -57,7 +68,7 @@
     font-size: 25px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 960px) {
     .navbar {
         background: #d81e05 !important;
         border-radius: 0 !important;
@@ -80,9 +91,21 @@
     .navbar-collapse.collapse>div>ul> li> a{
         color: white !important;
     }
+    .nav-toggle{
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+    .nav >li{
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 960px) and (min-width: 767px) {
+    .navbar {
+        background: #d81e05 !important;
+        border-radius: 0 !important;
+    }
     .navbar-content {
         width: auto;
         margin: auto;
@@ -97,6 +120,20 @@
 
     .container {
         width: auto !important;
+    }
+    .nav-toggle{
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+    .nav >li{
+        font-size: 14px;
+    }
+    .navbar-nav {
+        margin: 7.5px -15px!important;
+    }
+    .navbar-collapse.collapse>div>ul> li> a{
+        color: white !important;
     }
 }
 
@@ -125,9 +162,7 @@
     color: #2a5db0 !important;
 }
 
-.nav >li{
-    font-size: 15px;
-}
+
 
 .nav .dropdown-menu > li > a:focus{
     background-color: white !important;
@@ -153,11 +188,7 @@
     margin-left:-15px !important;
 }
 
-.nav-toggle{
-    width: 50%;
-    float: left;
-    position: relative;
-}
+
 
 .nav-toggle3{
     width: 33%;

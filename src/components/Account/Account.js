@@ -105,7 +105,8 @@ class Account extends Component {
                             <Line percent="100" strokeWidth="3.5" strokeColor="#00bb04" prefixCls="jeremy" trailColor="transparent"  strokeLinecap="butt" />
                           </div>
                         </div>
-                        <span className="absolute progress-number">$ 12.000.000</span>
+                        {/*<span className="absolute progress-number">$ 12.000.000</span>*/}
+                        <div >$ 12.000.000</div>
                       </div>
                     </div>
                     <div className="row progress2">
@@ -118,7 +119,8 @@ class Account extends Component {
                             <Line percent="50" strokeWidth="3.5" strokeColor="#d81e05" prefixCls="jeremy" trailColor="transparent"  strokeLinecap="butt" />
                           </div>
                         </div>
-                        <span className="absolute progress-number">$ -6.000.000</span>
+                        {/*<span className="absolute progress-number">$ -6.000.000</span>*/}
+                        <div >$ -6.000.000</div>
                       </div>
                     </div>
                     <div className="row progrees3">
@@ -131,7 +133,8 @@ class Account extends Component {
                             <Line percent="50" strokeWidth="3.5" strokeColor="#00bb04" prefixCls="jeremy" trailColor="transparent"  strokeLinecap="butt" />
                           </div>
                         </div>
-                        <span className="absolute progress-number">$ 6.000.000</span>
+                        {/*<span className="absolute progress-number">$ 6.000.000</span>*/}
+                        <div >$ 6.000.000</div>
                       </div>
                     </div>
                   </div>
@@ -153,7 +156,7 @@ class Account extends Component {
                           <tr>
                             <td className="amount-title"><Link to={`/account/deposite/${item.type}`}>{item.type}</Link></td>
                             <td className="amount">
-                                <div className="amount-number">$  {item.primary_balance.amount}</div>
+                                <div className="amount-number">${item.primary_balance.amount}</div>
                               <Dropdown isOpen={this.state.squarebtnArrayCuentas[index]} toggle={()=>{this.toggleCuentas(index)}} tag="li">
                                 <DropdownToggle
                                     tag="a"
@@ -205,7 +208,7 @@ class Account extends Component {
                             <tr>
                               <td className="amount-title"><Link to={`/credit/credtcard/${item.type}`}>{item.type}</Link></td>
                               <td className="amount">
-                                <div className="amount-number">$  {item.primary_balance.amount}</div>
+                                <div className="amount-number">${item.primary_balance.amount}</div>
                                 <Dropdown isOpen={this.state.squarebtnArrayCredit[index]} toggle={()=>{this.toggleCredit(index)}} tag="li">
                                   <DropdownToggle
                                       tag="a"
