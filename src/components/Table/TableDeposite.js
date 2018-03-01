@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import Calendar from "../Calendar/Calendar";
 import {Tabs, Tab} from 'react-bootstrap';
-
+import './Table.css';
 function priceFormatter(cell, row) {
     return `$ ${cell}`;
   }
   
-  class Table extends Component {
+class TableDeposite extends Component {
   
     //Constructor 
     constructor(props) {
@@ -15,6 +15,23 @@ function priceFormatter(cell, row) {
     }
 
     expandComponent(row) {
+        // console.log(row);
+        // let amount = row.dataSaldo;
+        // console.log(amount);
+        // const partial = [
+        //     {
+        //         col0: '',
+        //         col1: 'Fecha Contable',
+        //         col2: '26/06/2016',
+        //         col3: 'Imprimir '
+        //     },
+        //     {
+        //         col0: '',
+        //         col1: 'Descripción',
+        //         col2: 'Compra en Líder',
+        //         col3: 'Descargar'
+        //     },
+        // ]
         return (
         <div className="row">
             <div className="col-sm-12 col-style">
@@ -55,7 +72,7 @@ function priceFormatter(cell, row) {
                     <span>De</span>
                 </div>
                 <div className="col-sm-4">
-                    <span>Línea de Crédito *** 0007</span>
+                    <span>Tarjeta de Crédito *** 0008</span>
                 </div>
                 <div className="col-sm-2">
                     <span className="textAlignRight"></span><br />
@@ -118,6 +135,17 @@ function priceFormatter(cell, row) {
                 </div>
             </div>
         </div>
+        // <div>
+        //     <BootstrapTable
+        //             data={ partial }
+        //             >
+        //             <TableHeaderColumn dataField='col0' ></TableHeaderColumn>
+        //             <TableHeaderColumn dataField='col1' >Fecha Contable</TableHeaderColumn>
+        //             <TableHeaderColumn dataField='col2' >Descripción</TableHeaderColumn>
+        //             <TableHeaderColumn dataField='col3' isKey>De</TableHeaderColumn>
+        //     </BootstrapTable>    
+        
+        // </div>
         );
       }
 
@@ -127,27 +155,14 @@ function priceFormatter(cell, row) {
       }
     
     render() {
-        const users = [];
-        users.push({
-            name: 'LEONEL',
-            rut: '11.000.000-k',
-            bank: 'Banco de Chile',
-            phone:'123456683',
-            Email:'qwert@scotiabank.com'          
-        });
-        users.push({
-            name: 'CARLOS',
-            rut: '11.000.000-k',
-            bank: 'Scotiabank',
-            phone:'564534362',
-            Email:'qwert@scotiabank.com'          
-        });
         const item = this.props.items;
         const options = {
             expandRowBgColor: 'rgb(245, 245, 245)'
           };
+
+        
         return(
-            <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+            <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" onSelect={ this.afterTabChanged }>
                 <Tab eventKey={1} title="Últimos Movimientos">
                 <br />
                 <div>
@@ -155,14 +170,15 @@ function priceFormatter(cell, row) {
                     data={ item }
                     options={ options }
                     expandableRow={ this.isExpandableRow }
-                    expandComponent={ this.expandComponent }  
+                    expandComponent={ this.expandComponent }                    
                     search={ true }
                     hover
                     pagination>
-                    <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
+                    <TableHeaderColumn dataField='id' isKey dataSort hidden>Transaction ID</TableHeaderColumn>
                     <TableHeaderColumn dataField='posted_date' dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false }>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' dataFormat={ priceFormatter } searchable={ false }>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false } dataSort>Description</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataMonto' searchable={ false } dataSort>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataSaldo' searchable={ false } dataSort>Saldo($)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
@@ -175,4 +191,4 @@ function priceFormatter(cell, row) {
     }
 }
 
-export default Table;
+export default TableDeposite;

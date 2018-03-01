@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import './Transaction.css';
-import { GetTransactions } from '../../services/GetTransactions';
+import { GetDepositeTransactions } from '../../services/GetDepositeTransactions';
+import { GetDepositeDetails } from '../../services/GetDepositeDetails';
 import Leftbox from '../Leftbox/Leftbox';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
-import Table from "../Table/Table";
+import TableDeposite from "../Table/TableDeposite";
+// import DropDown from "../Midbox/DropDown";
+// import TableMeta from "../Table/TableMeta";
 // import { location } from 'react-router';
 
-class Transaction extends Component {
+class Cheque extends Component {
 
   //Constructor 
   constructor(props) {
@@ -17,20 +20,30 @@ class Transaction extends Component {
 
     // Assign state itself, and a default value for items
     this.state = {
+      data: '',
       open: true,
       curCode: '$'
     };
   }
 
   componentDidMount(){
-    GetTransactions().then((result) => {
-      let data = result.transactions.splice(0,50);
+    GetDepositeDetails().then((result) => {
+      // console.log(result);
+      let balance = result.available_balance.amount || 0;
+      this.setState({balance: balance});  
+      this.setState({details: result}); 
+      // console.log(this.state.details); 
+    });
+
+    GetDepositeTransactions().then((result) => {
+      let data = result.transactions;
       for(let i=0;i<data.length;i++){
         data[i].id = i+1;
-        data[i].dataAmount = data[i].transaction_amount.amount;
+        data[i].dataSaldo = data[i].running_balance.amount;
+        data[i].dataMonto = data[i].transaction_amount.amount;
       }
-      this.setState({items: data})  
-      this.setState({balance:'222222.34'}); 
+      // console.log(data);
+      this.setState({items: data})   
     });
     
   }
@@ -41,9 +54,10 @@ class Transaction extends Component {
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
-      <span className="product-amt">$ { this.state.balance }</span>
-    </div>;
-
+      <span className="product-amt">$ {this.state.balance}</span>
+    </div>
+    ;
+         
     return (
       <section>
         <div className="pushBottom">
@@ -64,7 +78,9 @@ class Transaction extends Component {
             <div>
               <div className="row" id="Body">  
                 {/* react bootstrap table */}
-                <Table items={this.state.items}/>
+                <TableDeposite items={this.state.items}/>
+                {/* <TableMeta items={this.state.items}/> */}
+
               </div>
             </div>
           </div>
@@ -79,11 +95,11 @@ class Transaction extends Component {
 }
 
 // export the connected className
-function mapStateToProps(state){
-  return({
-    users: state.users,
-    // page: Number(state.routing.locationBeforeTransitions.query.page) || 1,
-  })
-}
-export default connect(mapStateToProps) (Transaction)
-// export default Transaction;
+// function mapStateToProps(state){
+//   return({
+//     users: state.users,
+//     // page: Number(state.routing.locationBeforeTransitions.query.page) || 1,
+//   })
+// }
+// export default connect(mapStateToProps) (Cheque)
+export default Cheque;

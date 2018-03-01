@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './Leftbox.css'
 import { Link } from 'react-router-dom';
 import { ListGroup,ListGroupItem,Panel } from 'react-bootstrap';
+import { Mortgage} from '../Mortgage/Mortgage';
 
 class Leftbox extends Component {
     constructor(props, context) {
@@ -31,7 +32,7 @@ class Leftbox extends Component {
             type: "credit",
             accounts:[
               {
-                type:"credtcard",
+                type:"creditcard",
                 account: "MASTERCARD *** 8981",
               },{
                 type:"lineofcredit",
@@ -68,6 +69,7 @@ class Leftbox extends Component {
 
     handleCard(ele1,ele2){
       // console.log(ele2);
+      // return <Mortgage />
       // const currentState = this.state.active;
       // this.setState({ active: !currentState });
       // var current = document.querySelector('.active');
@@ -83,16 +85,21 @@ class Leftbox extends Component {
       let module = null;
       let module1 = null;
       if(!this.state.openCheque){
-        module = <i className="fas fa-caret-right"></i>
+        // module = <i className="fas fa-caret-right"></i>
+        module = <span className="glyphicon glyphicon-triangle-right"></span>
       }else{
-        module = <i className="fas fa-caret-down"></i>
+        // module = <i className="fas fa-caret-down"></i>
+        module = <span className="glyphicon glyphicon-triangle-bottom"></span>
       }
 
       if(!this.state.openCredit){
-        module1 = <i className="fas fa-caret-right"></i>
+        // module1 = <i className="fas fa-caret-right"></i>
+        module1 = <span className="glyphicon glyphicon-triangle-right"></span>
       }else{
-        module1 = <i className="fas fa-caret-down"></i>
+        // module1 = <i className="fas fa-caret-down"></i>
+        module1 = <span className="glyphicon glyphicon-triangle-bottom"></span>
       }
+
       return (
         <div>        
           <Panel bsStyle="danger" id="collapsible-panel-example-3" defaultExpanded={this.state.openCheque}>

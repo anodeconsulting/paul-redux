@@ -1,15 +1,17 @@
 import React, {Component} from 'react';
-import './Transaction.css';
+import './Mortgage.css';
 import { GetTransactions } from '../../services/GetTransactions';
+import { GetMortgageTransactions } from '../../services/GetMortgageTransactions';
 import Leftbox from '../Leftbox/Leftbox';
 import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
-import Table from "../Table/Table";
-// import { location } from 'react-router';
+import TableMortgage from "../Table/TableMortgage";
+import { location } from 'react-router';
+import {GetMortgageDetails} from "../../services/GetMortgageDetails";
 
-class Transaction extends Component {
+class Mortgage extends Component {
 
   //Constructor 
   constructor(props) {
@@ -17,31 +19,41 @@ class Transaction extends Component {
 
     // Assign state itself, and a default value for items
     this.state = {
-      open: true,
-      curCode: '$'
+      open: false
     };
   }
 
   componentDidMount(){
-    GetTransactions().then((result) => {
-      let data = result.transactions.splice(0,50);
+    GetMortgageDetails().then((result) => {
+        let balance = result.primary_balance.amount || 0;
+        let curCode = result.primary_balance.currency_code || '$';
+        this.setState({balance: balance});
+        this.setState({curCode: curCode});
+        this.setState({details: result});    
+      });
+
+
+    GetMortgageTransactions().then((result) => {
+      let data = result.transactions;
       for(let i=0;i<data.length;i++){
         data[i].id = i+1;
+        data[i].date = data[i].due_date[0]+'-'+data[i].due_date[1]+'-'+data[i].due_date[2];
+        data[i].dividend = "001";
         data[i].dataAmount = data[i].transaction_amount.amount;
       }
-      this.setState({items: data})  
-      this.setState({balance:'222222.34'}); 
+      this.setState({items: data})   
     });
     
   }
 
-  render() {
-    let pathName = this.props.location.pathname.split('/')[3];
+  render() {  
+    
+    let pathName = this.props.location.pathname;
     let type = this.props.location.pathname.split('/')[2];
     let module = 
     <div className="product-title">
-      <span className="product-name">{pathName}</span> 
-      <span className="product-amt">$ { this.state.balance }</span>
+      <span className="product-name">{pathName.split('/')[3]}</span> 
+      <span className="product-amt">{this.state.balance} {this.state.curCode}</span>
     </div>;
 
     return (
@@ -54,17 +66,16 @@ class Transaction extends Component {
           <div className="col-md-3">
           {/*  for accordion */}
             <Leftbox/>
-            <br />
           </div>
           <div className="col-md-6 pushRight">
             {/* for mid box */}
-            {module}
-            <Midbox details={this.state.balance} currency={this.state.curCode} type = {type}/>
+              {module}
+              <Midbox details={this.state.balance} currency={this.state.curCode} type = {type}/>
             <br />
             <div>
-              <div className="row" id="Body">  
+              <div className="row" id="Body"> 
                 {/* react bootstrap table */}
-                <Table items={this.state.items}/>
+                <TableMortgage items={this.state.items}/>
               </div>
             </div>
           </div>
@@ -85,5 +96,5 @@ function mapStateToProps(state){
     // page: Number(state.routing.locationBeforeTransitions.query.page) || 1,
   })
 }
-export default connect(mapStateToProps) (Transaction)
+export default connect(mapStateToProps) (Mortgage)
 // export default Transaction;

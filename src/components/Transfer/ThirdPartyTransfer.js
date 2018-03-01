@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './ThirdPartyTransfer.css';
-import {Tabs, Tab, TabContainer, TabContent, TabPane} from 'react-bootstrap';
+import {Button, Tabs, Tab, TabContainer, TabContent, TabPane} from 'react-bootstrap';
 import TabThirdPartyTransferStep1 from '../Tab/TabThirdPartyTransferStep1';
 import RightBox from "../Rightbox/Rightbox";
+import { Link } from "react-router-dom";
 
 class ThirdPartyTransfer extends Component {
 
@@ -24,6 +25,10 @@ class ThirdPartyTransfer extends Component {
                                     Tab 3 content
                                 </Tab>
                             </Tabs>
+                            <span className="pushBot row">
+                                <Button className="accept">Aceptar</Button>
+                                <Button className="cancel"><Link to="/account">Cancelar</Link></Button>                       
+                            </span>
                         </div>        
                 </div>  
                 <div className='col-sm-3'>

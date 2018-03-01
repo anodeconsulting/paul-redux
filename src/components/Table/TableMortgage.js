@@ -7,7 +7,7 @@ function priceFormatter(cell, row) {
     return `$ ${cell}`;
   }
   
-  class Table extends Component {
+  class TableMortgage extends Component {
   
     //Constructor 
     constructor(props) {
@@ -55,7 +55,7 @@ function priceFormatter(cell, row) {
                     <span>De</span>
                 </div>
                 <div className="col-sm-4">
-                    <span>Línea de Crédito *** 0007</span>
+                    <span>Tarjeta de Crédito *** 0008</span>
                 </div>
                 <div className="col-sm-2">
                     <span className="textAlignRight"></span><br />
@@ -127,25 +127,10 @@ function priceFormatter(cell, row) {
       }
     
     render() {
-        const users = [];
-        users.push({
-            name: 'LEONEL',
-            rut: '11.000.000-k',
-            bank: 'Banco de Chile',
-            phone:'123456683',
-            Email:'qwert@scotiabank.com'          
-        });
-        users.push({
-            name: 'CARLOS',
-            rut: '11.000.000-k',
-            bank: 'Scotiabank',
-            phone:'564534362',
-            Email:'qwert@scotiabank.com'          
-        });
-        const item = this.props.items;
         const options = {
             expandRowBgColor: 'rgb(245, 245, 245)'
           };
+        const item = this.props.items;
         return(
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
                 <Tab eventKey={1} title="Últimos Movimientos">
@@ -160,9 +145,10 @@ function priceFormatter(cell, row) {
                     hover
                     pagination>
                     <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='posted_date' dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false }>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' dataFormat={ priceFormatter } searchable={ false }>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='date'  dataSort>Fecha</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dividend' columnClassName='td-column-style' searchable={ false } dataSort>N° Dividendo</TableHeaderColumn>
+                    <TableHeaderColumn dataField='transaction_status' searchable={ false } dataSort>Estado</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataAmount' searchable={ false } dataSort>Valor Dividendo (UF)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
@@ -175,4 +161,4 @@ function priceFormatter(cell, row) {
     }
 }
 
-export default Table;
+export default TableMortgage;

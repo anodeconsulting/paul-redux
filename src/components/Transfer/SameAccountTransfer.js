@@ -73,7 +73,7 @@ class Pay extends Component {
           {moduleAlert}
           <section>
             <div className="row">
-                <div className='col-sm-9 divLeft'>
+                <div className='col-sm-9 div-border'>
                     <h1>Transferencias entre Mis Cuentas </h1>        
                         <div>
                             <Tabs activeKey={this.state.key} onSelect={this.handleSelect} animation={false} id="noanim-tab-example">
@@ -85,7 +85,7 @@ class Pay extends Component {
                                 </Tab>
                             </Tabs>
                         </div>  
-                        <div className="btnStyle">
+                        <div className="btnStyle row">
                             {module}
                             <Button className="accept" onClick={()=>
                             {

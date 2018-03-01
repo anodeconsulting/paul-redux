@@ -15,9 +15,14 @@
     margin-top: 40px;
 
 }
+/*<<<<<<< HEAD*/
 @media screen and (min-width: 960px) {
     .main-footer{
         width: 960px;
+/*=======*/
+/*.main-footer{*/
+    /*width: 100%;margin: auto;position: relative;text-align: left;*/
+/*>>>>>>> da69cc2f7c12b453f1cfc35a90e63de4c73ea08b*/
     }
 }
 

@@ -7,7 +7,7 @@ function priceFormatter(cell, row) {
     return `$ ${cell}`;
   }
   
-  class Table extends Component {
+  class TableCredit extends Component {
   
     //Constructor 
     constructor(props) {
@@ -52,66 +52,10 @@ function priceFormatter(cell, row) {
                     <span></span>
                 </div>
                 <div className="col-sm-4">
-                    <span>De</span>
-                </div>
-                <div className="col-sm-4">
-                    <span>Línea de Crédito *** 0007</span>
-                </div>
-                <div className="col-sm-2">
-                    <span className="textAlignRight"></span><br />
-                </div>
-            </div>
-            <div className="col-sm-12 col-style">
-                <div className="col-sm-2">
-                    <span></span>
-                </div>
-                <div className="col-sm-4">
-                    <span>A</span>
-                </div>
-                <div className="col-sm-4">
-                    <span>Líder</span>
-                </div>
-                <div className="col-sm-2">
-                    <span className="textAlignRight"></span><br />
-                </div>
-            </div>
-            <div className="col-sm-12 col-style">
-                <div className="col-sm-2">
-                    <span></span>
-                </div>
-                <div className="col-sm-4">
-                    <span>N° de Tarjeta</span>
-                </div>
-                <div className="col-sm-4">
-                    <span>*0008</span>
-                </div>
-                <div className="col-sm-2">
-                    <span className="textAlignRight"></span><br />
-                </div>
-            </div>
-            <div className="col-sm-12 col-style">
-                <div className="col-sm-2">
-                    <span></span>
-                </div>
-                <div className="col-sm-4">
                     <span>Ciudad y País</span>
                 </div>
                 <div className="col-sm-4">
                     <span>Santiago, Chile</span>
-                </div>
-                <div className="col-sm-2">
-                    <span className="textAlignRight"></span><br />
-                </div>
-            </div>
-            <div className="col-sm-12 col-style">
-                <div className="col-sm-2">
-                    <span></span>
-                </div>
-                <div className="col-sm-4">
-                    <span>Monto</span>
-                </div>
-                <div className="col-sm-4">
-                    <span>$ 100</span>
                 </div>
                 <div className="col-sm-2">
                     <span className="textAlignRight"></span><br />
@@ -129,18 +73,27 @@ function priceFormatter(cell, row) {
     render() {
         const users = [];
         users.push({
-            name: 'LEONEL',
-            rut: '11.000.000-k',
-            bank: 'Banco de Chile',
-            phone:'123456683',
-            Email:'qwert@scotiabank.com'          
+            id: 1,
+            date: '13/03/2016',
+            couta: '004',
+            estado: 'Pendiente',
+            valor:'2.563'
         });
         users.push({
-            name: 'CARLOS',
-            rut: '11.000.000-k',
-            bank: 'Scotiabank',
-            phone:'564534362',
-            Email:'qwert@scotiabank.com'          
+            id: 2,
+            date: '12/03/2016',
+            couta: '003',
+            estado: 'Pendiente',
+            valor:'3.143'
+         
+        });
+        users.push({
+            id: 3,
+            date: '01/01/2016',
+            couta: '002',
+            estado: 'Pendiente',
+            valor:'1.222'
+         
         });
         const item = this.props.items;
         const options = {
@@ -152,17 +105,18 @@ function priceFormatter(cell, row) {
                 <br />
                 <div>
                     <BootstrapTable
-                    data={ item }
+                    data={ users }
                     options={ options }
                     expandableRow={ this.isExpandableRow }
-                    expandComponent={ this.expandComponent }  
+                    expandComponent={ this.expandComponent }                    
                     search={ true }
                     hover
                     pagination>
                     <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='posted_date' dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false }>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' dataFormat={ priceFormatter } searchable={ false }>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='date' dataSort>Fecha de Vencimiento</TableHeaderColumn>
+                    <TableHeaderColumn dataField='couta' columnClassName='td-column-style' searchable={ false } dataSort>N° Cuota</TableHeaderColumn>
+                    <TableHeaderColumn dataField='estado' searchable={ false } dataSort>Estado</TableHeaderColumn>
+                    <TableHeaderColumn dataField='valor' searchable={ false } dataSort>Valor Cuota ($)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
@@ -175,4 +129,4 @@ function priceFormatter(cell, row) {
     }
 }
 
-export default Table;
+export default TableCredit;

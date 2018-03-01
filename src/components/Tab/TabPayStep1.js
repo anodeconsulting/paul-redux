@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './Tab.css';
-import { Button, Form, FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap';
 
 class TabPayStep1 extends Component {
      //Constructor 
@@ -72,7 +72,6 @@ class TabPayStep1 extends Component {
         let module1 = null;
         let module2 = null;
         let module2_1 = null;
-        let module3 = null;
         if("Cuenta Corriente *** 0001 - $ 2.222.345" === this.state.value){
             module=<ControlLabel className="labelSet">Línea de Crédito *** 0007 $ 33.445</ControlLabel>;
         }else if("Otro Banco" === this.state.value){
