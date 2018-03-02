@@ -1,0 +1,32 @@
+.square-btn{
+    font-size: 25px;
+}
+
+.red{
+    color:#d81e05;
+}
+
+.white{
+    color: white;
+}
+
+.black{
+    color: black;
+}
+
+.arrow-down-btn{
+    position: absolute;
+    right: 8px;
+    top:4px;
+    font-size: 12px;
+}
+
+.square-border{
+    border-color: #BBB!important;
+    border-bottom: 1px solid white!important;
+    border-radius: 3px 3px 0 0!important;
+    box-shadow: none!important;
+    border-top: 1px solid #cccccc!important;
+    border-right: 1px solid #cccccc!important;
+    border-left: 1px solid #cccccc!important;
+}

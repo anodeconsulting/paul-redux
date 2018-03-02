@@ -165,10 +165,7 @@ p {
     float: right!important;
 }
 
-.amount >li{
-    list-style: none;
-    margin-top: -20px;
-}
+
 
 .amount .dropdown ul{
     transform: none!important;
@@ -192,7 +189,7 @@ p {
 
 
 .progressbar{
-    width: 360px;
+    /*width: 360px;*/
 }
 
 .progressbar >div{
@@ -210,9 +207,12 @@ p {
     top:9px;
 }
 .progrees3{
-    height: 60px;
+    /*height: 60px;*/
+    height: 120px;
     border-top: 1px solid #d7d7d7;
-    margin: 0!important;
+    /*margin: 0!important;*/
+    margin-top:55px!important;
+    margin-left: 0!important;
     padding: 15px;
 }
 .progress-chart{
@@ -221,7 +221,9 @@ p {
 }
 .progress2{
     height: 50px;
-    margin: 0!important;
+    /*margin: 0!important;*/
+    margin-top:45px!important;
+    margin-left: 0!important;
     padding: 0 15px;
 }
 .progress1{
@@ -235,3 +237,44 @@ p {
 table{
     margin-bottom: 0!important;
 }
+
+@media (max-width: 766px) {
+    .progrees3{
+        height: 120px;
+        border-top: 1px solid #d7d7d7;
+        margin-top:55px!important;
+        margin-left: 0!important;
+        padding: 15px;
+    }
+
+    .progress2{
+        height: 50px;
+        margin-top:45px!important;
+        margin-left: 0!important;
+        padding: 0 15px;
+    }
+    .amount >li{
+        list-style: none;
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .progrees3{
+        height: 80px;
+        border-top: 1px solid #d7d7d7;
+        margin-top:40px!important;
+        margin-left: 0!important;
+        padding: 15px;
+    }
+    .progress2{
+        height: 50px;
+        margin: 0!important;
+        padding: 0 15px;
+    }
+    .amount >li{
+        list-style: none;
+        margin-top: -20px;
+    }
+}
+

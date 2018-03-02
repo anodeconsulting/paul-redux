@@ -7,6 +7,9 @@ import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import Table from "../Table/Table";
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import Link from "react-router-dom/es/Link";
+import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 // import { location } from 'react-router';
 
 class Transaction extends Component {
@@ -18,7 +21,8 @@ class Transaction extends Component {
     // Assign state itself, and a default value for items
     this.state = {
       open: true,
-      curCode: '$'
+      curCode: '$',
+      redBtn: false
     };
   }
 
@@ -35,6 +39,10 @@ class Transaction extends Component {
     
   }
 
+    redBtnToggle(){
+        this.setState({redBtn: !this.state.redBtn});
+    }
+
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
     let type = this.props.location.pathname.split('/')[2];
@@ -42,6 +50,19 @@ class Transaction extends Component {
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
       <span className="product-amt">$ { this.state.balance }</span>
+      <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
+        <DropdownToggle
+            tag="a"
+            data-toggle="dropdown"
+            aria-expanded={()=>{this.redBtnToggle()}}>
+          <RedDropDownBtn open = {this.state.redBtn} />
+        </DropdownToggle>
+        <DropdownMenu tag="ul">
+          <li role="presentation" className="squaren-btn-item">
+            <Link to={`/pay`}>Pagar</Link>
+          </li>
+        </DropdownMenu>
+      </Dropdown>
     </div>;
 
     return (

@@ -11,3 +11,7 @@
   .product-title{
     margin-bottom: 15px;
   }
+
+.product-title .dropdown{
+    position: absolute;
+}
