@@ -8,6 +8,9 @@ import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import TableDeposite from "../Table/TableDeposite";
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import Link from "react-router-dom/es/Link";
+import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 // import DropDown from "../Midbox/DropDown";
 // import TableMeta from "../Table/TableMeta";
 // import { location } from 'react-router';
@@ -22,7 +25,8 @@ class Cheque extends Component {
     this.state = {
       data: '',
       open: true,
-      curCode: '$'
+      curCode: '$',
+      redBtn: false
     };
   }
 
@@ -48,6 +52,10 @@ class Cheque extends Component {
     
   }
 
+    redBtnToggle(){
+        this.setState({redBtn: !this.state.redBtn});
+    }
+
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
     let type = this.props.location.pathname.split('/')[2];
@@ -55,6 +63,22 @@ class Cheque extends Component {
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
       <span className="product-amt">$ {this.state.balance}</span>
+      <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
+        <DropdownToggle
+            tag="a"
+            data-toggle="dropdown"
+            aria-expanded={()=>{this.redBtnToggle()}}>
+          <RedDropDownBtn open = {this.state.redBtn} />
+        </DropdownToggle>
+        <DropdownMenu tag="ul">
+          <li role="presentation" className="squaren-btn-item">
+            <Link to={`/thirdPartyTransfer`}>Transferir a Terceros</Link>
+          </li>
+          <li role="presentation" className="squaren-btn-item">
+            <Link to={`/accountTransfer`}>Transferencias entre Mis Cuentas</Link>
+          </li>
+        </DropdownMenu>
+      </Dropdown>
     </div>
     ;
          

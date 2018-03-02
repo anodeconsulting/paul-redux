@@ -10,6 +10,9 @@ import Midbox from "../Midbox/Midbox";
 import TableMortgage from "../Table/TableMortgage";
 import { location } from 'react-router';
 import {GetMortgageDetails} from "../../services/GetMortgageDetails";
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import Link from "react-router-dom/es/Link";
+import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 
 class Mortgage extends Component {
 
@@ -19,7 +22,8 @@ class Mortgage extends Component {
 
     // Assign state itself, and a default value for items
     this.state = {
-      open: false
+      open: false,
+      redBtn: false
     };
   }
 
@@ -46,6 +50,10 @@ class Mortgage extends Component {
     
   }
 
+    redBtnToggle(){
+        this.setState({redBtn: !this.state.redBtn});
+    }
+
   render() {  
     
     let pathName = this.props.location.pathname;
@@ -54,6 +62,19 @@ class Mortgage extends Component {
     <div className="product-title">
       <span className="product-name">{pathName.split('/')[3]}</span> 
       <span className="product-amt">{this.state.balance} {this.state.curCode}</span>
+      <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
+        <DropdownToggle
+            tag="a"
+            data-toggle="dropdown"
+            aria-expanded={()=>{this.redBtnToggle()}}>
+          <RedDropDownBtn open = {this.state.redBtn} />
+        </DropdownToggle>
+        <DropdownMenu tag="ul">
+          <li role="presentation" className="squaren-btn-item">
+            <Link to={`/pay`}>Pagar</Link>
+          </li>
+        </DropdownMenu>
+      </Dropdown>
     </div>;
 
     return (

@@ -10,6 +10,9 @@ import Midbox from "../Midbox/Midbox";
 import TableCredit from "../Table/TableCredit";
 import { location } from 'react-router';
 import {GetCCDetails} from "../../services/GetCCDetails";
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import Link from "react-router-dom/es/Link";
+import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 
 class CreditCard extends Component {
 
@@ -22,7 +25,8 @@ class CreditCard extends Component {
       type:'',
       balance:'',
       open: false,
-      curCode: '$'
+      curCode: '$',
+      redBtn: false
     };
   }
 
@@ -36,6 +40,10 @@ class CreditCard extends Component {
     
   }
 
+    redBtnToggle(){
+        this.setState({redBtn: !this.state.redBtn});
+    }
+
   render() {  
     
     let pathName = this.props.location.pathname;
@@ -45,6 +53,19 @@ class CreditCard extends Component {
     <div className="product-title">
       <span className="product-name">{pathName.split('/')[3]}</span> 
       <span className="product-amt">$ {this.state.balance}</span>
+      <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
+        <DropdownToggle
+            tag="a"
+            data-toggle="dropdown"
+            aria-expanded={()=>{this.redBtnToggle()}}>
+          <RedDropDownBtn open = {this.state.redBtn} />
+        </DropdownToggle>
+        <DropdownMenu tag="ul">
+          <li role="presentation" className="squaren-btn-item">
+            <Link to={`/pay`}>Pagar</Link>
+          </li>
+        </DropdownMenu>
+      </Dropdown>
     </div>;
 
     let moduleType = null;

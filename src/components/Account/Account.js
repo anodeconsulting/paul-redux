@@ -9,6 +9,7 @@ import Calendar from "../Calendar/Calendar";
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 
 import { Line, Circle } from 'rc-progress';
+import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 
 
 class Account extends Component {
@@ -43,10 +44,13 @@ class Account extends Component {
         Checking[2].type = "Cuenta Pesos *** 1111";
 
         credit[0].type = "MASTERCARD *** 8981";
+        credit[0].path = "/credit/creditcard/";
         credit[1].type = "Línea de Crédito *** 0007";
+        credit[1].path = "/credit/lineofcredit/";
         credit[2].type = "Crédito Hipotecario*** 0010";
+        credit[2].path = "/credit/mortgage/";
 
-        console.log(credit)
+        // console.log(credit)
       this.setState({itemsChecking: Checking});
       this.setState({itemsCredit: credit});
      });
@@ -162,12 +166,7 @@ class Account extends Component {
                                     tag="a"
                                     data-toggle="dropdown"
                                     aria-expanded={this.state.squarebtnArrayCuentas[index]}>
-                                    <span >
-
-                                      <i className={!this.state.squarebtnArrayCuentas[index]?"fa fa-square square-btn red":"fa fa-square square-btn white square-border"} aria-hidden="true"></i>
-                                      <i className={!this.state.squarebtnArrayCuentas[index]?"fa fa-sort-desc arrow-down-btn white":"fa fa-sort-desc arrow-down-btn black"} aria-hidden="true"></i>
-
-                                    </span>
+                                  <RedDropDownBtn open = {this.state.squarebtnArrayCuentas[index]} />
                                 </DropdownToggle>
                                 <DropdownMenu tag="ul">
                                   <li role="presentation" className="squaren-btn-item">
@@ -206,7 +205,7 @@ class Account extends Component {
                         {this.state.itemsCredit.map((item,index) =>
                             <tbody key={item.id}>
                             <tr>
-                              <td className="amount-title"><Link to={`/credit/credtcard/${item.type}`}>{item.type}</Link></td>
+                              <td className="amount-title"><Link to={`${item.path}${item.type}`}>{item.type}</Link></td>
                               <td className="amount">
                                 <div className="amount-number">${item.primary_balance.amount}</div>
                                 <Dropdown isOpen={this.state.squarebtnArrayCredit[index]} toggle={()=>{this.toggleCredit(index)}} tag="li">
@@ -214,12 +213,7 @@ class Account extends Component {
                                       tag="a"
                                       data-toggle="dropdown"
                                       aria-expanded={this.state.squarebtnArrayCredit[index]}>
-                                    <span >
-
-                                      <i className={!this.state.squarebtnArrayCredit[index]?"fa fa-square square-btn red":"fa fa-square square-btn white square-border"} aria-hidden="true"></i>
-                                      <i className={!this.state.squarebtnArrayCredit[index]?"fa fa-sort-desc arrow-down-btn white":"fa fa-sort-desc arrow-down-btn black"} aria-hidden="true"></i>
-
-                                    </span>
+                                    <RedDropDownBtn open = {this.state.squarebtnArrayCredit[index]} />
                                   </DropdownToggle>
                                   <DropdownMenu tag="ul">
                                       <li role="presentation" className="squaren-btn-item">
