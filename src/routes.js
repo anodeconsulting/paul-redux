@@ -15,6 +15,8 @@ import PayTransaction from "././components/Transaction/PayTransaction";
 import TransferTransaction from "././components/Transaction/TransferTransaction";
 import TransactionList from "././components/Transaction/TransactionList";
 import TransactionListCredit from "././components/Transaction/TransactionListCredit";
+import Statement from "././components/Statement/Statement";
+import PDF from "././components/Statement/PDFWrapper";
 
 // import NotFound from '././components/NotFound/NotFound';
 
@@ -29,7 +31,8 @@ const Routes = () => (
         <Route exact path="/thirdPartyTransfer" component={ThirdPartyTransfer}/>
         <Route exact path="/accountTransfer" component={SameAccountTransfer}/>
         <Route exact path="/transfer/transaction" component={TransferTransaction}/>
-
+        <Route exact path="/statement" component={Statement}/>
+        <Route exact path="/statement/:id" component={PDF}/>
         <Route exact path="/pay" component={Pay}/>
         <Route exact path="/pay/mutualfund" component={MutualFund}/>
         <Route exact path="/mutualFund/transaction" component={MutualFundTransaction}/>
