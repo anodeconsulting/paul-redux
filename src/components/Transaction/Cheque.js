@@ -34,7 +34,9 @@ class Cheque extends Component {
     GetDepositeDetails().then((result) => {
       // console.log(result);
       let balance = result.available_balance.amount || 0;
-      this.setState({balance: balance});  
+      this.setState({balance: "32925"});
+      this.setState({balance9990: "543.67"});
+      this.setState({balance1111: "1373"}); 
       this.setState({details: result}); 
       // console.log(this.state.details); 
     });
@@ -58,11 +60,18 @@ class Cheque extends Component {
 
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
+    let textDisplay = this.state.balance;
+    if(pathName.includes("9990")){
+      textDisplay = this.state.balance9990; 
+    }else if(pathName.includes("1111")){
+      textDisplay = this.state.balance1111; 
+    }
     let type = this.props.location.pathname.split('/')[2];
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
       <span className="product-amt">$ {this.state.balance}</span>
+      <span className="product-amt">$ {textDisplay}</span>
       <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
         <DropdownToggle
             tag="a"
@@ -76,6 +85,9 @@ class Cheque extends Component {
           </li>
           <li role="presentation" className="squaren-btn-item">
             <Link to={`/accountTransfer`}>Transferencias entre Mis Cuentas</Link>
+          </li>
+          <li role="presentation" className="squaren-btn-item">
+            <Link to={`/statement`}>Estados de Cuenta</Link>
           </li>
         </DropdownMenu>
       </Dropdown>
@@ -97,7 +109,7 @@ class Cheque extends Component {
           <div className="col-md-6 pushRight">
             {/* for mid box */}
             {module}
-            <Midbox details={this.state.balance} currency={this.state.curCode} type = {type}/>
+            <Midbox details={textDisplay} currency={this.state.curCode} type = {type}/>
             <br />
             <div>
               <div className="row" id="Body">  

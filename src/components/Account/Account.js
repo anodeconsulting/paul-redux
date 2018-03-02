@@ -175,6 +175,9 @@ class Account extends Component {
                                   <li role="presentation" className="squaren-btn-item">
                                     <Link to={`/accountTransfer`}>Transferencias entre Mis Cuentas</Link>
                                   </li>
+                                  <li role="presentation" className="squaren-btn-item">
+                                    <Link to={`/statement`}>Estados de Cuenta</Link>
+                                  </li>
 
                                   {/*<li role="presentation">*/}
                                     {/*<a href="#"  role="menuitem" className="squaren-btn-item">Comprar Minutos de Celular</a>*/}

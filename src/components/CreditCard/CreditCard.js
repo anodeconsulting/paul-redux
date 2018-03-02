@@ -34,7 +34,7 @@ class CreditCard extends Component {
 
     GetCCDetails().then((result) => {
       let balance = result.primary_balance.amount || 0;
-      this.setState({balance: balance});
+      this.setState({balance: "5150654"});
       this.setState({details: result});    
     });
     

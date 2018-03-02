@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Transaction from '../Transaction/Transaction';
 import CreditCard from '../CreditCard/CreditCard';
 import Mortgage from '../Mortgage/Mortgage';
+import Loan from '../Loan/Loan';
+
 // import { location } from 'react-router';
 
 export default class TransactionListCredit extends Component{
@@ -21,6 +23,8 @@ export default class TransactionListCredit extends Component{
             moduleType= <Mortgage location = {this.props.location}/>     
         }else if(type ==='lineofcredit'){
             moduleType = <Transaction location = {this.props.location}/>
+        }else if(type ==='loan'){
+            moduleType = <Loan location = {this.props.location}/>
         }else{
             moduleType = <CreditCard location = {this.props.location}/>
         }

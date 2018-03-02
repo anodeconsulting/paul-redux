@@ -1,21 +1,19 @@
 import React, {Component} from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-import Calendar from "../Calendar/Calendar";
 import {Tabs, Tab} from 'react-bootstrap';
+import MyLargeModal from './MyLargeModal';
 
-function priceFormatter(cell, row) {
-    return `$ ${cell}`;
-  }
-  
-  class TableCredit extends Component {
-  
-    //Constructor 
+class ExtraComponent extends Component {
     constructor(props) {
-      super(props);
+        super(props);
+        this.state = {
+          lgShow: false
+        };
     }
 
-    expandComponent(row) {
-        return (
+    render() {
+      let lgClose = () => this.setState({ lgShow: false });
+      return (
         <div className="row">
             <div className="col-sm-12 col-style">
                 <div className="col-sm-2">
@@ -28,7 +26,7 @@ function priceFormatter(cell, row) {
                     <span>26/06/2016</span>
                 </div>
                 <div className="col-sm-2">
-                    <span className="textAlignRight">Imprimir </span><br />
+                    <span className="textAlignRight" onClick={() => this.setState({ lgShow: true })}>Imprimir </span><br />
                 </div>
             </div><br />
             <div className="col-sm-12 col-style">
@@ -52,6 +50,48 @@ function priceFormatter(cell, row) {
                     <span></span>
                 </div>
                 <div className="col-sm-4">
+                    <span>De</span>
+                </div>
+                <div className="col-sm-4">
+                    <span>Tarjeta de Crédito *** 0008</span>
+                </div>
+                <div className="col-sm-2">
+                    <span className="textAlignRight"></span><br />
+                </div>
+            </div>
+            <div className="col-sm-12 col-style">
+                <div className="col-sm-2">
+                    <span></span>
+                </div>
+                <div className="col-sm-4">
+                    <span>A</span>
+                </div>
+                <div className="col-sm-4">
+                    <span>Líder</span>
+                </div>
+                <div className="col-sm-2">
+                    <span className="textAlignRight"></span><br />
+                </div>
+            </div>
+            <div className="col-sm-12 col-style">
+                <div className="col-sm-2">
+                    <span></span>
+                </div>
+                <div className="col-sm-4">
+                    <span>N° de Tarjeta</span>
+                </div>
+                <div className="col-sm-4">
+                    <span>*0008</span>
+                </div>
+                <div className="col-sm-2">
+                    <span className="textAlignRight"></span><br />
+                </div>
+            </div>
+            <div className="col-sm-12 col-style">
+                <div className="col-sm-2">
+                    <span></span>
+                </div>
+                <div className="col-sm-4">
                     <span>Ciudad y País</span>
                 </div>
                 <div className="col-sm-4">
@@ -61,12 +101,48 @@ function priceFormatter(cell, row) {
                     <span className="textAlignRight"></span><br />
                 </div>
             </div>
+            <div className="col-sm-12 col-style">
+                <div className="col-sm-2">
+                    <span></span>
+                </div>
+                <div className="col-sm-4">
+                    <span>Monto</span>
+                </div>
+                <div className="col-sm-4">
+                    <span>$ 100</span>
+                </div>
+                <div className="col-sm-2">
+                    <span className="textAlignRight"></span><br />
+                </div>
+            </div>
+            <MyLargeModal show={this.state.lgShow} onHide={lgClose} />
         </div>
+      );
+    }
+  }
+
+// function priceFormatter(cell, row) {
+//     return `$ ${cell}`;
+//   }
+  
+  class TableCredit extends Component {
+  
+    //Constructor 
+    constructor(props) {
+      super(props);
+      this.state = {
+        lgShow: false
+      };
+    }
+
+    expandComponent(row) {
+        return (
+            <ExtraComponent />
         );
       }
 
     isExpandableRow(row) {
-        if (row.id != 0) return true;
+        if (row.id !== 0) return true;
           else return false;
       }
     
@@ -95,7 +171,7 @@ function priceFormatter(cell, row) {
             valor:'1.222'
          
         });
-        const item = this.props.items;
+        // const item = this.props.items;
         const options = {
             expandRowBgColor: 'rgb(245, 245, 245)'
           };
