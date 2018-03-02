@@ -40,7 +40,10 @@ class Leftbox extends Component {
               },{
                 type:"mortgage",
                 account:"Crédito Hipotecario*** 0010"
-              }            
+              },{
+                type:"loan",
+                account:"Créditos*** 0009"
+              }         
             ]
           },
           {

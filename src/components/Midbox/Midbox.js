@@ -77,6 +77,9 @@ class Midbox extends Component {
 			}else if ('mortgage' === type){
 				base = 9000000.67;
 				ratio = details*100/base;
+			}else if('loan' === type){
+				base = 7000000.67;
+				ratio = details*100/base;
 			}else{
 				base = 4000000.67;
 				ratio = details*100/base;
