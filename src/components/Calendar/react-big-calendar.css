@@ -145,10 +145,25 @@ button.rbc-input::-moz-focus-inner {
   background-color: #e6e6e6;
   border-color: #adadad;
 }
+
+@media (max-width: 875px) {
+  .rbc-toolbar>span.rbc-btn-group:nth-child(3){
+    display: none!important;
+  }
+
+}
+
+@media screen and (min-width: 875px)  {
+  .rbc-toolbar>span.rbc-btn-group:nth-child(3){
+    display: inline-block!important;
+  }
+}
+
 .rbc-btn-group {
   display: inline-block;
   white-space: nowrap;
 }
+
 .rbc-btn-group > button:first-child:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;

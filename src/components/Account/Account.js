@@ -231,9 +231,8 @@ class Account extends Component {
                     </Table>
                 </div>
 
-                <div className="calendar">
-                  <Calendar/>
-                </div>
+                <Calendar/>
+
               </div>
 
               <div className="RUIFW-content-side RUIFW-col-3 col-md-3 col-sm-3">
