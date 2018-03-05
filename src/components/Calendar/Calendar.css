@@ -1,0 +1,57 @@
+.calendar-border{
+    border-right: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+    border-left: 1px solid #d8d8d8;
+    border-top: 3px solid #c0bfbb;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.table-calendar{
+    margin-top: 50px;
+}
+
+.tab-container{
+    position: relative;
+}
+
+.calendar-border .react-tabs > ul{
+    padding-left: 76%;
+}
+
+.calendar-border li{
+    display: inline;
+    margin-left: 44px;
+    color: red;
+    cursor: pointer;
+}
+
+.calendar-border li.react-tabs__tab--selected{
+    color: black;
+}
+
+.calendar-border li i{
+    font-size: 17px;
+}
+
+.calendar{
+    height: 500px;
+    margin-top: 50px;
+}
+
+.calendar-select{
+    position: absolute;
+    z-index: 2;
+}
+
+.account-title{
+    padding: 0 0 0 20px;
+    font-size: 20px;
+    color: #333333 !important;
+    margin: 0 0 20px 0;
+    cursor: pointer;
+}
+
+.calendar-select.form-control{
+    width: 29%!important;
+}

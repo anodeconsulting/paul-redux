@@ -51,6 +51,12 @@ class Header extends Component {
             });
         }
 
+        collapseNav(){
+            let btn =document.getElementsByClassName("navbar-toggle");
+            btn[0].click();
+            // console.log(btn);
+        }
+
       render() {
           const path = this.state.pathBase;
 
@@ -61,79 +67,79 @@ class Header extends Component {
                 <Navbar.Collapse>
                  <div>
                     <Nav >
-                        <IndexLinkContainer to={`/account`}>
+                        <IndexLinkContainer to={`/account`} onClick={()=>{this.collapseNav()}}>
                             <NavItem eventKey={1} href="#">
                                 Mis Productos
                             </NavItem>
                         </IndexLinkContainer>
-                        <IndexLinkContainer to={`/account/deposite/Cuenta%20Corriente%20Pesos%20***%200343`}>
+                        <IndexLinkContainer to={`/account/deposite/Cuenta%20Corriente%20Pesos%20***%200343`} onClick={()=>{this.collapseNav()}}>
                             <NavItem eventKey={2} href="#">
                                 Mis Movimientos
                             </NavItem>
                         </IndexLinkContainer>
                         <NavDropdown eventKey={3} title="Pagar" id="Pager" >
-                            <li id="billpayment" className="nav-toggle">
-                                <a href="" title="Pagar Servicios" >Pagar Servicios</a>
-                                <div >Realiza tus pagos de servicios en línea</div>
-                            </li>
-                            <li id="preauthpayment" className="nav-toggle">
-                                <a href="#" title="Pagos Automáticos (PAC/PAT)" >Pagos Automáticos (PAC/PAT) </a>
-                                <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
-                            </li>
-                            <li id="addcclmpayment" className="nav-toggle">
+                            {/*<li id="billpayment" className="nav-toggle">*/}
+                                {/*<a href="" title="Pagar Servicios" >Pagar Servicios</a>*/}
+                                {/*<div >Realiza tus pagos de servicios en línea</div>*/}
+                            {/*</li>*/}
+                            {/*<li id="preauthpayment" className="nav-toggle">*/}
+                                {/*<a href="#" title="Pagos Automáticos (PAC/PAT)" >Pagos Automáticos (PAC/PAT) </a>*/}
+                                {/*<div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>*/}
+                            {/*</li>*/}
+                            <li id="addcclmpayment" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
                                 <Link to={`/pay`} onClick={Header.handleClick.bind(this)}>Pagar Mis Productos</Link>
                                 <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
                             </li>
-                            <li id="paymentoverview" className="nav-toggle">
-                                <a href="#" title="Histórico de Pagos" >Histórico de Pagos </a>
-                                <div>Revisa tus pagos realizados</div>
-                            </li>
+                            {/*<li id="paymentoverview" className="nav-toggle">*/}
+                                {/*<a href="#" title="Histórico de Pagos" >Histórico de Pagos </a>*/}
+                                {/*<div>Revisa tus pagos realizados</div>*/}
+                            {/*</li>*/}
                         </NavDropdown>
                         <NavDropdown eventKey={4} title="Transferir" id="Transgerir">
-                                <li id="thirdpartytransfer" className="nav-toggle">
+                                <li id="thirdpartytransfer" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
                                     <Link to={`/thirdPartyTransfer`} onClick={Header.handleClick.bind(this)}>Transferir a Terceros</Link>
                                     <div>Realiza transferencias a cuentas en Scotiabank o en otro banco</div>
                                 </li>
-                                <li id="managerecipients" className="nav-toggle">
-                                    <a href="#" title="Administración de Destinatarios" >Administración de Destinatarios </a>
-                                    <div>Agregar/ editar/ eliminar destinatario de transferencias</div>
-                                </li>
+                                {/*<li id="managerecipients" className="nav-toggle">*/}
+                                    {/*<a href="#" title="Administración de Destinatarios" >Administración de Destinatarios </a>*/}
+                                    {/*<div>Agregar/ editar/ eliminar destinatario de transferencias</div>*/}
+                                {/*</li>*/}
 
-                                <li id="addfundstransfer" className="nav-toggle">
+                                <li id="addfundstransfer" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
                                     <Link to={`/accountTransfer`} title="Transferir entre Mis Cuentas" onClick={Header.handleClick.bind(this)}>Transferir entre Mis Cuentas </Link>
                                     <div>Realiza tus transferencias entre tus cuentas y pago de línea de crédito</div>
                                 </li>
 
-                                <li id="transfersoverview" className="nav-toggle">
-                                    <a href="#" title="Cartola de Transferencias">Cartola de Transferencias </a>
-                                    <div>Revisa tus transferencias realizadas y programadas.</div>
-                                </li>
-                                <li className="nav-toggle clear"></li>
+                                {/*<li id="transfersoverview" className="nav-toggle">*/}
+                                    {/*<a href="#" title="Cartola de Transferencias">Cartola de Transferencias </a>*/}
+                                    {/*<div>Revisa tus transferencias realizadas y programadas.</div>*/}
+                                {/*</li>*/}
+                                {/*<li className="nav-toggle clear"></li>*/}
 
-                                <li id="cashadvance" className="nav-toggle">
-                                    <a href="#" title="Avance de Tarjeta de Crédito" >Avance de Tarjeta de Crédito </a>
-                                    <div>Realiza avances en efectivo desde tus tarjetas de crédito hacia tus cuentas, con o sin cuotas.</div>
-                                </li>
+                                {/*<li id="cashadvance" className="nav-toggle">*/}
+                                    {/*<a href="#" title="Avance de Tarjeta de Crédito" >Avance de Tarjeta de Crédito </a>*/}
+                                    {/*<div>Realiza avances en efectivo desde tus tarjetas de crédito hacia tus cuentas, con o sin cuotas.</div>*/}
+                                {/*</li>*/}
 
                         </NavDropdown>
                         <NavDropdown eventKey={5} title="Invertir" id="Invertir">
-                            <li id="buy_mutual_fund" className="nav-toggle">
+                            <li id="buy_mutual_fund" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
                                 <Link to={`/pay/mutualfund`} onClick={Header.handleClick.bind(this)}>Invertir en Fondos Mutuos</Link>
                                 <div>Selecciona Fondos Mutuos asociados a tu Perfil de Inversionista.</div>
                             </li>
-                            <li id="investment_overview" className="nav-toggle">
-                                <a href="#" title="Cartola de Inversiones" >Cartola de Inversiones </a>
-                                <div>Revisa el movimiento de tus inversiones.</div>
-                            </li>
-                            <li className="nav-toggle clear"></li>
-                            <li id="add_term_deposit" className="nav-toggle">
-                                <a href="#" title="Invertir en Depósitos a Plazo" >Invertir en Depósitos a Plazo </a>
-                                <div>Selecciona el plazo y la moneda en la que deseas invertir.</div>
-                            </li>
+                            {/*<li id="investment_overview" className="nav-toggle">*/}
+                                {/*<a href="#" title="Cartola de Inversiones" >Cartola de Inversiones </a>*/}
+                                {/*<div>Revisa el movimiento de tus inversiones.</div>*/}
+                            {/*</li>*/}
+                            {/*<li className="nav-toggle clear"></li>*/}
+                            {/*<li id="add_term_deposit" className="nav-toggle">*/}
+                                {/*<a href="#" title="Invertir en Depósitos a Plazo" >Invertir en Depósitos a Plazo </a>*/}
+                                {/*<div>Selecciona el plazo y la moneda en la que deseas invertir.</div>*/}
+                            {/*</li>*/}
                         </NavDropdown>
-                        <NavItem eventKey={6} href="#">
-                            Ofertas Disponibles
-                        </NavItem>
+                        {/*<NavItem eventKey={6} href="#">*/}
+                            {/*Ofertas Disponibles*/}
+                        {/*</NavItem>*/}
                     </Nav>
 
 
@@ -260,10 +266,10 @@ class Header extends Component {
                     <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
                         <span className="RUIFW-sr sr-only sr-only"></span>
                     </h1>
-                    <div className="navbar-contact">
-                        <a href=""  title="Términos y Condiciones">Términos y Condiciones &nbsp;&nbsp;</a>
-                        <a href=""  title="Contacto">Contacto</a>
-                    </div>
+                    {/*<div className="navbar-contact">*/}
+                        {/*<a href=""  title="Términos y Condiciones">Términos y Condiciones &nbsp;&nbsp;</a>*/}
+                        {/*<a href=""  title="Contacto">Contacto</a>*/}
+                    {/*</div>*/}
                 </div>
                 {logout}
                 <Navbar>
