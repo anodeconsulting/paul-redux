@@ -48,8 +48,8 @@ class Cheque extends Component {
         data[i].dataSaldo = data[i].running_balance.amount;
         data[i].dataMonto = data[i].transaction_amount.amount;
       }
-      // console.log(data);
-      this.setState({items: data})   
+      console.log(data);
+      this.setState({items: data})
     });
     
   }
