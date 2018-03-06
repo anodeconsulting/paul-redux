@@ -28,6 +28,7 @@ class Cheque extends Component {
       curCode: '$',
       redBtn: false
     };
+    window.scrollTo(0,100);
   }
 
   componentDidMount(){
@@ -60,17 +61,18 @@ class Cheque extends Component {
 
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
-    let textDisplay = this.state.balance;
+    let textDisplay = null;
     if(pathName.includes("9990")){
       textDisplay = this.state.balance9990; 
     }else if(pathName.includes("1111")){
       textDisplay = this.state.balance1111; 
+    }else{
+      textDisplay = this.state.balance
     }
     let type = this.props.location.pathname.split('/')[2];
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
-      <span className="product-amt">$ {this.state.balance}</span>
       <span className="product-amt">$ {textDisplay}</span>
       <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
         <DropdownToggle

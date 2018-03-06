@@ -6,6 +6,7 @@ import TableTransfer from "../Table/TableTransfer";
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import {GetTransferActivities} from "../../services/GetTransferActivities";
+import AlertSuccess from '../Tools/Alert/Alert_Success';
 
 class TransferTransaction extends Component {
      //Constructor 
@@ -16,6 +17,7 @@ class TransferTransaction extends Component {
             show: true
         };
         this.handleDismiss = this.handleDismiss.bind(this);
+        window.scrollTo(0,100);
     }
 
     handleDismiss(){
@@ -41,58 +43,40 @@ class TransferTransaction extends Component {
     }
 
     render() {
-      let moduleAlert = null;
-      if (this.state.show) {
-         moduleAlert = 
-         <div >
-                    <Alert bsStyle="success" onDismiss={this.handleDismiss}>
-                        <span className="alert-icon"></span>
-                        <h4>¡Realizado!</h4>
-                        <p>
-                        Tu Inversión Nro 8997 por $ 1.000.000 fue tomado con éxito el día 17/01/2017 a la(s) 3:20 PM. 
-                        Recibirás un comprobante de aporte firmado en forma física o electrónica, 
-                        al domicilio o correo electrónico registrado, dentro de los próximos 30 días.         
-                        </p>  
-                        <p className="pushMid">
-                          <Button bsStyle="default">Nueva Inversión</Button>
-                          <Button bsStyle="default">Imprimir</Button>
-                          <Button bsStyle="default">Descargar</Button>
-                        </p>                     
-                    </Alert>
-        </div>
-      }
+      let moduleAlert = <AlertSuccess />;
+      
         return (
-          <div>
-            {moduleAlert}
-            <section>           
-        <div className="pushBottom">
-          {/* for topbox */}
-          <TopBox/>
-        </div>
-        <div className="row main2">
-          <div className="col-md-9 pushRight">
-            <div>
-            <div className="RUIFW-row mrgn-btm-10 row">
-                        <div className="RUIFW-col-6 col-sm-6">
-                            <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  ({this.state.length})</h5>
-                        </div>
-                        <div className="RUIFW-col-6 txt-right col-sm-6">
-                            <span><img width="70" src={button1} alt="scotia button1" /></span>   
-                        </div>
-                    </div><br />
-              <div id="Body">  
-                {/* react bootstrap table */}
-                <TableTransfer items={this.state.items}/>
-              </div>
+        <div>
+              <section>    
+              {moduleAlert}       
+            <div className="pushBottom">
+              {/* for topbox */}
+              <TopBox/>
             </div>
-          </div>
-          <div className="col-md-3">
-            {/* for right box */}
-            <RightBox location = {this.props.location}/>
-          </div>
-        </div>       
-    </section>
-    </div>
+            <div className="row main2">
+              <div className="col-md-9 pushRight">
+                <div>
+                <div className="RUIFW-row mrgn-btm-10 row">
+                            <div className="RUIFW-col-6 col-sm-6">
+                                <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  ({this.state.length})</h5>
+                            </div>
+                            <div className="RUIFW-col-6 txt-right col-sm-6">
+                                <span><img width="70" src={button1} alt="scotia button1" /></span>   
+                            </div>
+                        </div><br />
+                  <div id="Body">  
+                    {/* react bootstrap table */}
+                    <TableTransfer items={this.state.items}/>
+                  </div>
+                </div>
+                    </div>
+                    <div className="col-md-3">
+                      {/* for right box */}
+                      <RightBox location = {this.props.location}/>
+                    </div>
+                  </div>       
+              </section>
+        </div>
         );
     }
 }
