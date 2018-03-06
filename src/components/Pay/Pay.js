@@ -7,6 +7,7 @@ import RightBox from "../Rightbox/Rightbox";
 import { Button, Alert } from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
 import { Link } from "react-router-dom";
+import AlertWarning from '../Tools/Alert/Alert_Warning';
 
 class Pay extends Component {
 
@@ -20,6 +21,7 @@ class Pay extends Component {
        this.handleSelect = this.handleSelect.bind(this);
        this.handleDismiss = this.handleDismiss.bind(this);
        this.handleShow = this.handleShow.bind(this);
+    //    window.scrollTo(0,100);
     }
 
     handleSelect(key) {
@@ -43,25 +45,14 @@ class Pay extends Component {
     
 
     render() {
+        // window.scrollTo(0,0);
         let module = null;
         let moduleAlert = null;
         // let moduleLink = <MutualFundStep3 />;
         if(this.state.key !=1){
             module= <Button className="back" onClick={()=>this.handleSelect(1)}>Volver</Button>     
-            console.log(this.state.show);
-            if (this.state.show) {
-                moduleAlert = 
-                    <Alert bsStyle="warning" onDismiss={this.handleDismiss}>
-                        <span className="alert-icon-info"></span>
-                        <h4>¡Importante!</h4>
-                        <p>
-                        Las características esenciales de la inversión en este fondo mutuo se encuentran contenidas en su reglamento interno y 
-                        contrato general de fondos, 
-                        las que declaro conocer y aceptar en su integridad.
-                        </p>
-                        
-                    </Alert>
-            }
+            moduleAlert = <AlertWarning />
+            
         }
 
         if (this.state.key==3) {
@@ -70,8 +61,8 @@ class Pay extends Component {
 
         return (
         <div>
-                {moduleAlert}
           <section>
+            {moduleAlert}
             <div className="row">
                 <div className='col-sm-9 div-border'>
                     <h1>Pagar Mis Productos </h1>        

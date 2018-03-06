@@ -20,6 +20,7 @@ class Statement extends Component {
             valueA: 'Selecciona cuenta de oirgen',
             valueB: 'BCI',
         };
+        window.scrollTo(0,100);
     }
 
     onChange(e) {

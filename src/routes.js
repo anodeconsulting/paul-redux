@@ -17,6 +17,8 @@ import TransactionList from "././components/Transaction/TransactionList";
 import TransactionListCredit from "././components/Transaction/TransactionListCredit";
 import Statement from "././components/Statement/Statement";
 import PDF from "././components/Statement/PDFWrapper";
+import Configuration from "././components/Configuration/Config";
+import Password from "././components/Configuration/Password";
 
 // import NotFound from '././components/NotFound/NotFound';
 
@@ -37,6 +39,8 @@ const Routes = () => (
         <Route exact path="/pay/mutualfund" component={MutualFund}/>
         <Route exact path="/mutualFund/transaction" component={MutualFundTransaction}/>
         <Route exact path="/pay/transaction" component={PayTransaction}/>
+        <Route exact path="/configuration" component={Configuration}/>
+        <Route exact path="/password" component={Password}/>
 
         {/* <Route path="*" component={NotFound}/> */}
     </div>
