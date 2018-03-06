@@ -28,7 +28,6 @@ class Cheque extends Component {
       curCode: '$',
       redBtn: false
     };
-    window.scrollTo(0,100);
   }
 
   componentDidMount(){

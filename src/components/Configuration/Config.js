@@ -16,7 +16,6 @@ class Statement extends Component {
         this.state = {
             key: 1
         };
-        window.scrollTo(0,100);
     }
 
     render() {  

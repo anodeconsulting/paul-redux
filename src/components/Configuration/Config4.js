@@ -14,7 +14,6 @@ class Config3 extends Component {
             value: '',
             show: false
         };
-        window.scrollTo(0,100);
     }
 
     handleChange(){
