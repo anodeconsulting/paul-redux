@@ -133,6 +133,7 @@ class Leftbox extends Component {
               </ListGroup>
             </Panel.Collapse>
           </Panel>
+          <br />
         </div>
       );
     }

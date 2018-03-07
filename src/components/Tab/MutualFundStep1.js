@@ -100,7 +100,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>De</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>
                         {optionsA.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -112,7 +112,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>Nombre Fondo Mutuo</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
                         {optionsC.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -124,7 +124,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>Tipo de Fondo</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
                         {optionsB.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -137,7 +137,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>Cuenta Fondo Mutuo</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
                         {optionsD.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -182,7 +182,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>Nombre Fondo Mutuo</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>
                         {optionsa.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -194,7 +194,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>Cuenta Fondo Mutuo</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
                         {optionsb.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -207,7 +207,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>Tipo de Rescate</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
                         {optionsc.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -240,7 +240,7 @@ class MutualFundStep1 extends Component {
                         <ControlLabel>A</ControlLabel>
                     </div>
                     <div className="col-sm-9">
-                        <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
+                        <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
                         {optionsd.map(option => {
                             return <option value={option} key={option} >{option}</option>
                         })}    
@@ -273,7 +273,7 @@ class MutualFundStep1 extends Component {
                             <ControlLabel>Movimiento</ControlLabel>
                         </div>
                         <div className="col-sm-9">
-                            <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChange.bind(this)}>
+                            <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChange.bind(this)}>
                             {options.map(option => {
                                 return <option value={option} key={option} >{option}</option>
                             })}

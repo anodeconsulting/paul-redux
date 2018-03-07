@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 
 class ThirdPartyTransfer extends Component {
 
+    constructor(props) {
+        super(props);
+        // window.scrollTo(0,100);
+    }
+
     render() {
         return (
           <section>

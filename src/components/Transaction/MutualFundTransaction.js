@@ -6,6 +6,7 @@ import TableMutualFund from "../Table/TableMutualFund";
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import {GetMortgageTransactions} from "../../services/GetMortgageTransactions";
+import AlertSuccess from '../Tools/Alert/Alert_Success';
 
 class MutualFundTransaction extends Component {
      //Constructor 
@@ -17,6 +18,7 @@ class MutualFundTransaction extends Component {
             show: true
         };
         this.handleDismiss = this.handleDismiss.bind(this);
+        window.scrollTo(0,100);
     }
 
     handleDismiss(){
@@ -39,30 +41,11 @@ class MutualFundTransaction extends Component {
     }
 
     render() {
-      let moduleAlert = null;
-      if (this.state.show) {
-         moduleAlert = 
-         <div >
-                    <Alert bsStyle="success" onDismiss={this.handleDismiss}>
-                        <span className="alert-icon"></span>
-                        <h4>¡Realizado!</h4>
-                        <p>
-                        Tu Inversión Nro 8997 por $ 1.000.000 fue tomado con éxito el día 17/01/2017 a la(s) 3:20 PM. 
-                        Recibirás un comprobante de aporte firmado en forma física o electrónica, 
-                        al domicilio o correo electrónico registrado, dentro de los próximos 30 días.         
-                        </p>  
-                        <p className="pushMid">
-                          <Button bsStyle="default">Nueva Inversión</Button>
-                          <Button bsStyle="default">Imprimir</Button>
-                          <Button bsStyle="default">Descargar</Button>
-                        </p>                     
-                    </Alert>
-        </div>
-      }
+      let moduleAlert = <AlertSuccess />;
         return (
-        <div>
-            {moduleAlert}
-          <section>           
+          <div>
+          <section>     
+          {moduleAlert}      
         <div className="pushBottom">
           {/* for topbox */}
           <TopBox/>

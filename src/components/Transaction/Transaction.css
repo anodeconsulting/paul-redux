@@ -57,10 +57,52 @@ transform:         rotate(90deg);
   margin-right: 37px!important;
 }
 
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .alert-success{
+      background-color:#d3ecba!important;
+      margin: auto;
+      font-size:8px;
+    }
+
+    .pushMid .btn{
+      margin:2px!important;
+      font-size:7px!important;
+      text-align: left;
+    }
+
+    .alert-icon{
+      width: 70px;
+      height: 65px;
+    }
+    .alert h4{
+      font-size:12px!important;
+    }
+
+    .alert .pushMid{
+      margin: 3px 10px!important;
+    }
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+    
+}
+
+
 .alert-success{
   background-color:#d3ecba!important;
-  width:65%;
-  margin: auto;
+  font-size:16px;
+
 }
 
 .btn-default {
@@ -84,4 +126,3 @@ transform:         rotate(90deg);
 .pushRight1 {padding-left:15px;}
 .pushRight2 {padding-left:50;}
 .floatLeft{float:left;}
-

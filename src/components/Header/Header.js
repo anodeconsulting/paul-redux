@@ -203,14 +203,14 @@ class Header extends Component {
                                     <div>Descarga documentos y modifica opciones de envío.</div>
                                 </li>
                                 <li className="nav-toggle3" id="">
-                                    <a href="Chile_Manage_Security_Settings_changePassword.html" title="Configuración de Seguridad ">
-                                        Configuración de Seguridad</a>
+                                    <Link to={`/password`} title="Configuración de Seguridad " onClick={Header.handleClick.bind(this)}>
+                                        Configuración de Seguridad</Link>
                                     <div>Cambio de Contraseña</div>
                                 </li>
                                 <li className="nav-toggle3 clear"></li>
                                 <li className="nav-toggle3" id="">
-                                    <a href="Chile_General_Account_Settings.html" title="Configuración de Información Personal y de Productos">
-                                        Configuración de Información Personal y de Productos</a>
+                                    <Link to={`/configuration`} title="Configuración de Información Personal y de Productos" onClick={Header.handleClick.bind(this)}>
+                                        Configuración de Información Personal y de Productos</Link>
                                     <div>Actualiza tus datos personales, administra y configura tus productos.</div>
                                 </li>
 
