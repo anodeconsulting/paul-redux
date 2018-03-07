@@ -21,6 +21,15 @@
     }
 }
 
+@media (max-width: 960px) {
+    .main-footer{
+        padding: 20px;
+    }
+
+    .noprint{
+        padding-bottom: 20px;
+    }
+}
 
 .main-footer{
     margin: auto;position: relative;text-align: left;
