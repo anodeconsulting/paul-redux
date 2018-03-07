@@ -78,7 +78,7 @@ let Calendar = () => (
                     views={allViews}
                     step={60}
                     showMultiDayTimes
-                    defaultDate={new Date(2018, 2, 1)}
+                    defaultDate={new Date()}
                     onSelectEvent={(event: Object, e: SyntheticEvent) => {}}
                     />
                     </div>

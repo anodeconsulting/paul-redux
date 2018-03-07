@@ -71,6 +71,7 @@ class Account extends Component {
     toggleCredit(index) {
       this.squarebtnCredit[index] = !this.squarebtnCredit[index];
       let newArray = this.squarebtnCredit;
+      console.log(newArray)
         this.setState({
             squarebtnArrayCredit: newArray
         });

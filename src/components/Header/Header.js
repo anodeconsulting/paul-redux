@@ -17,7 +17,8 @@ class Header extends Component {
               question: false,
               GearOpen: false,
               QuestionOpen: false,
-              showIcon:true
+              showIcon:true,
+              localTime:0
           };
         }
 
@@ -57,12 +58,23 @@ class Header extends Component {
             // console.log(btn);
         }
 
+        runningTime(that){
+            let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit',hour: 'numeric', minute: 'numeric', second: 'numeric' });
+            that.setState({
+                localTime: time
+            });
+
+        }
+
       render() {
           const path = this.state.pathBase;
 
       let loginPage;
       let logout;
-        if(window.location.pathname !== path){
+          setTimeout(() => {setInterval(this.runningTime(this),1000); }, 0);
+
+
+          if(window.location.pathname !== path){
             loginPage=
                 <Navbar.Collapse>
                  <div>
@@ -245,7 +257,7 @@ class Header extends Component {
                     </li>
                     <li className="lftbox">
                             <span className="h-separator">
-                                <a herf="#">Último Ingreso: Miércoles, Julio 06, 2016 04:22 PM</a>
+                                <a herf="#"> Último Ingreso: {this.state.localTime}</a>
                             </span>
                     </li>
                     <li>

@@ -1,10 +1,4 @@
-.RUIFW-brand{
-    margin: 20px;
-    background: url("../../assets/images/scotiabank_logo.png") no-repeat 0 0;
-    width: 224px;
-    /*height: 40px;*/
-    height: 70px;
-}
+
 
 .RUIFW-brand:focus{
     outline: none;
@@ -44,6 +38,12 @@
     }
     .nav >li{
         font-size: 15px;
+    }
+    .RUIFW-brand{
+        margin: 20px;
+        background: url("../../assets/images/scotiabank_logo.png") no-repeat 0 0;
+        width: 48px;
+        height: 70px;
     }
 }
 
@@ -99,6 +99,13 @@
     .nav >li{
         font-size: 15px;
     }
+    .RUIFW-brand{
+        margin: 20px;
+        background: url("../../assets/images/scotiabank_logo.png") no-repeat 0 0;
+        width: 224px;
+        /*height: 40px;*/
+        height: 70px;
+    }
 }
 
 @media (max-width: 960px) and (min-width: 767px) {
@@ -134,6 +141,13 @@
     }
     .navbar-collapse.collapse>div>ul> li> a{
         color: white !important;
+    }
+    .RUIFW-brand{
+        margin: 20px;
+        background: url("../../assets/images/scotiabank_logo.png") no-repeat 0 0;
+        width: 224px;
+        /*height: 40px;*/
+        height: 70px;
     }
 }
 
