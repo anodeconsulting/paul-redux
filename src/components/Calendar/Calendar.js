@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import BigCalendar from 'react-big-calendar'
 import events from './events'
 import moment from 'moment';
@@ -8,6 +8,8 @@ import {Tab, Tabs} from "react-tabs";
 import TabList from "react-tabs/esm/components/TabList";
 import TabPanel from "react-tabs/esm/components/TabPanel";
 import TableCalendar from "../Table/TableCalendar";
+import Tooltip from "react-bootstrap/es/Tooltip";
+import OverlayTrigger from "react-bootstrap/es/OverlayTrigger";
 
 
 BigCalendar.momentLocalizer(moment);
@@ -43,50 +45,115 @@ let tableItems = [{"de":"Cuenta Corriente *** 0002","transaction_id":877932002,"
     {"de":"Cuenta Corriente *** 0002","transaction_id":877790565,"posted_date":"2017-05-26","original_date":"2017-05-25","description":"TEF cta vista ob datapower","transaction_amount":{"currency_code":"CLP","amount":-51},"running_balance":{"currency_code":"CLP","amount":3459377.96},"id":28,"dataSaldo":3459377.96,"dataMonto":-51},
     {"de":"Cuenta Corriente *** 0002","transaction_id":877790369,"posted_date":"2017-05-26","original_date":"2017-05-25","description":"TEF bco consorcio","transaction_amount":{"currency_code":"CLP","amount":-111},"running_balance":{"currency_code":"CLP","amount":3459428.96},"id":29,"dataSaldo":3459428.96,"dataMonto":-111},
     {"de":"Cuenta Corriente *** 0002","transaction_id":877790279,"posted_date":"2017-05-26","original_date":"2017-05-25","description":"TEF bco consorcio","transaction_amount":{"currency_code":"CLP","amount":-100},"running_balance":{"currency_code":"CLP","amount":3459539.96},"id":30,"dataSaldo":3459539.96,"dataMonto":-100}];
-let Calendar = () => (
+// let Calendar2 = () => (
+//
+//     <div className="calendar-border" >
+//         <div>
+//             <h2 className="account-title"> Transacciones Programadas</h2>
+//         </div>
+//         <div>
+//             <select placeholder="select" className="calendar-select form-control">
+//                 <option value="Todos los Productos">Todos los Productos</option>
+//                 <option value="Cuenta Corriente *** 0001">Cuenta Corriente *** 0001</option>
+//                 <option value="Cuenta de Ahorro *** 0002">Cuenta de Ahorro *** 0002</option>
+//                 <option value="Cuenta Vista *** 0003">Cuenta Vista *** 0003</option>
+//                 <option value="Tarjeta Joven *** 0004">Tarjeta Joven *** 0004</option>
+//             </select>
+//         </div>
+//
+//         <div className="tab-container">
+//             <Tabs defaultIndex={1}>
+//                 <TabList>
+//                     <Tab><i className="fa fa-bars"></i></Tab>
+//                     <Tab><i className="fa ">&#xf073;</i></Tab>
+//                 </TabList>
+//
+//                 <TabPanel>
+//                     <div className="table-calendar">
+//                         <TableCalendar items={tableItems}/>
+//                     </div>
+//                 </TabPanel>
+//                 <TabPanel>
+//                     <div className="calendar">
+//                     <BigCalendar
+//                     events={events}
+//                     views={allViews}
+//                     step={60}
+//                     showMultiDayTimes
+//                     defaultDate={new Date()}
+//                     onSelectEvent={(event, e) => {console.log(event);console.log(this)}}
+//                     />
+//                     </div>
+//                 </TabPanel>
+//             </Tabs>
+//         </div>
+//     </div>
+//
+// );
 
-    <div className="calendar-border" >
-        <div>
-            <h2 className="account-title"> Transacciones Programadas</h2>
+// export default Calendar
+
+
+class Calendar extends Component {
+    constructor(){
+        super();
+
+    }
+
+    clickhandler(event){
+        let node = document.getElementsByClassName("rbc-event")[0];
+        node.setAttribute("data-toggle", "tooltip");
+        node.setAttribute("data-placement", "top");
+        console.log(event)
+        console.log(node)
+    }
+
+    render(){
+
+        return (
+        <div className="calendar-border" >
+            <div>
+                <h2 className="account-title"> Transacciones Programadas</h2>
+            </div>
+            <div>
+                <select placeholder="select" className="calendar-select form-control">
+                    <option value="Todos los Productos">Todos los Productos</option>
+                    <option value="Cuenta Corriente *** 0001">Cuenta Corriente *** 0001</option>
+                    <option value="Cuenta de Ahorro *** 0002">Cuenta de Ahorro *** 0002</option>
+                    <option value="Cuenta Vista *** 0003">Cuenta Vista *** 0003</option>
+                    <option value="Tarjeta Joven *** 0004">Tarjeta Joven *** 0004</option>
+                </select>
+            </div>
+
+            <div className="tab-container">
+                <Tabs defaultIndex={1}>
+                    <TabList>
+                        <Tab><i className="fa fa-bars"></i></Tab>
+                        <Tab><i className="fa ">&#xf073;</i></Tab>
+                    </TabList>
+
+                    <TabPanel>
+                        <div className="table-calendar">
+                            <TableCalendar items={tableItems}/>
+                        </div>
+                    </TabPanel>
+                    <TabPanel>
+                        <div className="calendar">
+                            <BigCalendar
+                                events={events}
+                                views={allViews}
+                                step={60}
+                                showMultiDayTimes
+                                defaultDate={new Date()}
+                                onSelectEvent={(event, e) => {this.clickhandler(event)}}
+                            />
+                        </div>
+                    </TabPanel>
+                </Tabs>
+            </div>
         </div>
-        <div>
-            <select placeholder="select" className="calendar-select form-control">
-                <option value="Todos los Productos">Todos los Productos</option>
-                <option value="Cuenta Corriente *** 0001">Cuenta Corriente *** 0001</option>
-                <option value="Cuenta de Ahorro *** 0002">Cuenta de Ahorro *** 0002</option>
-                <option value="Cuenta Vista *** 0003">Cuenta Vista *** 0003</option>
-                <option value="Tarjeta Joven *** 0004">Tarjeta Joven *** 0004</option>
-            </select>
-        </div>
+        )
+    }
 
-        <div className="tab-container">
-            <Tabs defaultIndex={1}>
-                <TabList>
-                    <Tab><i className="fa fa-bars"></i></Tab>
-                    <Tab><i className="fa ">&#xf073;</i></Tab>
-                </TabList>
-
-                <TabPanel>
-                    <div className="table-calendar">
-                        <TableCalendar items={tableItems}/>
-                    </div>
-                </TabPanel>
-                <TabPanel>
-                    <div className="calendar">
-                    <BigCalendar
-                    events={events}
-                    views={allViews}
-                    step={60}
-                    showMultiDayTimes
-                    defaultDate={new Date()}
-                    onSelectEvent={(event: Object, e: SyntheticEvent) => {}}
-                    />
-                    </div>
-                </TabPanel>
-            </Tabs>
-        </div>
-    </div>
-
-);
-
+}
 export default Calendar

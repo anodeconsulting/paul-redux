@@ -86,7 +86,6 @@ class Account extends Component {
     }
 
   render() {
-
       return (
         <section >
             <TopBox/>
@@ -232,7 +231,7 @@ class Account extends Component {
                     </Table>
                 </div>
 
-                <Calendar/>
+                <Calendar />
 
               </div>
 
