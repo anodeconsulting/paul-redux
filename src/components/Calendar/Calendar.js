@@ -8,7 +8,7 @@ import {Tab, Tabs} from "react-tabs";
 import TabList from "react-tabs/esm/components/TabList";
 import TabPanel from "react-tabs/esm/components/TabPanel";
 import TableCalendar from "../Table/TableCalendar";
-
+import CustomEvent from "./CustomEvent";
 
 BigCalendar.momentLocalizer(moment);
 
@@ -74,12 +74,14 @@ let Calendar = () => (
                 <TabPanel>
                     <div className="calendar">
                     <BigCalendar
+                    components={{event:CustomEvent}}
                     events={events}
                     views={allViews}
                     step={60}
                     showMultiDayTimes
                     defaultDate={new Date()}
-                    onSelectEvent={(event: Object, e: SyntheticEvent) => {}}
+                    // onSelectEvent={(event: Object, e: SyntheticEvent) => {}}
+                    // onSelectEvent={event => alert(event.title)}
                     />
                     </div>
                 </TabPanel>
