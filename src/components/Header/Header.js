@@ -53,9 +53,11 @@ class Header extends Component {
         }
 
         collapseNav(){
-            let btn =document.getElementsByClassName("navbar-toggle");
-            btn[0].click();
-            // console.log(btn);
+            let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            if(w < 766){
+                let btn =document.getElementsByClassName("navbar-toggle");
+                btn[0].click();
+            }
         }
 
         runningTime(that){
@@ -90,48 +92,48 @@ class Header extends Component {
                             </NavItem>
                         </IndexLinkContainer>
                         <NavDropdown eventKey={3} title="Pagar" id="Pager" >
-                            {/*<li id="billpayment" className="nav-toggle">*/}
-                                {/*<a href="" title="Pagar Servicios" >Pagar Servicios</a>*/}
-                                {/*<div >Realiza tus pagos de servicios en línea</div>*/}
-                            {/*</li>*/}
-                            {/*<li id="preauthpayment" className="nav-toggle">*/}
-                                {/*<a href="#" title="Pagos Automáticos (PAC/PAT)" >Pagos Automáticos (PAC/PAT) </a>*/}
-                                {/*<div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>*/}
-                            {/*</li>*/}
+                            <li id="billpayment" className="nav-toggle">
+                                <a  title="Pagar Servicios" >Pagar Servicios</a>
+                                <div >Realiza tus pagos de servicios en línea</div>
+                            </li>
+                            <li id="preauthpayment" className="nav-toggle">
+                                <a  title="Pagos Automáticos (PAC/PAT)" >Pagos Automáticos (PAC/PAT) </a>
+                                <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
+                            </li>
                             <li id="addcclmpayment" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
                                 <Link to={`/pay`} onClick={Header.handleClick.bind(this)}>Pagar Mis Productos</Link>
                                 <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
                             </li>
-                            {/*<li id="paymentoverview" className="nav-toggle">*/}
-                                {/*<a href="#" title="Histórico de Pagos" >Histórico de Pagos </a>*/}
-                                {/*<div>Revisa tus pagos realizados</div>*/}
-                            {/*</li>*/}
+                            <li id="paymentoverview" className="nav-toggle">
+                                <a title="Histórico de Pagos" >Histórico de Pagos </a>
+                                <div>Revisa tus pagos realizados</div>
+                            </li>
                         </NavDropdown>
                         <NavDropdown eventKey={4} title="Transferir" id="Transgerir">
                                 <li id="thirdpartytransfer" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
                                     <Link to={`/thirdPartyTransfer`} onClick={Header.handleClick.bind(this)}>Transferir a Terceros</Link>
                                     <div>Realiza transferencias a cuentas en Scotiabank o en otro banco</div>
                                 </li>
-                                {/*<li id="managerecipients" className="nav-toggle">*/}
-                                    {/*<a href="#" title="Administración de Destinatarios" >Administración de Destinatarios </a>*/}
-                                    {/*<div>Agregar/ editar/ eliminar destinatario de transferencias</div>*/}
-                                {/*</li>*/}
+                                <li id="managerecipients" className="nav-toggle">
+                                    <a title="Administración de Destinatarios" >Administración de Destinatarios </a>
+                                    <div>Agregar/ editar/ eliminar destinatario de transferencias</div>
+                                </li>
 
                                 <li id="addfundstransfer" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
                                     <Link to={`/accountTransfer`} title="Transferir entre Mis Cuentas" onClick={Header.handleClick.bind(this)}>Transferir entre Mis Cuentas </Link>
                                     <div>Realiza tus transferencias entre tus cuentas y pago de línea de crédito</div>
                                 </li>
 
-                                {/*<li id="transfersoverview" className="nav-toggle">*/}
-                                    {/*<a href="#" title="Cartola de Transferencias">Cartola de Transferencias </a>*/}
-                                    {/*<div>Revisa tus transferencias realizadas y programadas.</div>*/}
-                                {/*</li>*/}
-                                {/*<li className="nav-toggle clear"></li>*/}
+                                <li id="transfersoverview" className="nav-toggle">
+                                    <a  title="Cartola de Transferencias">Cartola de Transferencias </a>
+                                    <div>Revisa tus transferencias realizadas y programadas.</div>
+                                </li>
+                                <li className="nav-toggle clear"></li>
 
-                                {/*<li id="cashadvance" className="nav-toggle">*/}
-                                    {/*<a href="#" title="Avance de Tarjeta de Crédito" >Avance de Tarjeta de Crédito </a>*/}
-                                    {/*<div>Realiza avances en efectivo desde tus tarjetas de crédito hacia tus cuentas, con o sin cuotas.</div>*/}
-                                {/*</li>*/}
+                                <li id="cashadvance" className="nav-toggle">
+                                    <a  title="Avance de Tarjeta de Crédito" >Avance de Tarjeta de Crédito </a>
+                                    <div>Realiza avances en efectivo desde tus tarjetas de crédito hacia tus cuentas, con o sin cuotas.</div>
+                                </li>
 
                         </NavDropdown>
                         <NavDropdown eventKey={5} title="Invertir" id="Invertir">
@@ -139,19 +141,19 @@ class Header extends Component {
                                 <Link to={`/pay/mutualfund`} onClick={Header.handleClick.bind(this)}>Invertir en Fondos Mutuos</Link>
                                 <div>Selecciona Fondos Mutuos asociados a tu Perfil de Inversionista.</div>
                             </li>
-                            {/*<li id="investment_overview" className="nav-toggle">*/}
-                                {/*<a href="#" title="Cartola de Inversiones" >Cartola de Inversiones </a>*/}
-                                {/*<div>Revisa el movimiento de tus inversiones.</div>*/}
-                            {/*</li>*/}
-                            {/*<li className="nav-toggle clear"></li>*/}
-                            {/*<li id="add_term_deposit" className="nav-toggle">*/}
-                                {/*<a href="#" title="Invertir en Depósitos a Plazo" >Invertir en Depósitos a Plazo </a>*/}
-                                {/*<div>Selecciona el plazo y la moneda en la que deseas invertir.</div>*/}
-                            {/*</li>*/}
+                            <li id="investment_overview" className="nav-toggle">
+                                <a  title="Cartola de Inversiones" >Cartola de Inversiones </a>
+                                <div>Revisa el movimiento de tus inversiones.</div>
+                            </li>
+                            <li className="nav-toggle clear"></li>
+                            <li id="add_term_deposit" className="nav-toggle">
+                                <a  title="Invertir en Depósitos a Plazo" >Invertir en Depósitos a Plazo </a>
+                                <div>Selecciona el plazo y la moneda en la que deseas invertir.</div>
+                            </li>
                         </NavDropdown>
-                        {/*<NavItem eventKey={6} href="#">*/}
-                            {/*Ofertas Disponibles*/}
-                        {/*</NavItem>*/}
+                        <NavItem eventKey={6} >
+                            Ofertas Disponibles
+                        </NavItem>
                     </Nav>
 
 
@@ -166,13 +168,13 @@ class Header extends Component {
                             </DropdownToggle>
                             <DropdownMenu tag="ul">
                                 <li className="nav-toggle" id="">
-                                    <a href="#" title="Ayuda con esta página">Ayuda con esta Página</a>
+                                    <a  title="Ayuda con esta página">Ayuda con esta Página</a>
                                     <div>Conoce las instrucciones paso a paso de cómo usar las funcionalidades de esta página</div>
                                 </li>
                                 <li className="nav-toggle clear"></li>
 
                                 <li  className="nav-toggle"id="">
-                                    <a href="#" title="Centro de Ayuda" >Centro de Ayuda</a>
+                                    <a  title="Centro de Ayuda" >Centro de Ayuda</a>
                                     <div>Revisa videos y tips de ayuda.</div></li>
                                 <li className="nav-toggle clear"></li>
 
@@ -198,7 +200,7 @@ class Header extends Component {
                             <DropdownMenu tag="ul">
 
                                 <li className="nav-toggle3" id="">
-                                    <a href="Chile_Online_Statements.html" title="Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos">
+                                    <a  title="Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos">
                                         Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos </a>
                                     <div>Descarga documentos y modifica opciones de envío.</div>
                                 </li>
@@ -215,17 +217,17 @@ class Header extends Component {
                                 </li>
 
                                 <li className="nav-toggle3" id="">
-                                    <a href="Chile_Manage_Cheques.html" title="Cheques y Ordenes de No Pago">Cheques y Ordenes de No Pago</a><div>
+                                    <a  title="Cheques y Ordenes de No Pago">Cheques y Ordenes de No Pago</a><div>
                                     Consulta el estado de un talonario o cheque e Instruye Ordenes de No Pago.</div>
                                 </li>
                                 <li className="nav-toggle3 clear"></li>
                                 <li className="nav-toggle3" id="">
-                                    <a href="Chile_Token_Management.html" title="ScotiaPass">ScotiaPass</a>
+                                    <a  title="ScotiaPass">ScotiaPass</a>
                                     <div>Activa, sincroniza y reemplaza tu dispositivo ScotiaPass</div>
                                 </li>
 
                                 <li className="nav-toggle3" id="">
-                                    <a href="Chile_Virtual_CreditCard.html" title="Tarjetas de Crédito Virtuales">
+                                    <a  title="Tarjetas de Crédito Virtuales">
                                         Tarjetas de Crédito Virtuales</a>
                                     <div>Crea, elimina y consulta tus tarjetas de crédito virtuales.</div>
                                 </li>
