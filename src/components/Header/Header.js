@@ -8,6 +8,7 @@ import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 class Header extends Component {
       constructor(){
           super();
+          let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
           this.toggle = this.toggle.bind(this);
           this.toggle2 = this.toggle2.bind(this);
           this.state = {
@@ -18,7 +19,7 @@ class Header extends Component {
               GearOpen: false,
               QuestionOpen: false,
               showIcon:true,
-              localTime:0
+              localTime:time
           };
         }
 
@@ -73,7 +74,7 @@ class Header extends Component {
 
       let loginPage;
       let logout;
-          setTimeout(() => {setInterval(this.runningTime(this),1000); }, 0);
+
 
 
           if(window.location.pathname !== path){
