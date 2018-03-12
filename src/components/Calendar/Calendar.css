@@ -55,3 +55,10 @@
 .calendar-select.form-control{
     width: 29%!important;
 }
+
+.calendar-popup {
+    padding-left: 0!important;
+    border-bottom: 1px dotted #D7D7D7!important;
+    list-style-type: none;
+}
+

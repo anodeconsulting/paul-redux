@@ -49,6 +49,12 @@ class Account extends Component {
         credit[1].path = "/credit/lineofcredit/";
         credit[2].type = "Crédito Hipotecario*** 0010";
         credit[2].path = "/credit/mortgage/";
+        credit.push({"type":"Créditos*** 0009",
+                        "path":"/credit/loan/",
+                        "primary_balance":{"amount":"5150654"}});
+        // credit[3].type = "Créditos*** 0009";
+        // credit[3].path = "/credit/loan/";
+        // credit[3].primary_balance.amount = "/credit/mortgage/";
 
         // console.log(credit)
       this.setState({itemsChecking: Checking});
@@ -86,7 +92,6 @@ class Account extends Component {
     }
 
   render() {
-
       return (
         <section >
             <TopBox/>
@@ -207,7 +212,7 @@ class Account extends Component {
                       <thead>
                       </thead>
                         {this.state.itemsCredit.map((item,index) =>
-                            <tbody key={item.id}>
+                            <tbody key={item.path}>
                             <tr>
                               <td className="amount-title"><Link to={`${item.path}${item.type}`}>{item.type}</Link></td>
                               <td className="amount">
@@ -232,7 +237,7 @@ class Account extends Component {
                     </Table>
                 </div>
 
-                <Calendar/>
+                <Calendar />
 
               </div>
 

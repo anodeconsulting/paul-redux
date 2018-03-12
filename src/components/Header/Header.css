@@ -3,7 +3,8 @@
 .RUIFW-brand:focus{
     outline: none;
 }
-@media (max-width: 766px) {
+
+@media (max-width: 666px) {
     .navbar {
         border-radius: 0 !important;
         background: transparent !important;
@@ -47,25 +48,49 @@
     }
 }
 
+@media (max-width: 766px) and (min-width: 666px) {
+    .navbar {
+        border-radius: 0 !important;
+        background: transparent !important;
+    }
 
-/*.navbar-collapse.collapse.in{*/
-    /*background-color: #f8f8f8 !important;*/
-/*}*/
+    .navbar .navbar-header{
+        background: #d81e05 !important;
+    }
 
-/*.navbar-collapse.collapse.in .navIcon-ul{*/
-    /*display: none;*/
-/*}*/
+    .navbar-collapse.collapse>div>ul> li> a{
+        color: #d81e05 !important;
+    }
 
-.container>.navbar-collapse > div>ul{
-    margin-top: 3px!important;
-}
+    .navbar-content {
+        width: auto;
+        margin: auto;
+        position: relative;
+    }
 
+    .navbar-logo {
+        width: auto;
+        margin: auto;
+        position: relative;
+    }
 
-
-.navbar-brand{
-    /*font-size: 16px;*/
-    color: white !important;
-    font-size: 25px;
+    .container {
+        width: auto !important;
+    }
+    .nav-toggle{
+        width: 100%;
+        float: none;
+    }
+    .nav >li{
+        font-size: 15px;
+    }
+    .RUIFW-brand{
+        margin: 20px;
+        background: url("../../assets/images/scotiabank_logo.png") no-repeat 0 0;
+        width: 224px;
+        /*height: 40px;*/
+        height: 70px;
+    }
 }
 
 @media screen and (min-width: 960px) {
@@ -150,6 +175,16 @@
         height: 70px;
     }
 }
+
+
+.navbar-brand{
+    color: white !important;
+    font-size: 25px;
+}
+.container>.navbar-collapse > div>ul{
+    margin-top: 3px!important;
+}
+
 
 .navbar-left{
     float: left;

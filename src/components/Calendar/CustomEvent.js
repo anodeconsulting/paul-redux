@@ -8,18 +8,30 @@ class CustomEvent extends Component {
 
 
     render(){
-    //   console.log(this.props);
-
       let popoverClickRootClose = (
-        <Popover id="popover-positioned-top" title="Popover top">
-            <strong>{this.props.title}</strong> Check this info.
+        <Popover id="popover-positioned-top" title="Transacciones Programadas">
+            <strong>{this.props.event.title}</strong>
+
+            <ul className="calendar-popup">
+                <li>Transferencia entre Cuentas Propias</li>
+                <li>De: {this.props.de}</li>
+                <li>A: </li>
+                <li>Monto: $ {this.props.event.dataMonto}</li>
+            </ul>
+            <ul className="calendar-popup">
+                <li>Transferencia A Terceros</li>
+                <li>Banco: {this.props.event.de}</li>
+                <li>Destinatario: </li>
+                <li>Monto: $ {this.props.event.dataMonto}</li>
+            </ul>
+
         </Popover>
       );
 
         return (
           <div>
-            <OverlayTrigger id="help" trigger="click" placement="left" overlay={popoverClickRootClose}>
-                <div>Holy guacamole!</div>
+            <OverlayTrigger id="help" trigger="click" placement="top" overlay={popoverClickRootClose} rootClose>
+                <div>{this.props.event.title}</div>
             </OverlayTrigger>
 
           </div>
