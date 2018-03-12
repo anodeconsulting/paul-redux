@@ -3,12 +3,17 @@ import './Topbox.css';
 import Link from "react-router-dom/es/Link";
 
 class TopBox extends Component {
+
+    handleClick(){
+        window.print();
+    }
+
     render() {
         return (
             <div className="row">
                 <h3 className=" col-sm-12 h1title">&nbsp;Mis Productos</h3>
                 <div className="col-sm-12 account-icon">
-                    <a className="print-icon"></a>
+                    <a className="print-icon" onClick={this.handleClick.bind(this)}></a>
                     <a className="caculate-icon"></a>
                     <a className="download-icon"></a>
 
