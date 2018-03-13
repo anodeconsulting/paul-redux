@@ -81,7 +81,7 @@ class CreditCard extends Component {
         <div className="row main2">
           <div className="col-md-3">
           {/*  for accordion */}
-            <Leftbox/>
+            <Leftbox location = {this.props.location}/>
           </div>
           <div className="col-md-6 pushRight">
             {/* for mid box */}

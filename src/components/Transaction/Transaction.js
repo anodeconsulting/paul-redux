@@ -74,7 +74,7 @@ class Transaction extends Component {
         <div className="row main2">
           <div className="col-md-3">
           {/*  for accordion */}
-            <Leftbox/>
+            <Leftbox location = {this.props.location}/>
             <br />
           </div>
           <div className="col-md-6 pushRight">

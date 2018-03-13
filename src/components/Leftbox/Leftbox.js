@@ -3,12 +3,14 @@ import './Leftbox.css'
 import { Link } from 'react-router-dom';
 import { ListGroup,ListGroupItem,Panel } from 'react-bootstrap';
 import { Mortgage} from '../Mortgage/Mortgage';
+import classNames from 'classnames';
 
 class Leftbox extends Component {
     constructor(props, context) {
       super(props, context);
   
       this.state = {
+        selected:this.props.location.pathname.split('/')[3],
         active:false,
         openCheque: true,
         openCredit: true,
@@ -71,20 +73,18 @@ class Leftbox extends Component {
     }
 
     handleCard(ele1,ele2){
-      // console.log(ele2);
-      // return <Mortgage />
-      // const currentState = this.state.active;
-      // this.setState({ active: !currentState });
-      // var current = document.querySelector('.active');
-      // console.log(this);
-      // if (current) {
-      //     current.classList.remove('active');
-      // }
-      // current.classList.add('active');
+      this.setState({selected  :ele1})
+      
+      }
+
+      _checkActiveBtn(filterName){
+
+        return ((filterName===this.state.selected) ?'active':'');
+        
       }
   
     render() {
-
+    
       let module = null;
       let module1 = null;
       if(!this.state.openCheque){
@@ -114,7 +114,7 @@ class Leftbox extends Component {
             <Panel.Collapse>
               <ListGroup id="firstList">
                 {this.state.data[0].accounts.map((ele,index)=>
-                    <ListGroupItem key={index}><Link to={'/account/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}>{ele.account}</Link></ListGroupItem>
+                    <ListGroupItem key={index} className={this._checkActiveBtn(ele.account)}><Link to={'/account/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}>{ele.account}</Link></ListGroupItem>
                 )}
               </ListGroup>
             </Panel.Collapse>
@@ -128,7 +128,7 @@ class Leftbox extends Component {
             <Panel.Collapse>
               <ListGroup id="secondList">
                 {this.state.data[1].accounts.map((ele,index)=>
-                    <ListGroupItem key={index}><Link to={'/credit/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account, ele.type)}>{ele.account}</Link></ListGroupItem>
+                    <ListGroupItem key={index} className={this._checkActiveBtn(ele.account)}><Link to={'/credit/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}>{ele.account}</Link></ListGroupItem>
                 )}
               </ListGroup>
             </Panel.Collapse>

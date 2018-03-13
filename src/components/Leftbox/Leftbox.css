@@ -21,7 +21,10 @@
     border-color: #aed248;
   }
 
-#firstList a, #secondList a{
-    color: #2A5DB0;
-}
+/* #firstList li, #secondList li{
+    background-color: #d4d4d4;
+} */
 
+.list-group-item.active{
+    background-color: #d4d4d4!important;
+}
