@@ -5,8 +5,8 @@ import button1 from '../../assets/images/button1.png';
 import TableMutualFund from "../Table/TableMutualFund";
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
-import {GetMortgageTransactions} from "../../services/GetMortgageTransactions";
 import AlertSuccess from '../Tools/Alert/Alert_Success';
+import * as Services from '../../services/Services';
 
 class MutualFundTransaction extends Component {
      //Constructor 
@@ -26,7 +26,7 @@ class MutualFundTransaction extends Component {
     }
 
     componentDidMount(){
-      GetMortgageTransactions().then((result) => {
+      Services.GetMortgageTransactions().then((result) => {
         let data = result.transactions;
         for(let i=0;i<data.length;i++){
           data[i].dataAmount = data[i].transaction_amount.amount;

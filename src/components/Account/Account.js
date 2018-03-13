@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
-import { GetAccounts } from "../../services/GetAccounts"
 import { Table } from 'react-bootstrap';
 import './Account.css';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Calendar from "../Calendar/Calendar";
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
-
+import * as Services from '../../services/Services';
 import { Line, Circle } from 'rc-progress';
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 
@@ -35,7 +34,7 @@ class Account extends Component {
   }
 
   componentDidMount(){
-    GetAccounts().then((result) => {
+    Services.GetAccounts().then((result) => {
       let credit = result.filter((item)=>{return !item.type.includes("CTA")});
       let Checking = result.filter((item)=>{return item.type.includes("CTA")});
 

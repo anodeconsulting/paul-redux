@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {Tabs, Tab} from 'react-bootstrap';
 import MyLargeModal from './MyLargeModal';
+import Calendar from "../Calendar/Calendar";
 
 class ExtraComponent extends Component {
     constructor(props) {
@@ -197,7 +198,8 @@ class ExtraComponent extends Component {
                 </div>
                 </Tab>
                 <Tab eventKey={2} title="Transacciones Programadas">
-                    <h5>No hay transacciones</h5>
+                    {/* <h5>No hay transacciones</h5> */}
+                    <Calendar />
                 </Tab>
             </Tabs> 
             

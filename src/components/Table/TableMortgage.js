@@ -171,7 +171,8 @@ function priceFormatter(cell, row) {
                 </div>
                 </Tab>
                 <Tab eventKey={2} title="Transacciones Programadas">
-                    <h5>No hay transacciones</h5>
+                    {/* <h5>No hay transacciones</h5> */}
+                    <Calendar />
                 </Tab>
             </Tabs> 
             

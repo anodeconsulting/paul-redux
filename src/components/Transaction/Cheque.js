@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Transaction.css';
-import { GetDepositeTransactions } from '../../services/GetDepositeTransactions';
-import { GetDepositeDetails } from '../../services/GetDepositeDetails';
+import * as Services from '../../services/Services';
 import Leftbox from '../Leftbox/Leftbox';
 // import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
@@ -11,9 +10,6 @@ import TableDeposite from "../Table/TableDeposite";
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import Link from "react-router-dom/es/Link";
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
-// import DropDown from "../Midbox/DropDown";
-// import TableMeta from "../Table/TableMeta";
-// import { location } from 'react-router';
 
 class Cheque extends Component {
 
@@ -31,7 +27,7 @@ class Cheque extends Component {
   }
 
   componentDidMount(){
-    GetDepositeDetails().then((result) => {
+    Services.GetDepositeDetails().then((result) => {
       // console.log(result);
       let balance = result.available_balance.amount || 0;
       this.setState({balance: "32925"});
@@ -41,7 +37,7 @@ class Cheque extends Component {
       // console.log(this.state.details); 
     });
 
-    GetDepositeTransactions().then((result) => {
+    Services.GetDepositeTransactions().then((result) => {
       let data = result.transactions;
       for(let i=0;i<data.length;i++){
         data[i].id = i+1;

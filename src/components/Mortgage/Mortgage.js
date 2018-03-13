@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Mortgage.css';
-import { GetTransactions } from '../../services/GetTransactions';
-import { GetMortgageTransactions } from '../../services/GetMortgageTransactions';
+import * as Services from '../../services/Services';
 import Leftbox from '../Leftbox/Leftbox';
 import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
@@ -9,7 +8,6 @@ import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import TableMortgage from "../Table/TableMortgage";
 import { location } from 'react-router';
-import {GetMortgageDetails} from "../../services/GetMortgageDetails";
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import Link from "react-router-dom/es/Link";
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
@@ -28,7 +26,7 @@ class Mortgage extends Component {
   }
 
   componentDidMount(){
-    GetMortgageDetails().then((result) => {
+    Services.GetMortgageDetails().then((result) => {
         let balance = result.primary_balance.amount || 0;
         let curCode = result.primary_balance.currency_code || '$';
         this.setState({balance: "5150654"});
@@ -37,7 +35,7 @@ class Mortgage extends Component {
       });
 
 
-    GetMortgageTransactions().then((result) => {
+    Services.GetMortgageTransactions().then((result) => {
       let data = result.transactions;
       for(let i=0;i<data.length;i++){
         data[i].id = i+1;

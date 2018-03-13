@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import './Transaction.css';
-import { GetTransactions } from '../../services/GetTransactions';
 import Leftbox from '../Leftbox/Leftbox';
 import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
@@ -10,7 +9,7 @@ import Table from "../Table/Table";
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import Link from "react-router-dom/es/Link";
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
-// import { location } from 'react-router';
+import * as Services from '../../services/Services';
 
 class Transaction extends Component {
 
@@ -27,7 +26,7 @@ class Transaction extends Component {
   }
 
   componentDidMount(){
-    GetTransactions().then((result) => {
+    Services.GetTransactions().then((result) => {
       let data = result.transactions.splice(0,50);
       for(let i=0;i<data.length;i++){
         data[i].id = i+1;

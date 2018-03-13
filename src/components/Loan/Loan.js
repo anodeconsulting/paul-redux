@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './Loan.css';
-import { GetTransactions } from '../../services/GetTransactions';
-import { GetMortgageTransactions } from '../../services/GetMortgageTransactions';
+import * as Services from '../../services/Services';
 import Leftbox from '../Leftbox/Leftbox';
 import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
@@ -9,7 +8,6 @@ import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import TableCredit from "../Table/TableCredit";
 import { location } from 'react-router';
-import {GetCCDetails} from "../../services/GetCCDetails";
 
 class Loan extends Component {
 
@@ -28,7 +26,7 @@ class Loan extends Component {
 
   componentDidMount(){
 
-    GetCCDetails().then((result) => {
+    Services.GetCCDetails().then((result) => {
       let balance = result.primary_balance.amount || 0;
       this.setState({balance: "5150654"});
       this.setState({details: result});    

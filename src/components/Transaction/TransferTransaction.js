@@ -5,8 +5,8 @@ import button1 from '../../assets/images/button1.png';
 import TableTransfer from "../Table/TableTransfer";
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
-import {GetTransferActivities} from "../../services/GetTransferActivities";
 import AlertSuccess from '../Tools/Alert/Alert_Success';
+import * as Services from '../../services/Services';
 
 class TransferTransaction extends Component {
      //Constructor 
@@ -25,7 +25,7 @@ class TransferTransaction extends Component {
     }
 
     componentDidMount(){
-      GetTransferActivities().then((result) => {
+      Services.GetTransferActivities().then((result) => {
         let data = result.acctTranRec;
         for(let i=0;i<data.length;i++){
           data[i].dataAmount = "$265.200";

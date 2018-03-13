@@ -201,8 +201,8 @@ class Header extends Component {
                             <DropdownMenu tag="ul">
 
                                 <li className="nav-toggle3" id="">
-                                    <a  title="Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos">
-                                        Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos </a>
+                                    <Link to={`/statement`} title="Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos" onClick={Header.handleClick.bind(this)}>
+                                        Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos </Link>
                                     <div>Descarga documentos y modifica opciones de envío.</div>
                                 </li>
                                 <li className="nav-toggle3" id="">
