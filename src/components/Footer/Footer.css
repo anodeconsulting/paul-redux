@@ -38,3 +38,8 @@
 .text-right{
     text-align: right;
 }
+.flag-options{
+    position: absolute !important;
+    top: auto !important;
+    bottom: calc(100% - 1px) !important;
+}

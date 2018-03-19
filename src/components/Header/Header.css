@@ -181,9 +181,9 @@
     color: white !important;
     font-size: 25px;
 }
-.container>.navbar-collapse > div>ul{
-    margin-top: 3px!important;
-}
+/*.container>.navbar-collapse > div>ul{*/
+    /*margin-top: 3px!important;*/
+/*}*/
 
 
 .navbar-left{
@@ -342,7 +342,7 @@ span{
 }
 
 .navIcon{
-    font-size: 25px;
+    font-size: 18px;
 }
 .creditcard-pic{
     background: url("../../assets/images/cc_img.png") no-repeat 0 0;
