@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Tab.css';
 import { FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap';
+import { FormattedMessage } from 'react-intl';
 
 class TabPayStep1 extends Component {
      //Constructor 
@@ -203,12 +204,12 @@ class TabPayStep1 extends Component {
         return (
             <div>
                 <div className="wizard-form-title">
-                    Desde esta página puedes  transferir dinero a una persona en Scotiabank o en otro banco.    
+                    <FormattedMessage id='pay_product.step1.title1' />    
                 </div>
                 <div className="well col-sm-12">
                     <div className="col-sm-12 pushBot">
                         <div className="col-sm-3">
-                            <ControlLabel>De</ControlLabel>
+                            <ControlLabel><FormattedMessage id='pay_product.step1.formtitle1' /></ControlLabel>
                         </div>
                         <div className="col-sm-9">
                             <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChange.bind(this)}>
@@ -224,7 +225,7 @@ class TabPayStep1 extends Component {
                     {module1}
                     <div className="col-sm-12">
                         <div className="col-sm-3">
-                            <ControlLabel>A</ControlLabel>
+                            <ControlLabel><FormattedMessage id='pay_product.step1.formtitle2' /></ControlLabel>
                         </div>
                         <div className="col-sm-9">
                             <FormControl value={this.state.valueA} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>

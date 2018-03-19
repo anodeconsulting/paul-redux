@@ -8,6 +8,7 @@ import { Button, Alert } from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
 import { Link } from "react-router-dom";
 import AlertWarning from '../Tools/Alert/Alert_Warning';
+import { FormattedMessage } from 'react-intl';
 
 class Pay extends Component {
 
@@ -65,13 +66,13 @@ class Pay extends Component {
             {moduleAlert}
             <div className="row">
                 <div className='col-sm-9 div-border'>
-                    <h1>Pagar Mis Productos </h1>        
+                    <h1><FormattedMessage id='pay_product.step1.title' /> </h1>        
                         <div>
                             <Tabs activeKey={this.state.key} onSelect={this.handleSelect} animation={false} id="noanim-tab-example">
-                                <Tab eventKey={1} title="1. Seleccionar Destino">
+                                <Tab eventKey={1} title={<FormattedMessage id='pay_product.step1.tab1' />}>
                                     <TabPayStep1 />
                                 </Tab>
-                                <Tab eventKey={2} title="2. Confirmar" disabled={this.state.disabled}>
+                                <Tab eventKey={2} title={<FormattedMessage id='pay_product.step1.tab2' />} disabled={this.state.disabled}>
                                     <TabPayStep2 />
                                 </Tab>
                             </Tabs>
@@ -85,8 +86,8 @@ class Pay extends Component {
                                 }else{
                                     this.handleSelect(2);
                                 }
-                                }}>Aceptar</Button>
-                            <Button className="cancel"><Link to="/account">Cancelar</Link></Button>
+                                }}><FormattedMessage id='pay_product.step1.accept' /></Button>
+                            <Button className="cancel"><Link to="/account"><FormattedMessage id='pay_product.step1.cancel' /></Link></Button>
                         </div>      
                 </div>  
                 <div className='col-sm-3'>

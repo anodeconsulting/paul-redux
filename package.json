@@ -12,6 +12,8 @@
     "react-bootstrap": "^0.32.1",
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "^16.2.0",
+    "react-flags-select": "^1.1.2",
+    "react-intl": "^2.4.0",
     "react-pdf-js-infinite": "^1.2.0",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
@@ -29,5 +31,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "homepage": "http://10.120.6.13:8080/react/"
+  "homepage": "http://10.120.6.13:8080/react/",
+  "devDependencies": {
+    "babel-plugin-react-intl": "^2.4.0"
+  }
 }

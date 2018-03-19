@@ -1,39 +1,40 @@
 import React, {Component} from 'react';
 import './Tab.css';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap';
- 
+import { FormattedMessage } from 'react-intl';
+
 class TabPayStep2 extends Component {
 
     render() {
         return (
             <div>
-                <div className="fontTop">Confirma los datos para invertir o rescatar tu Fondo Mutuo</div>
+                <div className="fontTop"><FormattedMessage id='pay_product.step2.text1' /></div>
                 <div className="wizard-form-title">
-                Revisa la información, si es correcta haz click en el botón "Confirmar" para completar tu inversión. Si los datos no están correctos, haz click en el botón “Volver” y efectúa las correcciones necesarias.    
+                    <FormattedMessage id='pay_product.step2.text2' />    
                 </div>
                 <div className="col-sm-12">
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Movimiento</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel1' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Inversión</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue1' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>De</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel2' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Cuenta Corriente *** 0001</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue2' /> *** 0001</ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Tipo de Fondo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel3' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Deuda de Corto Plazo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue3' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">

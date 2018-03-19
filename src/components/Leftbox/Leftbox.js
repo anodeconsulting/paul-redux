@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ListGroup,ListGroupItem,Panel } from 'react-bootstrap';
 import { Mortgage} from '../Mortgage/Mortgage';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 
 class Leftbox extends Component {
     constructor(props, context) {
@@ -108,7 +109,7 @@ class Leftbox extends Component {
           <Panel bsStyle="danger" id="collapsible-panel-example-3" defaultExpanded={this.state.openCheque}>
             <Panel.Heading>
             <Panel.Title toggle onClick={this.handleClickCheque}>
-              {module}Cuentas Bancarias
+              {module}<FormattedMessage id='leftbox.bankaccounts' />
             </Panel.Title>
             </Panel.Heading>
             <Panel.Collapse>
@@ -122,7 +123,7 @@ class Leftbox extends Component {
           <Panel bsStyle="danger" id="collapsible-panel-example-3" defaultExpanded={this.state.openCredit}>
             <Panel.Heading>
             <Panel.Title toggle onClick={this.handleClickCredit}>
-              {module1}Créditos y Tarjetas de Crédito
+              {module1}<FormattedMessage id='leftbox.creditaccounts' />
             </Panel.Title>
             </Panel.Heading>
             <Panel.Collapse>

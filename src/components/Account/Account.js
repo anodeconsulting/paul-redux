@@ -9,7 +9,7 @@ import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import * as Services from '../../services/Services';
 import { Line, Circle } from 'rc-progress';
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
-
+import { FormattedMessage } from 'react-intl';
 
 class Account extends Component {
 
@@ -100,13 +100,13 @@ class Account extends Component {
                 <div className="summerary-title" onClick={this.changeResumen.bind(this)}>
                   <i className="fa fa-caret-right arrow-down" aria-hidden="true" style={{display: this.state.resumenExpand? 'none' : 'block'}}></i>
                   <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.resumenExpand? 'block' : 'none'}}></i>
-                  <h2 className="account-title" >Resumen de Productos</h2>
+                  <h2 className="account-title" ><FormattedMessage id='account.summary' /></h2>
                 </div>
                 <div style={{display: this.state.resumenExpand? 'block' : 'none'}}>
                   <div className="progress-chart">
                     <div className="row progress1">
                       <div className=" col-md-3 col-sm-3 progress-title">
-                        Saldos en Cuentas
+                        <FormattedMessage id='account.balance' />
                       </div>
                       <div className=" col-md-9 col-sm-9 relative">
                         <div className="progressbar">
@@ -120,7 +120,7 @@ class Account extends Component {
                     </div>
                     <div className="row progress2">
                       <div className=" col-md-3 col-sm-3 progress-title">
-                        Cupos Utilizados
+                      <FormattedMessage id='account.quota' />
                       </div>
                       <div className=" col-md-9 col-sm-9 relative">
                         <div className="progressbar">
@@ -134,7 +134,7 @@ class Account extends Component {
                     </div>
                     <div className="row progrees3">
                       <div className=" col-md-3 col-sm-3 progress-title">
-                        Saldo Disponible
+                        <FormattedMessage id='account.availablebal' />
                       </div>
                       <div className=" col-md-9 col-sm-9 relative">
                         <div className="progressbar">
@@ -154,7 +154,7 @@ class Account extends Component {
                 <div className="summerary-title" onClick={this.changeCuentas.bind(this)}>
                   <i className="fa fa-caret-right arrow-down" aria-hidden="true" style={{display: this.state.cuentasExpand? 'none' : 'block'}}></i>
                   <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.cuentasExpand? 'block' : 'none'}}></i>
-                  <h2 className="account-title">Cuentas Bancarias</h2>
+                  <h2 className="account-title"><FormattedMessage id='account.bankaccounts' /></h2>
                 </div>
                 <div className="overview-table" style={{display: this.state.cuentasExpand? 'block' : 'none'}}>
                   <Table >
@@ -175,13 +175,13 @@ class Account extends Component {
                                 </DropdownToggle>
                                 <DropdownMenu tag="ul">
                                   <li role="presentation" className="squaren-btn-item">
-                                    <Link to={`/thirdPartyTransfer`}>Transferir a Terceros</Link>
+                                    <Link to={`/thirdPartyTransfer`}><FormattedMessage id='dropdown.transfer' /></Link>
                                   </li>
                                   <li role="presentation" className="squaren-btn-item">
-                                    <Link to={`/accountTransfer`}>Transferencias entre Mis Cuentas</Link>
+                                    <Link to={`/accountTransfer`}><FormattedMessage id='dropdown.transbetweenaccount' /></Link>
                                   </li>
                                   <li role="presentation" className="squaren-btn-item">
-                                    <Link to={`/statement`}>Estados de Cuenta</Link>
+                                    <Link to={`/statement`}><FormattedMessage id='dropdown.statement' /></Link>
                                   </li>
 
                                   {/*<li role="presentation">*/}
@@ -203,7 +203,7 @@ class Account extends Component {
                 <div className="summerary-title" onClick={this.changeCredit.bind(this)}>
                   <i className="fa fa-caret-right arrow-down" aria-hidden="true" style={{display: this.state.creditExpand? 'none' : 'block'}}></i>
                   <i className="fa fa-caret-down arrow-down" aria-hidden="true" style={{display: this.state.creditExpand? 'block' : 'none'}}></i>
-                  <h2 className="account-title">Créditos y Tarjetas de Crédito</h2>
+                  <h2 className="account-title"><FormattedMessage id='account.creditaccounts' /></h2>
                 </div>
                 <div className="overview-table" id="Body" style={{display: this.state.creditExpand? 'block' : 'none'}}>
                     {/*<Table responsive>*/}
@@ -225,7 +225,7 @@ class Account extends Component {
                                   </DropdownToggle>
                                   <DropdownMenu tag="ul">
                                       <li role="presentation" className="squaren-btn-item">
-                                        <Link to={`/pay`}>Pagar</Link>
+                                        <Link to={`/pay`}><FormattedMessage id='dropdown.pay' /></Link>
                                       </li>
                                   </DropdownMenu>
                                 </Dropdown>

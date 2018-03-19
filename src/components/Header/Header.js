@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import './Header.css';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, FormGroup, FormControl } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { IndexLinkContainer } from 'react-router-bootstrap';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
+import ReactFlagsSelect from 'react-flags-select';
+import 'react-flags-select/css/react-flags-select.css';
+import { location } from 'react-router';
 
 class Header extends Component {
-      constructor(){
-          super();
+      constructor(props){
+          super(props);
           let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
           this.toggle = this.toggle.bind(this);
           this.toggle2 = this.toggle2.bind(this);
@@ -21,6 +26,7 @@ class Header extends Component {
               showIcon:true,
               localTime:time
           };
+          
         }
 
         logout() {
@@ -69,13 +75,29 @@ class Header extends Component {
 
         }
 
+        handleLan(e){
+            let language = document.getElementsByTagName("img")[0].src;
+            if(language.includes('b87a932d')){
+                let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
+                this.setState({localTime: time});
+                language = "es-ES";
+            }else{
+                language = "en-US";
+                let time = new Date().toLocaleDateString('en',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
+                this.setState({localTime: time});
+            }
+            this.props.dispatch({
+                type: 'changeLanguage',
+                id: language
+            })
+        }
+
       render() {
           const path = this.state.pathBase;
+          const user = this.props.users;
 
-      let loginPage;
-      let logout;
-
-
+          let loginPage;
+          let logout;
 
           if(window.location.pathname !== path){
             loginPage=
@@ -84,79 +106,94 @@ class Header extends Component {
                     <Nav >
                         <IndexLinkContainer to={`/account`} onClick={()=>{this.collapseNav()}}>
                             <NavItem eventKey={1} href="#">
-                                Mis Productos
+                                <FormattedMessage id='nav.product' />
                             </NavItem>
                         </IndexLinkContainer>
                         <IndexLinkContainer to={`/account/deposite/Cuenta%20Corriente%20Pesos%20***%200343`} onClick={()=>{this.collapseNav()}}>
                             <NavItem eventKey={2} href="#">
-                                Mis Movimientos
+                            <FormattedMessage id='nav.transaction' />
                             </NavItem>
                         </IndexLinkContainer>
-                        <NavDropdown eventKey={3} title="Pagar" id="Pager" >
+                        <NavDropdown eventKey={3} title={<FormattedMessage id='nav.pay' />} id="Pager" >
                             <li id="billpayment" className="nav-toggle">
-                                <a  title="Pagar Servicios" >Pagar Servicios</a>
-                                <div >Realiza tus pagos de servicios en línea</div>
+                                <a  title="Pagar Servicios" ><FormattedMessage id='nav.payService' /></a>
+                                <div ><FormattedMessage id='nav.payServicetext' /></div>
                             </li>
                             <li id="preauthpayment" className="nav-toggle">
-                                <a  title="Pagos Automáticos (PAC/PAT)" >Pagos Automáticos (PAC/PAT) </a>
-                                <div>Administra tus Pagos de Cuentas de Servicios en forma automática con cargo a tu Cuenta o Tarjeta</div>
+                                <a  title="Pagos Automáticos (PAC/PAT)" ><FormattedMessage id='nav.automaticePayments' /> </a>
+                                <div><FormattedMessage id='nav.antomaticePaymentstext' /></div>
                             </li>
                             <li id="addcclmpayment" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
-                                <Link to={`/pay`} onClick={Header.handleClick.bind(this)}>Pagar Mis Productos</Link>
-                                <div>Realiza el pago de tus productos de crédito con cargo a tus cuentas</div>
+                                <Link to={`/pay`} onClick={Header.handleClick.bind(this)}><FormattedMessage id='nav.paymyproducts' /></Link>
+                                <div><FormattedMessage id='nav.paymyproductstext' /></div>
                             </li>
                             <li id="paymentoverview" className="nav-toggle">
-                                <a title="Histórico de Pagos" >Histórico de Pagos </a>
-                                <div>Revisa tus pagos realizados</div>
+                                <a title="Histórico de Pagos" ><FormattedMessage id='nav.paymenthistory' /> </a>
+                                <div><FormattedMessage id='nav.paymenthistorytext' /></div>
                             </li>
                         </NavDropdown>
-                        <NavDropdown eventKey={4} title="Transferir" id="Transgerir">
+                        <NavDropdown eventKey={4} title={<FormattedMessage id='nav.transfer' />} id="Transgerir">
                                 <li id="thirdpartytransfer" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
-                                    <Link to={`/thirdPartyTransfer`} onClick={Header.handleClick.bind(this)}>Transferir a Terceros</Link>
-                                    <div>Realiza transferencias a cuentas en Scotiabank o en otro banco</div>
+                                    <Link to={`/thirdPartyTransfer`} onClick={Header.handleClick.bind(this)}><FormattedMessage id='nav.transfers.transfer' /></Link>
+                                    <div><FormattedMessage id='nav.transfers.transfertext' /></div>
                                 </li>
                                 <li id="managerecipients" className="nav-toggle">
-                                    <a title="Administración de Destinatarios" >Administración de Destinatarios </a>
-                                    <div>Agregar/ editar/ eliminar destinatario de transferencias</div>
+                                    <a title="Administración de Destinatarios" ><FormattedMessage id='nav.transfers.review' /> </a>
+                                    <div><FormattedMessage id='nav.transfers.reviewtext' /></div>
                                 </li>
 
                                 <li id="addfundstransfer" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
-                                    <Link to={`/accountTransfer`} title="Transferir entre Mis Cuentas" onClick={Header.handleClick.bind(this)}>Transferir entre Mis Cuentas </Link>
-                                    <div>Realiza tus transferencias entre tus cuentas y pago de línea de crédito</div>
+                                    <Link to={`/accountTransfer`} title="Transferir entre Mis Cuentas" onClick={Header.handleClick.bind(this)}><FormattedMessage id='nav.transfers.tranbetweenaccount' /> </Link>
+                                    <div><FormattedMessage id='nav.transfers.tranbetweenaccounttext' /></div>
                                 </li>
 
                                 <li id="transfersoverview" className="nav-toggle">
-                                    <a  title="Cartola de Transferencias">Cartola de Transferencias </a>
-                                    <div>Revisa tus transferencias realizadas y programadas.</div>
+                                    <a  title="Cartola de Transferencias"><FormattedMessage id='nav.transfers.admin' /> </a>
+                                    <div><FormattedMessage id='nav.transfers.admintext' /></div>
                                 </li>
                                 <li className="nav-toggle clear"></li>
 
                                 <li id="cashadvance" className="nav-toggle">
-                                    <a  title="Avance de Tarjeta de Crédito" >Avance de Tarjeta de Crédito </a>
-                                    <div>Realiza avances en efectivo desde tus tarjetas de crédito hacia tus cuentas, con o sin cuotas.</div>
+                                    <a  title="Avance de Tarjeta de Crédito" ><FormattedMessage id='nav.transfers.cashadvance' /> </a>
+                                    <div><FormattedMessage id='nav.transfers.cashadvancetext' /></div>
                                 </li>
 
                         </NavDropdown>
-                        <NavDropdown eventKey={5} title="Invertir" id="Invertir">
+                        <NavDropdown eventKey={5} title={<FormattedMessage id='nav.invest' />} id="Invertir">
                             <li id="buy_mutual_fund" className="nav-toggle" onClick={()=>{this.collapseNav()}}>
-                                <Link to={`/pay/mutualfund`} onClick={Header.handleClick.bind(this)}>Invertir en Fondos Mutuos</Link>
-                                <div>Selecciona Fondos Mutuos asociados a tu Perfil de Inversionista.</div>
+                                <Link to={`/pay/mutualfund`} onClick={Header.handleClick.bind(this)}><FormattedMessage id='nav.invests.invest' /></Link>
+                                <div><FormattedMessage id='nav.invests.investtext' /></div>
                             </li>
                             <li id="investment_overview" className="nav-toggle">
-                                <a  title="Cartola de Inversiones" >Cartola de Inversiones </a>
-                                <div>Revisa el movimiento de tus inversiones.</div>
+                                <a  title="Cartola de Inversiones" ><FormattedMessage id='nav.invests.review' /> </a>
+                                <div><FormattedMessage id='nav.invests.reviewtext' /></div>
                             </li>
                             <li className="nav-toggle clear"></li>
                             <li id="add_term_deposit" className="nav-toggle">
-                                <a  title="Invertir en Depósitos a Plazo" >Invertir en Depósitos a Plazo </a>
-                                <div>Selecciona el plazo y la moneda en la que deseas invertir.</div>
+                                <a  title="Invertir en Depósitos a Plazo" ><FormattedMessage id='nav.invests.deposite' /> </a>
+                                <div><FormattedMessage id='nav.invests.depositetext' /></div>
                             </li>
                         </NavDropdown>
                         <NavItem eventKey={6} >
-                            Ofertas Disponibles
+                            <FormattedMessage id='nav.AvailableOffers' />
                         </NavItem>
                     </Nav>
 
+                    <ul className="nav navbar-nav floatRight navIcon-ul">
+                        {/* <FormGroup controlId="formControlsSelect">
+                            <FormControl componentClass="select" placeholder="select" onChange={this.handleLan.bind(this)}>
+                                <option value="es-ES">es</option>
+                                <option value="en-US">en</option>
+                            </FormControl>
+                        </FormGroup> */}
+                        <ReactFlagsSelect 
+                        countries={["CL", "CA"]} 
+                        showSelectedLabel={false} 
+                        showOptionLabel={false} 
+                        defaultCountry="CL"
+                        onSelect = {this.handleLan.bind(this)}
+                        />
+                    </ul>
 
                     <ul className="nav navbar-nav floatRight navIcon-ul question" style={{display: this.state.showIcon? 'block' : 'none'}}>
                         <Dropdown isOpen={this.state.QuestionOpen} toggle={this.toggle2} tag="li">
@@ -169,14 +206,14 @@ class Header extends Component {
                             </DropdownToggle>
                             <DropdownMenu tag="ul">
                                 <li className="nav-toggle" id="">
-                                    <a  title="Ayuda con esta página">Ayuda con esta Página</a>
-                                    <div>Conoce las instrucciones paso a paso de cómo usar las funcionalidades de esta página</div>
+                                    <a  title="Ayuda con esta página"><FormattedMessage id='nav.ask.title1' /></a>
+                                    <div><FormattedMessage id='nav.ask.text1' /></div>
                                 </li>
                                 <li className="nav-toggle clear"></li>
 
                                 <li  className="nav-toggle"id="">
-                                    <a  title="Centro de Ayuda" >Centro de Ayuda</a>
-                                    <div>Revisa videos y tips de ayuda.</div></li>
+                                    <a  title="Centro de Ayuda" ><FormattedMessage id='nav.ask.title2' /></a>
+                                    <div><FormattedMessage id='nav.ask.text2' /></div></li>
                                 <li className="nav-toggle clear"></li>
 
                                 <li className="banner2">
@@ -202,35 +239,35 @@ class Header extends Component {
 
                                 <li className="nav-toggle3" id="">
                                     <Link to={`/statement`} title="Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos" onClick={Header.handleClick.bind(this)}>
-                                        Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos </Link>
-                                    <div>Descarga documentos y modifica opciones de envío.</div>
+                                    <FormattedMessage id='nav.settings.title1' /> </Link>
+                                    <div><FormattedMessage id='nav.settings.text1' /></div>
                                 </li>
                                 <li className="nav-toggle3" id="">
                                     <Link to={`/password`} title="Configuración de Seguridad " onClick={Header.handleClick.bind(this)}>
-                                        Configuración de Seguridad</Link>
-                                    <div>Cambio de Contraseña</div>
+                                    <FormattedMessage id='nav.settings.title2' /></Link>
+                                    <div><FormattedMessage id='nav.settings.text2' /></div>
                                 </li>
                                 <li className="nav-toggle3 clear"></li>
                                 <li className="nav-toggle3" id="">
                                     <Link to={`/configuration`} title="Configuración de Información Personal y de Productos" onClick={Header.handleClick.bind(this)}>
-                                        Configuración de Información Personal y de Productos</Link>
-                                    <div>Actualiza tus datos personales, administra y configura tus productos.</div>
+                                    <FormattedMessage id='nav.settings.title3' /></Link>
+                                    <div><FormattedMessage id='nav.settings.text3' /></div>
                                 </li>
 
                                 <li className="nav-toggle3" id="">
-                                    <a  title="Cheques y Ordenes de No Pago">Cheques y Ordenes de No Pago</a><div>
-                                    Consulta el estado de un talonario o cheque e Instruye Ordenes de No Pago.</div>
+                                    <a  title="Cheques y Ordenes de No Pago"><FormattedMessage id='nav.settings.title4' /></a><div>
+                                    <FormattedMessage id='nav.settings.text4' /></div>
                                 </li>
                                 <li className="nav-toggle3 clear"></li>
                                 <li className="nav-toggle3" id="">
-                                    <a  title="ScotiaPass">ScotiaPass</a>
-                                    <div>Activa, sincroniza y reemplaza tu dispositivo ScotiaPass</div>
+                                    <a  title="ScotiaPass"><FormattedMessage id='nav.settings.title5' /></a>
+                                    <div><FormattedMessage id='nav.settings.text5' /></div>
                                 </li>
 
                                 <li className="nav-toggle3" id="">
                                     <a  title="Tarjetas de Crédito Virtuales">
-                                        Tarjetas de Crédito Virtuales</a>
-                                    <div>Crea, elimina y consulta tus tarjetas de crédito virtuales.</div>
+                                    <FormattedMessage id='nav.settings.title6' /></a>
+                                    <div><FormattedMessage id='nav.settings.text6' /></div>
                                 </li>
                                 <li className="nav-toggle3 clear"></li>
                                 <li className="nav-toggle3 clear"></li>
@@ -255,24 +292,24 @@ class Header extends Component {
                     </li>
                     <li >
                         <IndexLinkContainer to={`/`}>
-                            <button className="btn" id="signout" >Salir</button>
+                            <button className="btn" id="signout" ><FormattedMessage id='logout.logout' /></button>
                         </IndexLinkContainer>
                     </li>
                     <li className="lftbox">
                             <span className="h-separator">
-                                <a herf="#"> Último Ingreso: {this.state.localTime}</a>
+                                <a herf="#"> <FormattedMessage id='logout.lastentry' />: {this.state.localTime}</a>
                             </span>
                     </li>
                     <li>
                             <span className="h-separator">
                                 <i className="icon-lock icon-lock-signout"></i>
-                                <a herf="#" className="pull-right">Garantía de Seguridad</a>
+                                <a herf="#" className="pull-right"><FormattedMessage id='logout.security' /></a>
                             </span>
                     </li>
                 </ul>
             </div>
-        }
 
+        }
 
 
         return (
@@ -281,10 +318,6 @@ class Header extends Component {
                     <h1 className="RUIFW-brand RUIFW-col-6 RUIFW-sm-6" >
                         <span className="RUIFW-sr sr-only sr-only"></span>
                     </h1>
-                    {/*<div className="navbar-contact">*/}
-                        {/*<a href=""  title="Términos y Condiciones">Términos y Condiciones &nbsp;&nbsp;</a>*/}
-                        {/*<a href=""  title="Contacto">Contacto</a>*/}
-                    {/*</div>*/}
                 </div>
                 {logout}
                 <Navbar>
@@ -293,13 +326,31 @@ class Header extends Component {
                     </Navbar.Header>
                         {loginPage}
                 </Navbar>
-
-
-        </div>
+            </div>
         );
       }
 }
 
-export default Header;
+// //make sure we have all the props
+// Header.propTypes = {
+//     users: React.PropTypes.object.isRequired
+// }
+
+// export the connected class
+function mapStateToProps(state){
+    // console.log('changing');
+    // console.log(state);
+    let change;
+    if(state.users.id){
+        // console.log('changing id');
+        change = state.users.id;
+    }else {
+        change = {id:'es-ES'};
+    }
+    return {
+        change:change
+    }
+}
+export default connect(mapStateToProps) (Header);
 
 
