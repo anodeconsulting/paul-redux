@@ -8,7 +8,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import ReactFlagsSelect from 'react-flags-select';
 import 'react-flags-select/css/react-flags-select.css';
-import { location } from 'react-router';
+import { withRouter } from 'react-router';
 
 class Header extends Component {
       constructor(props){
@@ -35,7 +35,7 @@ class Header extends Component {
 
          static handleClick(e){
                     let target = e.target;
-                    let li = target.parentElement.parentElement.parentElement;
+                    let li = target.parentElement.parentElement.parentElement.parentElement;
                     li.click();
                 }
 
@@ -75,22 +75,23 @@ class Header extends Component {
 
         }
 
-        handleLan(e){
-            let language = document.getElementsByTagName("img")[0].src;
-            if(language.includes('b87a932d')){
-                let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
-                this.setState({localTime: time});
-                language = "es-ES";
-            }else{
-                language = "en-US";
-                let time = new Date().toLocaleDateString('en',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
-                this.setState({localTime: time});
-            }
-            this.props.dispatch({
-                type: 'changeLanguage',
-                id: language
-            })
-        }
+        // handleLan(e){
+        //     let language;
+        //     if(e === "CL"){
+        //         let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
+        //         this.setState({localTime: time});
+        //         language = "es-ES";
+        //     }else if(e === "CA"){
+        //         language = "en-US";
+        //         let time = new Date().toLocaleDateString('en',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
+        //         this.setState({localTime: time});
+        //     }
+        //     this.props.dispatch({
+        //         type: 'changeLanguage',
+        //         id: language
+        //     })
+        // }
+
 
       render() {
           const path = this.state.pathBase;
@@ -98,7 +99,6 @@ class Header extends Component {
 
           let loginPage;
           let logout;
-
           if(window.location.pathname !== path){
             loginPage=
                 <Navbar.Collapse>
@@ -179,21 +179,21 @@ class Header extends Component {
                         </NavItem>
                     </Nav>
 
-                    <ul className="nav navbar-nav floatRight navIcon-ul">
-                        {/* <FormGroup controlId="formControlsSelect">
-                            <FormControl componentClass="select" placeholder="select" onChange={this.handleLan.bind(this)}>
-                                <option value="es-ES">es</option>
-                                <option value="en-US">en</option>
-                            </FormControl>
-                        </FormGroup> */}
-                        <ReactFlagsSelect 
-                        countries={["CL", "CA"]} 
-                        showSelectedLabel={false} 
-                        showOptionLabel={false} 
-                        defaultCountry="CL"
-                        onSelect = {this.handleLan.bind(this)}
-                        />
-                    </ul>
+                    {/*<ul className="nav navbar-nav floatRight navIcon-ul">*/}
+                        {/*/!* <FormGroup controlId="formControlsSelect">*/}
+                            {/*<FormControl componentClass="select" placeholder="select" onChange={this.handleLan.bind(this)}>*/}
+                                {/*<option value="es-ES">es</option>*/}
+                                {/*<option value="en-US">en</option>*/}
+                            {/*</FormControl>*/}
+                        {/*</FormGroup> *!/*/}
+                        {/*<ReactFlagsSelect */}
+                        {/*countries={["CL", "CA"]} */}
+                        {/*showSelectedLabel={false} */}
+                        {/*showOptionLabel={false} */}
+                        {/*defaultCountry="CL"*/}
+                        {/*onSelect = {this.handleLan.bind(this)}*/}
+                        {/*/>*/}
+                    {/*</ul>*/}
 
                     <ul className="nav navbar-nav floatRight navIcon-ul question" style={{display: this.state.showIcon? 'block' : 'none'}}>
                         <Dropdown isOpen={this.state.QuestionOpen} toggle={this.toggle2} tag="li">
@@ -331,15 +331,12 @@ class Header extends Component {
       }
 }
 
-// //make sure we have all the props
-// Header.propTypes = {
-//     users: React.PropTypes.object.isRequired
-// }
+
 
 // export the connected class
 function mapStateToProps(state){
-    // console.log('changing');
-    // console.log(state);
+    console.log('changing');
+    console.log(state);
     let change;
     if(state.users.id){
         // console.log('changing id');
@@ -351,6 +348,8 @@ function mapStateToProps(state){
         change:change
     }
 }
-export default connect(mapStateToProps) (Header);
+
+
+export default withRouter(connect(mapStateToProps) (Header));
 
 

@@ -156,6 +156,7 @@ export default {
             attentionchannels:'Attention Channels',
             information:'Inform yourself about the warranty state limit of your deposits in your bank or website',
             rightsreserved:'2018 Scotiabank All rights reserved',
+            language:"Language"
         }       
     },
     'es-ES':{
@@ -318,6 +319,7 @@ export default {
             attentionchannels:'Canales de Atención',
             information:'Infórmese sobre el límite de garantía estatal a los depósitos en su banco o en',
             rightsreserved:'2018 Scotiabank Todos los derechos reservados',
+            language:"Lenguaje"
         } 
     }
 }

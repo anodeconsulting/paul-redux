@@ -35,13 +35,19 @@ class Routes extends Component {
     this.props.dispatch({type: 'USERS_FETCH_LIST'});
   }
 
+    yourHandler(previousRoute, nextRoute) {
+        //do your logic here
+        console.log('zzzz')
+    }
+
   render() {
+
     var users = this.props.users;
-    // console.log(users);
+    console.log(users);
     addLocaleData([...en, ...es]);
     return (
       <IntlProvider locale={this.props.users.id} messages={flattenMessages(messages[this.props.users.id])}>
-        <BrowserRouter basename="/react">
+        <BrowserRouter basename="/react" onChange={this.yourHandler}>
           <div className="">
               <Header users={users}/>
               <Route exact path="/" component={Login}/>
