@@ -3,6 +3,7 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {Tabs, Tab} from 'react-bootstrap';
 import MyLargeModal from './MyLargeModal';
 import Calendar from "../Calendar/Calendar";
+import { FormattedMessage } from 'react-intl';
 
 class ExtraComponent extends Component {
     constructor(props) {
@@ -178,7 +179,7 @@ class ExtraComponent extends Component {
           };
         return(
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-                <Tab eventKey={1} title="Últimos Movimientos">
+                <Tab eventKey={1} title={<FormattedMessage id='table.tab1' />}>
                 <br />
                 <div>
                     <BootstrapTable
@@ -190,14 +191,14 @@ class ExtraComponent extends Component {
                     hover
                     pagination>
                     <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='date' dataSort>Fecha de Vencimiento</TableHeaderColumn>
-                    <TableHeaderColumn dataField='couta' columnClassName='td-column-style' searchable={ false } dataSort>N° Cuota</TableHeaderColumn>
-                    <TableHeaderColumn dataField='estado' searchable={ false } dataSort>Estado</TableHeaderColumn>
-                    <TableHeaderColumn dataField='valor' searchable={ false } dataSort>Valor Cuota ($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='date' dataSort><FormattedMessage id='table.creditcard.head1' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='couta' columnClassName='td-column-style' searchable={ false } dataSort><FormattedMessage id='table.creditcard.head2' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='estado' searchable={ false } dataSort><FormattedMessage id='table.creditcard.head3' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='valor' searchable={ false } dataSort><FormattedMessage id='table.creditcard.head4' /> ($)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
-                <Tab eventKey={2} title="Transacciones Programadas">
+                <Tab eventKey={2} title={<FormattedMessage id='table.tab2' />}>
                     {/* <h5>No hay transacciones</h5> */}
                     <Calendar />
                 </Tab>

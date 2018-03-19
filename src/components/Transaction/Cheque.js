@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Transaction.css';
 import * as Services from '../../services/Services';
 import Leftbox from '../Leftbox/Leftbox';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
@@ -10,6 +10,7 @@ import TableDeposite from "../Table/TableDeposite";
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import Link from "react-router-dom/es/Link";
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
+import { FormattedMessage } from 'react-intl';
 
 class Cheque extends Component {
 
@@ -56,13 +57,23 @@ class Cheque extends Component {
 
   render() {
     let pathName = this.props.location.pathname.split('/')[3];
+    let language = this.props.users.id;
     let textDisplay = null;
-    if(pathName.includes("9990")){
-      textDisplay = this.state.balance9990; 
+    if(pathName.includes("990")){
+      textDisplay = this.state.balance9990;
+      if(language === 'en-US'){
+        pathName = "Pesos Account *** 0990";
+      }
     }else if(pathName.includes("1111")){
       textDisplay = this.state.balance1111; 
+      if(language === 'en-US'){
+        pathName = "Pesos Account *** 1111";
+      }
     }else{
       textDisplay = this.state.balance
+      if(language === 'en-US'){
+        pathName = "Pesos Account *** 0343";
+      }
     }
     let type = this.props.location.pathname.split('/')[2];
     let module = 
@@ -78,13 +89,13 @@ class Cheque extends Component {
         </DropdownToggle>
         <DropdownMenu tag="ul">
           <li role="presentation" className="squaren-btn-item">
-            <Link to={`/thirdPartyTransfer`}>Transferir a Terceros</Link>
+            <Link to={`/thirdPartyTransfer`}><FormattedMessage id='dropdown.transfer' /></Link>
           </li>
           <li role="presentation" className="squaren-btn-item">
-            <Link to={`/accountTransfer`}>Transferencias entre Mis Cuentas</Link>
+            <Link to={`/accountTransfer`}><FormattedMessage id='dropdown.transbetweenaccount' /></Link>
           </li>
           <li role="presentation" className="squaren-btn-item">
-            <Link to={`/statement`}>Estados de Cuenta</Link>
+            <Link to={`/statement`}><FormattedMessage id='dropdown.statement' /></Link>
           </li>
         </DropdownMenu>
       </Dropdown>
@@ -112,8 +123,6 @@ class Cheque extends Component {
               <div className="row" id="Body">  
                 {/* react bootstrap table */}
                 <TableDeposite items={this.state.items}/>
-                {/* <TableMeta items={this.state.items}/> */}
-
               </div>
             </div>
           </div>
@@ -128,11 +137,10 @@ class Cheque extends Component {
 }
 
 // export the connected className
-// function mapStateToProps(state){
-//   return({
-//     users: state.users,
-//     // page: Number(state.routing.locationBeforeTransitions.query.page) || 1,
-//   })
-// }
-// export default connect(mapStateToProps) (Cheque)
-export default Cheque;
+function mapStateToProps(state){
+  return {
+    users:state.users
+  }
+}
+export default connect(mapStateToProps) (Cheque)
+// export default Cheque;

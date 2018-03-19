@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Alert } from 'react-bootstrap';
 import './Alert.css';
+import { FormattedMessage } from 'react-intl';
 
 class AlertWarning extends Component {
     constructor(props) {
@@ -27,11 +28,9 @@ class AlertWarning extends Component {
         if(this.state.show){
             module = <Alert bsStyle="warning" onDismiss={this.handleDismiss}>
                 <span className="alert-icon-info"></span>
-                <h4>¡Importante!</h4>
+                <h4><FormattedMessage id='pay_product.step2.warningtext1' /></h4>
                 <p>
-                Las características esenciales de la inversión en este fondo mutuo se encuentran contenidas en su reglamento interno y 
-                contrato general de fondos, 
-                las que declaro conocer y aceptar en su integridad.
+                    <FormattedMessage id='pay_product.step2.warningtext2' />
                 </p>                       
             </Alert>
         }

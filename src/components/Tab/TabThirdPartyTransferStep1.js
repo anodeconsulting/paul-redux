@@ -3,6 +3,7 @@ import './Tab.css';
 import { Button } from 'react-bootstrap';
 import button1 from '../../assets/images/button1.png';
 import TableThirdParty from "../Table/TableThirdParty";
+import { FormattedMessage } from 'react-intl';
 
 class Tab1 extends Component {
      //Constructor 
@@ -33,12 +34,12 @@ class Tab1 extends Component {
         return (
             <div>
                 <div className="wizard-form-title">
-                    Desde esta página puedes  transferir dinero a una persona en Scotiabank o en otro banco.    
+                    <FormattedMessage id='transfer_thirdparty.step1.title' />    
                 </div>
                 <div className="RUIFW-col-12 contenttbs pad-lft-30 pad-right-30 col-sm-12">              
                     <div className="RUIFW-row mrgn-btm-10 row">
                         <div className="RUIFW-col-6 col-sm-6">
-                            <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  (2)</h5>
+                            <h5 className="mrgn-btm-5 mrgn-top-5"><FormattedMessage id='transfer_thirdparty.step1.head' />   (2)</h5>
                         </div>
                         <div className="RUIFW-col-6 txt-right col-sm-6">
                             <span><img width="70" src={button1} alt="scotia button1" /></span>   

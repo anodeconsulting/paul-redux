@@ -4,6 +4,7 @@ import {Button, Tabs, Tab, TabContainer, TabContent, TabPane} from 'react-bootst
 import TabThirdPartyTransferStep1 from '../Tab/TabThirdPartyTransferStep1';
 import RightBox from "../Rightbox/Rightbox";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 
 class ThirdPartyTransfer extends Component {
 
@@ -17,22 +18,22 @@ class ThirdPartyTransfer extends Component {
           <section>
             <div className="row">
                 <div className='col-sm-9 divLeft'>
-                    <h1>Transferencias a Terceros </h1>        
+                    <h1>{<FormattedMessage id='transfer_thirdparty.title' />} </h1>        
                         <div>
                             <Tabs defaultActiveKey={1} animation={false} id="noanim-tab-example">
-                                <Tab eventKey={1} title="1. Seleccionar Destino">
+                                <Tab eventKey={1} title={<FormattedMessage id='transfer_thirdparty.tab1' />}>
                                     <TabThirdPartyTransferStep1 />
                                 </Tab>
-                                <Tab eventKey={2} title="2. Ingresar" disabled>
+                                <Tab eventKey={2} title={<FormattedMessage id='transfer_thirdparty.tab2' />} disabled>
                                     Tab 2 content
                                 </Tab>
-                                <Tab eventKey={3} title="3. Confirmar" disabled>
+                                <Tab eventKey={3} title={<FormattedMessage id='transfer_thirdparty.tab3' />} disabled>
                                     Tab 3 content
                                 </Tab>
                             </Tabs>
                             <span className="pushBot row">
-                                <Button className="accept">Aceptar</Button>
-                                <Button className="cancel"><Link to="/account">Cancelar</Link></Button>                       
+                                <Button className="accept">{<FormattedMessage id='transfer_thirdparty.accept' />}</Button>
+                                <Button className="cancel"><Link to="/account">{<FormattedMessage id='transfer_thirdparty.cancel' />}</Link></Button>                       
                             </span>
                         </div>        
                 </div>  

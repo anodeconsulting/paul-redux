@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Alert, Button } from 'react-bootstrap';
 import './Alert.css';
+import { FormattedMessage } from 'react-intl';
 
 class AlertWarning extends Component {
     constructor(props) {
@@ -28,16 +29,14 @@ class AlertWarning extends Component {
             module = 
                     <Alert bsStyle="success" onDismiss={this.handleDismiss}>
                         <span className="alert-icon"></span>
-                        <h4>¡Realizado!</h4>
+                        <h4><FormattedMessage id='pay_product.step3.successtext1' /></h4>
                         <p>
-                        Tu Inversión Nro 8997 por $ 1.000.000 fue tomado con éxito el día 17/01/2017 a la(s) 3:20 PM. 
-                        Recibirás un comprobante de aporte firmado en forma física o electrónica, 
-                        al domicilio o correo electrónico registrado, dentro de los próximos 30 días.         
+                        <FormattedMessage id='pay_product.step3.successtext2' />         
                         </p>  
                         <p className="pushMid">
-                          <Button bsStyle="default">Nueva Inversión</Button>
-                          <Button bsStyle="default">Imprimir</Button>
-                          <Button bsStyle="default">Descargar</Button>
+                          <Button bsStyle="default"><FormattedMessage id='pay_product.step3.successtext3' /></Button>
+                          <Button bsStyle="default"><FormattedMessage id='pay_product.step3.successtext4' /></Button>
+                          <Button bsStyle="default"><FormattedMessage id='pay_product.step3.successtext5' /></Button>
                         </p>                     
                     </Alert>
         }

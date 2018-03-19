@@ -10,6 +10,7 @@ import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import Link from "react-router-dom/es/Link";
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 import * as Services from '../../services/Services';
+import { FormattedMessage } from 'react-intl';
 
 class Transaction extends Component {
 
@@ -43,8 +44,12 @@ class Transaction extends Component {
     }
 
   render() {
+    let language = this.props.users.id;
     let pathName = this.props.location.pathname.split('/')[3];
     let type = this.props.location.pathname.split('/')[2];
+    if(language === 'en-US'){
+      pathName = 'Line Of Credit *** 0007';
+    }
     let module = 
     <div className="product-title">
       <span className="product-name">{pathName}</span> 
@@ -58,7 +63,7 @@ class Transaction extends Component {
         </DropdownToggle>
         <DropdownMenu tag="ul">
           <li role="presentation" className="squaren-btn-item">
-            <Link to={`/pay`}>Pagar</Link>
+            <Link to={`/pay`}><FormattedMessage id='midbox.text8' /></Link>
           </li>
         </DropdownMenu>
       </Dropdown>

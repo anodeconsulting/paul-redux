@@ -3,6 +3,7 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import Calendar from "../Calendar/Calendar";
 import {Tabs, Tab} from 'react-bootstrap';
 import MyLargeModal from './MyLargeModal';
+import { FormattedMessage } from 'react-intl';
 
 class ExtraComponent extends Component {
     constructor(props) {
@@ -151,7 +152,7 @@ function priceFormatter(cell, row) {
         const item = this.props.items;
         return(
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-                <Tab eventKey={1} title="Últimos Movimientos">
+                <Tab eventKey={1} title={<FormattedMessage id='table.tab1' />}>
                 <br />
                 <div>
                     <BootstrapTable
@@ -163,14 +164,14 @@ function priceFormatter(cell, row) {
                     hover
                     pagination>
                     <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='date'  dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dividend' columnClassName='td-column-style' searchable={ false } dataSort>N° Dividendo</TableHeaderColumn>
-                    <TableHeaderColumn dataField='transaction_status' searchable={ false } dataSort>Estado</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' searchable={ false } dataSort>Valor Dividendo (UF)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='date'  dataSort><FormattedMessage id='table.mortgage.head1' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='dividend' columnClassName='td-column-style' searchable={ false } dataSort><FormattedMessage id='table.mortgage.head2' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='transaction_status' searchable={ false } dataSort><FormattedMessage id='table.mortgage.head3' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataAmount' searchable={ false } dataSort><FormattedMessage id='table.mortgage.head4' /> (UF)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
-                <Tab eventKey={2} title="Transacciones Programadas">
+                <Tab eventKey={2} title={<FormattedMessage id='table.tab2' />}>
                     {/* <h5>No hay transacciones</h5> */}
                     <Calendar />
                 </Tab>
