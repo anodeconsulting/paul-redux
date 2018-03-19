@@ -3,6 +3,7 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import {Tabs, Tab} from 'react-bootstrap';
 import MyLargeModal from './MyLargeModal';
 import Calendar from "../Calendar/Calendar";
+import { FormattedMessage } from 'react-intl';
 
 class ExtraComponent extends Component {
     constructor(props) {
@@ -161,7 +162,7 @@ function priceFormatter(cell, row) {
           };
         return(
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-                <Tab eventKey={1} title="Últimos Movimientos">
+                <Tab eventKey={1} title={<FormattedMessage id='table.tab1' />}>
                 <br />
                 <div>
                     <BootstrapTable
@@ -173,13 +174,13 @@ function priceFormatter(cell, row) {
                     hover
                     pagination>
                     <TableHeaderColumn dataField='id' isKey hidden>ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='posted_date' dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false }>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataAmount' dataFormat={ priceFormatter } searchable={ false }>Monto($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='posted_date' dataSort><FormattedMessage id='table.lineofcredit.head1' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false }><FormattedMessage id='table.lineofcredit.head2' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataAmount' dataFormat={ priceFormatter } searchable={ false }><FormattedMessage id='table.lineofcredit.head3' />($)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
-                <Tab eventKey={2} title="Transacciones Programadas">
+                <Tab eventKey={2} title={<FormattedMessage id='table.tab2' />}>
                     {/* <h5>No hay transacciones</h5> */}
                     <Calendar />
                 </Tab>

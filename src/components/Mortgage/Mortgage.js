@@ -11,6 +11,7 @@ import { location } from 'react-router';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import Link from "react-router-dom/es/Link";
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
+import { FormattedMessage } from 'react-intl';
 
 class Mortgage extends Component {
 
@@ -53,12 +54,15 @@ class Mortgage extends Component {
     }
 
   render() {  
-    
-    let pathName = this.props.location.pathname;
+    let language = this.props.users.id;
+    let pathName = this.props.location.pathname.split('/')[3];
+    if(language === 'en-US'){
+      pathName = 'Credit Mortgage*** 0010';
+    }
     let type = this.props.location.pathname.split('/')[2];
     let module = 
     <div className="product-title">
-      <span className="product-name">{pathName.split('/')[3]}</span> 
+      <span className="product-name">{pathName}</span> 
       <span className="product-amt">{this.state.balance} {this.state.curCode}</span>
       <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
         <DropdownToggle
@@ -69,7 +73,7 @@ class Mortgage extends Component {
         </DropdownToggle>
         <DropdownMenu tag="ul">
           <li role="presentation" className="squaren-btn-item">
-            <Link to={`/pay`}>Pagar</Link>
+            <Link to={`/pay`}><FormattedMessage id='midbox.text8' /></Link>
           </li>
         </DropdownMenu>
       </Dropdown>

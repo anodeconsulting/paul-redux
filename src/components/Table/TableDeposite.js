@@ -4,6 +4,7 @@ import {Table, Tabs, Tab, Modal, Button} from 'react-bootstrap';
 import './Table.css';
 import MyLargeModal from './MyLargeModal';
 import Calendar from "../Calendar/Calendar";
+import { FormattedMessage } from 'react-intl';
 
 class ExtraComponent extends Component {
     constructor(props) {
@@ -155,7 +156,7 @@ class TableDeposite extends Component {
           };      
         return(
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example" onSelect={ this.afterTabChanged }>
-                <Tab eventKey={1} title="Últimos Movimientos">
+                <Tab eventKey={1} title={<FormattedMessage id='table.tab1' />}>
                 <br />
                 <div>
                     <BootstrapTable
@@ -167,14 +168,14 @@ class TableDeposite extends Component {
                     hover
                     pagination>
                     <TableHeaderColumn dataField='id' isKey dataSort hidden>Transaction ID</TableHeaderColumn>
-                    <TableHeaderColumn dataField='posted_date' dataSort>Fecha</TableHeaderColumn>
-                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false } dataSort>Description</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataMonto' searchable={ false } dataSort>Monto($)</TableHeaderColumn>
-                    <TableHeaderColumn dataField='dataSaldo' searchable={ false } dataSort>Saldo($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='posted_date' dataSort><FormattedMessage id='table.deposite.head1' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='description' columnClassName='td-column-style' searchable={ false } dataSort><FormattedMessage id='table.deposite.head2' /></TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataMonto' searchable={ false } dataSort><FormattedMessage id='table.deposite.head3' />($)</TableHeaderColumn>
+                    <TableHeaderColumn dataField='dataSaldo' searchable={ false } dataSort><FormattedMessage id='table.deposite.head4' />($)</TableHeaderColumn>
                     </BootstrapTable>
                 </div>
                 </Tab>
-                <Tab eventKey={2} title="Transacciones Programadas">
+                <Tab eventKey={2} title={<FormattedMessage id='table.tab2' />}>
                     {/* <h5>No hay transacciones</h5> */}
                     <Calendar />
                 </Tab>

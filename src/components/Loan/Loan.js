@@ -8,6 +8,10 @@ import TopBox from "../Topbox/Topbox";
 import Midbox from "../Midbox/Midbox";
 import TableCredit from "../Table/TableCredit";
 import { location } from 'react-router';
+import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
+import Link from "react-router-dom/es/Link";
+import { FormattedMessage } from 'react-intl';
+import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
 
 class Loan extends Component {
 
@@ -20,7 +24,8 @@ class Loan extends Component {
       type:'',
       balance:'',
       open: false,
-      curCode: '$'
+      curCode: '$',
+      redBtn: false
     };
   }
 
@@ -34,15 +39,35 @@ class Loan extends Component {
     
   }
 
+  redBtnToggle(){
+    this.setState({redBtn: !this.state.redBtn});
+  }
+
   render() {  
-    
-    let pathName = this.props.location.pathname;
+    let language = this.props.users.id;
+    let pathName = this.props.location.pathname.split('/')[3];
     let type = this.props.location.pathname.split('/')[2];
+    if(language === 'en-US'){
+      pathName = 'Loan *** 0009';
+    }
     // console.log(type);
     let module = 
     <div className="product-title">
-      <span className="product-name">{pathName.split('/')[3]}</span> 
+      <span className="product-name">{pathName}</span> 
       <span className="product-amt">$ {this.state.balance}</span>
+      <Dropdown isOpen={this.state.redBtn} toggle={()=>{this.redBtnToggle()}} tag="span">
+        <DropdownToggle
+            tag="a"
+            data-toggle="dropdown"
+            aria-expanded={()=>{this.redBtnToggle()}}>
+          <RedDropDownBtn open = {this.state.redBtn} />
+        </DropdownToggle>
+        <DropdownMenu tag="ul">
+          <li role="presentation" className="squaren-btn-item">
+            <Link to={`/pay`}><FormattedMessage id='midbox.text8' /></Link>
+          </li>
+        </DropdownMenu>
+      </Dropdown>
     </div>;
 
     let moduleType = null;

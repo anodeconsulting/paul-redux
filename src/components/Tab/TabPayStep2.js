@@ -39,42 +39,42 @@ class TabPayStep2 extends Component {
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Nombre Fondo Mutuo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel4' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Proximidad Serie A</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue4' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Cuenta Fondo Mutuo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel5' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Nueva</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue5' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Monto</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel6' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>$ 1.000.000</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue6' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Fecha</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel7' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>20/02/2018</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue7' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Email </ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formlabel8' /> </ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>henrik.ramos@gmail.com</ControlLabel>
+                                <ControlLabel><FormattedMessage id='pay_product.step2.formvalue8' /></ControlLabel>
                             </div>
                     </div>
                 </div>       

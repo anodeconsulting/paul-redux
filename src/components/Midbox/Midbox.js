@@ -3,6 +3,8 @@ import logo from '../../assets/images/scotiapesoo.png';
 import './Midbox.css';
 import { Panel, ProgressBar } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
 
 class Midbox extends Component {
     constructor(props) {
@@ -24,13 +26,18 @@ class Midbox extends Component {
 	}
   
     render() {
+		let button = 'Pagar';
+		let language = this.props.users.id;
+		if(language === 'en-US'){
+			button = 'Pay'
+		}
 		let module = null;
 		let moduleText = null;
 		if(!this.state.open){
-			moduleText = "Más"
+			moduleText = <FormattedMessage id='midbox.text9' />
 			module = <span className="glyphicon glyphicon-chevron-down"></span>
 		  }else{
-			moduleText="Menos"
+			moduleText=<FormattedMessage id='midbox.text10' />
 			module = <span className="glyphicon glyphicon-chevron-up"></span>
 		}
 
@@ -49,19 +56,19 @@ class Midbox extends Component {
 			<div className="account-balance-container row pushRight" id="cc_balance_container_id">
 				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
-					<span className="data-label">Saldo Disponible</span>
+					<span className="data-label"><FormattedMessage id='midbox.deposite.text1' /></span>
 					<div className="data">
 						<label className="leap-data">{curCode} {details}</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
-					<span className="data-label">Retenciones</span>
+					<span className="data-label"><FormattedMessage id='midbox.deposite.text2' /></span>
 					<div className="data">
 						<label className="leap-data">{curCode} 150</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
-					<span className="data-label">Saldo Contable</span>
+					<span className="data-label"><FormattedMessage id='midbox.deposite.text3' /></span>
 					<div className="data">
 						<label className="leap-data">{curCode} {details+150}</label>
 					</div>
@@ -90,11 +97,11 @@ class Midbox extends Component {
 			module1=
 		<div className="account-balance-container row pushRight" id="cc_balance_container_id">
 				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
-					<h6> Resumen
+					<h6> <FormattedMessage id='midbox.title1' />
 						<span id="cc_lbl_credit_limit_id">
 							<a href="" className="RUIFW-tooltip" data-toggle="tooltip" title="" data-placement="auto" data-original-title="Cupo Autorizado en Pesos">
 								<span className="icon-info-sign"></span>
-							</a> Cupo Total: &nbsp;{curCode} {details} 
+							</a> <FormattedMessage id='midbox.title2' />: &nbsp;{curCode} {details} 
 						</span>
 					</h6>
 					<div className="progress">
@@ -107,19 +114,19 @@ class Midbox extends Component {
 				<div className="clear"></div>
 				<div className="RUIFW-col-12  mrgn-btm-15 col-sm-12 col-sm-12">
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
-					<span className="data-label">Cupo Disponible</span>
+					<span className="data-label"><FormattedMessage id='midbox.text1' /></span>
 					<div className="data">
 						<label className="leap-data">{curCode} {(base*0.234).toFixed(2)}</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
-					<span className="data-label">Cupo Utilizado</span>
+					<span className="data-label"><FormattedMessage id='midbox.text2' /></span>
 					<div className="data">
 						<label className="leap-data">{curCode} {(base*0.145).toFixed(2)}</label>
 					</div>
 				</div>
 				<div className="RUIFW-col-4 col-sm-4 col-sm-4">
-					<span className="data-label">Pago Mínimo</span>
+					<span className="data-label"><FormattedMessage id='midbox.text3' /></span>
 					<div className="data">
 						<label className="leap-data">{curCode} {(base*0.567).toFixed(2)}</label>
 					</div>
@@ -128,13 +135,13 @@ class Midbox extends Component {
 				<div className="clear"></div>
 				<div className="mrgn-top-15 row pushRight1">
 					<div className="RUIFW-col-4 col-sm-4 col-sm-4 ">
-						<span className="data-label">Monto Facturado</span>
+						<span className="data-label"><FormattedMessage id='midbox.text4' /></span>
 						<div className="data">
 							<label className="leap-data">{curCode} {(base*0.213).toFixed(2)}</label>
 						</div>
 					</div>
 					<div className="RUIFW-col-4 col-sm-4 col-sm-4">
-						<span className="data-label ">Saldo Disponible Avance</span>
+						<span className="data-label "><FormattedMessage id='midbox.text5' /></span>
 						<div className="data">
 							<label className="leap-data">{curCode} {(base*0.002).toFixed(2)}</label>
 						</div>
@@ -149,13 +156,13 @@ class Midbox extends Component {
 						</span>
 					</span>
 					<span className="inlineBlock35 veralignmiddle">
-						<span className="data-label">Pagar Hasta</span>
+						<span className="data-label"><FormattedMessage id='midbox.text6' /></span>
 						<br />
 						<span id="data_paymentDueDate">
-							<label className="leap-data">Espere Facturación</label>
+							<label className="leap-data"><FormattedMessage id='midbox.text7' /></label>
 						</span>
 					</span>
-					<Link to='/pay'><input id="transDetailsForm" name="transDetailsForm:ccpaymentbtn" value="Pagar " className="RUIFW-btn-primary mrgn-lft-10 btn btn-danger btn btn-danger btn btn-danger"
+					<Link to='/pay'><input id="transDetailsForm" name="transDetailsForm:ccpaymentbtn" value={button} className="RUIFW-btn-primary mrgn-lft-10 btn btn-danger btn btn-danger btn btn-danger"
 					type="submit" /></Link>
 				</div>
 				<div className="clear"></div>
@@ -166,29 +173,29 @@ class Midbox extends Component {
 					<Panel.Body>
 						<div className="well col-sm-12">
 							<div className="col-sm-4">
-								<span>Fecha de Última Facturación</span><br /><br />
+								<span><FormattedMessage id='midbox.expand.text1' /></span><br /><br />
 								<span>26/06/2016</span>
 							</div>
 							<div className="col-sm-4">
-								<span>Fecha Último Pago</span><br /><br />
+								<span><FormattedMessage id='midbox.expand.text2' /></span><br /><br />
 								<span>26/06/2016</span>
 							</div>
 							<div className="col-sm-4">
-								<span>Monto Último Pago</span><br /><br />
+								<span><FormattedMessage id='midbox.expand.text3' /></span><br /><br />
 								<span>$ 333.322</span>
 							</div>
 						</div>	
 						<div className="well col-sm-12">
 							<div className="col-sm-4">
-								<span>Cupo Total Dólares</span><br /><br />
+								<span><FormattedMessage id='midbox.expand.text4' /></span><br /><br />
 								<span>USD 10.122,20</span>
 							</div>
 							<div className="col-sm-4">
-								<span>Cupo Utilizado Dólares</span><br /><br />
+								<span><FormattedMessage id='midbox.expand.text5' /></span><br /><br />
 								<span>USD 12.111,12</span>
 							</div>
 							<div className="col-sm-4">
-								<span>Saldo del Último Estado de Cuenta</span><br /><br />
+								<span><FormattedMessage id='midbox.expand.text6' /></span><br /><br />
 								<span>USD 22.456,32</span>
 							</div>
 						</div>			
@@ -207,5 +214,11 @@ class Midbox extends Component {
         );
     }
 }
-      
-export default Midbox;
+	  
+function mapStateToProps(state){
+	return {
+		users:state.users
+	}
+  }
+  export default connect(mapStateToProps) (Midbox);
+// export default Midbox;

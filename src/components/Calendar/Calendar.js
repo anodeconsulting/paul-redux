@@ -9,6 +9,7 @@ import TabList from "react-tabs/esm/components/TabList";
 import TabPanel from "react-tabs/esm/components/TabPanel";
 import TableCalendar from "../Table/TableCalendar";
 import CustomEvent from "./CustomEvent";
+import { FormattedMessage } from 'react-intl';
 
 BigCalendar.momentLocalizer(moment);
 
@@ -112,7 +113,7 @@ class Calendar extends Component {
         return (
         <div className="calendar-border" >
             <div>
-                <h2 className="account-title"> Transacciones Programadas</h2>
+                <h2 className="account-title"> <FormattedMessage id='calendar.title' /></h2>
             </div>
             <div>
                 <select placeholder="select" className="calendar-select form-control">

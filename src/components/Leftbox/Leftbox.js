@@ -115,7 +115,7 @@ class Leftbox extends Component {
             <Panel.Collapse>
               <ListGroup id="firstList">
                 {this.state.data[0].accounts.map((ele,index)=>
-                    <ListGroupItem key={index} className={this._checkActiveBtn(ele.account)}><Link to={'/account/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}>{ele.account}</Link></ListGroupItem>
+                    <ListGroupItem key={index} className={this._checkActiveBtn(ele.account)}><Link to={'/account/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}><FormattedMessage id={'account.bankaccount'+(index+1)} /></Link></ListGroupItem>
                 )}
               </ListGroup>
             </Panel.Collapse>
@@ -129,7 +129,7 @@ class Leftbox extends Component {
             <Panel.Collapse>
               <ListGroup id="secondList">
                 {this.state.data[1].accounts.map((ele,index)=>
-                    <ListGroupItem key={index} className={this._checkActiveBtn(ele.account)}><Link to={'/credit/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}>{ele.account}</Link></ListGroupItem>
+                    <ListGroupItem key={index} className={this._checkActiveBtn(ele.account)}><Link to={'/credit/'+ele.type+'/'+ele.account} onClick={this.handleCard.bind(this, ele.account)}><FormattedMessage id={'account.creditaccount'+(index+1)} /></Link></ListGroupItem>
                 )}
               </ListGroup>
             </Panel.Collapse>

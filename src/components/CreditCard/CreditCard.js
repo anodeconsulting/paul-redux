@@ -11,6 +11,7 @@ import { location } from 'react-router';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import Link from "react-router-dom/es/Link";
 import RedDropDownBtn from "../Tools/RedDropdownBtn/RedDropDownBtn";
+import { FormattedMessage } from 'react-intl';
 
 class CreditCard extends Component {
 
@@ -60,7 +61,7 @@ class CreditCard extends Component {
         </DropdownToggle>
         <DropdownMenu tag="ul">
           <li role="presentation" className="squaren-btn-item">
-            <Link to={`/pay`}>Pagar</Link>
+            <Link to={`/pay`}><FormattedMessage id='midbox.text8' /></Link>
           </li>
         </DropdownMenu>
       </Dropdown>
