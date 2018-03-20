@@ -441,6 +441,88 @@ export default {
             nov: 'November'
         },
 
+        configuration: {
+            title:'Configuration of Personal and Product Information',
+            tab1text: 'My products',
+            tab2text: 'Contact information',
+            tab3text: 'Modify Quotas',
+            tab4text: 'Shopping WebPay Plus',
+            tab1: {
+                title:'General Configuration Options',
+                label1: 'Configuration of Product Numbers',
+                value1: 'Hide',
+                value11: '(The full number will not be shown, for example: *** 5678)',
+                value2: 'To show',
+                value22: '(he complete number will be displayed, for example: 7100 1668 8689)',
+                table: {
+                    title1:'Alias ​​configuration',
+                    title2:'This option will allow you to associate a name (Alias) to your products. You can also choose to hide some product summary products on the web or in mobile banking.',
+                    head1:'Product',
+                    head2:'Alias',
+                    head3: 'Show on the Web',
+                    head4: 'Show in Mobile Banking',
+                    account1: 'Deposite Account 0009 7091 2940',
+                    account2: 'Deposite Account 0009 7091 2942',
+                    account3: 'Savings account 3008 8635 1805',
+                    account4: 'Visa Credit Card 4966 7212 0000 7115'
+                }
+            },
+            tab2: {
+                title1: 'Contact information',
+                title2: 'Telephone Number Update',
+                title3: 'This data will allow us to contact you to deliver important information and communicate offers available via telephone or text messages (SMS).',
+                label1: 'Cell Phone Number',
+                value1: 'Number of 9 digits',
+                label2: 'Re-enter the Number',
+                title4: 'Email Update',
+                title5: 'This data will allow us to contact you to deliver important information and communicate offers available via email.',
+                label3: 'Email',
+                label4: 'Re-enter the Email',
+                form: {
+                    title: 'Address Update',
+                    region: 'Region',
+                    region1: 'RM-Metropolitan Region',
+                    country:'City or Commune',
+                    country1: 'Santiago',
+                    location: 'Location',
+                    location1: 'Las Condes',
+                    city: 'Street',
+                    number: 'number',
+                    information: 'Additional Information',
+                    zip: 'Postal Code',
+                    obligate: 'required'
+                }
+            },
+            tab3: {
+                title: 'Administration of Quotas for Additional Cards',
+                table: {
+                    title: 'Modify the quotas in pesos and dollars for your Additional Credit Cards',
+                    head1: 'Card',
+                    head2: 'State',
+                    head3: 'National quota',
+                    head4: 'International quota',
+                    account1: 'Alexis Credit Card *** 0081',
+                    account2: 'Sam Credit Card *** 0085',
+                    status1: 'Unlocked',
+                    status2: 'Blockeded'
+                }
+            },
+            tab4: {
+                title: 'Enabling WebPay Plus Purchases',
+                table: {
+                    title: 'Enables or disables the possibility that you can buy with your holders or additional cards at merchants attached to WebPay Plus.',
+                    label: 'Cards Holders',
+                    head1: 'Card number',
+                    head2: 'Type of Card',
+                    head3: 'Enabled to Buy',
+                    credit: 'Credit',
+                    debut: 'Debit',
+                }
+            },
+            cancel: 'Cancel',
+            accept: 'Accept'
+        },
+
         password: {
             title1: 'Security settings',
             title2: 'To change your access password, enter your current password and then twice the new password. Remember that your password must have a minimum length of 8 characters and a maximum of 15, at least one letter and a number.',
@@ -953,6 +1035,88 @@ export default {
             feb: 'Febrero',
             dec: 'Diciembre',
             nov: 'Noviembre'
+        },
+
+        configuration: {
+            title:'Configuración de Información Personal y de Productos',
+            tab1text: 'Mis Productos',
+            tab2text: 'Datos de Contacto',
+            tab3text: 'Modificar Cupos',
+            tab4text: 'Compras WebPay Plus',
+            tab1: {
+                title:'Opciones Generales de Configuración',
+                label1: 'Configuración de Números de Producto',
+                value1: 'Ocultar',
+                value11: '(No se mostrará el número completo, por ejemplo: *** 5678)',
+                value2: 'Mostrar',
+                value22: '(Se mostrará el número completo, por ejemplo: 7100 1668 8689)',
+                table: {
+                    title1:'Configuración de Alias',
+                    title2:'Esta opción te permitirá asociar un nombre (Alias) a tus productos. También puedes elegir ocultar algunos productos del Resumen de Productos en web o en banca móvil.',
+                    head1:'Producto',
+                    head2:'Alias',
+                    head3: 'Mostrar en Web',
+                    head4: 'Mostrar en Banca Móvil',
+                    account1: 'Cuenta Corriente 0009 7091 2940',
+                    account2: 'Cuenta Corriente 0009 7091 2942',
+                    account3: 'Cuenta de Ahorro 3008 8635 1805',
+                    account4: 'Tarjeta de Crédito Visa 4966 7212 0000 7115'
+                }
+            },
+            tab2: {
+                title1: 'Datos de Contacto',
+                title2: 'Actualización de Número Telefónico',
+                title3: 'Este dato nos permitirá contactarte para entregar información importante y comunicar ofertas disponibles vía telefónica o por mensajes de texto (SMS).',
+                label1: 'Número Teléfono Celular',
+                value1: 'Número de 9 Dígitos',
+                label2: 'Reingresa el Número',
+                title4: 'Actualización de Correo Electrónico',
+                title5: 'Este dato nos permitirá contactarte para entregar información importante y comunicar ofertas disponibles vía correo electrónico.',
+                label3: 'Correo Electrónico',
+                label4: 'Reingresa el Correo Electrónico',
+                form: {
+                    title: 'Actualización de Dirección',
+                    region: 'Región',
+                    region1: 'RM-Región Metropolitana',
+                    country:'Ciudad o Comuna',
+                    country1: 'Santiago',
+                    location: 'Localidad',
+                    location1: 'Las Condes',
+                    city: 'Calle',
+                    number: 'Número',
+                    information: 'Información Adicional',
+                    zip: 'Código Postal',
+                    obligate: 'Obligatorio'
+                }
+            },
+            tab3: {
+                title: 'Administración de Cupos para Tarjetas Adicionales',
+                table: {
+                    title: 'Modifica los cupos en pesos y dólar para tus Tarjetas de Crédito Adicionales',
+                    head1: 'Tarjeta',
+                    head2: 'Estado',
+                    head3: 'Cupo Nacional',
+                    head4: 'Cupo Internacional',
+                    account1: 'Tarjeta de Crédito Alexis *** 0081',
+                    account2: 'Tarjeta de Crédito Sam *** 0085',
+                    status1: 'Desbloqueada',
+                    status2: 'Bloqueada'
+                }
+            },
+            tab4: {
+                title: 'Habilitación Compras WebPay Plus',
+                table: {
+                    title: 'Habilita o deshabilita la posibilidad de que puedas comprar con tus tarjetas titulares o adicionales en comercios adheridos a WebPay Plus.',
+                    label: 'Tarjetas Titulares',
+                    head1: 'Número de Tarjeta',
+                    head2: 'Tipo de Tarjeta',
+                    head3: 'Habilitado para Comprar',
+                    credit: 'Crédito',
+                    debut: 'Débito',
+                }
+            },
+            cancel: 'Canelar',
+            accept: 'Aceptar'
         },
 
         password: {

@@ -4,6 +4,7 @@ import { HelpBlock, Button, Checkbox, Form, FormGroup, FormControl, ControlLabel
 import RightBox from "../Rightbox/Rightbox";
 import { Link } from "react-router-dom";
 import AlertSuccess from '../Tools/Alert/Alert_Success';
+import { FormattedMessage } from 'react-intl';
 
 class Config2 extends Component {
      //Constructor 
@@ -42,27 +43,27 @@ class Config2 extends Component {
                 <div className='col-sm-12'>
                     <div>
                         <div className="wizard-form-title">
-                        <h5> Datos de Contacto </h5>
+                        <h5> <FormattedMessage id='configuration.tab2.title1' /> </h5>
                         </div>
                         <div className="well col-sm-12">
                             <form>
                             <div>
-                                Actualización de Número Telefónico
+                                <FormattedMessage id='configuration.tab2.title2' />
                             </div><br />
-                            <ControlLabel>Este dato nos permitirá contactarte para entregar información importante y comunicar ofertas disponibles vía telefónica o por mensajes de texto (SMS).</ControlLabel><br />
+                            <ControlLabel><FormattedMessage id='configuration.tab2.title3' /></ControlLabel><br />
                             <FormGroup
                             controlId="formBasicText"
                             >
-                            <ControlLabel>Número Teléfono Celular</ControlLabel>
+                            <ControlLabel><FormattedMessage id='configuration.tab2.label1' /></ControlLabel>
                             <FormControl
                                 type="text"
                                 value={this.state.value}
                                 placeholder="987788900"
                                 onChange={this.handleChange}
                             />
-                            <HelpBlock>Número de 9 Dígitos (e.g. 9xxxxxxxx)</HelpBlock>
+                            <HelpBlock><FormattedMessage id='configuration.tab2.value1' /> (e.g. 9xxxxxxxx)</HelpBlock>
 
-                            <ControlLabel>Reingresa el Número</ControlLabel>
+                            <ControlLabel><FormattedMessage id='configuration.tab2.label2' /></ControlLabel>
                             <FormControl
                                 type="text"
                                 value={this.state.value}
@@ -72,23 +73,22 @@ class Config2 extends Component {
                             </FormGroup>
                             <hr />
                             <div>
-                                Actualización de Correo Electrónico
+                                <FormattedMessage id='configuration.tab2.title4' />
                             </div><br />
                             <ControlLabel>
-                                Este dato nos permitirá contactarte para entregar información importante y 
-                                comunicar ofertas disponibles vía correo electrónico.
+                                <FormattedMessage id='configuration.tab2.title5' />
                             </ControlLabel><br />
                             <FormGroup
                             controlId="formBasicText"
                             >
-                            <ControlLabel>Correo Electrónico</ControlLabel>
+                            <ControlLabel><FormattedMessage id='configuration.tab2.label3' /></ControlLabel>
                             <FormControl
                                 type="text"
                                 value={this.state.value}
                                 placeholder="henri.ramos@xyz.com"
                                 onChange={this.handleChange}
                             />
-                            <ControlLabel>Reingresa el Correo Electrónico</ControlLabel>
+                            <ControlLabel><FormattedMessage id='configuration.tab2.label4' /></ControlLabel>
                             <FormControl
                                 type="text"
                                 value={this.state.value}
@@ -98,60 +98,60 @@ class Config2 extends Component {
                             </FormGroup>
                             <hr />
                             <div>
-                                Actualización de Dirección
+                                <FormattedMessage id='configuration.tab2.form.title' />
                             </div><br />
                             <div className="row">
                                 <div className="form-group col-md-4">
-                                    <ControlLabel>Región<span className="RUIFW-red"> *</span></ControlLabel>
+                                    <ControlLabel><FormattedMessage id='configuration.tab2.form.region' /><span className="RUIFW-red"> *</span></ControlLabel>
                                     <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select">
-                                    {optionsRegion.map(option => {
-                                        return <option value={option} key={option} >{option}</option>
+                                    {optionsRegion.map((option,index) => {
+                                        return <option value={option} key={index} ><FormattedMessage id={'configuration.tab2.form.region'+(index+1)} /></option>
                                     })}    
                                     </FormControl> 
                                 </div>
                                 <div className="form-group col-md-4">
-                                    <ControlLabel>Ciudad o Comuna<span className="RUIFW-red"> *</span></ControlLabel>
+                                    <ControlLabel><FormattedMessage id='configuration.tab2.form.country' /><span className="RUIFW-red"> *</span></ControlLabel>
                                     <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select">
-                                    {optionsCiudad.map(option => {
-                                        return <option value={option} key={option} >{option}</option>
+                                    {optionsCiudad.map((option,index) => {
+                                        return <option value={option} key={index} ><FormattedMessage id={'configuration.tab2.form.country'+(index+1)} /></option>
                                     })}    
                                     </FormControl> 
                                 </div>
                                 <div className="form-group col-md-4">
-                                    <ControlLabel>Ciudad o Comuna<span className="RUIFW-red"> *</span></ControlLabel>
+                                    <ControlLabel><FormattedMessage id='configuration.tab2.form.location' /><span className="RUIFW-red"> *</span></ControlLabel>
                                     <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChange.bind(this)}>
-                                    {optionsLocalidad.map(option => {
-                                        return <option value={option} key={option} >{option}</option>
+                                    {optionsLocalidad.map((option,index) => {
+                                        return <option value={option} key={index} ><FormattedMessage id={'configuration.tab2.form.location'+(index+1)} /></option>
                                     })}    
                                     </FormControl> 
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="form-group col-md-6">
-                                    <ControlLabel>Calle<span className="RUIFW-red"> *</span></ControlLabel>
+                                    <ControlLabel><FormattedMessage id='configuration.tab2.form.city' /><span className="RUIFW-red"> *</span></ControlLabel>
                                     <input type="text" className="form-control" id="inputAddress" placeholder="VATA" />
                                 </div>
                                 <div className="form-group col-md-6">
-                                    <ControlLabel>Número<span className="RUIFW-red"> *</span></ControlLabel>
+                                    <ControlLabel><FormattedMessage id='configuration.tab2.form.number' /><span className="RUIFW-red"> *</span></ControlLabel>
                                     <input type="text" className="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
                                 </div>
                             </div>
                             <div className="row">
                                 <div className="form-group col-md-6">
-                                    <ControlLabel>Información Adicional</ControlLabel>
+                                    <ControlLabel><FormattedMessage id='configuration.tab2.form.information' /></ControlLabel>
                                     <input type="text" className="form-control" id="inputCity" />
                                 </div>
                                 <div className="form-group col-md-4">
-                                    <ControlLabel>Código Postal</ControlLabel>
+                                    <ControlLabel><FormattedMessage id='configuration.tab2.form.zip' /></ControlLabel>
                                     <input type="text" className="form-control" id="inputCity" placeholder="15.352.719-9"/>
                                 </div>
                             </div>
                             <div>
-                                <span className="RUIFW-red">* </span><ControlLabel> Obligatorio</ControlLabel>  
+                                <span className="RUIFW-red">* </span><ControlLabel> <FormattedMessage id='configuration.tab2.form.obligate' /></ControlLabel>  
                             </div>
                             <div className="row btnStyle">
-                                <Button className="accept" onClick={this.handleChange.bind(this)}>Aceptar</Button>
-                                <Button className="cancel"><Link to="/account">Cancelar</Link></Button>
+                                <Button className="accept" onClick={this.handleChange.bind(this)}><FormattedMessage id='configuration.accept' /></Button>
+                                <Button className="cancel"><Link to="/account"><FormattedMessage id='configuration.cancel' /></Link></Button>
                             </div>                     
                          </form>                  
                         </div>                    

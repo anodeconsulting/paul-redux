@@ -4,6 +4,7 @@ import { Table, Button, Checkbox, Form, FormGroup, FormControl, ControlLabel } f
 import RightBox from "../Rightbox/Rightbox";
 import { Link } from "react-router-dom";
 import AlertSuccess from '../Tools/Alert/Alert_Success';
+import { FormattedMessage } from 'react-intl';
 
 class Config3 extends Component {
      //Constructor 
@@ -39,29 +40,29 @@ class Config3 extends Component {
                 <div className='col-sm-12'>
                     <div>
                         <div className="wizard-form-title">
-                            <h5>Administración de Cupos para Tarjetas Adicionales</h5>
+                            <h5><FormattedMessage id='configuration.tab3.title' /></h5>
                         </div>
                         <div className="well col-sm-12">
                             <form>
                                 <ControlLabel>
-                                    Modifica los cupos en pesos y dólar para tus Tarjetas de Crédito Adicionales
+                                    <FormattedMessage id='configuration.tab3.table.title' />
                                 </ControlLabel><br />
                                 <Table bordered condensed hover className="tableAlign">
                                     <thead>
                                         <tr>
-                                        <th>Tarjeta</th>
-                                        <th>Estado</th>
-                                        <th>Cupo Nacional</th>
-                                        <th>Cupo Internacional</th>
+                                        <th><FormattedMessage id='configuration.tab3.table.head1' /></th>
+                                        <th><FormattedMessage id='configuration.tab3.table.head2' /></th>
+                                        <th><FormattedMessage id='configuration.tab3.table.head3' /></th>
+                                        <th><FormattedMessage id='configuration.tab3.table.head4' /></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                        <td>Tarjeta de Crédito Alexis *** 0081</td>
+                                        <td><FormattedMessage id='configuration.tab3.table.account1' /></td>
                                         <td>
                                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select">
-                                        {options1.map(option => {
-                                            return <option value={option} key={option} >{option}</option>
+                                        {options1.map((option,index) => {
+                                            return <option value={option} key={index} ><FormattedMessage id={'configuration.tab3.table.status'+(index+1)} /></option>
                                         })}    
                                         </FormControl> 
                                         </td>
@@ -75,11 +76,11 @@ class Config3 extends Component {
                                         </td>
                                         </tr>
                                         <tr>
-                                        <td>Tarjeta de Crédito Sam *** 0085</td>
+                                        <td><FormattedMessage id='configuration.tab3.table.account2' /></td>
                                         <td>
                                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select">
-                                        {options1.map(option => {
-                                            return <option value={option} key={option} >{option}</option>
+                                        {options1.map((option,index) => {
+                                            return <option value={option} key={index} ><FormattedMessage id={'configuration.tab3.table.status'+(index+1)} /></option>
                                         })}    
                                         </FormControl> 
                                         </td>
@@ -94,8 +95,8 @@ class Config3 extends Component {
                                     </tbody>
                                 </Table>
                                 <div className="row btnStyle">
-                                    <Button className="accept" onClick={this.handleChange.bind(this)}>Aceptar</Button>
-                                    <Button className="cancel"><Link to="/account">Cancelar</Link></Button>
+                                    <Button className="accept" onClick={this.handleChange.bind(this)}><FormattedMessage id='configuration.accept' /></Button>
+                                    <Button className="cancel"><Link to="/account"><FormattedMessage id='configuration.cancel' /></Link></Button>
                                 </div> 
                             </form>  
                 

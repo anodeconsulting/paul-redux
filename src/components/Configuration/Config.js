@@ -7,6 +7,7 @@ import Config1 from "./Config1";
 import Config2 from "./Config2";
 import Config3 from "./Config3";
 import Config4 from "./Config4";
+import { FormattedMessage } from 'react-intl';
 
 class Statement extends Component {
      //Constructor 
@@ -24,19 +25,19 @@ class Statement extends Component {
             <section>
             <div className="row">               
                 <div className='col-sm-9'>                    
-                    <h1>Configuración de Información Personal y de Productos </h1>        
+                    <h1><FormattedMessage id='configuration.title' /></h1>        
                     <div>
                         <Tabs animation={false} id="noanim-tab-example">
-                            <Tab eventKey={1} title="Mis Productos">
+                            <Tab eventKey={1} title={<FormattedMessage id='configuration.tab1text' />}>
                                 <Config1 location = {this.props.location}/>
                             </Tab>
-                            <Tab eventKey={2} title="Datos de Contacto">
+                            <Tab eventKey={2} title={<FormattedMessage id='configuration.tab2text' />}>
                                 <Config2 location = {this.props.location}/>
                             </Tab>
-                            <Tab eventKey={3} title="Modificar Cupos">
+                            <Tab eventKey={3} title={<FormattedMessage id='configuration.tab3text' />}>
                                 <Config3 location = {this.props.location}/>
                             </Tab>
-                            <Tab eventKey={4} title="Compras WebPay Plus">
+                            <Tab eventKey={4} title={<FormattedMessage id='configuration.tab4text' />}>
                                 <Config4 location = {this.props.location}/>
                             </Tab>
                         </Tabs>
