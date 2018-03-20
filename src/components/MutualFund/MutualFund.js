@@ -9,6 +9,7 @@ import { Button } from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
 import { Link } from "react-router-dom";
 import AlertWarning from "../Tools/Alert/Alert_Warning";
+import { FormattedMessage } from 'react-intl';
 
 class MutualFund extends Component {
 
@@ -42,7 +43,7 @@ class MutualFund extends Component {
         let moduleAlert = null;
         // let moduleLink = <MutualFundStep3 />;
         if(this.state.key !=1){
-            module= <Button className="back" onClick={()=>this.handleSelect(1)}>Volver</Button>     
+            module= <Button className="back" onClick={()=>this.handleSelect(1)}><FormattedMessage id='invest_mutualfund.back' /></Button>     
             moduleAlert = <AlertWarning />           
         }
 
@@ -55,13 +56,13 @@ class MutualFund extends Component {
             {moduleAlert}
                 <div className="row">
                     <div className='well col-sm-9 div-border'>
-                        <h1>Invierte o Rescata tu Fondo Mutuo </h1>        
+                        <h1><FormattedMessage id='invest_mutualfund.title' /> </h1>        
                             <div>
                                 <Tabs activeKey={this.state.key} onSelect={this.handleSelect} animation={false} id="noanim-tab-example">
-                                    <Tab eventKey={1} title="1. Ingresar">
+                                    <Tab eventKey={1} title={<FormattedMessage id='invest_mutualfund.tab1' />}>
                                         <MutualFundStep1 />
                                     </Tab>
-                                    <Tab eventKey={2} title="2. Confirmar" disabled={this.state.disabled}>
+                                    <Tab eventKey={2} title={<FormattedMessage id='invest_mutualfund.tab2' />} disabled={this.state.disabled}>
                                         <MutualFundStep2 />
                                     </Tab>
                                 </Tabs>
@@ -75,8 +76,8 @@ class MutualFund extends Component {
                                     }else{
                                         this.handleSelect(2);
                                     }
-                                    }}>Aceptar</Button>
-                                <Button className="cancel"><Link to="/account">Cancelar</Link></Button>
+                                    }}><FormattedMessage id='invest_mutualfund.accept' /></Button>
+                                <Button className="cancel"><Link to="/account"><FormattedMessage id='invest_mutualfund.cancel' /></Link></Button>
                             </div>
                     </div>  
                     <div className='col-sm-3'>

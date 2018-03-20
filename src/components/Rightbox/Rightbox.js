@@ -31,7 +31,7 @@ class RightBox extends Component {
                                         <i className="fa fa-caret-right right-box-arrow" aria-hidden="true"></i>
                                     </div>
                                     <div className="col-sm-11">
-                                        <h4 className="right-box-content">¿Necesitas Ayuda?</h4>
+                                        <h4 className="right-box-content"><FormattedMessage id='rightbox.rightbox9' /></h4>
                                     </div>
                                 </div>
                         </div>;

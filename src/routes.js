@@ -43,10 +43,9 @@ class Routes extends Component {
   render() {
 
     var users = this.props.users;
-    console.log(users);
     addLocaleData([...en, ...es]);
     return (
-      <IntlProvider locale={this.props.users.id} messages={flattenMessages(messages[this.props.users.id])}>
+      <IntlProvider textComponent={React.Fragment} locale={this.props.users.id} messages={flattenMessages(messages[this.props.users.id])}>
         <BrowserRouter basename="/react" onChange={this.yourHandler}>
           <div className="">
               <Header users={users}/>

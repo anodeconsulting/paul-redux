@@ -1,60 +1,61 @@
 import React, {Component} from 'react';
 import './Tab.css';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap';
- 
+import { FormattedMessage } from 'react-intl'; 
+
 class TabAccountTransStep2 extends Component {
 
     render() {
         return (
             <div>
-                <div className="fontTop">Confirma los datos para invertir o rescatar tu Fondo Mutuo</div>
+                <div className="fontTop"><FormattedMessage id='transfer_myaccounts.step2.title1' /></div>
                 <div className="wizard-form-title">
-                Revisa la información, si es correcta haz click en el botón "Confirmar" para completar tu inversión. Si los datos no están correctos, haz click en el botón “Volver” y efectúa las correcciones necesarias.    
+                <FormattedMessage id='transfer_myaccounts.step2.title2' />    
                 </div>
                 <div className="col-sm-12">
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Movimiento</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label1' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Inversión</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.value1' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>De</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label2' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Cuenta Corriente *** 0001</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.value2' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Tipo de Fondo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label3' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Deuda de Corto Plazo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.value3' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Nombre Fondo Mutuo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label4' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Proximidad Serie A</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.value4' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Cuenta Fondo Mutuo</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label5' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
-                                <ControlLabel>Nueva</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.value5' /></ControlLabel>
                             </div>
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Monto</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label6' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
                                 <ControlLabel>$ 1.000.000</ControlLabel>
@@ -62,7 +63,7 @@ class TabAccountTransStep2 extends Component {
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Fecha</ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label7' /></ControlLabel>
                             </div>
                             <div className="col-sm-9">
                                 <ControlLabel>20/02/2018</ControlLabel>
@@ -70,7 +71,7 @@ class TabAccountTransStep2 extends Component {
                     </div>
                     <div className="col-sm-12 pushBot">
                             <div className="col-sm-3">
-                                <ControlLabel>Email </ControlLabel>
+                                <ControlLabel><FormattedMessage id='transfer_myaccounts.step2.label8' /> </ControlLabel>
                             </div>
                             <div className="col-sm-9">
                                 <ControlLabel>henrik.ramos@gmail.com</ControlLabel>

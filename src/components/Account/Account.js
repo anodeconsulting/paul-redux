@@ -163,7 +163,7 @@ class Account extends Component {
                       {this.state.itemsChecking.map((item,index) =>
                           <tbody key={item.id}>
                           <tr>
-                            <td className="amount-title"><Link to={`/account/deposite/${item.type}`}>{item.type}</Link></td>
+                            <td className="amount-title"><Link to={`/account/deposite/${item.type}`}><FormattedMessage id={'account.bankaccount'+(index+1)} /></Link></td>
                             <td className="amount">
                                 <div className="amount-number">${item.primary_balance.amount}</div>
                               <Dropdown isOpen={this.state.squarebtnArrayCuentas[index]} toggle={()=>{this.toggleCuentas(index)}} tag="li">
@@ -213,7 +213,7 @@ class Account extends Component {
                         {this.state.itemsCredit.map((item,index) =>
                             <tbody key={item.path}>
                             <tr>
-                              <td className="amount-title"><Link to={`${item.path}${item.type}`}>{item.type}</Link></td>
+                              <td className="amount-title"><Link to={`${item.path}${item.type}`}><FormattedMessage id={'account.creditaccount'+(index+1)} /></Link></td>
                               <td className="amount">
                                 <div className="amount-number">${item.primary_balance.amount}</div>
                                 <Dropdown isOpen={this.state.squarebtnArrayCredit[index]} toggle={()=>{this.toggleCredit(index)}} tag="li">

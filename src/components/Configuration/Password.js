@@ -5,6 +5,7 @@ import RightBox from "../Rightbox/Rightbox";
 import { Link } from "react-router-dom";
 import {Redirect} from 'react-router-dom';
 import AlertSuccess from '../Tools/Alert/Alert_Success';
+import { FormattedMessage } from 'react-intl';
 
 class Password extends Component {
      //Constructor 
@@ -39,23 +40,23 @@ class Password extends Component {
             {moduleAlert} 
             <div className="row">               
                 <div className='col-sm-9'>                    
-                    <h1>Configuración de Seguridad </h1>        
+                    <h1><FormattedMessage id='password.title1' /> </h1>        
                     <div>
                         <Tabs animation={false} id="noanim-tab-example">
-                            <Tab eventKey={1} title="Cambio de Contraseña">
+                            <Tab eventKey={1} title={<FormattedMessage id='password.tab' />}>
                             <section>
                                 <div className="row">
                                     <div className='col-sm-12'>
                                         <div>
                                             <div className="wizard-form-title">
-                                            Para cambiar tu contraseña de acceso, ingresa tu contraseña actual y luego dos veces la nueva contraseña. Recuerda que tu contraseña debe tener un largo mínimo de 8 carácteres y máximo de 15, al menos una letra y un número.
+                                            <FormattedMessage id='password.title2' />
                                             </div>
                                             <div className="well">
                                                 <form>
                                                     <div className = "row">
                                                         <div className="col-sm-6">
                                                             <ControlLabel>
-                                                            Ingresa tu Contraseña Actual
+                                                            <FormattedMessage id='password.label1' />
                                                             </ControlLabel>
                                                             <FormControl
                                                                 type="text"
@@ -68,7 +69,7 @@ class Password extends Component {
                                                     <div className = "row">
                                                         <div className="col-sm-6">
                                                             <ControlLabel>
-                                                            Ingresa tu Nueva Contraseña
+                                                            <FormattedMessage id='password.label2' />
                                                             </ControlLabel>
                                                             <FormControl
                                                                 type="text"
@@ -81,7 +82,7 @@ class Password extends Component {
                                                     <div className = "row">
                                                         <div className="col-sm-6">
                                                             <ControlLabel>
-                                                            Ingresa tu Contraseña Nuevamente para Confirmar
+                                                            <FormattedMessage id='password.label3' />
                                                             </ControlLabel>
                                                             <FormControl
                                                                 type="text"
@@ -104,8 +105,8 @@ class Password extends Component {
                             <Button className="accept" onClick={()=>
                             {
                               this.handleSelect(2)                                                               
-                            }}>Aceptar</Button>
-                            <Button className="cancel"><Link to="/account">Cancelar</Link></Button>
+                            }}><FormattedMessage id='password.accept' /></Button>
+                            <Button className="cancel"><Link to="/account"><FormattedMessage id='password.cancel' /></Link></Button>
                     </div> 
                 </div>  
                 <div className='col-sm-3'>

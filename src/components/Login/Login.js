@@ -4,6 +4,7 @@ import './Login.css';
 // import { Button } from 'react-bootstrap';
 import RightBox from "../Rightbox/Rightbox";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from 'react-intl';
 // import {AddTransferD2D} from "../../services/AddTransferD2D";
 // import {AddTransferD2CC} from "../../services/AddTransferD2CC";
 // import {AddCashAdvance} from "../../services/AddCashAdvance";
@@ -70,30 +71,30 @@ class Login extends Component {
                 {/* <Link to="/pay/mutualfund">mutualfund</Link><br /> */}
                 {/* <Link to="pay">Pay</Link>   */}
                 <form className="form-signin">
-                    <h1 className=" h1title">Acceso Clientes Persona</h1>
+                    <h1 className=" h1title"><FormattedMessage id='login.title' /></h1>
                     <div className="row">
                         <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9">
                             <div className="wizard-form-content wrapfrom">
                                 <div className="RUIFW-row row">
                                     <div className="col-sm-4">
-                                        <label  className="">RUT</label>
+                                        <label  className=""><FormattedMessage id='login.user' /></label>
                                         <input type="text" id="inputEmail" className="form-control inputwidth"  placeholder="Email address" ></input>
                                     </div>
                                 </div>
                                 <div className="RUIFW-row row">
                                     <div className="col-sm-4">
-                                        <label  className="">Contraseña</label>
+                                        <label  className=""><FormattedMessage id='login.password' /></label>
                                         <input type="password" id="inputPassword" className="form-control inputwidth"   placeholder="Password" ></input>
                                     </div>
                                 </div>
                                 <div className="RUIFW-row row">
                                     <div className="forgetPassword col-sm-4" >
-                                        <a href="">¿Olvidaste tu contraseña?</a>
+                                        <a href=""><FormattedMessage id='login.ask' /></a>
                                     </div>
                                 </div>
 
                                 <div className="btn-holder">
-                                    <button className="btn login-btn " type="submit" onClick={this.login} ><i className="fa fa-lock" aria-hidden="true"></i> Ingresar</button>
+                                    <button className="btn login-btn " type="submit" onClick={this.login} ><i className="fa fa-lock" aria-hidden="true"></i> <FormattedMessage id='login.login' /></button>
                                 </div>
                             </div>
                         </div>

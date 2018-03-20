@@ -73,7 +73,8 @@ export default {
             rightbox5: "Contact us",
             rightbox6: "CENTER OFFICE",
             rightbox7: "General comments",
-            rightbox8: "Call us at"
+            rightbox8: "Call us at",
+            rightbox9: "¿Need help?",
         },
 
         leftbox:{
@@ -150,11 +151,29 @@ export default {
                 head1: 'Date',
                 head2: 'Description',
                 head3: 'Amount',
-            }          
+            },
+            transfer: {
+                head1: 'Date',
+                head2: 'Description',
+                head3: 'Account or Card',
+                head4: 'State',
+                head5: 'Amount',
+            },
+            mutualfund: {
+                head1: 'Date',
+                head2: 'Description',
+                head3: 'Account',
+                head4: 'Amount'
+            }         
         },
 
         calendar: {
-            title:'Scheduled Transactions'
+            title:'Scheduled Transactions',
+            item1: 'All the products',
+            item2: 'Deposite Account *** 0001',
+            item3: 'Savings account *** 0002',
+            item4: 'Vista Account *** 0003',
+            item5: 'Youth card *** 0004'           
         },
 
         account: {
@@ -169,7 +188,7 @@ export default {
             creditaccounts:"Credits and Credit Cards",
             creditaccount1: "MASTERCARD *** 8981",
             creditaccount2: "Line Of Credit *** 0007",
-            creditaccount3: "Credit Mortgage*** 0010",
+            creditaccount3: "Credit Mortgage *** 0010",
             creditaccount4: "Loan *** 0009",
             lineofcredit: "Line Of Credit",
             mortgage: "Mortgage",
@@ -237,6 +256,147 @@ export default {
             accept:'Accept'
         },
 
+        transfer_myaccounts:{
+            title: 'Transfers between My Accounts',
+            tab1:'1. Select Destination',
+            tab2:'2. Confirm',
+            step1:{
+                title: 'Select or enter the data to effect the transfer of funds',
+                from: 'From',
+                to: 'To',
+                fromaccount1: 'Select an account',
+                fromaccount2: 'Deposite Account *** 0001 - $ 2.222.345',
+                fromaccount3: 'Deposite Account *** 0002 - $ 3.231.456',
+                fromaccount4: 'Savings account *** 0003',
+                fromaccount5: 'Credit card *** 0008',
+                fromaccount6: 'Other Bank',
+                toaccount1: 'Select an account',
+                toaccount2: 'Credit card *** 0008',
+                toaccount3: 'Loan *** 0009',
+                toaccount4: 'Mortgage *** 0010',
+                toaccount5: 'CAE Fees *** 0011',
+                toaccount6: 'CAE Commission *** 0011',
+                toaccount7: 'Student Loan *** 0013',bancoaccount1: 'BCI',
+                bancoaccount1: 'BCI',
+                bancoaccount2: 'Satander',
+                banco: 'Bank',
+                region: 'Region',
+                regionlist1: 'Nationals',
+                regionlist2: 'Internationals',
+                monto: 'Amount',
+                montolist1: 'Billed Amount',
+                montolist2: 'Minimum payment',
+                montolist3: 'Total Due',
+                montolist4: 'Other Amount',
+                fecha: 'Date',
+                text1: 'To see more information click here',
+                text2: 'Payment type',
+                text3: 'Share',
+                text4: 'Prepaid',
+                lineofcredit: 'Line Of Credit *** 0007'
+            },
+            step2: {
+                title1:'Confirm the data to invest or redeem your Mutual Fund',
+                title2: 'Check the information, if it is correct, click on the "Confirm" button to complete your investment. If the data is not correct, click on the "Back" button and make the necessary corrections.',
+                label1:'Movement',
+                value1:'Investment', 
+                label2:'From',
+                value2:'Deposite Account *** 0001',
+                label3:'Type of Fund',
+                value3:'Short Term Debt',
+                label4:'Mutual Fund Name',
+                value4:'Proximidad Serie A',
+                label5:'Mutual Fund Account',
+                value5:'New',
+                label6:'Amount',
+                label7:'Date',
+                label8:'Email',
+            },
+            step3: {
+                text1: 'My Recipients'
+            },
+            back:'Back',
+            cancel:'Cancel',
+            accept:'Accept'
+        },
+
+        invest_mutualfund: {
+            title: 'Invest or Rescue your Mutual Fund',
+            tab1:'1. Enter',
+            tab2:'2. Confirm',
+            step1: {
+                title1: 'Enter the data to Invest or Rescue your Mutual Fund',
+                title2: 'Select or enter the data requested to make the investment or the rescue of your investment and then click "Accept" to continue. Mutual funds can only be taken from accounts in the same currency and from the same owner of the investment.',
+                label1: 'Movement',
+                valuelist11: 'investment',
+                valuelist12: 'Rescue',
+                label2: 'From',
+                valuelist21: 'Deposite Account *** 0001 $ 2,000.120',
+                valuelist22: 'Deposite Account *** 0002 USD 10,000.00',
+                label3: 'Mutual Fund Name',
+                valuelist31: 'Proximidata Serie A',
+                valuelist32: 'Proximidata Serie B',
+                valuelist33: 'Valoriza',
+                label4: 'Type of Fund',
+                valuelist41: 'Short Term Debt',
+                valuelist42: 'Medium and Long Term Debt',
+                valuelist43: 'Balanced or Managed',
+                valuelist44: 'National and International Shareholders',
+                value45:'Know here the characteristics of the available Funds',
+                label5: 'Mutual Fund Account',
+                valuelist51: 'Nueva',
+                valuelist52: '001',
+                valuelist53: '002',
+                value55: 'Know here the costs associated with the investment',
+                label6: 'Investment Amount',
+                label7: 'Date',
+                label8: 'Amount',
+                label9: 'Date',
+                label10: 'Mutual Fund Name',
+                valuelist101:'Clipper Series A $ 3.358.715',
+                valuelist102:'Proximidad Serie A $ 2.000.000',
+                valuelist103:'Optimo Serie A $ 3.255.951',
+                valuelist104:'Valoriza Serie A $ 2.608.434',
+                valuelist105:'Scotia Mixto Serie A $ 1.389.037',
+                label11: 'Mutual Fund Account',
+                valuelist111:'001 - $ 1.000.000',
+                valuelist112:'002 - $ 1.000.000',
+                valuelist113:'003 - $ 1.000.000',
+                label12:'Dues',
+                label13:'Type of Rescue',
+                valuelist131:'Partial',
+                valuelist132:'Total',
+                label14:'Amount / Fees',
+                label15:'To',
+                valuelist151:'Deposite Account *** 0001 $ 2.000.120',
+                valuelist152:'Deposite Account *** 0002 $ 2.000.120',
+                label16:'Date',
+            },
+            step2: {
+                title1:'Confirm the data to invest or redeem your Mutual Fund',
+                title2:'Check the information, if it is correct, click on the "Confirm" button to complete your investment. If the data is not correct, click on the "Back" button and make the necessary corrections.',
+                label1:'Movement',
+                value1:'Investment',
+                label2:'From',
+                value2:'Deposite Account *** 0001',
+                label3:'Type of Fund',
+                value3:'Short Term Debt',
+                label4:'Mutual Fund Name',
+                value4:'Proximity Series A',
+                label5:'Mutual Fund Account',
+                value5:'New',
+                label6:'Amount',
+                label7:'Date',
+                label8:'Email',
+            },
+            step3: {
+                text1: 'My Recipients'
+            },
+            back:'Back',
+            cancel:'Cancel',
+            accept:'Accept'
+        },
+
         dropdown:{
             transfer:"Transfer to Third Parties",
             transbetweenaccount:"Transfers between My Accounts",
@@ -244,10 +404,52 @@ export default {
             pay: "Pay"
         },
 
+        login:{
+            title: 'Client Access Person',
+            user: 'RUT',
+            password:'Password',
+            ask: '¿Did you forget your password?',
+            login: 'Enter'
+        },
+
         logout:{
             logout: 'Log Out',
             lastentry: 'Last Entry',
             security:'Security Guarantee'
+        },
+
+        statement: {
+            title1: 'Statements of Accounts, Certificates and Electronic Tax Documents',
+            title2: 'Check and download documents associated with your banking products and tax history.',
+            label1: 'From',
+            value11:'Deposite Account *** 0001 - $ 2.222.345',
+            value12:'Deposite Account *** 0002 - $ 3.231.456',
+            value13:'Savings account *** 0003',
+            value14:'Credit card *** 0008',
+            value15:'Other Bank',
+            label2: 'Document type',
+            value2: 'Official Cartola',
+            label3: 'Shipping type',
+            value3: 'By Email - Modify',
+            label4: 'Date',
+            june: 'June',
+            may: 'May',
+            april: 'April',
+            march: 'March',
+            feb: 'February',
+            dec: 'December',
+            nov: 'November'
+        },
+
+        password: {
+            title1: 'Security settings',
+            title2: 'To change your access password, enter your current password and then twice the new password. Remember that your password must have a minimum length of 8 characters and a maximum of 15, at least one letter and a number.',
+            tab: 'Change of password',
+            label1: 'Enter your Current Password',
+            label2: 'Enter your New Password',
+            label3: 'Enter your password again to confirm',
+            cancel:'Cancel',
+            accept:'Accept'
         },
 
         footer:{
@@ -335,7 +537,8 @@ export default {
             rightbox5: "Contáctanos",
             rightbox6: "OFICINA CENTRO",
             rightbox7: "Comentarios Generales",
-            rightbox8: "Llámanos al"
+            rightbox8: "Llámanos al",
+            rightbox9: "¿Necesitas Ayuda?",
         },
 
         leftbox:{
@@ -381,7 +584,7 @@ export default {
             tab2: 'Transacciones Programadas',
             deposite: {
                 head1: 'Fecha',
-                head2: 'Description',
+                head2: 'Descripción',
                 head3: 'Monto',
                 head4: 'Saldo',
             },
@@ -405,18 +608,36 @@ export default {
             },
             lineofcredit: {
                 head1: 'Fecha',
-                head2: 'Description',
+                head2: 'Descripción',
                 head3: 'Monto',
             },
             thirdparty: {
                 head1: 'Fecha',
-                head2: 'Description',
+                head2: 'Descripción',
                 head3: 'Monto',
-            }          
+            },
+            transfer: {
+                head1: 'Fecha',
+                head2: 'Descripción',
+                head3: 'Cuenta o Tarjeta',
+                head4: 'Estado',
+                head5: 'Monto',
+            },
+            mutualfund: {
+                head1: 'Fecha',
+                head2: 'Descripción',
+                head3: 'Cuenta',
+                head4: 'Monto'
+            }       
         },
 
         calendar: {
-            title:'Transacciones Programadas'
+            title: 'Transacciones Programadas',
+            item1: 'Todos los Productos',
+            item2: 'Cuenta Corriente *** 0001',
+            item3: 'Cuentade Ahorro *** 0002',
+            item4: 'Cuenta Vista *** 0003',
+            item5: 'Tarjeta Joven *** 0004'
         },
 
         account: {
@@ -431,8 +652,8 @@ export default {
             creditaccounts:"Créditos y Tarjetas de Crédito",
             creditaccount1: "MASTERCARD *** 8981",
             creditaccount2: "Línea de Crédito *** 0007",
-            creditaccount3: "Crédito Hipotecario*** 0010",
-            creditaccount4: "Créditos*** 0009",
+            creditaccount3: "Crédito Hipotecario *** 0010",
+            creditaccount4: "Créditos *** 0009",
             lineofcredit: "Línea de Crédito",
             mortgage: "Crédito Hipotecario",
             loan: "Créditos"
@@ -549,6 +770,147 @@ export default {
             accept:'Aceptar'
         },
 
+        transfer_myaccounts:{
+            title: 'Transferencias entre Mis Cuentas',
+            tab1:'1. Seleccionar Destino',
+            tab2:'2. Confirmar',
+            step1:{
+                title: 'Selecciona o ingresa los datos para efectuar la transferencia de fondos',
+                from: 'De',
+                to: 'A',
+                fromaccount1: 'Selecciona cuenta de oirgen',
+                fromaccount2: 'Cuenta Corriente *** 0001 - $ 2.222.345',
+                fromaccount3: 'Cuenta Corriente *** 0002 - $ 3.231.456',
+                fromaccount4: 'Cuenta de Ahorro *** 0003',
+                fromaccount5: 'Tarjeta de Crédito *** 0008',
+                fromaccount6: 'Otro Banco',
+                toaccount1: 'Selecciona cuenta de oirgen',
+                toaccount2: 'Tarjeta de Crédito *** 0008',
+                toaccount3: 'Crédito *** 0009',
+                toaccount4: 'Crédito Hipotecario *** 0010',
+                toaccount5: 'CAE Arancel Cuotas *** 0011',
+                toaccount6: 'CAE Comisión Cuotas *** 0011',
+                toaccount7: 'Crédito Educación *** 0013',
+                bancoaccount1: 'BCI',
+                bancoaccount2: 'Satander',
+                banco: 'Banco',
+                region: 'Región',
+                regionlist1: 'Nacionales',
+                regionlist2: 'Internacionales',
+                monto: 'monto',
+                montolist1: 'Monto Facturado',
+                montolist2: 'Pago Mínimo',
+                montolist3: 'Deuda Total',
+                montolist4: 'Otro Monto',
+                fecha: 'Fecha',
+                text1: 'Para ver más información haga clic aquí',
+                text2: 'Tipo de Pago',
+                text3: 'Cuota',
+                text4: 'Prepago',
+                lineofcredit: 'Línea de Crédito *** 0007'
+            },
+            step2: {
+                title1:'Confirma los datos para invertir o rescatar tu Fondo Mutuo',
+                title2: 'Revisa la información, si es correcta haz click en el botón "Confirmar" para completar tu inversión. Si los datos no están correctos, haz click en el botón “Volver” y efectúa las correcciones necesarias.',
+                label1:'Movimiento',
+                value1:'Inversión', 
+                label2:'De',
+                value2:'Cuenta Corriente *** 0001',
+                label3:'Tipo de Fondo',
+                value3:'Deuda de Corto Plazo',
+                label4:'Nombre Fondo Mutuo',
+                value4:'Proximidad Serie A',
+                label5:'Cuenta Fondo Mutuo',
+                value5:'Nueva',
+                label6:'Monto',
+                label7:'Fecha',
+                label8:'Email',
+            },
+            step3: {
+                text1: 'Mis Destinatarios'
+            },
+            back:'Volver',
+            cancel:'Canelar',
+            accept:'Aceptar'
+        },
+
+        invest_mutualfund: {
+            title: 'Invierte o Rescata tu Fondo Mutuo',
+            tab1:'1. Ingresar',
+            tab2:'2. Confirmar',
+            step1: {
+                title1: 'Ingresa los datos para Invertir o Rescatar tu Fondo Mutuo',
+                title2: 'Selecciona o ingresa los datos solicitados para efectuar la inversión o el rescate de tu inversión y luego haz clic en "Aceptar" para continuar. Fondos mutuos se pueden tomar solamente con cargo a cuentas en la misma moneda y del mismo titular de la inversión.',
+                label1: 'Movimiento',
+                valuelist11: 'inversión',
+                valuelist12: 'Rescate',
+                label2: 'De',
+                valuelist21: 'Cuenta Corriente *** 0001 $ 2,000.120',
+                valuelist22: 'Cuenta Corriente *** 0002 USD 10,000.00',
+                label3: 'Nombre Fondo Mutuo',
+                valuelist31: 'Proximidata Serie A',
+                valuelist32: 'Proximidata Serie B',
+                valuelist33: 'Valoriza',
+                label4: 'Tipo de Fondo',
+                valuelist41: 'Deuda de Corto Plazo',
+                valuelist42: 'Deuda De Mediano y Largo Plazo',
+                valuelist43: 'Balanceados o Gestionados',
+                valuelist44: 'Accionarios Nacionales e Internacionales',
+                value45:'Conozca aquí las características de los Fondos disponibles',
+                label5: 'Cuenta Fondo Mutuo',
+                valuelist51: 'Nueva',
+                valuelist52: '001',
+                valuelist53: '002',
+                value55:'Conozca aquí los costos asociados a la inversión',
+                label6: 'inversiónMonto',
+                label7: 'Fecha',
+                label8: 'Monto',
+                label9: 'Fecha',
+                label10: 'Nombre Fondo Mutuo',
+                valuelist101:'Clipper Series A $ 3.358.715',
+                valuelist102:'Proximidad Serie A $ 2.000.000',
+                valuelist103:'Optimo Serie A $ 3.255.951',
+                valuelist104:'Valoriza Serie A $ 2.608.434',
+                valuelist105:'Scotia Mixto Serie A $ 1.389.037',
+                label11: 'Cuenta Fondo Mutuo',
+                valuelist111:'001 - $ 1.000.000',
+                valuelist112:'002 - $ 1.000.000',
+                valuelist113:'003 - $ 1.000.000',
+                label12:'Cuotas',
+                label13:'Tipo de Rescate',
+                valuelist131:'Parcual',
+                valuelist132:'Total',
+                label14:'Monto/Cuotas',
+                label15:'A',
+                valuelist151:'Cuenta Corriente *** 0001 $ 2.000.120',
+                valuelist152:'Cuenta Corriente *** 0002 $ 2.000.120',
+                label16:'Fecha',
+            },
+            step2: {
+                title1:'Confirma los datos para invertir o rescatar tu Fondo Mutuo',
+                title2:'Revisa la información, si es correcta haz click en el botón "Confirmar" para completar tu inversión. Si los datos no están correctos, haz click en el botón “Volver” y efectúa las correcciones necesarias.',
+                label1:'Movimiento',
+                value1:'Inversión',
+                label2:'De',
+                value2:'Cuenta Corriente *** 0001',
+                label3:'Tipo de Fondo',
+                value3:'Deuda de Corto Plazo',
+                label4:'Nombre Fondo Mutuo',
+                value4:'Proximidad Serie A',
+                label5:'Cuenta Fondo Mutuo',
+                value5:'Nueva',
+                label6:'Monto',
+                label7:'Fecha',
+                label8:'Email',
+            },
+            step3: {
+                text1: 'Mis Destinatarios'
+            },
+            back:'Volver',
+            cancel:'Canelar',
+            accept:'Aceptar'
+        },
+
         dropdown:{
             transfer:"Transferir a Terceros",
             transbetweenaccount:"Transferencias entre Mis Cuentas",
@@ -556,10 +918,52 @@ export default {
             pay: "Pagar"
         },
 
+        login:{
+            title: 'Acceso Clientes Persona',
+            user: 'RUT',
+            password:'Contraseña',
+            ask: '¿Olvidaste tu contraseña?',
+            login: 'Ingresar'
+        },
+
         logout:{
             logout: 'Salir',
             lastentry: 'Último Ingreso',
             security:'Garantía de Seguridad'
+        },
+
+        statement: {
+            title1: 'Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos',
+            title2: 'Consulta y descarga documentos asociados a tus productos bancarios y antecedentes tributarios.',
+            label1: 'De',
+            value11:'Cuenta Corriente *** 0001 - $ 2.222.345',
+            value12:'Cuenta Corriente *** 0002 - $ 3.231.456',
+            value13:'Cuenta de Ahorro *** 0003',
+            value14:'Tarjeta de Crédito *** 0008',
+            value15:'Otro Banco',
+            label2: 'Tipo de Documento',
+            value2: 'Cartola Oficial',
+            label3: 'Tipo de Envío',
+            value3: 'Por Email - Modificar',
+            label4: 'Fecha',
+            june: 'Julio',
+            may: 'Mayo',
+            april: 'Abril',
+            march: 'Marzo',
+            feb: 'Febrero',
+            dec: 'Diciembre',
+            nov: 'Noviembre'
+        },
+
+        password: {
+            title1: 'Configuración de Seguridad',
+            title2: 'Para cambiar tu contraseña de acceso, ingresa tu contraseña actual y luego dos veces la nueva contraseña. Recuerda que tu contraseña debe tener un largo mínimo de 8 carácteres y máximo de 15, al menos una letra y un número.',
+            tab: 'Cambio de Contraseña',
+            label1: 'Ingresa tu Contraseña Actual',
+            label2: 'Ingresa tu Nueva Contraseña',
+            label3: 'Ingresa tu Contraseña Nuevamente para Confirmar',
+            cancel:'Canelar',
+            accept:'Aceptar'
         },
 
         footer:{

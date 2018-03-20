@@ -13,6 +13,7 @@ import 'react-flags-select/css/react-flags-select.css';
 class Footer extends Component {
     handleLan(e){
         let language;
+        console.log(e);
         if(e === "CL"){
             let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
             this.setState({localTime: time});

@@ -117,11 +117,11 @@ class Calendar extends Component {
             </div>
             <div>
                 <select placeholder="select" className="calendar-select form-control">
-                    <option value="Todos los Productos">Todos los Productos</option>
-                    <option value="Cuenta Corriente *** 0001">Cuenta Corriente *** 0001</option>
-                    <option value="Cuenta de Ahorro *** 0002">Cuenta de Ahorro *** 0002</option>
-                    <option value="Cuenta Vista *** 0003">Cuenta Vista *** 0003</option>
-                    <option value="Tarjeta Joven *** 0004">Tarjeta Joven *** 0004</option>
+                    <option value="Todos los Productos"><FormattedMessage id='calendar.item1' /></option>
+                    <option value="Cuenta Corriente *** 0001"><FormattedMessage id='calendar.item2' /></option>
+                    <option value="Cuenta de Ahorro *** 0002"><FormattedMessage id='calendar.item3' /></option>
+                    <option value="Cuenta Vista *** 0003"><FormattedMessage id='calendar.item4' /></option>
+                    <option value="Tarjeta Joven *** 0004"><FormattedMessage id='calendar.item5' /></option>
                 </select>
             </div>
 

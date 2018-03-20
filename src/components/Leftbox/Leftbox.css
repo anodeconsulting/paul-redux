@@ -19,7 +19,7 @@
 #firstList .list-group-item a.active {
     background-color: #030;
     border-color: #aed248;
-  }
+}
 
 /* #firstList li, #secondList li{
     background-color: #d4d4d4;
@@ -27,4 +27,8 @@
 
 .list-group-item.active{
     background-color: #d4d4d4!important;
+}
+
+#firstList .list-group-item a, #secondList .list-group-item a {
+    color: #337ab7;
 }

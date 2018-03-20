@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './Tab.css';
 import { Button, Form, FormGroup, FormControl, ControlLabel, Radio } from 'react-bootstrap';
- 
+import { FormattedMessage } from 'react-intl';
+
 class MutualFundStep1 extends Component {
      //Constructor 
      constructor(props) {
@@ -97,57 +98,59 @@ class MutualFundStep1 extends Component {
              <div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>De</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label2' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>
-                        {optionsA.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsA.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist2'+(index+1)} /></option>
                         })}    
                         </FormControl>        
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Nombre Fondo Mutuo</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label3' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
-                        {optionsC.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsC.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist3'+(index+1)} /></option>
                         })}    
                         </FormControl>        
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Tipo de Fondo</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label4' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
-                        {optionsB.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsB.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist4'+(index+1)} /></option>
                         })}    
                         </FormControl>
-                        <ControlLabel className="labelSet">Conozca aquí las características de los Fondos disponibles</ControlLabel>        
+                        <ControlLabel className="labelSet">
+                            <FormattedMessage id='invest_mutualfund.step1.value45' />
+                        </ControlLabel>        
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Cuenta Fondo Mutuo</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label5' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
-                        {optionsD.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsD.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist5'+(index+1)} /></option>
                         })}    
                         </FormControl> 
-                        <ControlLabel className="labelSet">Conozca aquí los costos asociados a la inversión</ControlLabel>       
+                        <ControlLabel className="labelSet"><FormattedMessage id='invest_mutualfund.step1.value55' /></ControlLabel>       
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Monto</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label8' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <div className="col-sm-8 pushToLeft20">
@@ -167,7 +170,7 @@ class MutualFundStep1 extends Component {
                 </div>
                 <div className="col-sm-12 pushBot">
                          <div className="col-sm-3">
-                             <ControlLabel>Fecha</ControlLabel>
+                             <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label9' /></ControlLabel>
                          </div>
                          <div className="col-sm-9">
                          <ControlLabel>19/02/2018</ControlLabel>  
@@ -179,44 +182,44 @@ class MutualFundStep1 extends Component {
              <div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Nombre Fondo Mutuo</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label10' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>
-                        {optionsa.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsa.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist10'+(index+1)} /></option>
                         })}    
                         </FormControl>        
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Cuenta Fondo Mutuo</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label11' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
-                        {optionsb.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsb.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist11'+(index+1)} /></option>
                         })}    
                         </FormControl> 
-                        <ControlLabel className="labelSet">Cuotas: 250.3412</ControlLabel>               
+                        <ControlLabel className="labelSet"><FormattedMessage id='invest_mutualfund.step1.label12' />: 250.3412</ControlLabel>               
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Tipo de Rescate</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label13' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
-                        {optionsc.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsc.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist13'+(index+1)} /></option>
                         })}    
                         </FormControl>
                     </div>
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Monto/Cuotas</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label14' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <div className="col-sm-8 pushToLeft20">
@@ -237,12 +240,12 @@ class MutualFundStep1 extends Component {
                 </div>
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>A</ControlLabel>
+                        <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label15' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
-                        {optionsd.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsd.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist15'+(index+1)} /></option>
                         })}    
                         </FormControl> 
                     </div>
@@ -250,7 +253,7 @@ class MutualFundStep1 extends Component {
                 
                 <div className="col-sm-12 pushBot">
                          <div className="col-sm-3">
-                             <ControlLabel>Fecha</ControlLabel>
+                             <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label16' /></ControlLabel>
                          </div>
                          <div className="col-sm-9">
                             <ControlLabel>19/02/2018</ControlLabel>
@@ -263,19 +266,19 @@ class MutualFundStep1 extends Component {
     
         return (
             <div>
-                <div className="fontTop">Ingresa los datos para Invertir o Rescatar tu Fondo Mutuo</div>
+                <div className="fontTop"><FormattedMessage id='invest_mutualfund.step1.title1' /></div>
                 <div className="wizard-form-title">
-                Selecciona o ingresa los datos solicitados para efectuar la inversión o el rescate de tu inversión y luego haz clic en "Aceptar" para continuar. Fondos mutuos se pueden tomar solamente con cargo a cuentas en la misma moneda y del mismo titular de la inversión.    
+                <FormattedMessage id='invest_mutualfund.step1.title2' />    
                 </div>
                 <div className="col-sm-12">
                     <div className="col-sm-12 pushBot">
                         <div className="col-sm-3">
-                            <ControlLabel>Movimiento</ControlLabel>
+                            <ControlLabel><FormattedMessage id='invest_mutualfund.step1.label1' /></ControlLabel>
                         </div>
                         <div className="col-sm-9">
                             <FormControl className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChange.bind(this)}>
-                            {options.map(option => {
-                                return <option value={option} key={option} >{option}</option>
+                            {options.map((option,index) => {
+                                return <option value={option} key={index} ><FormattedMessage id={'invest_mutualfund.step1.valuelist1'+(index+1)} /></option>
                             })}
                             </FormControl>              
                         </div>

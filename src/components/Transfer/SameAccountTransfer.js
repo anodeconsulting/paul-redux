@@ -8,6 +8,7 @@ import { Button, Alert } from 'react-bootstrap';
 import {Redirect} from 'react-router-dom';
 import { Link } from "react-router-dom";
 import AlertWarning from "../Tools/Alert/Alert_Warning";
+import { FormattedMessage } from 'react-intl';
 
 class Pay extends Component {
 
@@ -41,7 +42,7 @@ class Pay extends Component {
         let module = null;
         let moduleAlert = null;
         if(this.state.key !=1){
-            module= <Button className="back" onClick={()=>this.handleSelect(1)}>Volver</Button>     
+            module= <Button className="back" onClick={()=>this.handleSelect(1)}><FormattedMessage id='transfer_myaccounts.back' /></Button>     
             moduleAlert = <AlertWarning show={this.state.show}/>
             
         }
@@ -56,13 +57,13 @@ class Pay extends Component {
                 {moduleAlert}
                 <div className="row">
                     <div className='col-sm-9 div-border'>
-                        <h1>Transferencias entre Mis Cuentas </h1>        
+                        <h1><FormattedMessage id='transfer_myaccounts.title' /> </h1>        
                             <div>
                                 <Tabs activeKey={this.state.key} onSelect={this.handleSelect} animation={false} id="noanim-tab-example">
-                                    <Tab eventKey={1} title="1. Seleccionar Destino">
+                                    <Tab eventKey={1} title={<FormattedMessage id='transfer_myaccounts.tab1' />}>
                                         <TabAccountTransStep1 />
                                     </Tab>
-                                    <Tab eventKey={2} title="2. Confirmar" disabled={this.state.disabled}>
+                                    <Tab eventKey={2} title={<FormattedMessage id='transfer_myaccounts.tab2' />} disabled={this.state.disabled}>
                                         <TabAccountTransStep2 />
                                     </Tab>
                                 </Tabs>
@@ -76,8 +77,8 @@ class Pay extends Component {
                                     }else{
                                         this.handleSelect(2);
                                     }
-                                    }}>Aceptar</Button>
-                                <Button className="cancel"><Link to="/account">Cancelar</Link></Button>
+                                    }}><FormattedMessage id='transfer_myaccounts.accept' /></Button>
+                                <Button className="cancel"><Link to="/account"><FormattedMessage id='transfer_myaccounts.cancel' /></Link></Button>
                             </div>      
                     </div>  
                     <div className='col-sm-3'>

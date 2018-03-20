@@ -7,6 +7,7 @@ import RightBox from "../Rightbox/Rightbox";
 import TopBox from "../Topbox/Topbox";
 import AlertSuccess from '../Tools/Alert/Alert_Success';
 import * as Services from '../../services/Services';
+import { FormattedMessage } from 'react-intl';
 
 class TransferTransaction extends Component {
      //Constructor 
@@ -58,7 +59,7 @@ class TransferTransaction extends Component {
                 <div>
                 <div className="RUIFW-row mrgn-btm-10 row">
                             <div className="RUIFW-col-6 col-sm-6">
-                                <h5 className="mrgn-btm-5 mrgn-top-5">Mis Destinatarios  ({this.state.length})</h5>
+                                <h5 className="mrgn-btm-5 mrgn-top-5"><FormattedMessage id='transfer_myaccounts.step3.text1' />  ({this.state.length})</h5>
                             </div>
                             <div className="RUIFW-col-6 txt-right col-sm-6">
                                 <span><img width="70" src={button1} alt="scotia button1" /></span>   

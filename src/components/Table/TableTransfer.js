@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
-  
+import { FormattedMessage } from 'react-intl';
+
   class TableTransfer extends Component {
     
     render() {
@@ -13,11 +14,11 @@ import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
                 search={ true }
                 hover
                 pagination>
-                <TableHeaderColumn dataField='date' isKey dataSort>Fecha</TableHeaderColumn>
-                <TableHeaderColumn dataField='desc' dataSort>Descripción</TableHeaderColumn>
-                <TableHeaderColumn dataField='cuenta' dataSort>Cuenta o Tarjeta</TableHeaderColumn>
-                <TableHeaderColumn dataField='Estado' dataSort>Estado</TableHeaderColumn>
-                <TableHeaderColumn dataField='dataAmount' dataSort>Monto</TableHeaderColumn>
+                <TableHeaderColumn dataField='date' isKey dataSort><FormattedMessage id='table.transfer.head1' /></TableHeaderColumn>
+                <TableHeaderColumn dataField='desc' dataSort><FormattedMessage id='table.transfer.head2' /></TableHeaderColumn>
+                <TableHeaderColumn dataField='cuenta' dataSort><FormattedMessage id='table.transfer.head3' /></TableHeaderColumn>
+                <TableHeaderColumn dataField='Estado' dataSort><FormattedMessage id='table.transfer.head4' /></TableHeaderColumn>
+                <TableHeaderColumn dataField='dataAmount' dataSort><FormattedMessage id='table.transfer.head5' /></TableHeaderColumn>
                 </BootstrapTable>
             </div>
         );

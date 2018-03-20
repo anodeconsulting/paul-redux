@@ -7,8 +7,7 @@ import myPdf02 from '../../assets/pdf/statement022016.pdf';
 import myPdf03 from '../../assets/pdf/statement032016.pdf';
 import myPdf05 from '../../assets/pdf/statement052016.pdf';
 import myPdf06 from '../../assets/pdf/statement062016.pdf';
-
-
+import { FormattedMessage } from 'react-intl';
 
 class Statement extends Component {
      //Constructor 
@@ -67,21 +66,21 @@ class Statement extends Component {
             <section>
             <div className="row">
                 <div className='col-sm-9 div-border'>
-                    <h1>Cartolas, Estados de Cuenta, Certificados y Documentos Tributarios Electrónicos </h1>        
+                    <h1><FormattedMessage id='statement.title1' /></h1>        
                         <div>
                         <div>
                 <div className="wizard-form-title">
-                    Consulta y descarga documentos asociados a tus productos bancarios y antecedentes tributarios.
+                <FormattedMessage id='statement.title2' />
                 </div>
                 <div className="well col-sm-12">
                         <div className="col-sm-12 form12">
                             <div className="col-sm-4">
-                                <ControlLabel>De</ControlLabel>
+                                <ControlLabel><FormattedMessage id='statement.label1' /></ControlLabel>
                             </div>
                             <div className="col-sm-8">
                                 <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChange.bind(this)}>
-                                {options.map(option => {
-                                    return <option value={option} key={option} >{option}</option>
+                                {options.map((option,index) => {
+                                    return <option value={option} key={index} ><FormattedMessage id={'statement.value1'+(index+1)} /></option>
                                 })}
                                     
                                 </FormControl>
@@ -90,48 +89,48 @@ class Statement extends Component {
                         </div>
                         <div className="col-sm-12 form12">
                             <div className="col-sm-4">
-                                <ControlLabel>Tipo de Documento</ControlLabel>
+                                <ControlLabel><FormattedMessage id='statement.label2' /></ControlLabel>
                             </div>
                             <div className="col-sm-8">
-                                Cartola Oficial
+                            <FormattedMessage id='statement.label2' />
                             </div>
                         </div>
                         <div className="col-sm-12 form12">
                             <div className="col-sm-4">
-                                <ControlLabel>Tipo de Envío</ControlLabel>
+                                <ControlLabel><FormattedMessage id='statement.label3' /></ControlLabel>
                             </div>
                             <div className="col-sm-8">
-                                Por Email - Modificar
+                            <FormattedMessage id='statement.label3' />
                             </div>
                         </div>
                     <div className="col-sm-12 table12">
                     <Table striped bordered condensed hover>
                         <thead>
                             <tr>
-                            <th>Fecha</th>
+                            <th><FormattedMessage id='statement.label4' /></th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                            <td><a onClick={this.handleClick.bind(this,"06")}><span>Julio 2016</span></a></td>
+                            <td><a onClick={this.handleClick.bind(this,"06")}><span><FormattedMessage id='statement.june' /> 2016</span></a></td>
                             </tr>
                             <tr>
-                            <td><a onClick={this.handleClick.bind(this,"05")}><span>Mayo 2016</span></a></td>
+                            <td><a onClick={this.handleClick.bind(this,"05")}><span><FormattedMessage id='statement.may' /> 2016</span></a></td>
                             </tr>
                             <tr>
-                            <td><span>Abril 2016</span></td>
+                            <td><span><FormattedMessage id='statement.april' /> 2016</span></td>
                             </tr>
                             <tr>
-                            <td><a onClick={this.handleClick.bind(this,"03")}><span>Marzo 2016</span></a></td>
+                            <td><a onClick={this.handleClick.bind(this,"03")}><span><FormattedMessage id='statement.march' /> 2016</span></a></td>
                             </tr>
                             <tr>
-                            <td><a onClick={this.handleClick.bind(this,"02")}><span>Febrero 2016</span></a></td>
+                            <td><a onClick={this.handleClick.bind(this,"02")}><span><FormattedMessage id='statement.feb' /> 2016</span></a></td>
                             </tr>
                             <tr>
-                            <td><span>Diciembre 2015</span></td>
+                            <td><span><FormattedMessage id='statement.dec' /> 2015</span></td>
                             </tr>
                             <tr>
-                            <td><span>Noviembre 2015</span></td>
+                            <td><span><FormattedMessage id='statement.nov' /> 2015</span></td>
                             </tr>
                         </tbody>
                         </Table>
