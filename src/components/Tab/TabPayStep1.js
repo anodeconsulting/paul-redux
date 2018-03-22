@@ -74,17 +74,17 @@ class TabPayStep1 extends Component {
         let module2 = null;
         let module2_1 = null;
         if("Cuenta Corriente *** 0001 - $ 2.222.345" === this.state.value){
-            module=<ControlLabel className="labelSet">Línea de Crédito *** 0007 $ 33.445</ControlLabel>;
+            module=<ControlLabel className="labelSet"><FormattedMessage id='pay_product.step1.options.label1' /></ControlLabel>;
         }else if("Otro Banco" === this.state.value){
             module1=
                 <div className="col-sm-12 pushLeft">
                     <div className="col-sm-3">
-                        <ControlLabel>Banco</ControlLabel>
+                        <ControlLabel><FormattedMessage id='pay_product.step1.options.label2' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                         <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeB.bind(this)}>
-                        {optionsB.map(option => {
-                            return <option value={option} key={option} >{option}</option>
+                        {optionsB.map((option,index) => {
+                            return <option value={option} key={index} ><FormattedMessage id={'pay_product.step1.options.value2'+(index+1)} /></option>
                         })}    
                         </FormControl>        
                     </div>
@@ -95,15 +95,15 @@ class TabPayStep1 extends Component {
             <div>
             <div className="col-sm-12 pushBot">
                 <div className="col-sm-3">
-                    <ControlLabel>Región</ControlLabel>
+                    <ControlLabel><FormattedMessage id='pay_product.step1.options.label3' /></ControlLabel>
                 </div>
                 <div className="col-sm-9">
                 <FormGroup>
                     <Radio name="radioGroup1" inline defaultChecked disabled>
-                        Nacionales
+                        <FormattedMessage id='pay_product.step1.options.value31' />
                     </Radio>
                     <Radio name="radioGroup1" inline disabled>
-                        Internacionales
+                        <FormattedMessage id='pay_product.step1.options.value32' />
                     </Radio>                          
                 </FormGroup>
                     
@@ -111,28 +111,28 @@ class TabPayStep1 extends Component {
             </div>
             <div className="col-sm-12">
                 <div className="col-sm-3">
-                    <ControlLabel>Monto</ControlLabel>
+                    <ControlLabel><FormattedMessage id='pay_product.step1.options.label4' /></ControlLabel>
                 </div>
                 <div className="col-sm-9">
                 <FormGroup>
                     <Radio name="radioGroup" defaultChecked >
-                    Monto Facturado ($ 123.456)
+                    <FormattedMessage id='pay_product.step1.options.value41' /> ($ 123.456)
                     </Radio>{' '}
                     <Radio name="radioGroup"  >
-                    Pago Mínimo ($ 3.456)
+                    <FormattedMessage id='pay_product.step1.options.value42' /> ($ 3.456)
                     </Radio> {' '} 
                     <Radio name="radioGroup"  >
-                    Deuda Total ($ 340.456)
+                    <FormattedMessage id='pay_product.step1.options.value43' /> ($ 340.456)
                     </Radio> {' '} 
                     <Radio name="radioGroup"  >
-                    Otro Monto
+                    <FormattedMessage id='pay_product.step1.options.value44' />
                     </Radio>                          
                 </FormGroup>    
                 </div>
             </div>
             <div className="col-sm-12">
                 <div className="col-sm-3">
-                    <ControlLabel>Fecha</ControlLabel>
+                    <ControlLabel><FormattedMessage id='pay_product.step1.options.label5' /></ControlLabel>
                 </div>
                 <div className="col-sm-9">
                 <ControlLabel>19/02/2018</ControlLabel>  
@@ -144,7 +144,7 @@ class TabPayStep1 extends Component {
             <div>
                 <div className="col-sm-12 pushBot">
                     <div className="col-sm-3">
-                        <ControlLabel>Monto</ControlLabel>
+                        <ControlLabel><FormattedMessage id='pay_product.step1.options.label6' /></ControlLabel>
                     </div>
                     <div className="col-sm-9">
                     <ControlLabel>$ 122.000</ControlLabel>  
@@ -152,7 +152,7 @@ class TabPayStep1 extends Component {
                 </div>
                 <div className="col-sm-12">
                 <div className="col-sm-3">
-                    <ControlLabel>Fecha</ControlLabel>
+                    <ControlLabel><FormattedMessage id='pay_product.step1.options.label5' /></ControlLabel>
                 </div>
                 <div className="col-sm-9">
                 <ControlLabel>19/02/2018</ControlLabel>  
@@ -163,26 +163,26 @@ class TabPayStep1 extends Component {
             if("Selecciona cuenta de oirgen"!== this.state.valueA ) {
                 if("Crédito Educación *** 0013" !== this.state.valueA ) {
                     module2_1=
-                     <ControlLabel className="labelSet">Para ver más información haga clic aquí</ControlLabel>;
+                     <ControlLabel className="labelSet"><FormattedMessage id='pay_product.step1.options.label7' /></ControlLabel>;
                  }
-                 module2 = 
+                 module2 =  
                  <div>
                      <div className="col-sm-12 pushBot">
                          <div className="col-sm-3">
-                             <ControlLabel>Tipo de Pago</ControlLabel>
+                             <ControlLabel><FormattedMessage id='pay_product.step1.options.label8' /></ControlLabel>
                          </div>
                          <div className="col-sm-9">
                              <Radio name="radioGroup2" inline defaultChecked>
-                                 Cuota
+                                <FormattedMessage id='pay_product.step1.options.value81' />
                              </Radio>
                              <Radio name="radioGroup2" inline>
-                                 Prepago
+                                <FormattedMessage id='pay_product.step1.options.value82' />
                              </Radio>  
                          </div>
                      </div>
                      <div className="col-sm-12">
                          <div className="col-sm-3">
-                             <ControlLabel>Monto</ControlLabel>
+                             <ControlLabel><FormattedMessage id='pay_product.step1.options.label6' /></ControlLabel>
                          </div>
                          <div className="col-sm-9">
                          <ControlLabel>$ 122.000</ControlLabel>  
@@ -190,7 +190,7 @@ class TabPayStep1 extends Component {
                      </div>
                      <div className="col-sm-12 pushBot">
                          <div className="col-sm-3">
-                             <ControlLabel>Fecha</ControlLabel>
+                             <ControlLabel><FormattedMessage id='pay_product.step1.options.label5' /></ControlLabel>
                          </div>
                          <div className="col-sm-9">
                          <ControlLabel>19/02/2018</ControlLabel>  
@@ -213,8 +213,8 @@ class TabPayStep1 extends Component {
                         </div>
                         <div className="col-sm-9">
                             <FormControl value={this.state.value} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChange.bind(this)}>
-                            {options.map(option => {
-                                return <option value={option} key={option} >{option}</option>
+                            {options.map((option,index) => {
+                                return <option value={option} key={index} ><FormattedMessage id={'pay_product.step1.options.fromaccount'+(index+1)} /></option>
                             })}
                                 
                             </FormControl>
@@ -229,8 +229,8 @@ class TabPayStep1 extends Component {
                         </div>
                         <div className="col-sm-9">
                             <FormControl value={this.state.valueA} className="col-sm-9 inputWidth" componentClass="select" placeholder="select" onChange={this.onChangeA.bind(this)}>
-                            {optionsA.map(option => {
-                                return <option value={option} key={option} >{option}</option>
+                            {optionsA.map((option,index) => {
+                                return <option value={option} key={index}><FormattedMessage id={'pay_product.step1.options.toaccount'+(index+1)} /></option>
                             })}
                             </FormControl>
                             {module2_1}

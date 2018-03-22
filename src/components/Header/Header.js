@@ -13,7 +13,7 @@ import { withRouter } from 'react-router';
 class Header extends Component {
       constructor(props){
           super(props);
-          let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
+        //   let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit' });
           this.toggle = this.toggle.bind(this);
           this.toggle2 = this.toggle2.bind(this);
           this.state = {
@@ -24,7 +24,7 @@ class Header extends Component {
               GearOpen: false,
               QuestionOpen: false,
               showIcon:true,
-              localTime:time
+            //   localTime:time
           };
           
         }
@@ -67,13 +67,13 @@ class Header extends Component {
             }
         }
 
-        runningTime(that){
-            let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit',hour: 'numeric', minute: 'numeric', second: 'numeric' });
-            that.setState({
-                localTime: time
-            });
+        // runningTime(that){
+        //     let time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit',hour: 'numeric', minute: 'numeric', second: 'numeric' });
+        //     that.setState({
+        //         localTime: time
+        //     });
 
-        }
+        // }
 
         // handleLan(e){
         //     let language;
@@ -96,7 +96,13 @@ class Header extends Component {
       render() {
           const path = this.state.pathBase;
           const user = this.props.users;
-
+          console.log(this.props.users.id);
+          let time;
+          if(this.props.users.id==='en-US'){
+            time = new Date().toLocaleDateString('en',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit',hour: 'numeric', minute: 'numeric', second: 'numeric' });
+          }else {
+            time = new Date().toLocaleDateString('es',{ weekday: 'long', year: 'numeric', month: 'long', day: '2-digit',hour: 'numeric', minute: 'numeric', second: 'numeric' });
+          }
           let loginPage;
           let logout;
           if(window.location.pathname !== path){
@@ -297,7 +303,7 @@ class Header extends Component {
                     </li>
                     <li className="lftbox">
                             <span className="h-separator">
-                                <a herf="#"> <FormattedMessage id='logout.lastentry' />: {this.state.localTime}</a>
+                                <a herf="#"> <FormattedMessage id='logout.lastentry' />: {time}</a>
                             </span>
                     </li>
                     <li>
