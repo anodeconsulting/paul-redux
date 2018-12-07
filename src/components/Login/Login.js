@@ -1,112 +1,110 @@
-import React, {Component} from 'react';
-import {Redirect} from 'react-router-dom';
-import './Login.css';
-// import { Button } from 'react-bootstrap';
-import RightBox from "../Rightbox/Rightbox";
-import { Link } from "react-router-dom";
-import { FormattedMessage } from 'react-intl';
-// import {AddTransferD2D} from "../../services/AddTransferD2D";
-// import {AddTransferD2CC} from "../../services/AddTransferD2CC";
-// import {AddCashAdvance} from "../../services/AddCashAdvance";
-// import {GetTransferActivities} from "../../services/GetTransferActivities";
-// import {GetCCDetails} from "../../services/GetCCDetails";
-// import {GetMortgageDetails} from "../../services/GetMortgageDetails";
-// import {GetMortgageTransactions} from "../../services/GetMortgageTransactions";
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import "./Login.css";
 
 class Login extends Component {
+  constructor() {
+    super();
 
-    constructor(){
-        super();
-       
-        this.state = {
-         username: '',
-         password: '',
-         redirectToReferrer: false
-        };
-    
-        this.login = this.login.bind(this);
-        this.onChange = this.onChange.bind(this);
-    
-      }
+    this.state = {
+      username: "",
+      password: "",
+      redirectToReferrer: false
+    };
 
-    login() {      
-        this.setState({redirectToReferrer: true})
+    this.login = this.login.bind(this);
+    this.onChange = this.onChange.bind(this);
+  }
+
+  login() {
+    this.setState({ redirectToReferrer: true });
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  componentDidMount() {}
+
+  render() {
+    if (this.state.redirectToReferrer) {
+      return <Redirect to={"/account"} />;
     }
 
-    onChange(e){
-        this.setState({[e.target.name]:e.target.value});
-    }
+    return (
+      <section className="section-plans">
+        <div className="row">
+          <h2>Choose Your License</h2>
+        </div>
+        <div className="row">
+          <div className="col col-sm-4">
+            <div className="plan-box">
+              <div className="height-top">
+                <h3>Personal</h3>
+                <p className="plan-desc">
+                  Just started using awesome Module. Great way to boost the hard
+                  designing or prototyping process.{" "}
+                </p>
+              </div>
+              <div>
+                <span className="green">Free</span>
+                <p className="plan-desc-details">
+                  Per month billed annualy or $250 from month to month
+                </p>
+              </div>
+              <div>
+                <a className="btn btn-buy-bot">Get it</a>
+              </div>
+            </div>
+          </div>
+          <div className="col col-sm-4">
+            <div className="plan-box border-grey">
+              <div>
+                <h3>Agency</h3>
+                <p className="plan-desc">
+                  Also a perfect tool for creative studios and freelancers”{" "}
+                </p>
+              </div>
+              <div>
+                <span>
+                  <small className="small">$</small>123
+                </span>
+                <p className="plan-desc-details">
+                  Per month billed annualy or $250 from month to month
+                </p>
+              </div>
+              <div>
+                <a className="btn btn-buy-bot">Buy Now</a>
+              </div>
+            </div>
+          </div>
 
-    componentDidMount(){
-        // AddTransferD2D().then((result) => {
-        //     console.log(result);  
-        // });
-        // AddTransferD2CC().then((result) => {
-        //     console.log(result);  
-        // });
-        // AddCashAdvance().then((result) => {
-        //     console.log(result);  
-        // });
-        // GetTransferActivities().then((result) => {
-        //     console.log(result);  
-        // });
-        // GetCCDetails().then((result) => {
-        //     console.log(result);  
-        // });
-        // GetMortgageDetails().then((result) => {
-        //     console.log(result);  
-        // });
-        // GetMortgageTransactions().then((result) => {
-        //     console.log(result);  
-        // });
-      }
-
-    render() {
-        if (this.state.redirectToReferrer) {
-            return (<Redirect to={'/account'}/>)
-        }
-        return (
-            <section >
-                {/* <Link to="/account/123">Transactions</Link> <br /> */}
-                {/* <Link to="/pay/mutualfund">mutualfund</Link><br /> */}
-                {/* <Link to="pay">Pay</Link>   */}
-                <form className="form-signin">
-                    <h1 className=" h1title"><FormattedMessage id='login.title' /></h1>
-                    <div className="row">
-                        <div className="RUIFW-content-main RUIFW-col-9 col-md-9 col-sm-9">
-                            <div className="wizard-form-content wrapfrom">
-                                <div className="RUIFW-row row">
-                                    <div className="col-sm-4">
-                                        <label  className=""><FormattedMessage id='login.user' /></label>
-                                        <input type="text" id="inputEmail" className="form-control inputwidth"  placeholder="Email address" ></input>
-                                    </div>
-                                </div>
-                                <div className="RUIFW-row row">
-                                    <div className="col-sm-4">
-                                        <label  className=""><FormattedMessage id='login.password' /></label>
-                                        <input type="password" id="inputPassword" className="form-control inputwidth"   placeholder="Password" ></input>
-                                    </div>
-                                </div>
-                                <div className="RUIFW-row row">
-                                    <div className="forgetPassword col-sm-4" >
-                                        <a href=""><FormattedMessage id='login.ask' /></a>
-                                    </div>
-                                </div>
-
-                                <div className="btn-holder">
-                                    <button className="btn login-btn " type="submit" onClick={this.login} ><i className="fa fa-lock" aria-hidden="true"></i> <FormattedMessage id='login.login' /></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="RUIFW-content-side RUIFW-col-3 col-md-3 col-sm-3">
-                            <RightBox location = {this.props.location}/>
-                        </div>
-                    </div>
-                </form>
-            </section>
-          );
-    }
+          <div className="col col-sm-4">
+            <div className="plan-box">
+              <div>
+                <h3>Unlimited</h3>
+                <p className="plan-desc">
+                  Living in today’s metropolitan world of cellular phones,
+                  mobile computers{" "}
+                </p>
+              </div>
+              <div>
+                <span>
+                  <small className="small">$</small>232
+                </span>
+                <p className="plan-desc-details">
+                  Per month billed annualy or $250 from month to month
+                </p>
+              </div>
+              <div>
+                <a className="btn btn-buy-bot">Buy Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 }
 
 export default Login;
