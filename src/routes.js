@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Login from "././components/Login/Login";
 import Header from "././components/Header/Header";
+import Account from "././components/Account/BillingAccount";
 import { connect } from "react-redux";
 import { addLocaleData, IntlProvider } from "react-intl";
 import messages from "./components/I18n/messages";
@@ -35,6 +36,7 @@ class Routes extends Component {
           <div className="">
             <Header users={users} />
             <Route exact path="/" component={Login} />
+            <Route exact path="/billing-account" component={Account} />
             {/* <Route exact path="/account" component={Account} />
             <Route path="/account/:id/:id" component={TransactionList} />
             <Route
