@@ -15,6 +15,7 @@ class Header extends Component {
     this.handleCloseUser = this.handleCloseUser.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
+    this.handleUserSignIn = this.handleUserSignIn.bind(this);
     this.handleHome = this.handleHome.bind(this);
 
     this.state = {
@@ -32,6 +33,10 @@ class Header extends Component {
 
   handleHome() {
     this.props.history.push("/");
+  }
+
+  handleUserSignIn() {
+    this.props.history.push("/msfui");
   }
 
   handleSignIn() {
@@ -205,7 +210,11 @@ class Header extends Component {
                     id="password1"
                   />
                 </div>
-                <button type="submit" className="btn btn-info">
+                <button
+                  type="submit"
+                  className="btn btn-info"
+                  onClick={this.handleUserSignIn}
+                >
                   Sign In
                 </button>
                 <p />

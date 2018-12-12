@@ -37,6 +37,10 @@ class Routes extends Component {
             <Header users={users} />
             <Route exact path="/" component={Login} />
             <Route exact path="/billing-account" component={Account} />
+            <Route
+              path="/msfui"
+              component={() => (window.location = "https://www.novaera.io/")}
+            />
             {/* <Route exact path="/account" component={Account} />
             <Route path="/account/:id/:id" component={TransactionList} />
             <Route
