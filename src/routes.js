@@ -32,7 +32,7 @@ class Routes extends Component {
         locale={this.props.users.id}
         messages={flattenMessages(messages[this.props.users.id])}
       >
-        <BrowserRouter basename="/entry_port" onChange={this.yourHandler}>
+        <BrowserRouter basename="/entryport" onChange={this.yourHandler}>
           <div className="">
             <Header users={users} />
             <Route exact path="/" component={Login} />
@@ -48,6 +48,14 @@ class Routes extends Component {
               component={() =>
                 (window.location = "https://www.novaera.io/mssf/login/oauth2")
               }
+            />
+            <Route
+              path="/test/oauth2"
+              component={() => (window.location = "http://www.google.ca")}
+            />
+            <Route
+              path="/test?code=123"
+              component={() => this.props.history.push("/test/oauth2")}
             />
             {/* <Route exact path="/account" component={Account} />
             <Route path="/account/:id/:id" component={TransactionList} />

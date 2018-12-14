@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "react-flags-select/css/react-flags-select.css";
 import { withRouter } from "react-router";
 import { DropdownButton, Modal, MenuItem } from "react-bootstrap";
 import Link from "react-router-dom/es/Link";

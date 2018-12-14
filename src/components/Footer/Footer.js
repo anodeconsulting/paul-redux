@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { IntlProvider } from "react-intl";
 import messages from "../I18n/messages";
 import { flattenMessages } from "../I18n/Utils";
-import "react-flags-select/css/react-flags-select.css";
 
 class Footer extends Component {
   render() {
