@@ -32,7 +32,7 @@ class Routes extends Component {
         locale={this.props.users.id}
         messages={flattenMessages(messages[this.props.users.id])}
       >
-        <BrowserRouter basename="/react" onChange={this.yourHandler}>
+        <BrowserRouter basename="/entry_port" onChange={this.yourHandler}>
           <div className="">
             <Header users={users} />
             <Route exact path="/" component={Login} />
@@ -40,6 +40,12 @@ class Routes extends Component {
             <Route
               path="/msfui"
               component={() => (window.location = "https://www.novaera.io/")}
+            />
+            <Route
+              path="/login/oauth2"
+              component={() =>
+                (window.location = "https://www.novaera.io/mssf/login/oauth2")
+              }
             />
             {/* <Route exact path="/account" component={Account} />
             <Route path="/account/:id/:id" component={TransactionList} />
