@@ -39,7 +39,9 @@ class Routes extends Component {
             <Route exact path="/billing-account" component={Account} />
             <Route
               path="/msfui"
-              component={() => (window.location = "https://www.novaera.io/")}
+              component={() =>
+                (window.location = "https://www.novaera.io/mssf/#")
+              }
             />
             <Route
               path="/login/oauth2"
