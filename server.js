@@ -1,8 +1,9 @@
 require("dotenv").config();
-
+var cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+app.use(cors());
 const User = require("./models/user");
 const mongoose = require("mongoose");
 // DB Config
