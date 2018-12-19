@@ -34,7 +34,7 @@ class Routes extends Component {
           <Route
             path="/login/oauth2"
             component={() =>
-              (window.location = "https://www.novaera.io/mssf/login/oauth2")
+              (window.location = "https://www.novaera.io/login/oauth2")
             }
           />
         </div>
