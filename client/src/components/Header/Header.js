@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { withRouter } from "react-router";
+import { withRouter } from "react-router";
 import { DropdownButton, Modal, MenuItem } from "react-bootstrap";
 import Link from "react-router-dom/es/Link";
 import "./Header.css";
 import { alertActions } from "../../actions/alert.actions";
-import { userActions } from "../../actions/user.action";
-import { history } from "../../helpers/history";
+// import { userActions } from "../../actions/user.action";
+// import { history } from "../../helpers/history";
 
 class Header extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class Header extends Component {
 
   componentDidMount() {
     if (!this.state.login) {
-      history.push("/");
+      this.props.history.push("/");
     }
   }
 
@@ -49,45 +49,21 @@ class Header extends Component {
     });
   }
 
-  callApi = async () => {
-    console.log("sending to mongo");
-    const response = await fetch("/api/signin", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.password
-      })
-    });
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    return body;
-  };
-
   handleHome() {
-    history.push("/");
+    this.props.history.push("/");
   }
 
   handleUserSignIn(e) {
-    e.preventDefault();
+    this.props.history.push("/msfui");
 
-    const { email, password } = this.state;
-    const { dispatch } = this.props;
+    // e.preventDefault();
+    // const { email, password } = this.state;
+    // const { dispatch } = this.props;
 
-    if (email && password) {
-      console.log("login component:dispatching " + email + "/" + password);
-      dispatch(userActions.login(email, password));
-    }
-
-    // this.callApi()
-    //   .then(res => {
-    //     console.log(res);
-    //     this.props.history.push("/msfui");
-    //   })
-    //   .catch(err => console.log(err));
+    // if (email && password) {
+    //   console.log("login component:dispatching " + email + "/" + password);
+    //   dispatch(userActions.login(email, password));
+    // }
   }
 
   handleSignIn() {
@@ -102,7 +78,7 @@ class Header extends Component {
       show: false,
       login: false
     });
-    history.push("/");
+    this.props.history.push("/");
   }
 
   handleClose() {
@@ -316,6 +292,6 @@ function mapStateToProps(state) {
   };
 }
 
-const connectedApp = connect(mapStateToProps)(Header);
-export { connectedApp as Header };
-// export default withRouter(connect(mapStateToProps)(Header));
+// const connectedApp = connect(mapStateToProps)(Header);
+// export { connectedApp as Header };
+export default withRouter(connect(mapStateToProps)(Header));

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { Router, Route } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import Login from "././components/Login/Login";
-import NotFound from "././components/NotFound/NotFound";
+// import NotFound from "././components/NotFound/NotFound";
 
-import { Header } from "././components/Header/Header";
+import Header from "././components/Header/Header";
 import Account from "././components/Account/BillingAccount";
 import { connect } from "react-redux";
-import { history } from "./helpers/history";
+// import { history } from "./helpers/history";
 
 class Routes extends Component {
   componentWillMount() {
@@ -18,15 +18,17 @@ class Routes extends Component {
   render() {
     var users = this.props.users;
     return (
-      <Router path="/entryport" history={history}>
+      // <Router basename="/entryport" history={history}>
+      <BrowserRouter basename="/entryport">
         <div className="">
           <Header users={users} />
           <Route exact path="/" component={Login} />
           <Route exact path="/billing-account" component={Account} />
           <Route
             path="/msfui"
-            component={() =>
-              (window.location = "https://www.novaera.io/#")
+            component={
+              () => (window.location = "https://www.novaera.io")
+              // (window.location = "https://www.google.ca")
             }
           />
           <Route
@@ -35,9 +37,8 @@ class Routes extends Component {
               (window.location = "https://www.novaera.io/login/oauth2")
             }
           />
-          <Route path="*" component={NotFound} />
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
