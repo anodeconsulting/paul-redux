@@ -29,5 +29,7 @@
   },
   "devDependencies": {
     "babel-plugin-react-intl": "^2.4.0"
-  }
+  },
+  "homepage": "./",
+  "proxy":"http://app:5000"
 }

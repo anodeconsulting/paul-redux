@@ -5,7 +5,7 @@ import { DropdownButton, Modal, MenuItem } from "react-bootstrap";
 import Link from "react-router-dom/es/Link";
 import "./Header.css";
 import { alertActions } from "../../actions/alert.actions";
-// import { userActions } from "../../actions/user.action";
+import { userActions } from "../../actions/user.action";
 // import { history } from "../../helpers/history";
 
 class Header extends Component {
@@ -54,16 +54,16 @@ class Header extends Component {
   }
 
   handleUserSignIn(e) {
-    this.props.history.push("/msfui");
+    // this.props.history.push("/msfui");
 
-    // e.preventDefault();
-    // const { email, password } = this.state;
-    // const { dispatch } = this.props;
+    e.preventDefault();
+    const { email, password } = this.state;
+    const { dispatch } = this.props;
 
-    // if (email && password) {
-    //   console.log("login component:dispatching " + email + "/" + password);
-    //   dispatch(userActions.login(email, password));
-    // }
+    if (email && password) {
+      console.log("login component:dispatching " + email + "/" + password);
+      dispatch(userActions.login(email, password));
+    }
   }
 
   handleSignIn() {
