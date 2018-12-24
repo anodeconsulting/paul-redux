@@ -12,7 +12,7 @@ function login(email, password) {
     body: JSON.stringify({ email, password })
   };
 
-  return fetch(`/api/signin`, requestOptions)
+  return fetch(`/nodejs/api/signin`, requestOptions)
     .then(handleResponse)
     .then(user => {
       console.log(user);
