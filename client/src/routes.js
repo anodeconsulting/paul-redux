@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Router } from 'react-router';
 import { BrowserRouter, Route } from "react-router-dom";
+import { history } from "./helpers/history";
 
 import Login from "././components/Login/Login";
 // import NotFound from "././components/NotFound/NotFound";
@@ -18,8 +20,7 @@ class Routes extends Component {
   render() {
     var users = this.props.users;
     return (
-      // <Router basename="/entryport" history={history}>
-      <BrowserRouter basename="/entryport">
+      <Router  history={history}>
         <div className="">
           <Header users={users} />
           <Route exact path="/" component={Login} />
@@ -28,8 +29,9 @@ class Routes extends Component {
             path="/msfui"
             component={
               () =>
-                  (window.location = "https://www.novaera.io/#")
-              // (window.location = "https://www.google.ca")
+              {
+                  // window.location.href = "https://www.google.ca"; return null;}
+                      window.location = "https://www.novaera.io/#"; return null;}
             }
           />
           <Route
@@ -39,7 +41,7 @@ class Routes extends Component {
             }
           />
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }
