@@ -28,7 +28,7 @@ class Routes extends Component {
             path="/msfui"
             component={
               () =>
-                  (window.location = "https://www.novaera.io")
+                  (window.location = "https://www.novaera.io/#")
               // (window.location = "https://www.google.ca")
             }
           />

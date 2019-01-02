@@ -1,19 +1,21 @@
 # base image
-FROM node:9.6.1
+FROM node:9.6.1 as BUILD
 
-# set working directory
-RUN mkdir /usr/src/app
+COPY . /usr/src/app 
+
 WORKDIR /usr/src/app
-COPY . .
 
-# add `/usr/src/app/node_modules/.bin` to $PATH
-ENV PATH /usr/src/app/node_modules/.bin:$PATH
-
-# install and cache app dependencies
-COPY package.json /usr/src/app/package.json
-#RUN npm install --silent
 RUN npm install
 RUN npm install react-scripts@1.1.1 -g --silent
-EXPOSE 3000
-# start app
-CMD ["npm", "start"]
+
+RUN npm run build
+
+FROM nginx
+
+#RUN apt-get update && apt-get install -y curl && apt-get clean
+
+EXPOSE 80
+
+COPY --from=BUILD /usr/src/app/build/  /usr/share/nginx/html
+
+

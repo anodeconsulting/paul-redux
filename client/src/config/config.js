@@ -1,3 +1,3 @@
 export const config = {
-  proxy: "http://app:5000"
+  proxy: "http://entrypoint-nodejs-cluster-ip-service:5000"
 };
