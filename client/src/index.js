@@ -16,6 +16,9 @@ const store = createStore(
   applyMiddleware(thunkMiddleware, loggerMiddleware)
 );
 
+console.log("start#####")
+console.log(process.env)
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

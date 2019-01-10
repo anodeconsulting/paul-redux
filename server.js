@@ -1,4 +1,4 @@
-require("dotenv").config();
+require("dotenv").config({ path: process.cwd() + "/.env" });
 var cors = require("cors");
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -11,12 +11,13 @@ const mongoose = require("mongoose");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const db = require("./config/keys").mongoURI;
-const user1 = require("./config/keys").mongoUser;
-const pass1 = require("./config/keys").mongoPass;
+// const db = require("./config/keys").mongoURI;
+const db = process.env.mongoURI;
+const user1 = process.env.mongoUser;
+const pass1 = process.env.mongoPass;
 mongoose
   .connect(
-    db,
+      db,
     { useNewUrlParser: true }
   ) // Adding new mongo url parser
   .then(() => console.log("MongoDB Connected..."))

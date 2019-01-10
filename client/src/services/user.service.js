@@ -5,6 +5,8 @@ export const userService = {
   logout
 };
 
+const cloudprefix = process.env.REACT_APP_PREFIX;
+
 function login(email, password) {
   const requestOptions = {
     method: "POST",
@@ -12,7 +14,7 @@ function login(email, password) {
     body: JSON.stringify({ email, password })
   };
 
-  return fetch(`/nodejs/api/signin`, requestOptions)
+  return fetch(cloudprefix+`api/signin`, requestOptions)
     .then(handleResponse)
     .then(user => {
       console.log(user);
