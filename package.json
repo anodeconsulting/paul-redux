@@ -8,7 +8,7 @@
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "windows-dev": "concurrently --kill-others-on-fail \"set HTTPS=true &&SET mongoURI=mongodb://localhost:27017/billingUser&& nodemon server.js\" \"cd client && set REACT_APP_PREFIX=/&& npm start\"",
-    "docker-dev": "concurrently --kill-others-on-fail \"SET mongoURI=mongodb://mongo:27017/billingUser& nodemon server.js\" \"yarn client\"",
+    "docker-dev": "concurrently --kill-others-on-fail \"mongoURI=mongodb://mongo:27017/billingUser& node server.js\"",
     "linux-dev": "concurrently --kill-others-on-fail \"yarn server\" \"set HTTPS=true&&yarn client\""
   },
   "author": "",
