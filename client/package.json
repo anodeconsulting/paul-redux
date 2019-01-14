@@ -32,6 +32,6 @@
   "devDependencies": {
     "babel-plugin-react-intl": "^2.4.0"
   },
-  "homepage": "./",
-  "proxy":"http://entrypoint-nodejs-cluster-ip-service:5000"
+  "homepage": "./entrypoint/",
+  "proxy": "http://entrypoint-nodejs-cluster-ip-service:5000"
 }
